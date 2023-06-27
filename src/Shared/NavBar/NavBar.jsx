@@ -5,7 +5,7 @@ const NavBar = () => {
     const navItems = <>
         <li className="font-pppins"><NavLink to="/">Home</NavLink></li>
         <li className="font-pppins"><NavLink to="/about">About</NavLink></li>
-        <li className="font-pppins"><NavLink to="/menu">Services</NavLink></li>
+        <li className="font-pppins"><NavLink to="/services">Services</NavLink></li>
         <li className="font-pppins"><NavLink to="/order">Contact</NavLink></li>
         <li className="font-pppins"><NavLink to="/login">Login</NavLink></li>
         <li className="font-pppins"><NavLink to="/register">Register</NavLink></li>
