@@ -14,7 +14,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 console.log(imgHosting_token);
 const SignUp = () => {
-  const { createAccount } = useContext(AuthContext);
+  const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;
   const {
     register,
@@ -67,7 +67,10 @@ const SignUp = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-
+   
+  const handleloginwithgoogle=()=>{
+    googleLogin()
+  }
   return (
     <div>
       <div className="hero w-full min-h-screen rounded-lg  bg-slate-200 mt-16 py-16">
@@ -184,9 +187,9 @@ const SignUp = () => {
               <p className="text-center text-black text-lg font-semibold">
                 Or Sign-up with
               </p>
-              <div className="flex text-center gap-8 py-4 justify-center">
+              <div onClick={handleloginwithgoogle} className="flex bg-black w-1/2 btn mx-auto hover:bg-orange-600 justify-center">
                 <Link>
-                  <FaGoogle className="text-black h-6 w-6"></FaGoogle>
+                  <FaGoogle className="text-white h-6 w-6"></FaGoogle>
                 </Link>
               </div>
             </form>
