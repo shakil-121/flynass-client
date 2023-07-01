@@ -1,0 +1,12 @@
+.bgi{
+    background-image: url(../../assets/images/contact-bg.png); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+} 
+.contact-bg{
+    background-image: url(../../assets/images/contact-bg-two.png); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
