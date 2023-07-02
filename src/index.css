@@ -1,16 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.nav-link {
-    color: red;
-}
-
-.nav-item>a:hover {
-    color: red;
-}
-
-/*code to change background color*/
-.navbar-nav>.active>a {
-    background-color: red;
-}

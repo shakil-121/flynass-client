@@ -1,0 +1,21 @@
+$background-size: 404px;
+
+.background-animated {
+  width: 100%;
+  height: $background-size;
+  position: absolute;
+  background-color: #4277a3;
+  // background-image: url('https://andreivictor.ro/codepen/infinite-scroll-bg/infinite-scroll-bg.jpg');
+  // uncomment this to see how animation really works
+  background-image: url('https://media.istockphoto.com/id/1255877450/fi/vektori/tyhj%C3%A4-tie-puoli-litte%C3%A4-vektori-kuva-yl%C3%A4n%C3%A4kym%C3%A4.jpg?s=612x612&w=0&k=20&c=UAG65IeHqJvPfeYgrurcUZiHjUYo4srtNsHRxw0gBLo=');
+  animation: infiniteScrollBg 35s linear infinite;
+}
+
+@keyframes infiniteScrollBg {
+  0% {
+    background-position: 50% 0;
+  }
+  100%{
+    background-position: 50% (-$background-size * 2);
+  }
+}
