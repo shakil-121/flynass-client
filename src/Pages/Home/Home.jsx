@@ -1,9 +1,12 @@
 import React from 'react';
+import HomeBanner from './HomeBanner/HomeBanner';
+import WhatWeDo from './WhatWeDo/WhatWeDo';
 
 const Home = () => {
     return (
-        <div className='bg-[#1E8FD0] h-96'>
-            This is home page!
+        <div>
+            <HomeBanner/>
+            <WhatWeDo/>
         </div>
     );
 };

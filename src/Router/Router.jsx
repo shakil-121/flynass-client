@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import Root from "../Layout/Root/Root";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
@@ -10,36 +10,37 @@ import Login from "../Pages/LoginAndSignup/Login";
 import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element:<Root></Root>,
-      children:[
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-          path:"/about",
-          element: <About></About>
-        },
-        {
-          path: "/services",
-          element: <Services></Services>
-        },
-        {
-          path:'/signup', 
-          element:<SignUp></SignUp>
-        },
-        {
-           path:"/contact",
-           element:<Contact></Contact>
-        },
-        {
-          path:"/login", 
-          element:<Login></Login>
-        }
-      ]
-    },
-  ]); 
+  {
+    path: "/",
+    element: <Root></Root>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/services",
+        element: <Services></Services>
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>
+      },
 
-  export default router;
+      {
+        path: "/login",
+        element: <Login></Login>
+      }
+    ]
+  },
+]);
+
+export default router;
