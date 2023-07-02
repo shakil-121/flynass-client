@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import Root from "../Layout/Root/Root";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
@@ -42,4 +42,12 @@ const router = createBrowserRouter([
     },
   ]); 
 
-  export default router;
+      {
+        path: "/login",
+        element: <Login></Login>
+      }
+    ]
+  },
+]);
+
+export default router;
