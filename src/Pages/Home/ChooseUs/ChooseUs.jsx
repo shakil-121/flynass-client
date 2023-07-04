@@ -4,7 +4,7 @@ import SectionTitle from '../../../Component/SectionTitle';
 
 const ChooseUs = () => {
     return (
-        <div className='grid grid-cols-4 mt-28'>
+        <div className='grid md:grid-cols-4 mt-48 gap-2'>
             <div>
 
             </div>
@@ -15,14 +15,19 @@ const ChooseUs = () => {
                 <button className='btn bg-[#ff8a00] mt-5'>Learn More ---</button>
             </div>
             <div className='col-span-2'>
-                <div className='flex '>
-                    <div className='mt-28'>
+                <div className='grid grid-cols-2 '>
+                    <div className=''>
                         <img src={pic1} alt="" />
                     </div>
-                    <div className='h-[520px] w-[365px] bg-white shadow-xl -ms-14 flex relative'>
-                        <img className='h-[530px] w-[340px] absolute -top-10 right-0' src={pic2} alt="" />
+                    <div className='h-5 animate-bounce -mt-16 relative'>
+                        <div className='bg-white shadow-2xl -ml-48 shadow-[#7ABDE2] w-96 h-[530px]'>
+                            <img className='ms-11 absolute -top-9' src={pic2} alt="" />
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div className='col-start-2 mt-28'>
+                <h1 className='text-8xl font-bold opacity-20'>LOGISTICS</h1>
             </div>
         </div>
     );
