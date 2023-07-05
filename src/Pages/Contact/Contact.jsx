@@ -30,7 +30,7 @@ const Contact = () => {
   return (
     <div>
       <div className="bgi">
-        <h1 className="mt-16 pt-48 ps-16 text-7xl text-white font-bold font-pppins">
+        <h1 className="pt-48 ps-16 text-7xl text-white font-bold font-pppins">
           Contact US
         </h1>
       </div>

@@ -22,7 +22,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="mt-14">
+    <div>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
