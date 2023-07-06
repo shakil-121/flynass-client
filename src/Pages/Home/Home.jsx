@@ -3,6 +3,7 @@ import WhatWeDo from './WhatWeDo/WhatWeDo';
 import ChooseUs from './ChooseUs/ChooseUs';
 import RequestAQuote from './RequestAQuote/RequestAQuote';
 import Estimation from './Estimation/Estimation';
+import Respect from './Respect/Respect';
 
 const Home = () => {
     return (
@@ -10,7 +11,7 @@ const Home = () => {
            <HeroSection></HeroSection>
            <WhatWeDo/>
            <ChooseUs/> 
-           <Support></Support>
+           {/* <Support></Support> */}
            <RequestAQuote/>
            <Estimation/>
            <Respect/>
