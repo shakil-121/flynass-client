@@ -43,9 +43,9 @@ const HeroSection = () => {
           <div className="md:w-[80%] px-10 py-4">
           <h1 className="text-design text-9xl text-white font-bold">
                 {" "}
-                সম্পূর্ণ
+                WHOLE
               </h1>
-              <h1 className="text-9xl text-white font-bold">বাংলাদেশ</h1>
+              <h1 className="text-9xl text-white font-bold">BANGLADESH</h1>
              <br />  
              <br />
              <p className="text-white text-2xl">Lorem ipsum dolor sit amet  Sunt enim maiores numquam ducimus <br /> necessitatibus vero qui quos quibusdam labore non!</p> <br />
