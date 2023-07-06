@@ -6,16 +6,16 @@ import { FaFacebookF,FaTwitter,FaInstagram,FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="md:h-[60vh] h-full p-10 f-bg mt-16">
-      <div className="md:flex">
+      <div className="md:flex justify-center">
       <div>
         <img className="h-24 w-auto" src={logo} alt="Flynass Logo" />
         <br />
-        <p className="text-white ps-10 text-lg">
+        <p className="text-white text-lg">
           Many desktop publishing packages <br /> and web page editors now use
           are <br /> dolra Ipsum as their default .
         </p>
-        <div className="flex ps-8 mt-6 text-white">
-            <div className="bg-[#184f6e] hover:bg-[#051721] p-2 ms-2">
+        <div className="flex  mt-6 text-white">
+            <div className="bg-[#184f6e] hover:bg-[#051721] p-2">
               <FaFacebookF className="text-2xl"></FaFacebookF>
             </div>
             <div className="bg-[#184f6e] hover:bg-[#051721] p-2 ms-3">
