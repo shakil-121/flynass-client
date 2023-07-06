@@ -6,7 +6,7 @@ import { FaArrowAltCircleDown, FaRegArrowAltCircleDown } from 'react-icons/fa';
 
 const RequestAQuote = () => {
     return (
-        <div className='mt-28 mb-48 bg-[#F2FAFF] pb-20'>
+        <div className='mt-28 bg-[#F2FAFF] pb-20'>
             <div className='p-10 bg-white w-1/3 mx-auto flex flex-col gap-2 shadow-2xl shadow-[#ff8800a1] -mt-1'>
                 <h4 className='uppercase font-semibold'>24/7 Active Suport Team</h4>
                 <h1 className='text-3xl text-[#ff8a00] font-bold'>Need Immediate Support Or Any Help?</h1>
