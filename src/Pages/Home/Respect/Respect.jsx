@@ -10,19 +10,19 @@ import Marquee from "react-fast-marquee";
 
 const Respect = () => {
     return (
-        <div className='mt-36'>
-            <SectionTitle subHeading="Respected" heading="Clinets & Partners"></SectionTitle>
-            <div className='max-w-screen-xl mx-auto'>
-                <Marquee>
-                    <img className='p-10 w-48' src={logo1} alt="" />
-                    <img className='p-10 w-48' src={logo2} alt="" />
-                    <img className='p-10 w-48' src={logo3} alt="" />
-                    <img className='p-10 w-48' src={logo4} alt="" />
-                    <img className='p-10 w-48' src={logo5} alt="" />
-                    <img className='p-10 w-48' src={logo6} alt="" />
-                    <img className='p-10 w-48' src={logo3} alt="" />
-                </Marquee>
+        <div className='max-w-screen-xl mx-auto mt-36'>
+            <div className='text-center'>
+                <SectionTitle subHeading="Respected" heading="Clinets & Partners"></SectionTitle>
             </div>
+            <Marquee>
+                <img className='p-10 w-48' src={logo1} alt="" />
+                <img className='p-10 w-48' src={logo2} alt="" />
+                <img className='p-10 w-48' src={logo3} alt="" />
+                <img className='p-10 w-48' src={logo4} alt="" />
+                <img className='p-10 w-48' src={logo5} alt="" />
+                <img className='p-10 w-48' src={logo6} alt="" />
+                <img className='p-10 w-48' src={logo3} alt="" />
+            </Marquee>
         </div>
     );
 };

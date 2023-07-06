@@ -5,6 +5,7 @@ import RequestAQuote from './RequestAQuote/RequestAQuote';
 import Estimation from './Estimation/Estimation';
 import Respect from './Respect/Respect';
 import Support from './RequestAQuote/Support';
+import CompanyApproch from './CompanyApproch/CompanyApproch';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
            <RequestAQuote/>
            <Estimation/>
            <Respect/>
+           <CompanyApproch/>
         </div>
     );
 };
