@@ -8,10 +8,12 @@ const WhatWeDo = () => {
     return (
         <div className='bg-[#F2FAFF]'>
             <div className='max-w-screen-xl mx-auto'>
-                <SectionTitle
+                <div className='text-center'>
+                <SectionTitle 
                     heading="Specialist Logistics Services"
                     subHeading="What We Do!">
                 </SectionTitle>
+                </div>
                 <p className='text-center font-semibold'>Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text <br /> ever since the when an printer took.</p>
                 <div className='grid md:grid-cols-2 items-center justify-items-center gap-14 mt-20'>
                     <div>
