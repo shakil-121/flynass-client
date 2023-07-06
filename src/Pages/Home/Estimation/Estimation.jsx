@@ -15,7 +15,7 @@ const Estimation = () => {
             </div>
             <div className='bg'>
                 <div className='max-w-screen-xl h-full mx-auto grid md:grid-cols-3 gap-10'>
-                    <div className='text-white hover:border-8 hover:transition duration-700 ease-in hover:bg-slate-600 hover:bg-opacity-40 p-2 flex flex-col justify-end hover:justify-center'>
+                    <div className='text-white hover:border-8 hover:transition-transform duration-700  hover:bg-slate-600 hover:bg-opacity-40 p-2 flex flex-col justify-end hover:justify-center'>
                         <h1 className='text-8xl font-bold font-roboto mb-7'>01</h1>
                         <h2 className='text-2xl font-semibold font-pppins mb-5'>Solutions and specialized expretise</h2>
                         <p className='font-semibold mb-5'>Our aim is to optimize and improve your supply chain so that we can give you the best service</p>
@@ -23,7 +23,7 @@ const Estimation = () => {
                             <button className='border px-8 py-3 text-2xl'><HiArrowRight /></button>
                         </div>
                     </div>
-                    <div className='text-white hover:border-8 hover:bg-slate-600 hover:bg-opacity-40 p-2 flex flex-col justify-end hover:justify-center'>
+                    <div className='text-white hover:transition-transform duration-700  hover:border-8 hover:bg-slate-600 hover:bg-opacity-40 p-2 flex flex-col justify-end hover:justify-center'>
                         <h1 className='text-8xl font-bold font-roboto mb-7'>02</h1>
                         <h2 className='text-2xl font-semibold font-pppins mb-5'>Multiple warehouese</h2>
                         <p className='font-semibold mb-5'>Lorem ipsum dolor sit </p>
@@ -32,7 +32,7 @@ const Estimation = () => {
                             <button className='border px-8 py-3 text-2xl'><HiArrowRight /></button>
                         </div>
                     </div>
-                    <div className='text-white hover:border-8 hover:bg-slate-600 hover:bg-opacity-40 p-2 flex flex-col justify-end hover:justify-center'>
+                    <div className='text-white hover:transition-transform duration-700  hover:border-8 hover:bg-slate-600 hover:bg-opacity-40 p-2 flex flex-col justify-end hover:justify-center'>
                         <h1 className='text-8xl font-bold font-roboto mb-7'>03</h1>
                         <h2 className='text-2xl font-semibold font-pppins mb-5'>Tracking made easy</h2>
                         <p className='font-semibold mb-5'>A tracking number for the entire process. so that you can find the exact position. it will help you</p>
