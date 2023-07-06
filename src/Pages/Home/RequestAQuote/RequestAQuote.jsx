@@ -6,13 +6,11 @@ import { FaArrowAltCircleDown, FaRegArrowAltCircleDown } from 'react-icons/fa';
 
 const RequestAQuote = () => {
     return (
-        <div className='mt-28 bg-[#F2FAFF] pb-20'>
-            <div className='p-10 bg-white w-1/3 mx-auto flex flex-col gap-2 shadow-2xl shadow-[#ff8800a1] -mt-1'>
-                <h4 className='uppercase font-semibold'>24/7 Active Suport Team</h4>
-                <h1 className='text-3xl text-[#ff8a00] font-bold'>Need Immediate Support Or Any Help?</h1>
-                <h2 className='text-2xl font-bold'>(01303329413)</h2>
-            </div>
-            <SectionTitle subHeading="Request A Quote" heading="Booking For Product Transformation" />
+        <div className='pt-4 mt-8 bg-[#F2FAFF] pb-20'>
+            
+           <div className="text-center">
+           <SectionTitle subHeading="Request A Quote" heading="Booking For Product Transformation" />
+           </div>
             <p className='text-center'>Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text <br /> ever since the when an printer took.</p>
             <div className="md:flex justify-center items-center relative">
                 <div className="flex justify-center">

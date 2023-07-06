@@ -27,7 +27,7 @@ const ChooseUs = () => {
                 </div>
             </div>
             <div className='col-start-2 mt-28'>
-                <h1 className='text-8xl font-bold opacity-20'>LOGISTICS</h1>
+                <h1 className='text-8xl -z-10 font-bold opacity-20'>LOGISTICS</h1>
             </div>
         </div>
     );
