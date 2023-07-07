@@ -7,7 +7,7 @@ import './CompannyApproch.css'
 
 const CompanyApproch = () => {
     return (
-        <div className='mt-28 max-w-screen-xl md:px-10 mx-auto'>
+        <div className='mt-28 max-w-screen-xl mx-auto  2xl:px-0 px-16'>
             <div className='grid grid-cols-2 justify-items-end items-center'>
                 <div>
                     <SectionTitle className="text-left" subHeading="Company Approch" heading="Reliable Logistic & Transport  Solutions"></SectionTitle>

@@ -10,7 +10,7 @@ import Marquee from "react-fast-marquee";
 
 const Respect = () => {
     return (
-        <div className='max-w-screen-xl mx-auto mt-36'>
+        <div className='max-w-screen-xl mx-auto mt-36 2xl:px-0 px-16'>
             <div className='text-center'>
                 <SectionTitle subHeading="Respected" heading="Clinets & Partners"></SectionTitle>
             </div>

@@ -7,7 +7,7 @@ import SectionTitle from '../../../Component/SectionTitle';
 const WhatWeDo = () => {
     return (
         <div className='bg-[#F2FAFF]'>
-            <div className='max-w-screen-xl mx-auto'>
+            <div className='max-w-screen-xl mx-auto 2xl:px-0 px-16'>
                 <div className='text-center'>
                 <SectionTitle 
                     heading="Specialist Logistics Services"
