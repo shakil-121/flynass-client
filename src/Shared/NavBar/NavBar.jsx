@@ -31,7 +31,7 @@ const NavBar = () => {
               <Link>Home</Link>
             </li>
             <li>
-              <Link>Services</Link>
+              <Link to="services">Services</Link>
             </li>
             <li>
               <Link to="contact">Contact Us</Link>
@@ -42,6 +42,7 @@ const NavBar = () => {
             <li>
               <Link to="coverage">Coverage</Link>
             </li>
+            
           </ul>
         </div>
         <img className="h-20" src={logo} alt="" />
@@ -50,6 +51,9 @@ const NavBar = () => {
         <ul className="menu menu-horizontal font-pppins text-base px-1">
         <li>
               <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to="services">Services</Link>
             </li>
             <li>
             <Link to="contact">Contact Us</Link>
