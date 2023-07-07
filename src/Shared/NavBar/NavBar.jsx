@@ -52,19 +52,14 @@ const NavBar = () => {
               <Link to='/'>Home</Link>
             </li>
             <li>
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link>Home</Link>
-          </li>
-          <li>
-            <Link to="services">Services</Link>
-          </li>
-          <li>
             <Link to="contact">Contact Us</Link>
           </li>
           <li>
             <Link to="signup">Registration</Link>
           </li>
+          <li>
+              <Link to="coverage">Coverage</Link>
+            </li>
         </ul>
       </div>
       <div className="navbar-end">
