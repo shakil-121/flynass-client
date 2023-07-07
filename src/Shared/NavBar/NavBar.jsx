@@ -4,7 +4,7 @@ import logo from "../../assets/logo/logo.png"
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-sky-100 sticky top-0 z-10 px-6 -pt-16">
+    <div className="navbar bg-sky-100 sticky top-0 z-10 px-6 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,12 +41,12 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <img className="h-24" src={logo} alt="" />
+        <img className="h-20" src={logo} alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal font-pppins text-base px-1">
         <li>
-              <Link>Home</Link>
+              <Link to='/'>Home</Link>
             </li>
             <li>
             <Link to="contact">Contact Us</Link>

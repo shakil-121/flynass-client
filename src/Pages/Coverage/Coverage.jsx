@@ -1,12 +1,16 @@
 import React from "react";
 import map from "../../assets/images/map.png";
-import "./Coverage.css";
+import "./Coverage.css"; 
+import cover from "../../assets/images/_Delivery Point.png"
 
 const Coverage = () => {
   return (
-    <div>
+    <div> 
+      <div>
+        <img src={cover} alt="" />
+      </div>
       <div className="max-w-screen-xl md:px-10">
-        <h1 className="mt-10 max-w-lg text-4xl font-bold border-l-8 border-orange-600 p-2 font">
+        <h1 className="mt-10 max-w-lg text-4xl font-bold border-l-8 border-[#111042] p-2 font">
           Coverage Map
         </h1>
         <p className="text-lg font-bold mt-4 font">

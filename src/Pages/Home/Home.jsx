@@ -6,8 +6,10 @@ import Estimation from './Estimation/Estimation';
 import Respect from './Respect/Respect';
 import Support from './RequestAQuote/Support';
 import CompanyApproch from './CompanyApproch/CompanyApproch';
+import useTitle from '../../Hooks/useTitle';
 
-const Home = () => {
+const Home = () => { 
+    useTitle("Home")
     return (
         <div>
            <HeroSection></HeroSection>
