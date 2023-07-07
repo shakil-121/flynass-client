@@ -1,0 +1,6 @@
+.services-bg{
+    background-image: url(../../assets//Services/hero-header-bg.png);
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+}
