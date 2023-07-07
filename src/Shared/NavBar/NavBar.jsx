@@ -40,7 +40,7 @@ const NavBar = () => {
               <Link to="signup">Registration</Link>
             </li>
             <li>
-            <Link to="coverage">Coverage</Link>
+              <Link to="coverage">Coverage</Link>
             </li>
           </ul>
         </div>
@@ -60,10 +60,6 @@ const NavBar = () => {
           <li>
             <Link to="signup">Registration</Link>
           </li>
-            </li>
-            <li>
-            <Link to="coverage">Coverage</Link>
-            </li>
         </ul>
       </div>
       <div className="navbar-end">
