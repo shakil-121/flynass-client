@@ -39,6 +39,9 @@ const NavBar = () => {
             <li>
               <Link to="signup">Registration</Link>
             </li>
+            <li>
+            <Link to="coverage">Coverage</Link>
+            </li>
           </ul>
         </div>
         <img className="h-24" src={logo} alt="" />
@@ -57,6 +60,10 @@ const NavBar = () => {
           <li>
             <Link to="signup">Registration</Link>
           </li>
+            </li>
+            <li>
+            <Link to="coverage">Coverage</Link>
+            </li>
         </ul>
       </div>
       <div className="navbar-end">
