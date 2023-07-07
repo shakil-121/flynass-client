@@ -30,16 +30,16 @@ const Contact = () => {
   return (
     <div>
       <div className="bgi">
-        <h1 className="pt-48 ps-16 text-7xl text-white font-bold font-pppins">
+        <h1 className="pt-40 ps-16 md:hidden md:text-7xl text-4xl text-white font-bold font-pppins">
           Contact US
         </h1>
       </div>
       <div>
-        <h1 className="text-5xl text-indigo-950 font-pppins font-bold md:pt-28 md:ps-16">
+        <h1 className="md:text-5xl  text-3xl text-center text-indigo-950 font-pppins font-bold md:pt-28 pt-8 md:ps-16">
           Send Us a Message
         </h1>
       </div>
-      <div className="bg-slate-200  m-14 md:flex gap-4 rounded-xl">
+      <div className="bg-slate-200  md:m-14 m-4 md:flex gap-4 rounded-xl">
         <div className="md:w-2/3 p-10">
           <form ref={form} onSubmit={sendEmail}>
             <div className="form-control w-full">

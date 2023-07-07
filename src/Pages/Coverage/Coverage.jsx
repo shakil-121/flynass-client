@@ -9,11 +9,11 @@ const Coverage = () => {
       <div>
         <img src={cover} alt="" />
       </div>
-      <div className="max-w-screen-xl md:px-10">
-        <h1 className="mt-10 max-w-lg text-4xl font-bold border-l-8 border-[#111042] p-2 font">
+      <div className="max-w-screen-xl px-10">
+        <h1 className="mt-10 max-w-lg md:text-4xl text-2xl font-bold border-l-8 border-[#111042] p-2 font">
           Coverage Map
         </h1>
-        <p className="text-lg font-bold mt-4 font">
+        <p className="md:text-lg text-base font-bold mt-4 font">
           We are currently available in 64 districts in Bangladesh.
         </p>
       </div>
@@ -98,8 +98,8 @@ const Coverage = () => {
             </ul>
           </div>
         </div>
-        <div className="w-1/2">
-          <img className="h-[700px] w-full" src={map} alt="" />
+        <div className="md:w-1/2">
+          <img className="md:h-[700px] h-[300px] w-full" src={map} alt="" />
         </div>
       </div>
     </div>
