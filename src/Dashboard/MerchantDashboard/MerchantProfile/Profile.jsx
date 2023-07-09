@@ -1,13 +1,15 @@
-import profile from "../../../assets/profile.jpg";
+import { useContext } from "react";
 import { LiaEdit } from "react-icons/lia";
-const MerchantProfile = () => {
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+const Profile = () => {
+    const {user}=useContext(AuthContext)
     return (
         <div className='bg-pink-400 p-10'>
             <div className="flex justify-between">
                 <h1 className='text-4xl font-bold font-pppins'>My Profile</h1>
             </div>
             <div className="mt-14">
-                <img className="w-32 rounded" src={profile} alt="" />
+                <img className="w-32 rounded" src={user?.photoURL} alt="" />
                 <div className="flex justify-between mt-8">
                     <div className="flex-1 grid grid-cols-2 mt-5">
                         <h4 className="font-bold mt-2">
@@ -49,4 +51,4 @@ const MerchantProfile = () => {
     );
 };
 
-export default MerchantProfile;
+export default Profile;
