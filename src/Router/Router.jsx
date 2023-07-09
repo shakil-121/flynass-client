@@ -6,11 +6,6 @@ import Services from "../Pages/Services/Services";
 import SignUp from "../Pages/LoginAndSignup/SignUp";
 import Login from "../Pages/LoginAndSignup/Login";
 import Contact from "../Pages/Contact/Contact";
-import Coverage from "../Pages/Coverage/Coverage";
-import Dashboard from "../Layout/Root/Dashboard";
-import MerchantProfile from "../Dashboard/MerchantDashboard/MerchantProfile/Profile";
-import Profile from "../Dashboard/MerchantDashboard/MerchantProfile/Profile";
-import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
 
 const router = createBrowserRouter([
   {
@@ -54,10 +49,6 @@ const router = createBrowserRouter([
       {
         path: 'profile',
         element: <Profile></Profile>,
-      },
-      {
-        path:'admin-analysis',
-        element:<AdminAnalysis></AdminAnalysis>
       }
     ]
   }

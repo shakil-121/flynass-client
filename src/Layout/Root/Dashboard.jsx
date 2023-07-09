@@ -22,12 +22,11 @@ const Dashboard = () => {
     }
   return (
     <div>
-      <div className="drawer lg:drawer-open gap-8 max-w-screen-xl mx-auto">
+      <div className="drawer lg:drawer-open md:gap-8 px-4 md:px-0 max-w-screen-xl mx-auto">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
           
-
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
@@ -38,7 +37,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+          <ul className="menu p-4 w-80 text-white h-full bg-[#2c2c54]">
             <div className="mb-10">
               <img className="w-20 h-20 rounded-full border-2 border-red-400 mx-auto" src={profile} alt="" />
               <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
