@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     element:<Dashboard></Dashboard>,
     children:[
       {
-        path: 'profile',
+        path: '/',
         element: <MerchantProfile></MerchantProfile>,
       }
     ]
