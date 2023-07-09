@@ -1,15 +1,16 @@
-import { useContext } from "react";
 import { LiaEdit } from "react-icons/lia";
-import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import React, { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+
 const Profile = () => {
-    const {user}=useContext(AuthContext)
+    const user = useContext(AuthContext);
     return (
         <div className='bg-pink-400 p-10 rounded-md'>
             <div className="flex justify-between">
                 <h1 className='text-4xl font-bold font-pppins'>My Profile</h1>
             </div>
             <div className="mt-14">
-                <img className="w-32 rounded" src={profile} alt="" />
+                <img className="w-32 rounded" src={user?.photoURL} alt="" />
                 <div className="flex justify-between mt-8 shadow-2xl p-5 rounded-md">
                     <div className="flex-1 grid grid-cols-2 mt-5 gap-4">
                         <h4 className="font-bold mt-2">

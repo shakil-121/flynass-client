@@ -8,8 +8,7 @@ import Login from "../Pages/LoginAndSignup/Login";
 import Contact from "../Pages/Contact/Contact";
 import Coverage from "../Pages/Coverage/Coverage";
 import Dashboard from "../Layout/Root/Dashboard";
-import MerchantProfile from "../Dashboard/MerchantDashboard/MerchantProfile/Profile";
-import Profile from "../Dashboard/MerchantDashboard/MerchantProfile/Profile";
+import Profile from "../Dashboard/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -51,8 +50,8 @@ const router = createBrowserRouter([
     element:<Dashboard></Dashboard>,
     children:[
       {
-        path: '/',
-        element: <MerchantProfile></MerchantProfile>,
+        path: "profile",
+        element: <Profile></Profile>
       }
     ]
   }
