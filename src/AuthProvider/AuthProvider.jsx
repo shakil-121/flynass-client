@@ -34,7 +34,7 @@ const createAccount=(email,password)=>{
   };
 
   const logout=()=>{
-    signOut(auth)
+    return signOut(auth)
   }
   
   const googleLogin=()=>{
