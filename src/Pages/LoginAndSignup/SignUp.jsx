@@ -50,7 +50,15 @@ const SignUp = () => {
               const loggedUser = result.user;
               updateProfiledata(loggedUser, data.name, imgUrl);
               toast("Account Create Successfully !")
-              console.log(result);
+              console.log(result); 
+              console.log(userInfo); 
+              fetch("http://localhost:5000/users",{
+                method:"POST",
+                headers:{
+                  "content-type":"application/json"
+                },
+                body:JSON.stringify(userInfo)
+              })
             })
             .catch((error) => {
               console.log(error);

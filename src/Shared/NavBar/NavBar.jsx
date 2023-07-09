@@ -1,8 +1,11 @@
 // import logo from "../../assets/logo.png"
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo/logo.png"
-3
+import logo from "../../assets/logo/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="navbar bg-sky-100 sticky top-0 z-10 px-6 ">
       <div className="navbar-start">
@@ -42,32 +45,46 @@ const NavBar = () => {
             <li>
               <Link to="coverage">Coverage</Link>
             </li>
-            
           </ul>
         </div>
         <img className="h-20" src={logo} alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal font-pppins text-base px-1">
-        <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to="services">Services</Link>
-            </li>
-            <li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="services">Services</Link>
+          </li>
+          <li>
             <Link to="contact">Contact Us</Link>
           </li>
           <li>
             <Link to="signup">Registration</Link>
           </li>
           <li>
-              <Link to="coverage">Coverage</Link>
-            </li>
+            <Link to="coverage">Coverage</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn" to="login">Login</Link>
+        {user ? (
+          <>
+            <Link className="btn mx-3" to="/dashboard">
+               Dashboard
+            </Link>
+            <div className="avatar online">
+              <div className="h-16 auto rounded-full">
+                <img className="" title={user?.displayName} src={user.photoURL} alt="" />
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <button className="btn" to="/login">Login</button>
+          </>
+        )}
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ const Dashboard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
+          
 
           <Outlet></Outlet>
           <label

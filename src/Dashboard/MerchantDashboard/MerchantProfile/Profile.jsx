@@ -1,6 +1,8 @@
-import profile from "../../../assets/profile.jpg";
+import { useContext } from "react";
 import { LiaEdit } from "react-icons/lia";
-const MerchantProfile = () => {
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+const Profile = () => {
+    const {user}=useContext(AuthContext)
     return (
         <div className='bg-pink-400 p-10 rounded-md'>
             <div className="flex justify-between">
@@ -49,4 +51,4 @@ const MerchantProfile = () => {
     );
 };
 
-export default MerchantProfile;
+export default Profile;
