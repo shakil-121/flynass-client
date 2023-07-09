@@ -7,6 +7,7 @@ import SignUp from "../Pages/LoginAndSignup/SignUp";
 import Login from "../Pages/LoginAndSignup/Login";
 import Contact from "../Pages/Contact/Contact";
 import Coverage from "../Pages/Coverage/Coverage";
+import Dashboard from "../Layout/Root/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'dashboard',
+    element:<Dashboard></Dashboard>
+  }
 ]);
 
 export default router;

@@ -73,7 +73,7 @@ const SignUp = () => {
   }
   return (
     <div>
-      <div className="hero w-full min-h-screen rounded-lg  bg-slate-200 mt-16 py-16">
+      <div className="hero w-full min-h-screen rounded-lg  bg-slate-200  py-16">
         <div className="hero-content w-5/6 flex-col py-4  lg:flex-row">
           <div className="text-center md:w-1/2 lg:text-left">
             <Lottie
