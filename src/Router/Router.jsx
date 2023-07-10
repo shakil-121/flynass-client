@@ -9,6 +9,7 @@ import Contact from "../Pages/Contact/Contact";
 import Coverage from "../Pages/Coverage/Coverage";
 import Dashboard from "../Layout/Root/Dashboard";
 import Profile from "../Dashboard/Profile/Profile";
+import MyParclel from "../Dashboard/MyParcel/MyParclel";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,14 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile></Profile>
+      },
+      {
+        path: "my-parcel",
+        element: <MyParclel></MyParclel>
+      },
+      {
+        path: "my-history",
+        element: <Home></Home>
       }
     ]
   }

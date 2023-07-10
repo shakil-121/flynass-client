@@ -1,5 +1,5 @@
 import profile from "../../assets/profile.jpg";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { MdVerified } from "react-icons/md";
 
 const Dashboard = () => {
@@ -29,10 +29,10 @@ const Dashboard = () => {
             <div className="">
               <div>
                 <li>
-                  <a>Sidebar Item 1</a>
+                  <Link to="/dashboard/profile">Profile</Link>
                 </li>
                 <li>
-                  <a>Sidebar Item 2</a>
+                  <Link to="/dashboard/my-parcel">my-parcel</Link>
                 </li>
               </div>
               <div>
