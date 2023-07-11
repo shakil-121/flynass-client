@@ -42,6 +42,8 @@ const SignUp = () => {
             phone: data.phone,
             NID: data.nid,
             image: imgUrl,
+            role:"Merchant",
+            address:"N/A"
           };
         //   console.log(userInfo);
 

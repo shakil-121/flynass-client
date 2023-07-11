@@ -1,8 +1,25 @@
 import profile from "../../assets/profile.jpg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { MdVerified } from "react-icons/md";
+import { FaSignOutAlt } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-const Dashboard = () => {    
+const Dashboard = () => { 
+    const navigate=useNavigate()
+    const {user, logout}=useContext(AuthContext) 
+
+    const handleLogout=()=>{
+        logout()
+        .then(()=>{
+            // navigate({to:"/"})
+            
+            console.log("logout completed");
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
   return (
     <div>
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
@@ -26,10 +43,17 @@ const Dashboard = () => {
               <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
               <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">Merchant Account<MdVerified className="text-success" /></h4>
             </div>
-            <div className="">
+            <div className="h-100vh">
               <div>
                 <li>
-                  <Link to="/dashboard/profile">Profile</Link>
+                <NavLink to="/">
+                    Home
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to="admin-analysis">
+                    Analysis
+                </NavLink>
                 </li>
                 <li>
                   <Link to="/dashboard/my-parcel">my-parcel</Link>
@@ -38,8 +62,10 @@ const Dashboard = () => {
                   <Link to="/dashboard/">History</Link>
                 </li>
               </div>
-              <div>
-                <button>LogOut</button>
+              <div className="absolute bottom-10">
+                <button className="btn btn-error text-white" onClick={handleLogout}><NavLink to="/">
+           LogOut
+           </NavLink><FaSignOutAlt></FaSignOutAlt> </button>
               </div>
             </div>
           </ul>

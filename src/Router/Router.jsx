@@ -9,7 +9,7 @@ import Contact from "../Pages/Contact/Contact";
 import Coverage from "../Pages/Coverage/Coverage";
 import Dashboard from "../Layout/Root/Dashboard";
 import Profile from "../Dashboard/Profile/Profile";
-import MyParclel from "../Dashboard/MyParcel/MyParclel";
+import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
 
 const router = createBrowserRouter([
   {
@@ -55,12 +55,8 @@ const router = createBrowserRouter([
         element: <Profile></Profile>
       },
       {
-        path: "my-parcel",
-        element: <MyParclel></MyParclel>
-      },
-      {
-        path: "my-history",
-        element: <Home></Home>
+        path: "admin-analysis",
+        element: <AdminAnalysis></AdminAnalysis>
       }
     ]
   }
