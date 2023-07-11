@@ -3,20 +3,38 @@ import { AiOutlineNumber } from "react-icons/ai";
 import { IoMdMail } from "react-icons/io";
 import { useForm } from "react-hook-form";
 import './CreateParcel.css'
+import { useEffect, useState } from "react";
 
 const CreateParcel = ({ isVisible, onClose, user }) => {
+    const [district, setDistrict] = useState('');
+    const [subCategory, setSubCategory] = useState('');
+    const [cod, setCod] = useState(0);
     if (!isVisible) return null;
 
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-    } = useForm();
+    console.log(cod);
+
+    const handleDistrictonChange = (e) => {
+        const selectDistrict = e.target.value;
+        setDistrict(selectDistrict);
+        // Reset sub-category when category changes
+        setSubCategory('');
+    };
+
+    const handleSubCategoryChange = (e) => {
+        const selectedSubCategory = e.target.value;
+        setSubCategory(selectedSubCategory);
+    };
+
+    const handleParcelAmount = (event) => {
+        const codAmount = (event.target.value);
+        const COD = codAmount / 100;
+
+        if (district == 'Dhaka') {
+            setCod(0)
+        }
+        setCod(COD)
 
 
-    const onSubmit = (data) => {
-        console.log(data);
     };
 
     return (
@@ -26,80 +44,97 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 <div className="height-vh overflow-y-scroll bg-sky-200 bg-opacity-40 py-4 rounded-xl">
-                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                    <form className="card-body text-black">
                         <div>
                             <h1 className="font-pppins text-3xl pb-5 font-bold text-white">
                                 Create a Parcel
                             </h1>
                         </div>
-                        <div className="grid grid-cols-2 gap-2 mb-5">
-                            <div className="form-control">
-                                <input
-                                    name="phone"
-                                    {...register("phone", { required: true })}
-                                    type="text"
-                                    placeholder="Phone"
-                                    className="input border-slate-300 text-black focus:outline-none focus:shadow-outline"
-                                />
-                            </div>
-                            <div className="form-control">
-                                <input
-                                    name="name"
-                                    {...register("name", { required: true })}
-                                    type="text"
-                                    placeholder="Name"
-                                    className="input border-slate-300 text-black focus:outline-none focus:shadow-outline"
-                                />
-                            </div>
-                        </div>
 
-                        <div className="grid grid-cols-2 gap-2 mb-5">
-                            <div className="form-control">
-                                <input
-                                    name="district"
-                                    {...register("distric", { required: true })}
-                                    type="text"
-                                    placeholder="Select Delivery District"
-                                    className="input border-slate-300 text-black focus:outline-none focus:shadow-outline"
-                                />
+                        <div className="grid grid-cols-2 gap-5">
+                            <div className="leading-10">
+                                <label htmlFor="district">Select Delivery District</label>
+                                <select className="w-full p-3" id="district" value={district} onChange={handleDistrictonChange}>
+                                    <option value="">Select a category</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="jamalpur">Jamalpur</option>
+                                    <option value="sherpur">Sherpur</option>
+                                </select>
                             </div>
-                            <div className="form-control">
-                                <input
-                                    name="thana"
-                                    {...register("thana", { required: true })}
-                                    type="text"
-                                    placeholder="Thana"
-                                    className="input border-slate-300 text-black focus:outline-none focus:shadow-outline"
-                                />
+                            <div className="leading-10">
+                                <label htmlFor="subcategory">Select Delivery District</label>
+                                <select className="w-full p-3" id="subcategory" value={subCategory} onChange={handleSubCategoryChange}>
+                                    <option value="">Select Delivery Thana</option>
+                                    {district === 'Dhaka' && (
+                                        <>
+                                            <option value="adabor-thana">Adabor Thana</option>
+                                            <option value="airport-thana">Airport Thana</option>
+                                            <option value="badda-thana">Badda Thana</option>
+                                            <option value="bangshal-thana">Bangshal Thana</option>
+                                            <option value="bhatara-thana">Bhatara Thana</option>
+                                            <option value="bhasantek-thana">Bhashantek Thana</option>
+                                            <option value="demra-thana">Demra Thana</option>
+                                            <option value="dhanmondi-thana">Dhanmondi Thana</option>
+                                            <option value="gulshan-thana">Gulshan Thana</option>
+                                            <option value="airport">Hazaribagh Thana</option>
+                                            <option value="jatrabari-thana">Jatrabari Thana</option>
+                                            <option value="kadamtali-thana">Kadamtali Thana</option>
+                                            <option value="kamrangirchar-thana">Kamrangirchar Thana</option>
+                                            <option value="keraniganj-thana">Keraniganj Thana</option>
+                                            <option value="khaligaon-thana">Khilgaon Thana</option>
+                                            <option value="kotwali-thana">Kotwali Thana</option>
+                                            <option value="lalbag-thana">Lalbagh Thana</option>
+                                            <option value="mirpur-thana">Mirpur Thana</option>
+                                            <option value="mohammadpur-thana">Mohammadpur Thana</option>
+                                            <option value="pollobi-thana">Pallabi Thana</option>
+                                            <option value="rampura-thana">Rampura Thana</option>
+                                            <option value="rupnagar-thana">Rupnagar Thana</option>
+                                            <option value="sabujbag-thana">Sabujbag Thana</option>
+                                            <option value="sherebangla-nogor">Sherebangla Nagar Thana</option>
+                                            <option value="shyampur-thana">Shyampur Thana</option>
+                                            <option value="sutrapur-thana">Sutrapur Thana</option>
+                                            <option value="tejgaon-thana">Tejgaon Model Thana</option>
+                                        </>
+                                    )}
+                                    {district === 'jamalpur' && (
+                                        <>
+                                            <option value="jamalpur-sodor">Jamalpur Sodor Thana</option>
+                                            <option value="melandaha-thana">Melandaha Upazila</option>
+                                            <option value="sarishabari-thana">Sarishabari Thana</option>
+                                            <option value="Madargonj-thana">Madargonj Model Thana</option>
+                                            <option value="islampur-thana">Islampur THana</option>
+                                            <option value="Baksiganj-thana">Baksiganj Thana</option>
+                                            <option value="Dewanganj Thana">Dewangoaj Thana</option>
+                                        </>
+                                    )}
+                                    {district === 'sherpur' && (
+                                        <>
+                                            <option value="sherpur-sadar">Sherpur Sadar Thana</option>
+                                            <option value="nokla-thana">Nakla Upazila</option>
+                                            <option value="sreebardi-thana">Sreebardi Thana</option>
+                                            <option value="nalitabari-thana">Nalitabari Thana</option>
+                                            <option value="jhenaigati-thana">Jhenaigati Thana</option>
+                                        </>
+                                    )}
+                                </select>
                             </div>
-                        </div>
 
-                        <div className="grid grid-cols-2 gap-2">
+                        </div>
+                        <div>
                             <div className="form-control">
-                                <input
-                                    name="customer-details"
-                                    {...register("customer-details", { required: true })}
-                                    type="text"
-                                    placeholder="Cunstomer Address Details"
-                                    className="input border-slate-300 text-black focus:outline-none focus:shadow-outline"
-                                />
-                            </div>
-                            <div className="form-control">
-                                <input
-                                    name="Select Product Weight"
-                                    {...register("products-weight", { required: true })}
-                                    type="text"
-                                    placeholder="0-1kg"
-                                    className="input border-slate-300 text-black focus:outline-none focus:shadow-outline"
-                                />
+                                <label className="label">
+                                    <span className="label-text font-pppins">Parcel Amount</span>
+                                </label>
+                                <input onChange={handleParcelAmount} type="text" placeholder="Amount" name='amount' className="input input-bordered" />
                             </div>
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn bg-zinc-950 border-none text-white hover:text-black">
-                                Create Parcel
-                            </button>
+                        <div>
+                            <input className="btn btn-block" type="submit" value="Submit" />
                         </div>
                     </form>
+                    <div>
+                        COD:{cod}
+                    </div>
                 </div>
             </div>
         </div>
