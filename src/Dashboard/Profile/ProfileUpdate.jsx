@@ -22,7 +22,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
 
                                 <span className="font-serif font-medium flex items-center gap-2 text-blaclk"><FaIdCard />7307890245</span>
                             </div>
-                            <div className='flex justify-between'>
+                            <div className='grid grid-cols-2 gap-2'>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-gray-700'>Your Name</label>
                                     <input type='text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Enter Name' defaultValue={user.displayName} />
