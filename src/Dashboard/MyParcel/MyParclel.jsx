@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { MdCreateNewFolder } from 'react-icons/md';
+import CreateParcel from './CreateParcel';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const MyParclel = () => {
+    const [showModal, setShowModal] = useState(false);
+    const { user } = useContext(AuthContext);
     return (
         <div className='bg-[#2c2c54] p-10 rounded-md text-white h-full'>
             <div className="flex justify-between">
@@ -9,7 +13,7 @@ const MyParclel = () => {
             </div>
             <div className="mt-14">
                 <div className="flex justify-between mt-8 shadow-[rgba(0,_0,_0,_2)_0px_3px_10px] p-5 rounded-md">
-                    <div className="overflow-x-scroll flex-1 mt-10">
+                    <div className="overflow-x-auto flex-1 mt-10">
                         <table className="table">
                             {/* head */}
                             <thead className='text-white'>
@@ -87,7 +91,7 @@ const MyParclel = () => {
                     </div>
                 </div>
             </div>
-
+            <CreateParcel isVisible={showModal} onClose={() => setShowModal(false)} user={user}></CreateParcel>
         </div>
     );
 };

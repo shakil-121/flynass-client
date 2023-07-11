@@ -2,10 +2,10 @@ import profile from "../../assets/profile.jpg";
 import { Link, Outlet } from "react-router-dom";
 import { MdVerified } from "react-icons/md";
 
-const Dashboard = () => {
+const Dashboard = () => {    
   return (
     <div>
-      <div className="drawer lg:drawer-open md:gap-8 px-4 md:px-0 max-w-screen-xl mx-auto">
+      <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
@@ -33,6 +33,9 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link to="/dashboard/my-parcel">my-parcel</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/">History</Link>
                 </li>
               </div>
               <div>
