@@ -1,11 +1,25 @@
 import profile from "../../assets/profile.jpg";
-import { Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { MdVerified } from "react-icons/md";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-const Dashboard = () => {
+const Dashboard = () => { 
+    const navigate=useNavigate()
+    const {user, logout}=useContext(AuthContext) 
+
+    const handleLogout=()=>{
+        logout()
+        .then(()=>{
+            // navigate({to:"/"})
+            
+            console.log("logout completed");
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
   return (
     <div>
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
@@ -32,7 +46,17 @@ const Dashboard = () => {
             <div className="h-100vh">
               <div>
                 <li>
-                  <a>Sidebar Item 1</a>
+                <NavLink to="/">
+                    Home
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to="admin-analysis">
+                    Analysis
+                </NavLink>
+                </li>
+                <li>
+                  <Link to="/dashboard/my-parcel">my-parcel</Link>
                 </li>
                 <li>
                   <Link to="/dashboard/">History</Link>
