@@ -10,6 +10,7 @@ import Coverage from "../Pages/Coverage/Coverage";
 import Dashboard from "../Layout/Root/Dashboard";
 import Profile from "../Dashboard/Profile/Profile";
 import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
+import MyParclel from "../Dashboard/MyParcel/MyParclel";
 
 const router = createBrowserRouter([
   {
@@ -47,12 +48,16 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path:'dashboard',
-    element:<Dashboard></Dashboard>,
-    children:[
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
       {
         path: "profile",
         element: <Profile></Profile>
+      },
+      {
+        path: "my-parcel",
+        element: <MyParclel></MyParclel>
       },
       {
         path: "admin-analysis",
