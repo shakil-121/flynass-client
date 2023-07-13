@@ -37,7 +37,7 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
 
     // };
 
-    
+
 
     const district = [
         { value: "Bagerhat", label: "Bagerhat" },
@@ -107,16 +107,6 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
     ];
 
     // ALL Thana information
-    const Jamalpur = [
-        { value: "Jamalpur-Sadar", label: "Jamalpur-Sadar" },
-        { value: "Madarganj", label: "Madarganj" },
-        { value: "Melandaha", label: "Melandaha" },
-        { value: "Sarishabari ", label: "Sarishabari " },
-        { value: "Baksiganj ", label: "Baksiganj " },
-        { value: "Islampur  ", label: "Islampur  " },
-        { value: "Dewanganj", label: "Dewanganj" },
-    ]
-
     const Dhaka = [
         { value: "Adabor", label: "Adabor" },
         { value: "Badda", label: "Badda" },
@@ -255,7 +245,7 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
         { value: "Ashuganj Port", label: "Ashuganj Port" }
     ];
 
-    const Bholahat = [
+    const Chapai_Nawabganj = [
         { value: "Chapai Nawabganj Sadar", label: "Chapai Nawabganj Sadar" },
         { value: "Bholahat", label: "Bholahat" },
         { value: "Gomastapur", label: "Gomastapur" },
@@ -324,234 +314,1377 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
     ];
 
     const Cox_Bazar = [
-    { value: "Cox's Bazar Sadar", label: "Cox's Bazar Sadar" },
-    { value: "Chakaria", label: "Chakaria" },
-    { value: "Kutubdia", label: "Kutubdia" },
-    { value: "Maheshkhali", label: "Maheshkhali" },
-    { value: "Ramu", label: "Ramu" },
-    { value: "Teknaf", label: "Teknaf" },
-    { value: "Ukhia", label: "Ukhia" }
+        { value: "Cox's Bazar Sadar", label: "Cox's Bazar Sadar" },
+        { value: "Chakaria", label: "Chakaria" },
+        { value: "Kutubdia", label: "Kutubdia" },
+        { value: "Maheshkhali", label: "Maheshkhali" },
+        { value: "Ramu", label: "Ramu" },
+        { value: "Teknaf", label: "Teknaf" },
+        { value: "Ukhia", label: "Ukhia" }
     ];
 
-return (
-    <div className='fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
-        <div className='w-full md:w-[800px] flex flex-col  rounded-lg'>
-            <button onClick={() => onClose()} className="btn btn-circle btn-outline border-[#E4D804] text-white place-self-end">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-            {/* Form Start */}
-            <div className='text-black grid grid-cols-2'>
-                <div>
-                    <Select
-                        options={district}
-                        defaultValue={currentDistrict}
-                        placeholder='Select Delivery District'
-                        onChange={setCurrentDistrict}
-                        isSearchable
-                    />
-                </div>
-                <div>
-                    {
-                        currentDistrict?.value === "Jamalpur" && (
-                            <div>
-                                <Select
-                                    options={Jamalpur}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Dinajpur = [
+        { value: "Dinajpur Sadar", label: "Dinajpur Sadar" },
+        { value: "Birampur", label: "Birampur" },
+        { value: "Biral", label: "Biral" },
+        { value: "Bochaganj", label: "Bochaganj" },
+        { value: "Chirirbandar", label: "Chirirbandar" },
+        { value: "Phulbari", label: "Phulbari" },
+        { value: "Ghoraghat", label: "Ghoraghat" },
+        { value: "Hakimpur", label: "Hakimpur" },
+        { value: "Kaharol", label: "Kaharol" },
+        { value: "Khansama", label: "Khansama" },
+        { value: "Nawabganj", label: "Nawabganj" },
+        { value: "Parbatipur", label: "Parbatipur" },
+        { value: "Fulchhari", label: "Fulchhari" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Dhaka" && (
-                            <div>
-                                <Select
-                                    options={Dhaka}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Faridpur = [
+        { value: "Faridpur Sadar", label: "Faridpur Sadar" },
+        { value: "Alfadanga", label: "Alfadanga" },
+        { value: "Bhanga", label: "Bhanga" },
+        { value: "Boalmari", label: "Boalmari" },
+        { value: "Charbhadrasan", label: "Charbhadrasan" },
+        { value: "Madhukhali", label: "Madhukhali" },
+        { value: "Nagarkanda", label: "Nagarkanda" },
+        { value: "Sadarpur", label: "Sadarpur" },
+        { value: "Saltha", label: "Saltha" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Bagerhat" && (
-                            <div>
-                                <Select
-                                    options={Bagerhat}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Feni = [
+        { value: "Feni Sadar", label: "Feni Sadar" },
+        { value: "Sonagazi", label: "Sonagazi" },
+        { value: "Chhagalnaiya", label: "Chhagalnaiya" },
+        { value: "Daganbhuiyan", label: "Daganbhuiyan" },
+        { value: "Parshuram", label: "Parshuram" },
+        { value: "Fulgazi", label: "Fulgazi" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Bandarban" && (
-                            <div>
-                                <Select
-                                    options={Bandarban}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Gaibandha = [
+        { value: "Gaibandha Sadar", label: "Gaibandha Sadar" },
+        { value: "Fulchhari", label: "Fulchhari" },
+        { value: "Gobindaganj", label: "Gobindaganj" },
+        { value: "Palashbari", label: "Palashbari" },
+        { value: "Sadullapur", label: "Sadullapur" },
+        { value: "Sundarganj", label: "Sundarganj" },
+        { value: "Saghata", label: "Saghata" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Barguna" && (
-                            <div>
-                                <Select
-                                    options={Barguna}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Gazipur = [
+        { value: "Gazipur Sadar", label: "Gazipur Sadar" },
+        { value: "Kaliakair", label: "Kaliakair" },
+        { value: "Kapasia", label: "Kapasia" },
+        { value: "Sreepur", label: "Sreepur" },
+        { value: "Kaliganj", label: "Kaliganj" },
+        { value: "Tongi", label: "Tongi" },
+        { value: "Bhawalnagar", label: "Bhawalnagar" },
+        { value: "Monnunagar", label: "Monnunagar" },
+        { value: "Kaliakair Thana Gazi", label: "Kaliakair Thana Gazi" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Barisal" && (
-                            <div>
-                                <Select
-                                    options={Barisal}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Gopalganj = [
+        { value: "Gopalganj Sadar", label: "Gopalganj Sadar" },
+        { value: "Kotalipara", label: "Kotalipara" },
+        { value: "Tungipara", label: "Tungipara" },
+        { value: "Kashiani", label: "Kashiani" },
+        { value: "Muksudpur", label: "Muksudpur" },
+        { value: "Kawnia", label: "Kawnia" },
+        { value: "Bhairabpur", label: "Bhairabpur" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Bhola" && (
-                            <div>
-                                <Select
-                                    options={Bhola}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Habiganj = [
+        { value: "Habiganj Sadar", label: "Habiganj Sadar" },
+        { value: "Bahubal", label: "Bahubal" },
+        { value: "Baniachong", label: "Baniachong" },
+        { value: "Chunarughat", label: "Chunarughat" },
+        { value: "Ajmiriganj", label: "Ajmiriganj" },
+        { value: "Lakhai", label: "Lakhai" },
+        { value: "Madhabpur", label: "Madhabpur" },
+        { value: "Nabiganj", label: "Nabiganj" },
+        { value: "Shayestaganj", label: "Shayestaganj" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Bogra" && (
-                            <div>
-                                <Select
-                                    options={Bogra}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Jamalpur = [
+        { value: "Jamalpur Sadar", label: "Jamalpur Sadar" },
+        { value: "Madarganj", label: "Madarganj" },
+        { value: "Melandaha", label: "Melandaha" },
+        { value: "Islampur", label: "Islampur" },
+        { value: "Sarishabari", label: "Sarishabari" },
+        { value: "Dewanganj", label: "Dewanganj" },
+        { value: "Bakshiganj", label: "Bakshiganj" }
 
-                    {
-                        currentDistrict?.value === "Brahmanbaria" && (
-                            <div>
-                                <Select
-                                    options={Brahmanbaria}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    ];
 
-                    {
-                        currentDistrict?.value === "Bholahat" && (
-                            <div>
-                                <Select
-                                    options={Bholahat}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Jessore = [
+        { value: "Jessore Sadar", label: "Jessore Sadar" },
+        { value: "Bagherpara", label: "Bagherpara" },
+        { value: "Chaugachha", label: "Chaugachha" },
+        { value: "Abhaynagar", label: "Abhaynagar" },
+        { value: "Manirampur", label: "Manirampur" },
+        { value: "Keshabpur", label: "Keshabpur" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Chandpur" && (
-                            <div>
-                                <Select
-                                    options={Chandpur}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Jhalokati = [
+        { value: "Jhalokati Sadar", label: "Jhalokati Sadar" },
+        { value: "Kathalia", label: "Kathalia" },
+        { value: "Nalchity", label: "Nalchity" },
+        { value: "Rajapur", label: "Rajapur" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Chattogram" && (
-                            <div>
-                                <Select
-                                    options={Chattogram}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Jhenaidah = [
+        { value: "Jhenaidah Sadar", label: "Jhenaidah Sadar" },
+        { value: "Kaliganj", label: "Kaliganj" },
+        { value: "Kotchandpur", label: "Kotchandpur" },
+        { value: "Maheshpur", label: "Maheshpur" },
+        { value: "Shailkupa", label: "Shailkupa" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Chuadanga" && (
-                            <div>
-                                <Select
-                                    options={Chuadanga}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Joypurhat = [
+        { value: "Joypurhat Sadar", label: "Joypurhat Sadar" },
+        { value: "Akkelpur", label: "Akkelpur" },
+        { value: "Kalai", label: "Kalai" },
+        { value: "Khetlal", label: "Khetlal" },
+        { value: "Panchbibi", label: "Panchbibi" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Comilla" && (
-                            <div>
-                                <Select
-                                    options={Comilla}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Khagrachhari = [
+        { value: "Khagrachhari Sadar", label: "Khagrachhari Sadar" },
+        { value: "Dighinala", label: "Dighinala" },
+        { value: "Guimara", label: "Guimara" },
+        { value: "Laxmichhari", label: "Laxmichhari" },
+        { value: "Mahalchhari", label: "Mahalchhari" },
+        { value: "Manikchhari", label: "Manikchhari" },
+        { value: "Matiranga", label: "Matiranga" },
+        { value: "Panchhari", label: "Panchhari" },
+        { value: "Ramgarh", label: "Ramgarh" }
+    ];
 
-                    {
-                        currentDistrict?.value === "Cox_Bazar" && (
-                            <div>
-                                <Select
-                                    options={Cox_Bazar}
-                                    defaultValue='Select Delivery Thana'
-                                    onChange={setCurrentThana}
-                                    isSearchable
-                                />
-                            </div>
-                        )
-                    }
+    const Kushtia = [
+        { value: "Kushtia Sadar", label: "Kushtia Sadar" },
+        { value: "Kumarkhali", label: "Kumarkhali" },
+        { value: "Mirpur", label: "Mirpur" },
+        { value: "Daulatpur", label: "Daulatpur" },
+        { value: "Bheramara", label: "Bheramara" },
+        { value: "Khoksa", label: "Khoksa" }
+    ];
+
+    const Khulna = [
+        { value: "Khulna Sadar", label: "Khulna Sadar" },
+        { value: "Batiaghata", label: "Batiaghata" },
+        { value: "Dacope", label: "Dacope" },
+        { value: "Dumuria", label: "Dumuria" },
+        { value: "Dighalia", label: "Dighalia" },
+        { value: "Koyra", label: "Koyra" },
+        { value: "Paikgacha", label: "Paikgacha" },
+        { value: "Phultala", label: "Phultala" },
+        { value: "Rupsha", label: "Rupsha" },
+        { value: "Terokhada", label: "Terokhada" }
+    ];
+
+    const Kishoreganj = [
+        { value: "Kishoreganj Sadar", label: "Kishoreganj Sadar" },
+        { value: "Astagram", label: "Astagram" },
+        { value: "Bajitpur", label: "Bajitpur" },
+        { value: "Bhairab", label: "Bhairab" },
+        { value: "Hossainpur", label: "Hossainpur" },
+        { value: "Itna", label: "Itna" },
+        { value: "Karimganj", label: "Karimganj" },
+        { value: "Katiadi", label: "Katiadi" },
+        { value: "Kuliarchar", label: "Kuliarchar" },
+        { value: "Mithamain", label: "Mithamain" },
+        { value: "Nikli", label: "Nikli" },
+        { value: "Pakundia", label: "Pakundia" },
+        { value: "Tarail", label: "Tarail" }
+    ];
+
+    const Kurigram = [
+        { value: "Kurigram Sadar", label: "Kurigram Sadar" },
+        { value: "Bhurungamari", label: "Bhurungamari" },
+        { value: "Char Rajibpur", label: "Char Rajibpur" },
+        { value: "Chilmari", label: "Chilmari" },
+        { value: "Phulbari", label: "Phulbari" },
+        { value: "Nageswari", label: "Nageswari" },
+        { value: "Rajarhat", label: "Rajarhat" },
+        { value: "Raomari", label: "Raomari" },
+        { value: "Ulipur", label: "Ulipur" }
+    ];
+
+    const Lakshmipur = [
+        { value: "Lakshmipur Sadar", label: "Lakshmipur Sadar" },
+        { value: "Raipur", label: "Raipur" },
+        { value: "Ramganj", label: "Ramganj" },
+        { value: "Ramgati", label: "Ramgati" },
+        { value: "Kamalnagar", label: "Kamalnagar" },
+        { value: "Komolnagar", label: "Komolnagar" }
+    ]
+    const Lalmonirhat = [
+        { value: "Lalmonirhat Sadar", label: "Lalmonirhat Sadar" },
+        { value: "Aditmari", label: "Aditmari" },
+        { value: "Hatibandha", label: "Hatibandha" },
+        { value: "Kaliganj", label: "Kaliganj" },
+        { value: "Patgram", label: "Patgram" }
+    ]
+    const Madaripur = [
+        { value: "Madaripur Sadar", label: "Madaripur Sadar" },
+        { value: "Kalkini", label: "Kalkini" },
+        { value: "Rajoir", label: "Rajoir" },
+        { value: "Shibchar", label: "Shibchar" }
+    ]
+    const Magura = [
+        { value: "Magura Sadar", label: "Magura Sadar" },
+        { value: "Mohammadpur", label: "Mohammadpur" },
+        { value: "Shalikha", label: "Shalikha" },
+        { value: "Sreepur", label: "Sreepur" }
+    ]
+    const Manikganj = [
+        { value: "Manikganj Sadar", label: "Manikganj Sadar" },
+        { value: "Singair", label: "Singair" },
+        { value: "Shibalaya", label: "Shibalaya" },
+        { value: "Harirampur", label: "Harirampur" },
+        { value: "Ghior", label: "Ghior" },
+        { value: "Daulatpur", label: "Daulatpur" }
+    ]
+    const Meherpur = [
+        { value: "Meherpur Sadar", label: "Meherpur Sadar" },
+        { value: "Mujibnagar", label: "Mujibnagar" },
+        { value: "Gangni", label: "Gangni" }
+    ]
+    const Moulvibazar = [
+        { value: "Moulvibazar Sadar", label: "Moulvibazar Sadar" },
+        { value: "Barlekha", label: "Barlekha" },
+        { value: "Juri", label: "Juri" },
+        { value: "Kamalganj", label: "Kamalganj" },
+        { value: "Kulaura", label: "Kulaura" },
+        { value: "Rajnagar", label: "Rajnagar" },
+        { value: "Sreemangal", label: "Sreemangal" }
+    ]
+    const Munshiganj = [
+        { value: "Munshiganj Sadar", label: "Munshiganj Sadar" },
+        { value: "Gazaria", label: "Gazaria" },
+        { value: "Lohajang", label: "Lohajang" },
+        { value: "Sreenagar", label: "Sreenagar" },
+        { value: "Sirajdikhan", label: "Sirajdikhan" },
+        { value: "Tongibari", label: "Tongibari" }
+    ]
+    const Mymensingh = [
+        { value: "Mymensingh Sadar", label: "Mymensingh Sadar" },
+        { value: "Bhaluka", label: "Bhaluka" },
+        { value: "Trishal", label: "Trishal" },
+        { value: "Haluaghat", label: "Haluaghat" },
+        { value: "Muktagachha", label: "Muktagachha" },
+        { value: "Gaffargaon", label: "Gaffargaon" },
+        { value: "Ishwarganj", label: "Ishwarganj" },
+        { value: "Nandail", label: "Nandail" },
+        { value: "Phulpur", label: "Phulpur" }
+    ]
+    const Naogaon = [
+        { value: "Naogaon Sadar", label: "Naogaon Sadar" },
+        { value: "Atrai", label: "Atrai" },
+        { value: "Badalgachhi", label: "Badalgachhi" },
+        { value: "Dhamoirhat", label: "Dhamoirhat" },
+        { value: "Manda", label: "Manda" },
+        { value: "Mohadevpur", label: "Mohadevpur" },
+        { value: "Niamatpur", label: "Niamatpur" },
+        { value: "Patnitala", label: "Patnitala" },
+        { value: "Porsha", label: "Porsha" },
+        { value: "Raninagar", label: "Raninagar" },
+        { value: "Sapahar", label: "Sapahar" }
+    ]
+    const Narail = [
+        { value: "Narail Sadar", label: "Narail Sadar" },
+        { value: "Kalia", label: "Kalia" },
+        { value: "Lohagara", label: "Lohagara" }
+    ]
+    const Narayanganj = [
+        { value: "Narayanganj Sadar", label: "Narayanganj Sadar" },
+        { value: "Araihazar", label: "Araihazar" },
+        { value: "Rupganj", label: "Rupganj" },
+        { value: "Bandar", label: "Bandar" },
+        { value: "Sonargaon", label: "Sonargaon" }
+    ]
+    const Narsingdi = [
+        { value: "Narsingdi Sadar", label: "Narsingdi Sadar" },
+        { value: "Belabo", label: "Belabo" },
+        { value: "Monohardi", label: "Monohardi" },
+        { value: "Palash", label: "Palash" },
+        { value: "Raipura", label: "Raipura" },
+        { value: "Shibpur", label: "Shibpur" }
+    ]
+    const Natore = [
+        { value: "Natore Sadar", label: "Natore Sadar" },
+        { value: "Bagatipara", label: "Bagatipara" },
+        { value: "Baraigram", label: "Baraigram" },
+        { value: "Gurudaspur", label: "Gurudaspur" },
+        { value: "Lalpur", label: "Lalpur" },
+        { value: "Singra", label: "Singra" }
+    ]
+    const Netrokona = [
+        { value: "Netrokona Sadar", label: "Netrokona Sadar" },
+        { value: "Atpara", label: "Atpara" },
+        { value: "Barhatta", label: "Barhatta" },
+        { value: "Durgapur", label: "Durgapur" },
+        { value: "Khaliajuri", label: "Khaliajuri" },
+        { value: "Kalmakanda", label: "Kalmakanda" },
+        { value: "Madan", label: "Madan" },
+        { value: "Mohanganj", label: "Mohanganj" },
+        { value: "Purbadhala", label: "Purbadhala" }
+    ]
+    const Nilphamari = [
+        { value: "Nilphamari Sadar", label: "Nilphamari Sadar" },
+        { value: "Domar", label: "Domar" },
+        { value: "Jaldhaka", label: "Jaldhaka" },
+        { value: "Kishoreganj", label: "Kishoreganj" },
+        { value: "Saidpur", label: "Saidpur" },
+        { value: "Dimla", label: "Dimla" },
+        { value: "Taraganj", label: "Taraganj" }
+    ]
+    const Noakhali = [
+        { value: "Noakhali Sadar", label: "Noakhali Sadar" },
+        { value: "Begumganj", label: "Begumganj" },
+        { value: "Chatkhil", label: "Chatkhil" },
+        { value: "Companyganj", label: "Companyganj" },
+        { value: "Hatiya", label: "Hatiya" },
+        { value: "Senbagh", label: "Senbagh" },
+        { value: "Sonaimuri", label: "Sonaimuri" },
+        { value: "Subarnachar", label: "Subarnachar" },
+        { value: "Kobirhat", label: "Kobirhat" }
+    ]
+    const Pabna = [
+        { value: "Pabna Sadar", label: "Pabna Sadar" },
+        { value: "Atgharia", label: "Atgharia" },
+        { value: "Bera", label: "Bera" },
+        { value: "Bhangura", label: "Bhangura" },
+        { value: "Chatmohar", label: "Chatmohar" },
+        { value: "Santhia", label: "Santhia" },
+        { value: "Sujanagar", label: "Sujanagar" }
+    ]
+    const Panchagarh = [
+        { value: "Panchagarh Sadar", label: "Panchagarh Sadar" },
+        { value: "Atwari", label: "Atwari" },
+        { value: "Boda", label: "Boda" },
+        { value: "Debiganj", label: "Debiganj" },
+        { value: "Tetulia", label: "Tetulia" }
+    ]
+    const Patuakhali = [
+        { value: "Patuakhali Sadar", label: "Patuakhali Sadar" },
+        { value: "Bauphal", label: "Bauphal" },
+        { value: "Dashmina", label: "Dashmina" },
+        { value: "Dumki", label: "Dumki" },
+        { value: "Galachipa", label: "Galachipa" },
+        { value: "Kalapara", label: "Kalapara" },
+        { value: "Mirzaganj", label: "Mirzaganj" },
+        { value: "Rangabali", label: "Rangabali" }
+    ]
+    const Pirojpur = [
+        { value: "Pirojpur Sadar", label: "Pirojpur Sadar" },
+        { value: "Bhandaria", label: "Bhandaria" },
+        { value: "Kaukhali", label: "Kaukhali" },
+        { value: "Mathbaria", label: "Mathbaria" },
+        { value: "Nazirpur", label: "Nazirpur" },
+        { value: "Nesarabad", label: "Nesarabad" },
+        { value: "Zianagar", label: "Zianagar" }
+    ]
+    const Rajbari = [
+        { value: "Rajbari Sadar", label: "Rajbari Sadar" },
+        { value: "Baliakandi", label: "Baliakandi" },
+        { value: "Goalandaghat", label: "Goalandaghat" },
+        { value: "Pangsha", label: "Pangsha" },
+        { value: "Kalukhali", label: "Kalukhali" }
+    ]
+    const Rajshahi = [
+        { value: "Rajshahi Sadar", label: "Rajshahi Sadar" },
+        { value: "Bagha", label: "Bagha" },
+        { value: "Bagmara", label: "Bagmara" },
+        { value: "Charghat", label: "Charghat" },
+        { value: "Durgapur", label: "Durgapur" },
+        { value: "Godagari", label: "Godagari" },
+        { value: "Mohanpur", label: "Mohanpur" },
+        { value: "Paba", label: "Paba" },
+        { value: "Puthia", label: "Puthia" },
+        { value: "Tanore", label: "Tanore" }
+    ]
+    const Rangamati = [
+        { value: "Rangamati Sadar", label: "Rangamati Sadar" },
+        { value: "Bagaichhari", label: "Bagaichhari" },
+        { value: "Barkal", label: "Barkal" },
+        { value: "Kaptai", label: "Kaptai" },
+        { value: "Juraichhari", label: "Juraichhari" },
+        { value: "Langadu", label: "Langadu" },
+        { value: "Nannerchar", label: "Nannerchar" },
+        { value: "Rajasthali", label: "Rajasthali" }
+    ]
+    const Rangpur = [
+        { value: "Rangpur Sadar", label: "Rangpur Sadar" },
+        { value: "Badarganj", label: "Badarganj" },
+        { value: "Gangachara", label: "Gangachara" },
+        { value: "Kaunia", label: "Kaunia" },
+        { value: "Mithapukur", label: "Mithapukur" },
+        { value: "Pirgachha", label: "Pirgachha" },
+        { value: "Pirganj", label: "Pirganj" },
+        { value: "Taraganj", label: "Taraganj" }
+    ]
+    const Satkhira = [
+        { value: "Satkhira Sadar", label: "Satkhira Sadar" },
+        { value: "Assasuni", label: "Assasuni" },
+        { value: "Debhata", label: "Debhata" },
+        { value: "Kaliganj", label: "Kaliganj" },
+        { value: "Kolaroa", label: "Kolaroa" },
+        { value: "Shyamnagar", label: "Shyamnagar" },
+        { value: "Tala", label: "Tala" }
+    ]
+    const Shariatpur = [
+        { value: "Shariatpur Sadar", label: "Shariatpur Sadar" },
+        { value: "Bhedarganj", label: "Bhedarganj" },
+        { value: "Damudya", label: "Damudya" },
+        { value: "Gosairhat", label: "Gosairhat" },
+        { value: "Naria", label: "Naria" },
+        { value: "Zanjira", label: "Zanjira" }
+    ]
+    const Sherpur = [
+        { value: "Sherpur Sadar", label: "Sherpur Sadar" },
+        { value: "Jhenaigati", label: "Jhenaigati" },
+        { value: "Nalitabari", label: "Nalitabari" },
+        { value: "Sreebardi", label: "Sreebardi" }
+    ]
+    const Sirajganj = [
+        { value: "Sirajganj Sadar", label: "Sirajganj Sadar" },
+        { value: "Belkuchi", label: "Belkuchi" },
+        { value: "Chauhali", label: "Chauhali" },
+        { value: "Kamarkhanda", label: "Kamarkhanda" },
+        { value: "Kazipur", label: "Kazipur" },
+        { value: "Raiganj", label: "Raiganj" },
+        { value: "Shahjadpur", label: "Shahjadpur" },
+        { value: "Tarash", label: "Tarash" },
+        { value: "Ullahpara", label: "Ullahpara" }
+    ]
+    const Sunamganj = [
+        { value: "Sunamganj Sadar", label: "Sunamganj Sadar" },
+        { value: "Bishwamvarpur", label: "Bishwamvarpur" },
+        { value: "Chhatak", label: "Chhatak" },
+        { value: "Derai", label: "Derai" },
+        { value: "Dharampasha", label: "Dharampasha" },
+        { value: "Dowarabazar", label: "Dowarabazar" },
+        { value: "Jagannathpur", label: "Jagannathpur" },
+        { value: "Jamalganj", label: "Jamalganj" },
+        { value: "Sulla", label: "Sulla" },
+        { value: "Tahirpur", label: "Tahirpur" }
+    ]
+    const Sylhet = [
+        { value: "Sylhet Sadar", label: "Sylhet Sadar" },
+        { value: "Balaganj", label: "Balaganj" },
+        { value: "Beanibazar", label: "Beanibazar" },
+        { value: "Bishwanath", label: "Bishwanath" },
+        { value: "Companiganj", label: "Companiganj" },
+        { value: "Fenchuganj", label: "Fenchuganj" },
+        { value: "Golapganj", label: "Golapganj" },
+        { value: "Gowainghat", label: "Gowainghat" },
+        { value: "Jaintiapur", label: "Jaintiapur" },
+        { value: "Kanaighat", label: "Kanaighat" },
+        { value: "Zakiganj", label: "Zakiganj" }
+    ]
+    const Tangail = [
+        { value: "Tangail Sadar", label: "Tangail Sadar" },
+        { value: "Basail", label: "Basail" },
+        { value: "Bhuapur", label: "Bhuapur" },
+        { value: "Delduar", label: "Delduar" },
+        { value: "Ghatail", label: "Ghatail" },
+        { value: "Gopalpur", label: "Gopalpur" },
+        { value: "Kalihati", label: "Kalihati" },
+        { value: "Madhupur", label: "Madhupur" },
+        { value: "Mirzapur", label: "Mirzapur" },
+        { value: "Nagarpur", label: "Nagarpur" },
+        { value: "Sakhipur", label: "Sakhipur" }
+    ]
+    const Thakurgaon = [
+        { value: "Thakurgaon Sadar", label: "Thakurgaon Sadar" },
+        { value: "Baliadangi", label: "Baliadangi" },
+        { value: "Haripur", label: "Haripur" },
+        { value: "Pirganj", label: "Pirganj" },
+        { value: "Ranisankail", label: "Ranisankail" }
+    ]
+
+    return (
+        <div className='fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
+            <div className='w-full md:w-[800px] flex flex-col  rounded-lg'>
+                <button onClick={() => onClose()} className="btn btn-circle btn-outline border-[#E4D804] text-white place-self-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+                {/* Form Start */}
+                <div className='text-black grid grid-cols-2'>
+                    <div>
+                        <Select
+                            options={district}
+                            defaultValue={currentDistrict}
+                            placeholder='Select Delivery District'
+                            onChange={setCurrentDistrict}
+                            isSearchable
+                        />
+                    </div>
+                    <div>
+                        {
+                            currentDistrict?.value === "Jamalpur" && (
+                                <div>
+                                    <Select
+                                        options={Jamalpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Dhaka" && (
+                                <div>
+                                    <Select
+                                        options={Dhaka}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Bagerhat" && (
+                                <div>
+                                    <Select
+                                        options={Bagerhat}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Bandarban" && (
+                                <div>
+                                    <Select
+                                        options={Bandarban}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Barguna" && (
+                                <div>
+                                    <Select
+                                        options={Barguna}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Barisal" && (
+                                <div>
+                                    <Select
+                                        options={Barisal}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Bhola" && (
+                                <div>
+                                    <Select
+                                        options={Bhola}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Bogra" && (
+                                <div>
+                                    <Select
+                                        options={Bogra}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Brahmanbaria" && (
+                                <div>
+                                    <Select
+                                        options={Brahmanbaria}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Chapai_Nawabganj" && (
+                                <div>
+                                    <Select
+                                        options={Chapai_Nawabganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Chandpur" && (
+                                <div>
+                                    <Select
+                                        options={Chandpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Chattogram" && (
+                                <div>
+                                    <Select
+                                        options={Chattogram}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Chuadanga" && (
+                                <div>
+                                    <Select
+                                        options={Chuadanga}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Comilla" && (
+                                <div>
+                                    <Select
+                                        options={Comilla}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Cox_Bazar" && (
+                                <div>
+                                    <Select
+                                        options={Cox_Bazar}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Dinajpur" && (
+                                <div>
+                                    <Select
+                                        options={Dinajpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Faridpur" && (
+                                <div>
+                                    <Select
+                                        options={Faridpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Feni" && (
+                                <div>
+                                    <Select
+                                        options={Feni}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Gaibandha" && (
+                                <div>
+                                    <Select
+                                        options={Gaibandha}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Gazipur" && (
+                                <div>
+                                    <Select
+                                        options={Gazipur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Gopalganj" && (
+                                <div>
+                                    <Select
+                                        options={Gopalganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Habiganj" && (
+                                <div>
+                                    <Select
+                                        options={Habiganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Jessore" && (
+                                <div>
+                                    <Select
+                                        options={Jessore}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Jhenaidah" && (
+                                <div>
+                                    <Select
+                                        options={Jhenaidah}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Jhalokati" && (
+                                <div>
+                                    <Select
+                                        options={Jhalokati}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Joypurhat" && (
+                                <div>
+                                    <Select
+                                        options={Joypurhat}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Khagrachhari" && (
+                                <div>
+                                    <Select
+                                        options={Khagrachhari}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Kushtia" && (
+                                <div>
+                                    <Select
+                                        options={Kushtia}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Khulna " && (
+                                <div>
+                                    <Select
+                                        options={Khulna}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Kishoreganj  " && (
+                                <div>
+                                    <Select
+                                        options={Kishoreganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Kurigram" && (
+                                <div>
+                                    <Select
+                                        options={Kurigram}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Kishoreganj" && (
+                                <div>
+                                    <Select
+                                        options={Kishoreganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Lakshmipur" && (
+                                <div>
+                                    <Select
+                                        options={Lakshmipur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Lalmonirhat" && (
+                                <div>
+                                    <Select
+                                        options={Lalmonirhat}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
 
 
+                        {
+                            currentDistrict?.value === "Madaripur" && (
+                                <div>
+                                    <Select
+                                        options={Madaripur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Magura" && (
+                                <div>
+                                    <Select
+                                        options={Magura}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Manikganj" && (
+                                <div>
+                                    <Select
+                                        options={Manikganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Meherpur" && (
+                                <div>
+                                    <Select
+                                        options={Meherpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Moulvibazar" && (
+                                <div>
+                                    <Select
+                                        options={Moulvibazar}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Munshiganj" && (
+                                <div>
+                                    <Select
+                                        options={Munshiganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Mymensingh" && (
+                                <div>
+                                    <Select
+                                        options={Mymensingh}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Naogaon" && (
+                                <div>
+                                    <Select
+                                        options={Naogaon}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Narail" && (
+                                <div>
+                                    <Select
+                                        options={Narail}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Narayanganj" && (
+                                <div>
+                                    <Select
+                                        options={Narayanganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Narsingdi" && (
+                                <div>
+                                    <Select
+                                        options={Narsingdi}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Natore" && (
+                                <div>
+                                    <Select
+                                        options={Natore}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Netrokona" && (
+                                <div>
+                                    <Select
+                                        options={Netrokona}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Nilphamari" && (
+                                <div>
+                                    <Select
+                                        options={Nilphamari}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Noakhali" && (
+                                <div>
+                                    <Select
+                                        options={Noakhali}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Pabna" && (
+                                <div>
+                                    <Select
+                                        options={Pabna}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Panchagarh" && (
+                                <div>
+                                    <Select
+                                        options={Panchagarh}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Patuakhali" && (
+                                <div>
+                                    <Select
+                                        options={Patuakhali}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Pirojpur" && (
+                                <div>
+                                    <Select
+                                        options={Pirojpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Rajbari" && (
+                                <div>
+                                    <Select
+                                        options={Rajbari}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Rajshahi" && (
+                                <div>
+                                    <Select
+                                        options={Rajshahi}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Rangamati" && (
+                                <div>
+                                    <Select
+                                        options={Rangamati}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Rangpur" && (
+                                <div>
+                                    <Select
+                                        options={Rangpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Satkhira" && (
+                                <div>
+                                    <Select
+                                        options={Satkhira}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Shariatpur" && (
+                                <div>
+                                    <Select
+                                        options={Shariatpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Shariatpur" && (
+                                <div>
+                                    <Select
+                                        options={Shariatpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Sirajganj" && (
+                                <div>
+                                    <Select
+                                        options={Sirajganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Sherpur" && (
+                                <div>
+                                    <Select
+                                        options={Sherpur}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Sunamganj" && (
+                                <div>
+                                    <Select
+                                        options={Sunamganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Sylhet" && (
+                                <div>
+                                    <Select
+                                        options={Sylhet}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Tangail" && (
+                                <div>
+                                    <Select
+                                        options={Sirajganj}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            currentDistrict?.value === "Thakurgaon" && (
+                                <div>
+                                    <Select
+                                        options={Thakurgaon}
+                                        defaultValue='Select Delivery Thana'
+                                        onChange={setCurrentThana}
+                                        isSearchable
+                                    />
+                                </div>
+                            )
+                        }
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
 };
 
 export default CreateParcel;
