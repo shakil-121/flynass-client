@@ -4,30 +4,32 @@ import { MdVerified } from "react-icons/md";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Profile from "../../Dashboard/Profile/Profile";
 
-const Dashboard = () => { 
-    const navigate=useNavigate()
-    const {user, logout}=useContext(AuthContext) 
+const Dashboard = () => {
+  const navigate = useNavigate()
+  const { user, logout } = useContext(AuthContext)
 
-    const handleLogout=()=>{
-        logout()
-        .then(()=>{
-            // navigate({to:"/"})
-            
-            console.log("logout completed");
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
-    }
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        // navigate({to:"/"})
+
+        console.log("logout completed");
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
   return (
     <div>
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
-          
+
           <Outlet></Outlet>
+          <Profile></Profile>
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
@@ -46,14 +48,14 @@ const Dashboard = () => {
             <div className="h-100vh">
               <div>
                 <li>
-                <NavLink to="/">
+                  <NavLink to="/">
                     Home
-                </NavLink>
+                  </NavLink>
                 </li>
                 <li>
-                <NavLink to="admin-analysis">
+                  <NavLink to="admin-analysis">
                     Analysis
-                </NavLink>
+                  </NavLink>
                 </li>
                 <li>
                   <Link to="/dashboard/my-parcel">my-parcel</Link>
@@ -64,8 +66,8 @@ const Dashboard = () => {
               </div>
               <div className="absolute bottom-10">
                 <button className="btn btn-error text-white" onClick={handleLogout}><NavLink to="/">
-           LogOut
-           </NavLink><FaSignOutAlt></FaSignOutAlt> </button>
+                  LogOut
+                </NavLink><FaSignOutAlt></FaSignOutAlt> </button>
               </div>
             </div>
           </ul>

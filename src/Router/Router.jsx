@@ -52,10 +52,6 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: "profile",
-        element: <Profile></Profile>
-      },
-      {
         path: "my-parcel",
         element: <MyParclel></MyParclel>
       },
