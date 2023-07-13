@@ -1,0 +1,28 @@
+$background-size: 75vh;
+
+.background-animated {
+  // width: 20%;
+  height: $background-size;
+
+  position: absolute;
+  background-color: #4277a3;
+  // background-image: url('https://andreivictor.ro/codepen/infinite-scroll-bg/infinite-scroll-bg.jpg');
+  // uncomment this to see how animation really works
+  background-image: url('https://i.ibb.co/zfMw4R3/road02-350-800-px.png');
+
+  animation: infiniteScrollBg 8s linear infinite;
+}
+
+@keyframes infiniteScrollBg {
+  0% {
+    background-position: 50% 0;
+  }
+  100%{
+    background-position: 50% ($background-size * 2);
+  }
+}
+
+.text-design{ 
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+}

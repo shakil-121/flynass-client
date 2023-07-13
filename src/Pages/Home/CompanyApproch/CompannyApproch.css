@@ -1,0 +1,15 @@
+.waves {
+    background-image: url(../../../assets/CompanyApproch/waves.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.text-bg {
+    background-image: url(../../../assets/CompanyApproch/text-bg.jpg);
+    font-size: 5vw;
+    font-weight: bolder;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
