@@ -53,6 +53,11 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink to="/dashboard">
+                    Dashboard
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink to="admin-analysis">
                     Analysis
                   </NavLink>
@@ -61,7 +66,7 @@ const Dashboard = () => {
                   <Link to="/dashboard/my-parcel">my-parcel</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/">History</Link>
+                  <Link to="">History</Link>
                 </li>
               </div>
               <div className="absolute bottom-10">

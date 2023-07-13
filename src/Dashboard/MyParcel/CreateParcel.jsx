@@ -809,926 +809,934 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
 
 
     return (
-        <div className='fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
-            <div className='w-full md:w-[800px] flex flex-col  rounded-lg'>
+        <div className='fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center '>
+            <div className='w-full md:w-[800px] flex flex-col  rounded-lg '>
                 <button onClick={() => onClose()} className="btn btn-circle btn-outline border-[#E4D804] text-white place-self-end">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 {/* Form Start */}
-                <h1 className='text-5xl font-pppins'>Customer Details</h1>
-                <p className='font-pppins'>To Door Step</p>
-                <div className='grid grid-cols-2 gap-4 text-black mb-5'>
-                    <div className="form-control">
-                        <input type="text" placeholder="Phone" className="input input-bordered" required />
+                <div className='bg-[#FECACA] p-5 rounded-md'>
+                    <div className='text-black flex flex-col gap-3 mb-5'>
+                        <h1 className='text-5xl font-pppins'>Customer Details</h1>
+                        <p className='font-pppins'>To Door Step</p>
                     </div>
-                    <div className="form-control">
-                        <input type="text" placeholder="Name" className="input input-bordered" required />
+                    <div className='grid grid-cols-2 gap-4 text-black mb-5'>
+                        <div className="form-control">
+                            <input type="text" placeholder="Phone" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <input type="text" placeholder="Name" className="input input-bordered" required />
+                        </div>
                     </div>
-                </div>
 
-                <div className=' text-black mb-5'>
-                    <div className="form-control">
-                        <input type="text" placeholder="Enter Customer’s Detailed Address" className="input input-bordered" required />
+                    <div className=' text-black mb-5'>
+                        <div className="form-control">
+                            <input type="text" placeholder="Enter Customer’s Detailed Address" className="input input-bordered" required />
+                        </div>
                     </div>
-                    <div className="form-control">
-                        <input type="text" placeholder="Parcel Details" className="input input-bordered" required />
+                    <div className='text-black grid grid-cols-2 gap-4'>
+                        <div>
+                            <Select
+                                options={district}
+                                defaultValue={currentDistrict}
+                                placeholder='Select Delivery District'
+                                onChange={handleDistrictOnChange}
+
+                                isSearchable
+                            />
+                        </div>
+
+                        <div>
+                            {
+                                currentDistrict === "Jamalpur" && (
+                                    <div>
+                                        <Select
+                                            options={Jamalpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Dhaka" && (
+                                    <div>
+                                        <Select
+                                            options={Dhaka}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Bagerhat" && (
+                                    <div>
+                                        <Select
+                                            options={Bagerhat}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Bandarban" && (
+                                    <div>
+                                        <Select
+                                            options={Bandarban}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Barguna" && (
+                                    <div>
+                                        <Select
+                                            options={Barguna}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Barisal" && (
+                                    <div>
+                                        <Select
+                                            options={Barisal}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Bhola" && (
+                                    <div>
+                                        <Select
+                                            options={Bhola}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Bogra" && (
+                                    <div>
+                                        <Select
+                                            options={Bogra}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Brahmanbaria" && (
+                                    <div>
+                                        <Select
+                                            options={Brahmanbaria}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Chapai_Nawabganj" && (
+                                    <div>
+                                        <Select
+                                            options={Chapai_Nawabganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Chandpur" && (
+                                    <div>
+                                        <Select
+                                            options={Chandpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Chattogram" && (
+                                    <div>
+                                        <Select
+                                            options={Chattogram}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Chuadanga" && (
+                                    <div>
+                                        <Select
+                                            options={Chuadanga}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Comilla" && (
+                                    <div>
+                                        <Select
+                                            options={Comilla}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Cox_Bazar" && (
+                                    <div>
+                                        <Select
+                                            options={Cox_Bazar}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Dinajpur" && (
+                                    <div>
+                                        <Select
+                                            options={Dinajpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Faridpur" && (
+                                    <div>
+                                        <Select
+                                            options={Faridpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Feni" && (
+                                    <div>
+                                        <Select
+                                            options={Feni}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Gaibandha" && (
+                                    <div>
+                                        <Select
+                                            options={Gaibandha}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Gazipur" && (
+                                    <div>
+                                        <Select
+                                            options={Gazipur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Gopalganj" && (
+                                    <div>
+                                        <Select
+                                            options={Gopalganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Habiganj" && (
+                                    <div>
+                                        <Select
+                                            options={Habiganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Jessore" && (
+                                    <div>
+                                        <Select
+                                            options={Jessore}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Jhenaidah" && (
+                                    <div>
+                                        <Select
+                                            options={Jhenaidah}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Jhalokati" && (
+                                    <div>
+                                        <Select
+                                            options={Jhalokati}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Joypurhat" && (
+                                    <div>
+                                        <Select
+                                            options={Joypurhat}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Khagrachhari" && (
+                                    <div>
+                                        <Select
+                                            options={Khagrachhari}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Kushtia" && (
+                                    <div>
+                                        <Select
+                                            options={Kushtia}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Khulna " && (
+                                    <div>
+                                        <Select
+                                            options={Khulna}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Kishoreganj  " && (
+                                    <div>
+                                        <Select
+                                            options={Kishoreganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Kurigram" && (
+                                    <div>
+                                        <Select
+                                            options={Kurigram}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Kishoreganj" && (
+                                    <div>
+                                        <Select
+                                            options={Kishoreganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Lakshmipur" && (
+                                    <div>
+                                        <Select
+                                            options={Lakshmipur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Lalmonirhat" && (
+                                    <div>
+                                        <Select
+                                            options={Lalmonirhat}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+
+                            {
+                                currentDistrict === "Madaripur" && (
+                                    <div>
+                                        <Select
+                                            options={Madaripur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Magura" && (
+                                    <div>
+                                        <Select
+                                            options={Magura}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Manikganj" && (
+                                    <div>
+                                        <Select
+                                            options={Manikganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Meherpur" && (
+                                    <div>
+                                        <Select
+                                            options={Meherpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Moulvibazar" && (
+                                    <div>
+                                        <Select
+                                            options={Moulvibazar}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Munshiganj" && (
+                                    <div>
+                                        <Select
+                                            options={Munshiganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Mymensingh" && (
+                                    <div>
+                                        <Select
+                                            options={Mymensingh}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Naogaon" && (
+                                    <div>
+                                        <Select
+                                            options={Naogaon}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Narail" && (
+                                    <div>
+                                        <Select
+                                            options={Narail}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Narayanganj" && (
+                                    <div>
+                                        <Select
+                                            options={Narayanganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Narsingdi" && (
+                                    <div>
+                                        <Select
+                                            options={Narsingdi}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Natore" && (
+                                    <div>
+                                        <Select
+                                            options={Natore}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Netrokona" && (
+                                    <div>
+                                        <Select
+                                            options={Netrokona}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Nilphamari" && (
+                                    <div>
+                                        <Select
+                                            options={Nilphamari}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Noakhali" && (
+                                    <div>
+                                        <Select
+                                            options={Noakhali}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Pabna" && (
+                                    <div>
+                                        <Select
+                                            options={Pabna}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Panchagarh" && (
+                                    <div>
+                                        <Select
+                                            options={Panchagarh}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Patuakhali" && (
+                                    <div>
+                                        <Select
+                                            options={Patuakhali}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Pirojpur" && (
+                                    <div>
+                                        <Select
+                                            options={Pirojpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Rajbari" && (
+                                    <div>
+                                        <Select
+                                            options={Rajbari}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Rajshahi" && (
+                                    <div>
+                                        <Select
+                                            options={Rajshahi}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Rangamati" && (
+                                    <div>
+                                        <Select
+                                            options={Rangamati}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Rangpur" && (
+                                    <div>
+                                        <Select
+                                            options={Rangpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Satkhira" && (
+                                    <div>
+                                        <Select
+                                            options={Satkhira}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Shariatpur" && (
+                                    <div>
+                                        <Select
+                                            options={Shariatpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Shariatpur" && (
+                                    <div>
+                                        <Select
+                                            options={Shariatpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Sirajganj" && (
+                                    <div>
+                                        <Select
+                                            options={Sirajganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Sherpur" && (
+                                    <div>
+                                        <Select
+                                            options={Sherpur}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Sunamganj" && (
+                                    <div>
+                                        <Select
+                                            options={Sunamganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Sylhet" && (
+                                    <div>
+                                        <Select
+                                            options={Sylhet}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Tangail" && (
+                                    <div>
+                                        <Select
+                                            options={Sirajganj}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            {
+                                currentDistrict === "Thakurgaon" && (
+                                    <div>
+                                        <Select
+                                            options={Thakurgaon}
+                                            defaultValue='Select Delivery Thana'
+                                            onChange={handleThanaOnChange}
+                                            isSearchable
+                                        />
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className="form-control">
-                        <input type="text" placeholder="Marchent Order ID" className="input input-bordered" required />
+                    <div className='flex flex-col gap-5 mt-5'>
+                        <div>
+                            <div className="form-control">
+                                <input type="text" placeholder="Parcel Details" className="input input-bordered" required />
+                            </div>
+                        </div>
+                        <div>
+                            <div className="form-control">
+                                <input type="text" placeholder="Marchent Order ID" className="input input-bordered" required />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className='text-black grid grid-cols-2'>
+                    <div className='flex flex-col gap-5'>
+                        {
+                            currentThana ? <><div className="form-control mt-5">
+                                <input onChange={handleParcelAmount} type="text" placeholder="Amount" className="input input-bordered text-black" />
+                            </div></>
+                                :
+                                <>
+
+                                </>
+                        }
+                        <div className="form-control">
+                            <input type="text" placeholder="Product Weight" className="input input-bordered text-black" required />
+                        </div>
+                    </div>
                     <div>
-                        <Select
-                            options={district}
-                            defaultValue={currentDistrict}
-                            placeholder='Select Delivery District'
-                            onChange={handleDistrictOnChange}
 
-                            isSearchable
-                        />
+                        <div>COD:{cod == "" ? <>0.00</> : <>{cod}</>}</div>
                     </div>
-
-                    <div>
-                        {
-                            currentDistrict === "Jamalpur" && (
-                                <div>
-                                    <Select
-                                        options={Jamalpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Dhaka" && (
-                                <div>
-                                    <Select
-                                        options={Dhaka}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Bagerhat" && (
-                                <div>
-                                    <Select
-                                        options={Bagerhat}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Bandarban" && (
-                                <div>
-                                    <Select
-                                        options={Bandarban}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Barguna" && (
-                                <div>
-                                    <Select
-                                        options={Barguna}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Barisal" && (
-                                <div>
-                                    <Select
-                                        options={Barisal}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Bhola" && (
-                                <div>
-                                    <Select
-                                        options={Bhola}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Bogra" && (
-                                <div>
-                                    <Select
-                                        options={Bogra}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Brahmanbaria" && (
-                                <div>
-                                    <Select
-                                        options={Brahmanbaria}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Chapai_Nawabganj" && (
-                                <div>
-                                    <Select
-                                        options={Chapai_Nawabganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Chandpur" && (
-                                <div>
-                                    <Select
-                                        options={Chandpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Chattogram" && (
-                                <div>
-                                    <Select
-                                        options={Chattogram}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Chuadanga" && (
-                                <div>
-                                    <Select
-                                        options={Chuadanga}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Comilla" && (
-                                <div>
-                                    <Select
-                                        options={Comilla}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Cox_Bazar" && (
-                                <div>
-                                    <Select
-                                        options={Cox_Bazar}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Dinajpur" && (
-                                <div>
-                                    <Select
-                                        options={Dinajpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Faridpur" && (
-                                <div>
-                                    <Select
-                                        options={Faridpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Feni" && (
-                                <div>
-                                    <Select
-                                        options={Feni}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Gaibandha" && (
-                                <div>
-                                    <Select
-                                        options={Gaibandha}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Gazipur" && (
-                                <div>
-                                    <Select
-                                        options={Gazipur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Gopalganj" && (
-                                <div>
-                                    <Select
-                                        options={Gopalganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Habiganj" && (
-                                <div>
-                                    <Select
-                                        options={Habiganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Jessore" && (
-                                <div>
-                                    <Select
-                                        options={Jessore}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Jhenaidah" && (
-                                <div>
-                                    <Select
-                                        options={Jhenaidah}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Jhalokati" && (
-                                <div>
-                                    <Select
-                                        options={Jhalokati}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Joypurhat" && (
-                                <div>
-                                    <Select
-                                        options={Joypurhat}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Khagrachhari" && (
-                                <div>
-                                    <Select
-                                        options={Khagrachhari}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Kushtia" && (
-                                <div>
-                                    <Select
-                                        options={Kushtia}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Khulna " && (
-                                <div>
-                                    <Select
-                                        options={Khulna}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Kishoreganj  " && (
-                                <div>
-                                    <Select
-                                        options={Kishoreganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Kurigram" && (
-                                <div>
-                                    <Select
-                                        options={Kurigram}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Kishoreganj" && (
-                                <div>
-                                    <Select
-                                        options={Kishoreganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Lakshmipur" && (
-                                <div>
-                                    <Select
-                                        options={Lakshmipur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Lalmonirhat" && (
-                                <div>
-                                    <Select
-                                        options={Lalmonirhat}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-
-                        {
-                            currentDistrict === "Madaripur" && (
-                                <div>
-                                    <Select
-                                        options={Madaripur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Magura" && (
-                                <div>
-                                    <Select
-                                        options={Magura}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Manikganj" && (
-                                <div>
-                                    <Select
-                                        options={Manikganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Meherpur" && (
-                                <div>
-                                    <Select
-                                        options={Meherpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Moulvibazar" && (
-                                <div>
-                                    <Select
-                                        options={Moulvibazar}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Munshiganj" && (
-                                <div>
-                                    <Select
-                                        options={Munshiganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Mymensingh" && (
-                                <div>
-                                    <Select
-                                        options={Mymensingh}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Naogaon" && (
-                                <div>
-                                    <Select
-                                        options={Naogaon}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Narail" && (
-                                <div>
-                                    <Select
-                                        options={Narail}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Narayanganj" && (
-                                <div>
-                                    <Select
-                                        options={Narayanganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Narsingdi" && (
-                                <div>
-                                    <Select
-                                        options={Narsingdi}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Natore" && (
-                                <div>
-                                    <Select
-                                        options={Natore}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Netrokona" && (
-                                <div>
-                                    <Select
-                                        options={Netrokona}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Nilphamari" && (
-                                <div>
-                                    <Select
-                                        options={Nilphamari}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Noakhali" && (
-                                <div>
-                                    <Select
-                                        options={Noakhali}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Pabna" && (
-                                <div>
-                                    <Select
-                                        options={Pabna}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Panchagarh" && (
-                                <div>
-                                    <Select
-                                        options={Panchagarh}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Patuakhali" && (
-                                <div>
-                                    <Select
-                                        options={Patuakhali}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Pirojpur" && (
-                                <div>
-                                    <Select
-                                        options={Pirojpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Rajbari" && (
-                                <div>
-                                    <Select
-                                        options={Rajbari}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Rajshahi" && (
-                                <div>
-                                    <Select
-                                        options={Rajshahi}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Rangamati" && (
-                                <div>
-                                    <Select
-                                        options={Rangamati}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Rangpur" && (
-                                <div>
-                                    <Select
-                                        options={Rangpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Satkhira" && (
-                                <div>
-                                    <Select
-                                        options={Satkhira}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Shariatpur" && (
-                                <div>
-                                    <Select
-                                        options={Shariatpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Shariatpur" && (
-                                <div>
-                                    <Select
-                                        options={Shariatpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Sirajganj" && (
-                                <div>
-                                    <Select
-                                        options={Sirajganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Sherpur" && (
-                                <div>
-                                    <Select
-                                        options={Sherpur}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Sunamganj" && (
-                                <div>
-                                    <Select
-                                        options={Sunamganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Sylhet" && (
-                                <div>
-                                    <Select
-                                        options={Sylhet}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Tangail" && (
-                                <div>
-                                    <Select
-                                        options={Sirajganj}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-
-                        {
-                            currentDistrict === "Thakurgaon" && (
-                                <div>
-                                    <Select
-                                        options={Thakurgaon}
-                                        defaultValue='Select Delivery Thana'
-                                        onChange={handleThanaOnChange}
-                                        isSearchable
-                                    />
-                                </div>
-                            )
-                        }
-                    </div>
-                </div>
-                <div>
-                    {
-                        currentThana ? <><div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input onChange={handleParcelAmount} type="text" placeholder="Amount" className="input input-bordered text-black" />
-                        </div></>
-                            :
-                            <>
-
-                            </>
-                    }
-                </div>
-                <div>
-
-                    <div>COD:{cod == "" ? <>0.00</> : <>{cod}</>}</div>
                 </div>
             </div>
         </div>
