@@ -1,0 +1,7 @@
+.bg{
+    background-image: url(../../assets/logo/logbg.png); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:600px;
+    width: 100%;
+}

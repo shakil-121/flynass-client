@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import "./Login.css"
 
 const Login = () => {
 
@@ -47,8 +48,8 @@ const Login = () => {
   }
   return (
     <div>
-      <div className="hero w-full min-h-screen rounded-lg    py-16">
-        <div className="card flex-shrink-0 md:w-1/2  shadow-2xl text-white bg-white">
+      <div className="hero w-full min-h-screen rounded-lg bg py-16">
+        <div className="card flex-shrink-0 md:w-1/2 bg-opacity-80  shadow-2xl text-white bg-white">
           <form onSubmit={handleSubmit} className="card-body">
             <div>
               <h1 className="font-pppins text-3xl pb-5 font-bold text-center text-black">

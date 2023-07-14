@@ -22,28 +22,28 @@ const Services = () => {
                     <div className='grid grid-cols-4 gap-1 nd:gap-5 mt-16'>
                         <div>
                             <h1 className='p-1 md:p-3 flex justify-center items-center md:font-pppins bg-[#CFFCFF] rounded-bl-3xl rounded-tr-3xl text-center'>Package Weight</h1>
-                            <div className='bg-[#A7E0F4] rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5'>
+                            <div className='bg-[#020531] text-white font-pppins rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5'>
                                 <h1 className='md:text-xl font-semibold mb-2'>Standard up to 1kg</h1>
                                 <h1 className='md:text-xl font-semibold mb-2'>Per Additional kg</h1>
                             </div>
                         </div>
                         <div>
                             <h1 className='p-1 md:p-3 flex justify-center items-center md:font-pppins bg-[#CFFCFF] rounded-bl-3xl rounded-tr-3xl text-center'>Inside Dhaka</h1>
-                            <div className='bg-[#A7E0F4] rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
+                            <div className='bg-[#020531] text-white font-pppins rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
                                 <h1 className='md:text-xl font-semibold mb-2'>70 Tk</h1>
                                 <h1 className='md:text-xl font-semibold mb-2'>20 Tk</h1>
                             </div>
                         </div>
                         <div>
                             <h1 className='p-1 md:p-3 flex justify-center items-center md:font-pppins bg-[#CFFCFF] rounded-bl-3xl rounded-tr-3xl text-center'>Dhaka Sub-Area</h1>
-                            <div className='bg-[#A7E0F4] rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
+                            <div className='bg-[#020531] text-white font-pppins rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
                                 <h1 className='ms:text-xl font-semibold mb-2'>110 Tk</h1>
                                 <h1 className='ms:text-xl font-semibold mb-2'>25 Tk</h1>
                             </div>
                         </div>
                         <div>
                             <h1 className='p-1 md:p-3 flex justify-center items-center md:font-pppins bg-[#CFFCFF] rounded-bl-3xl rounded-tr-3xl text-center'>Outside Dhaka</h1>
-                            <div className='bg-[#A7E0F4] rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
+                            <div className='bg-[#020531] text-white font-pppins rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
                                 <h1 className='md:text-xl font-semibold mb-2'>170 Tk</h1>
                                 <h1 className='md:text-xl font-semibold mb-2'>30 Tk</h1>
                             </div>

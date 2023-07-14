@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 const CreateParcel = ({ isVisible, onClose, user }) => {
     const [currentDistrict, setCurrentDistrict] = useState(null);
     const [currentThana, setCurrentThana] = useState(null);
-    const [cod, setCod] = useState(0);
+    const [cod, setCod] = useState(0); 
+    const [delivaryCharge,setDelivaryCharge]=useState(null)
     if (!isVisible) return null;
 
     console.log(currentThana);
@@ -40,8 +41,44 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
 
     };
 
+    // ================================Delivary charge calculation===========
+    const handledelivarycharge=(e)=>{
+        const delivaryCharge=parseFloat(e.value);
+        console.log(delivaryCharge); 
+        setDelivaryCharge(delivaryCharge)
+    } 
 
+    const totalAmount=delivaryCharge+cod;
+    console.log("total:",totalAmount);
+    
+    
+    // Delivery charge inside Dhaka 
+    const deliveryChargeDhaka=[
+        {value:40,label:"0-1KG"},
+        {value:60,label:"1-2KG"},
+        {value:80,label:"2-3KG"},
+        {value:100,label:"3-4KG"},
+        {value:120,label:"4-5KG"},
+        {value:140,label:"5-6KG"},
+        {value:160,label:"6-7KG"},
+        {value:180,label:"7-8KG"},
+        {value:200,label:"8-9KG"},
+        {value:220,label:"9-10KG"}
+    ] 
+    const deliveryChargeOthercity=[
+        {value:90,label:"0-1KG"},
+        {value:125,label:"1-2KG"},
+        {value:160,label:"2-3KG"},
+        {value:195,label:"3-4KG"},
+        {value:230,label:"4-5KG"},
+        {value:265,label:"5-6KG"},
+        {value:300,label:"6-7KG"},
+        {value:335,label:"7-8KG"},
+        {value:370,label:"8-9KG"},
+        {value:405,label:"9-10KG"}
+    ] 
 
+//All District in Bangladesh
     const district = [
         { value: "Bagerhat", label: "Bagerhat" },
         { value: "Bandarban", label: "Bandarban" },
@@ -810,15 +847,20 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
 
     return (
         <div className='fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center '>
-            <div className='w-full md:w-[800px] flex flex-col  rounded-lg '>
+            <div className='w-full md:w-[800px] my-24 flex flex-col  rounded-lg '>
                 <button onClick={() => onClose()} className="btn btn-circle btn-outline border-[#E4D804] text-white place-self-end">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 {/* Form Start */}
-                <div className='bg-[#FECACA] p-5 rounded-md'>
+                <div className='bg-[#0b0031] overflow-x-auto  h-[70vh] p-10 rounded-md'>
                     <div className='text-black flex flex-col gap-3 mb-5'>
-                        <h1 className='text-5xl font-pppins'>Customer Details</h1>
-                        <p className='font-pppins'>To Door Step</p>
+                        
+                        <h1 className='text-3xl text-white font-pppins'>Customer Details</h1>
+                        <p className='font-pppins text-white'>From Doorstep</p>
+                        <div className="form-control">
+                            <input type="text" placeholder="Enter Your Address" className="input input-bordered" required />
+                        </div>
+                        <p className='font-pppins text-white'>To Doorstep</p>
                     </div>
                     <div className='grid grid-cols-2 gap-4 text-black mb-5'>
                         <div className="form-control">
@@ -1709,9 +1751,7 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
                     </div>
                     <div className='flex flex-col gap-5 mt-5'>
                         <div>
-                            <div className="form-control">
-                                <input type="text" placeholder="Parcel Details" className="input input-bordered" required />
-                            </div>
+                        <h1 className='text-3xl text-white font-pppins'>Parcel Details</h1>
                         </div>
                         <div>
                             <div className="form-control">
@@ -1729,14 +1769,41 @@ const CreateParcel = ({ isVisible, onClose, user }) => {
 
                                 </>
                         }
-                        <div className="form-control">
-                            <input type="text" placeholder="Product Weight" className="input input-bordered text-black" required />
+                        <div className="form-control my-2">
+                        {
+                                currentDistrict === "Dhaka" ? <>
+                                <div className='text-black'>
+                                        <Select
+                                            options={deliveryChargeDhaka}
+                                            defaultValue='Select Product Weight'
+                                            onChange={handledelivarycharge}
+                                            isSearchable
+                                        />
+                                    </div>
+                                </>:<>
+                                <div className='text-black'>
+                                        <Select
+                                            options={deliveryChargeOthercity}
+                                            defaultValue='Select Product Weight'
+                                            onChange={handledelivarycharge}
+                                            isSearchable
+                                        />
+                                    </div>
+                                
+                                </>
+                                    
+                                
+                            }
                         </div>
                     </div>
-                    <div>
-
-                        <div>COD:{cod == "" ? <>0.00</> : <>{cod}</>}</div>
+                    <div className='text-white my-4 font-pppins'>
+                        <h1 className=' text-2xl mb-3'>Charges:</h1>
+                        <div>Delivary Charge: {delivaryCharge == "" ? <>0.00</> : <>{delivaryCharge}</>} TK</div>
+                        <div>COD: {cod == "" ? <>0.00</> : <>{cod}</>} TK</div>
+                       <h1>--------------------------------</h1>
+                       <h1>Total Amount: {totalAmount} TK</h1>
                     </div>
+<button className='btn btn-info'>Place Order</button>
                 </div>
             </div>
         </div>

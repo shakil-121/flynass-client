@@ -86,8 +86,8 @@ const MyParclel = () => {
                             </tbody>
                         </table>
                     </div>
-                    <div>
-                        <button onClick={() => setShowModal(true)} className="text-xl font-serif flex items-center"><MdCreateNewFolder /> Create</button>
+                    <div className="btn hover:btn-success">
+                        <button onClick={() => setShowModal(true)} className="text-base  flex items-center font-pppins"><MdCreateNewFolder /> Parcel Create </button>
                     </div>
                 </div>
             </div>

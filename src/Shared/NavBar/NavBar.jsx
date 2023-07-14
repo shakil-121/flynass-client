@@ -2,12 +2,14 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AuthContext } from "../../AuthProvider/AuthProvider"; 
+import { FaUserShield,FaPhoneAlt } from "react-icons/fa"; 
+import { MdDashboard } from "react-icons/md";
 
 const NavBar = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="navbar bg-sky-100 sticky top-0 z-10 px-6 ">
+    <div className="navbar bg-white sticky top-0 z-10 px-6 shadow-[0px_42px_31px_11px_#00000024]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,14 +42,17 @@ const NavBar = () => {
               <Link to="contact">Contact Us</Link>
             </li>
             <li>
-              <Link to="signup">Registration</Link>
+              <Link to="coverage">Coverage</Link>
             </li>
             <li>
-              <Link to="coverage">Coverage</Link>
+              <Link to="signup">Registration</Link>
+            </li> 
+            <li>
+              <p><FaPhoneAlt></FaPhoneAlt> 09611305423</p>
             </li>
           </ul>
         </div>
-        <img className="h-20" src={logo} alt="" />
+        <img className="h-16" src={logo} alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal font-pppins text-base px-1">
@@ -61,18 +66,21 @@ const NavBar = () => {
             <Link to="contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="signup">Registration</Link>
-          </li>
-          <li>
             <Link to="coverage">Coverage</Link>
           </li>
+          <li>
+            <Link to="signup">Registration</Link>
+          </li> 
+          <li>
+              <a href="tel:09611305423"><FaPhoneAlt></FaPhoneAlt> 09611305423</a>
+            </li>
         </ul>
       </div>
       <div className="navbar-end">
         {user ? (
           <>
-            <Link className="btn mx-3" to="/dashboard">
-               Dashboard
+            <Link className="btn mx-3 bg-[#062751] hover:text-black text-white" to="/dashboard">
+               <MdDashboard></MdDashboard> Dashboard
             </Link>
             <div className="avatar online">
               <div className="h-16 auto rounded-full">
@@ -82,7 +90,7 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <Link className="btn" to="/login">Login</Link>
+            <Link className="btn btn-active bg-[#062751] text-white hover:text-black" to="/login"><FaUserShield></FaUserShield> Login</Link>
           </>
         )}
       </div>
