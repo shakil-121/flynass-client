@@ -17,7 +17,7 @@ const RequestAQuote = () => {
                     <img className="md:ml-48 h-[500px]" src={TrolleyMan} alt="" />
                 </div>
                 <div className="md:w-[1000px]">
-                    <div className="absolute z-20 flex flex-col gap-10 mt-36 ">
+                    <div className="absolute z-20 flex gap-10">
                         <div className="w-44 h-32 bg-white flex flex-col items-center justify-center gap-2 border">
                             <img src={icon1} alt="" />
                             <h3 className="text-center font-semibold">Request A Quote</h3>

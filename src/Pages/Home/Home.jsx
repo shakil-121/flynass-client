@@ -16,10 +16,9 @@ const Home = () => {
            <WhatWeDo/>
            <ChooseUs/>  
            <Support></Support>
-           <ChooseUs/> 
            {/* <Support></Support> */}
-           <RequestAQuote/>
-           <Estimation/>
+           {/* <RequestAQuote/> */}
+           {/* <Estimation/> */}
            <Respect/>
            <CompanyApproch/>
         </div>
