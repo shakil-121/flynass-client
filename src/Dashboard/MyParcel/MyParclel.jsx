@@ -12,7 +12,7 @@ const MyParclel = () => {
                 <h1 className='text-4xl font-bold font-pppins'>My Parcel</h1>
             </div>
             <div className="mt-14">
-                <div className="flex justify-between mt-8 shadow-[rgba(0,_0,_0,_2)_0px_3px_10px] p-5 rounded-md">
+                <div className="md:flex justify-between mt-8 shadow-[rgba(0,_0,_0,_2)_0px_3px_10px] p-5 rounded-md">
                     <div className="overflow-x-auto flex-1 mt-10">
                         <table className="table">
                             {/* head */}

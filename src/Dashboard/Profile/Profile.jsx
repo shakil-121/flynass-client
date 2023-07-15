@@ -18,7 +18,7 @@ const Profile = () => {
             <div className="mt-14">
                 <img className="w-28 h-28 rounded-xl" src={user?.photoURL} alt="" />
                 <div className="flex justify-between mt-8 shadow-[rgba(0,_0,_0,_2)_0px_3px_10px] p-5 rounded-md">
-                    <div className="flex-1 grid grid-cols-2 mt-5 gap-4">
+                    <div className="flex-1 grid md:grid-cols-2 mt-5 gap-4">
                         <h4 className="font-bold mt-2">
                             Merchant ID:
                             <br />
