@@ -5,7 +5,7 @@ import { FaFacebookF,FaTwitter,FaInstagram,FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="md:h-[60vh] h-full p-10 f-bg mt-16">
+    <div className="md:h-[60vh] h-full p-10 f-bg ">
       <div className="md:flex justify-between max-w-screen-xl mx-auto ">
       <div>
         <img className="h-24 w-auto" src={logo} alt="Flynass Logo" />
