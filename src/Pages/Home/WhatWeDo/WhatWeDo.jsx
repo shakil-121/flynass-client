@@ -26,7 +26,7 @@ const WhatWeDo = () => {
                                     <img src={pic1} alt="" />
                                 </div>
                                 <div>
-                                    <h1><span className='text-[#ff8a00] text-4xl font-bold'>01. </span><span className='text-3xl font-bold'>Road Freight</span></h1>
+                                    <h1><span className='text-[#ff8a00] text-4xl font-bold'>01. </span><span className='text-2xl md:text-3xl font-bold'>Road Freight</span></h1>
                                     <p className='leading-7 mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ const WhatWeDo = () => {
                                     <img src={pic2} alt="" />
                                 </div>
                                 <div>
-                                    <h1><span className='text-[#ff8a00] text-4xl font-bold'>01. </span><span className='text-3xl font-bold'>Shipping Freight</span></h1>
+                                    <h1><span className='text-[#ff8a00] text-4xl font-bold'>02. </span><span className='text-xl md:text-3xl font-bold'>Shipping Freight</span></h1>
                                     <p className='leading-7 mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@ const WhatWeDo = () => {
                                     <img src={pic3} alt="" />
                                 </div>
                                 <div>
-                                    <h1><span className='text-[#ff8a00] text-4xl font-bold'>01. </span><span className='text-3xl font-bold'>Air Freight</span></h1>
+                                    <h1><span className='text-[#ff8a00] text-4xl font-bold'>03. </span><span className='text-2xl md:text-3xl font-bold'>Air Freight</span></h1>
                                     <p className='leading-7 mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
                                 </div>
                             </div>
