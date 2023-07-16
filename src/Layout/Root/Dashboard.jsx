@@ -24,12 +24,11 @@ const Dashboard = () => {
   }
   return (
     <div>
-      <NavBar></NavBar>
-      <div className="drawer lg:drawer-open mt-4 md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
+      <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
-           
+
           <Outlet></Outlet>
           {/* <Profile></Profile> */}
           <label
@@ -47,13 +46,8 @@ const Dashboard = () => {
               <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
               <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">Merchant Account<MdVerified className="text-success" /></h4>
             </div>
-            <div className="h-100vh font-pppins">
-              <div>
-                <li>
-                  <NavLink to="/">
-                    Home
-                  </NavLink>
-                </li>
+            <div className="h-100vh font-pppins px-5 text-xl">
+              <div className="flex flex-col gap-2">
                 {/* <li>
                   <NavLink to="/dashboard">
                     Dashboard
@@ -61,8 +55,11 @@ const Dashboard = () => {
                 </li> */}
                 <li>
                   <NavLink to="admin-analysis">
-                    Analysis
+                    Dashboard
                   </NavLink>
+                </li>
+                <li>
+                  <Link to="profile">Profile</Link>
                 </li>
                 <li>
                   <Link to="my-parcel">My Parcel</Link>
@@ -70,8 +67,12 @@ const Dashboard = () => {
                 <li>
                   <Link to="">History</Link>
                 </li>
+                <li>
+                  <Link to="/services">Service</Link>
+                </li>
               </div>
-              <div className="absolute bottom-10">
+              <div className="absolute bottom-10 flex flex-col gap-3">
+                <h2>Hotline: 09611305423</h2>
                 <button className="btn bg-[red] text-white" onClick={handleLogout}><NavLink to="/">
                   LogOut
                 </NavLink><FaSignOutAlt></FaSignOutAlt> </button>

@@ -928,7 +928,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
         {/* Form Start */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="bg-[#0b0031] overflow-x-auto  h-[70vh] p-10 rounded-md">
+          <div className="bg-[#0b0031] overflow-x-auto  h-[90vh] p-10 rounded-md">
             <div className="text-black flex flex-col gap-3 mb-5">
               <h1 className="text-3xl text-white font-pppins">
                 Customer Details

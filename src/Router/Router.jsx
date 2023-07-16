@@ -56,6 +56,10 @@ const router = createBrowserRouter([
         element: <Profile></Profile>
       },
       {
+        path: "profile",
+        element: <Profile></Profile>
+      },
+      {
         path: "my-parcel",
         element: <MyParclel></MyParclel>
       },

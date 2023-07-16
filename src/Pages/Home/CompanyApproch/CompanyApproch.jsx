@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const CompanyApproch = () => {
     return (
-        <div className='mt-28 max-w-screen-xl mx-auto  2xl:px-0 md:px-16 px-5'>
+        <div className='mt-28 max-w-screen-xl mx-auto  2xl:px-0 md:px-16 px-5 mb-10'>
             <div className='grid md:grid-cols-2 md:justify-items-end justify-items-center items-center'>
                 <div>
                     <SectionTitle className="text-left" subHeading="Company Approch" heading="Reliable Logistic & Transport  Solutions"></SectionTitle>

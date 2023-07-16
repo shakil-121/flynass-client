@@ -12,30 +12,34 @@ const AdminAnalysis = () => {
   ];
   return (
     <div className="bg-[#2c2c54] h-auto">
-      <h1 className="text-2xl font-pppins p-8 text-white">My Analytics</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5 px-8">
+      <h1 className="text-2xl font-pppins p-8 text-white">Dashboard</h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-8 font-pppins">
         <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
           <h1 className="text-4xl">Total Order</h1>
           <h1 className="text-4xl">15</h1>
         </div>
         <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Total Order</h1>
+          <h1 className="text-4xl">Todays Order</h1>
+          <h1 className="text-4xl">25</h1>
+        </div>
+        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-4xl">On The Way</h1>
+          <h1 className="text-4xl">35</h1>
+        </div>
+        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-4xl">Hold Order</h1>
           <h1 className="text-4xl">15</h1>
         </div>
         <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Total Order</h1>
+          <h1 className="text-4xl">Delivered</h1>
           <h1 className="text-4xl">15</h1>
         </div>
         <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Total Order</h1>
+          <h1 className="text-4xl">Return</h1>
           <h1 className="text-4xl">15</h1>
         </div>
         <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Total Order</h1>
-          <h1 className="text-4xl">15</h1>
-        </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Total Order</h1>
+          <h1 className="text-4xl text-center">Return To <span className="text-3xl">Merchent</span></h1>
           <h1 className="text-4xl">15</h1>
         </div>
       </div>
