@@ -9,7 +9,6 @@ import van from "../../assets/images/van.png";
 import Lottie from "lottie-react";
 import bikeanimation from "../../../public/Delivery boy on the way.json";
 import delivaryanimation from "../../../public/2 animation combined.json";
-
 import { FaChevronCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -92,7 +91,7 @@ const HeroSection = () => {
               <p className="text-white text-2xl">
                 Lorem ipsum dolor sit amet Sunt enim maiores numquam ducimus{" "}
                 <br /> necessitatibus vero qui quos quibusdam labore non!
-              </p>{" "}
+              </p>
               <br />
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">
                 VIEW SERVICES

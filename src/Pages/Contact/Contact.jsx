@@ -83,7 +83,7 @@ const Contact = () => {
             />
           </form>
         </div>
-        <div className="md:w-1/3 contact-bg bg-blue-950 p-10 text-white">
+        <div className="md:w-1/3 contact-bg bg-blue-950 p-10 text-white md:rounded-tr-md rounded-b-md">
           <h1 className="border-l-8 border-orange-400 p-2 text-2xl font-semibold text-white font-pppins">
             Let's get in touch
           </h1>
