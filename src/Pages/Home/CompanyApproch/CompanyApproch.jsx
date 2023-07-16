@@ -14,7 +14,7 @@ const CompanyApproch = () => {
                     <SectionTitle className="text-left" subHeading="Company Approch" heading="Reliable Logistic & Transport  Solutions"></SectionTitle>
                     <p className='mb-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry the <br /> standard dummy text ever since the when an printer took.</p>
                 </div>
-                <div>
+                <div className='mb-10 md:mb-0'>
                     <Link to='/covera'>
                         <button className='bg-[#FF8A00] px-6 py-3 text-white font-bold'>Read More---</button>
                     </Link>
