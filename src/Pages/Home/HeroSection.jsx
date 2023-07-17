@@ -38,7 +38,7 @@ const HeroSection = () => {
         className="mySwiper  -z-10"
       >
         <SwiperSlide>
-          <div className="md:h-[75vh]  bg-gradient-to-l  from-gray-700 via-gray-900 to-black flex"> 
+          <div className="md:h-[75vh]  bg-gradient-to-l bg-[#1E8FD0] flex"> 
           <div className="md:w-[80%] px-10 py-4">
           <h1 className="text-design text-base md:text-9xl text-white font-bold">
                 {" "}
@@ -74,7 +74,7 @@ const HeroSection = () => {
                 VIEW SERVICES
               </button>
             </div>
-            <div className="w-[80%] md:w-[40%]  md:right-0">
+            <div className="w-[80%] md:w-[40%]  md:right-0 mt-20">
               <Lottie className="opacity-70" animationData={bikeanimation} loop={true} />
             </div>
           </div>
