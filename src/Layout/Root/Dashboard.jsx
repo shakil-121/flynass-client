@@ -40,7 +40,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 text-white h-full rounded-md  bg-[#062751]">
+          <ul className="menu p-4 w-80 text-white h-full rounded-md  bg-[#2C2C54]">
             <div className="mb-10">
               <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
               <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
@@ -63,6 +63,9 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link to="my-parcel">My Parcel</Link>
+                </li>
+                <li>
+                  <Link to="all-parcel">All Parcel</Link>
                 </li>
                 <li>
                   <Link to="">History</Link>

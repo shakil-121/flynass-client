@@ -10,6 +10,7 @@ const AdminAnalysis = () => {
     { name: 'Hold', value: 278 },
     { name: 'Return to Merchant', value: 189 },
   ];
+  
   return (
     <div className="bg-[#2c2c54] h-auto">
       <h1 className="text-2xl font-pppins p-8 text-white">Dashboard</h1>
