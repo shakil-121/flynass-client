@@ -44,7 +44,9 @@ const NavBar = () => {
             <li>
               <Link to="coverage">Coverage</Link>
             </li>
-            <li>
+            {
+              user?<></>:<>
+              <li>
               <Link to="signup">Registration</Link>
             </li>
             <li>

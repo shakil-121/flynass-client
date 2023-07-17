@@ -38,20 +38,20 @@ const HeroSection = () => {
         className="mySwiper  -z-10"
       >
         <SwiperSlide>
-          <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex"> 
+          <div className="md:h-[75vh]  bg-gradient-to-l  from-gray-700 via-gray-900 to-black flex"> 
           <div className="md:w-[80%] px-10 py-4">
-          <h1 className="text-design text-9xl text-white font-bold">
+          <h1 className="text-design text-base md:text-9xl text-white font-bold">
                 {" "}
                 WHOLE
               </h1>
-              <h1 className="text-9xl text-white font-bold">BANGLADESH</h1>
+              <h1 className="text-base md:text-9xl text-white font-bold">BANGLADESH</h1>
               <br />
               <br />
               <p className="text-white text-2xl">Lorem ipsum dolor sit amet  Sunt enim maiores numquam ducimus <br /> necessitatibus vero qui quos quibusdam labore non!</p> <br />
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">VIEW SERVICES</button>
 
             </div>
-            <div className="background-animated w-[80%] md:w-[24%]  md:right-0">
+            <div className="background-animated md:w-[24%]  md:right-0">
               <img className="px-6 pt-16" src={van} alt="" />
             </div>
           </div>

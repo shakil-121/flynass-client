@@ -5,10 +5,13 @@ import { AiOutlineNumber } from "react-icons/ai";
 import { FaIdCard, FaPhone, FaUserAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import ProfileUpdate from "./ProfileUpdate";
+import useUserInfo from "../../Hooks/useUserInfo";
 
 const Profile = () => {
     const [showModal, setShowModal] = useState(false);
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext); 
+    const userInfo=useUserInfo()
+    console.log(userInfo);
 
     return (
         <div className='bg-[#2c2c54] p-10 rounded-md text-white h-full'>
@@ -22,37 +25,37 @@ const Profile = () => {
                         <h4 className="font-bold mt-2">
                             Merchant ID:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><AiOutlineNumber /> FN-12102</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><AiOutlineNumber /> FN-{userInfo?._id}</span>
                         </h4>
 
                         <h4 className="font-bold mt-2">
                             Full Name:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><FaUserAlt /> {user?.displayName}</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><FaUserAlt /> {userInfo?.name}</span>
                         </h4>
 
                         <h4 className="font-bold mt-2">
                             Email Address:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><IoMdMail />codersrabbi@gmail.com</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><IoMdMail />{userInfo?.email}</span>
                         </h4>
 
                         <h4 className="font-bold mt-2">
                             Phone:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><FaPhone />+8801303329413</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><FaPhone />{userInfo?.phone}</span>
                         </h4>
 
                         <h4 className="font-bold mt-2">
                             NID Number:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />7307890245</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />{userInfo?.NID}</span>
                         </h4>
 
                         <h4 className="font-bold mt-2">
                             Address:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />N/A</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />{userInfo?.address}</span>
                         </h4>
                     </div>
                     <div>
