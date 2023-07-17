@@ -1,6 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
+import ParcelRejectForm from './ParcelRejectForm';
 
 const AllParcel = () => {
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <div className='bg-[#2C2C54] rounded-md p-2 h-full'>
             <h1 className='text-4xl text-white font-pppins mb-10'>All Parcel</h1>
@@ -75,10 +79,10 @@ const AllParcel = () => {
                             </div>
                         </td>
                         <td>
-                            <button className='btn btn-secondary'>Reject</button>
+                            <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                         </td>
                         <td>
-                            <button className='btn btn-sm'>Feedback</button>
+                            <button onClick={() => setShowModal(true)} className="btn btn-sm">Feedback</button>
                         </td>
                     </tr>
                     {/* row 2 */}
@@ -127,14 +131,15 @@ const AllParcel = () => {
                             </div>
                         </td>
                         <td>
-                            <button className='btn btn-secondary'>Reject</button>
+                            <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                         </td>
                         <td>
-                            <button className='btn btn-sm'>Feedback</button>
+                            <button onClick={() => setShowModal(true)} className="btn btn-sm">Feedback</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <ParcelRejectForm isVisible={showModal} onClose={() => setShowModal(false)}></ParcelRejectForm>
         </div>
     );
 };
