@@ -9,8 +9,8 @@ import useUserInfo from "../../Hooks/useUserInfo";
 
 const Profile = () => {
     const [showModal, setShowModal] = useState(false);
-    const { user } = useContext(AuthContext); 
-    const userInfo=useUserInfo()
+    const { user } = useContext(AuthContext);
+    const userInfo = useUserInfo()
     console.log(userInfo);
 
     return (

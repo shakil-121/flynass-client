@@ -12,7 +12,7 @@ import { Result } from "postcss";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-console.log(imgHosting_token);
+// console.log(imgHosting_token);
 const SignUp = () => {
   const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;

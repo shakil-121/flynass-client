@@ -45,17 +45,19 @@ const NavBar = () => {
               <Link to="coverage">Coverage</Link>
             </li>
             {
-              user?<></>:<>
-              <li>
-              <Link to="signup">Registration</Link>
-            </li>
+              user ? <></> : <>
+                <li>
+                  <Link to="signup">Registration</Link>
+                </li>
+              </>
+            }
             <li>
               <p><FaPhoneAlt></FaPhoneAlt> 09611305423</p>
             </li>
-          </ul>
-        </div>
+          </ul >
+        </div >
         <img className="h-16" src={logo} alt="" />
-      </div>
+      </div >
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal font-pppins text-base px-1">
           <li>
@@ -70,9 +72,13 @@ const NavBar = () => {
           <li>
             <Link to="coverage">Coverage</Link>
           </li>
-          <li>
-            <Link to="signup">Registration</Link>
-          </li>
+          {
+            user ? <></> : <>
+              <li>
+                <Link to="signup">Registration</Link>
+              </li>
+            </>
+          }
           <li>
             <a href="tel:09611305423"><FaPhoneAlt></FaPhoneAlt> 09611305423</a>
           </li>
@@ -99,7 +105,7 @@ const NavBar = () => {
           </>
         )}
       </div>
-    </div>
+    </div >
   );
 };
 
