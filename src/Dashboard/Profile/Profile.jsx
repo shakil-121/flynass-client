@@ -8,7 +8,8 @@ import ProfileUpdate from "./ProfileUpdate";
 
 const Profile = () => {
     const [showModal, setShowModal] = useState(false);
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext); 
+    console.log(user);
 
     return (
         <div className='bg-[#2c2c54] p-10 rounded-md text-white h-full'>
