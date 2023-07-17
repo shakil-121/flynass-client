@@ -11,7 +11,7 @@ import Dashboard from "../Layout/Root/Dashboard";
 import Profile from "../Dashboard/Profile/Profile";
 import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
 import MyParclel from "../Dashboard/MyParcel/MyParclel";
-import AllParcel from "../Layout/Root/AllParcel";
+import AllParcel from "../Dashboard/Admin/AllParcel/Allparcel";
 
 const router = createBrowserRouter([
   {
@@ -61,12 +61,12 @@ const router = createBrowserRouter([
         element: <Profile></Profile>
       },
       {
-        path: "all-parcel",
-        element: <AllParcel></AllParcel>
-      },
-      {
         path: "my-parcel",
         element: <MyParclel></MyParclel>
+      },
+      {
+        path: "all-parcel",
+        element: <AllParcel></AllParcel>
       },
       {
         path: "admin-analysis",

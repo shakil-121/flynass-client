@@ -88,6 +88,9 @@ const NavBar = () => {
         {user ? (
           <>
             <Link className="btn mx-3 bg-[#062751] hover:text-black text-white" to="/dashboard">
+              <div>
+                <h1>Hi, Rabbi</h1>
+              </div>
                <MdDashboard></MdDashboard> Dashboard
             </Link>
             <div className="avatar online">
