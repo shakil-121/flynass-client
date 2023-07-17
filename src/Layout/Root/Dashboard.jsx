@@ -59,7 +59,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <Link to="profile">Profile</Link>
+                  <Link to="">Profile</Link>
                 </li>
                 <li>
                   <Link to="my-parcel">My Parcel</Link>

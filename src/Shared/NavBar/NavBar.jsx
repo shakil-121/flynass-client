@@ -2,8 +2,8 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider"; 
-import { FaUserShield,FaPhoneAlt } from "react-icons/fa"; 
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaUserShield, FaPhoneAlt } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 
 const NavBar = () => {
@@ -46,7 +46,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="signup">Registration</Link>
-            </li> 
+            </li>
             <li>
               <p><FaPhoneAlt></FaPhoneAlt> 09611305423</p>
             </li>
@@ -70,10 +70,10 @@ const NavBar = () => {
           </li>
           <li>
             <Link to="signup">Registration</Link>
-          </li> 
+          </li>
           <li>
-              <a href="tel:09611305423"><FaPhoneAlt></FaPhoneAlt> 09611305423</a>
-            </li>
+            <a href="tel:09611305423"><FaPhoneAlt></FaPhoneAlt> 09611305423</a>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
@@ -81,9 +81,9 @@ const NavBar = () => {
           <>
             <Link className="btn mx-3 bg-[#062751] hover:text-black text-white" to="/dashboard">
               <div>
-                <h1>Hi, Rabbi</h1>
+                <h1>Hello <br />
+                  Rabbi Mia</h1>
               </div>
-               <MdDashboard></MdDashboard> Dashboard
             </Link>
             <div className="avatar online">
               <div className="h-16 auto rounded-full">

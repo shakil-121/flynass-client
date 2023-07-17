@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -8,42 +8,42 @@ import "./Login.css"
 const Login = () => {
 
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
-  const emailRef=useRef()
+  const emailRef = useRef()
 
 
-  const  handleSubmit= event => {
+  const handleSubmit = event => {
     event.preventDefault()
-        const form=event.target; 
-        const email=form.email.value;
-        const password=form.password.value;
-    login(email,password)
-    .then((result) => {
-      const loggeduser = result.user;
-      toast("Login Successfully");
-    }).catch((error) => {
-      console.log(error);
-    });
-  }; 
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then((result) => {
+        const loggeduser = result.user;
+        toast("Login Successfully");
+        <NavLink to="/dashboard"/>
+      }).catch((error) => {
+        console.log(error);
+      });
+  };
 
-  const handelresetpassword=()=>{
-    const email=emailRef.current.value; 
-    if(!email)
-    {
-        alert('Please Enter Your Email Address')
-        return;
-    } 
+  const handelresetpassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      alert('Please Enter Your Email Address')
+      return;
+    }
     passwordReset(email)
-    .then(()=>{
+      .then(() => {
         alert('Please Check your Email')
-    }) 
-    .catch(error=>{ 
-        console.log(error); 
+      })
+      .catch(error => {
+        console.log(error);
         toast("Email is Not Found !")
-    })
+      })
 
   }
 
-  const handleloginwithgoogle=()=>{
+  const handleloginwithgoogle = () => {
     googleLogin()
   }
   return (
@@ -61,7 +61,7 @@ const Login = () => {
                 <span className="label-text text-lg">Email</span>
               </label>
               <input
-               ref={emailRef}
+                ref={emailRef}
                 name="email"
                 type="text"
                 placeholder="email"
@@ -73,7 +73,7 @@ const Login = () => {
               <label className="label">
                 <span className="label-text text-lg">Password</span>
               </label>
-              <input 
+              <input
                 name="password"
                 type="password"
                 placeholder="password"

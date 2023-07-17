@@ -20,6 +20,8 @@ const ParcelRejectForm = ({ isVisible, onClose }) => {
             }
         )
     }
+
+    
     return (
         <div className='fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
             <div className='w-full md:w-[600px] flex flex-col  rounded-lg'>
