@@ -5,6 +5,7 @@ import useAxiosSecure from './useAxiosSecure';
 const useUserInfo = () => {
     const {user}=useAuth()
     const [axiosSecure] = useAxiosSecure();
+    
     const {data: userInfo } = useQuery({
         queryKey: ['carts', user?.email],
         // enabled: !loading,

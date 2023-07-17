@@ -1,20 +1,13 @@
 import './Services.css';
 import React from 'react';
-import Lottie from "lottie-react";
-import services from "../../assets/all-animation/Transport 2.json";
+// import Lottie from "lottie-react";
+// import services from "../../assets/all-animation/Transport 2.json";
 
 const Services = () => {
     return (
         <div className='mb-16'>
             <div className='services-bg'>
-                <div className='md:flex justify-center items-center gap-10 2xl:px-0 px-16 2xl:py-0 py-16'>
-                    <div className='hidden md:block gap-6 text-white'>
-                        <h2 className='text-6xl mb-10'>A Trusted Provider of</h2>
-                        <h1 className='text-5xl font-pppins font-bold mb-5'>Courier services</h1>
-                        <p className='text-xl'>We deliver your products safely to <br /> your home in a reasonable time.</p>
-                    </div>
-                    <Lottie className="w-full md:w-1/2 -mt-5 md:-mt-56  xl:-mt-60 " animationData={services} loop={true} />
-                </div>
+                
             </div>
             <div className='max-w-screen-xl mx-auto 2xl:px-0 md:px-16'>
                 <h1 className='text-4xl text-center font-pppins mt-20'>Delivery Charges</h1>

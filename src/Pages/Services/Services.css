@@ -1,6 +1,6 @@
 .services-bg{
-    background-image: url(../../assets//Services/Service.png);
-    /* height: 70vh; */
+    background-image: url(../../assets/Services/servicescover.png);
+    height: 60vh;
     background-size: cover;
     background-position: center;
 }

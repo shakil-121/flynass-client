@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { FaMapMarkerAlt, FaMobileAlt, FaEnvelope } from "react-icons/fa";
+import cover from "../../assets/images/contact.png"
 
 const Contact = () => {
   const form = useRef();
@@ -29,10 +30,8 @@ const Contact = () => {
   };
   return (
     <div>
-      <div className="bgi">
-        <h1 className="pt-40 ps-16 md:hidden md:text-7xl text-4xl text-white font-bold font-pppins">
-          Contact US
-        </h1>
+       <div>
+        <img className="w-full" src={cover} alt="" />
       </div>
       <div>
         <h1 className="md:text-5xl  text-3xl text-center text-indigo-950 font-pppins font-bold md:pt-28 pt-8 md:ps-16">
