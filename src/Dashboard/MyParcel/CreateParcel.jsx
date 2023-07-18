@@ -915,11 +915,11 @@ const CreateParcel = ({ isVisible, onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 md:left-1/4  bg-opacity-25 backdrop-blur-sm flex justify-center items-center ">
+    <div className="fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center ">
       <div className="w-full md:w-[800px] my-24 flex flex-col  rounded-lg ">
         <button
           onClick={() => onClose()}
-          className="btn btn-circle btn-outline border-[#E4D804] text-white place-self-end"
+          className="btn btn-circle btn-outline border-black text-blcak place-self-end"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

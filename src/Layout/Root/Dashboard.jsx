@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Profile from "../../Dashboard/Profile/Profile";
 import NavBar from "../../Shared/NavBar/NavBar";
+import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -26,11 +27,11 @@ const Dashboard = () => {
   }
   return (
     <div>
+      <DashboardNavBar/>
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
-
           <Outlet></Outlet>
           {/* <Profile></Profile> */}
           <label
