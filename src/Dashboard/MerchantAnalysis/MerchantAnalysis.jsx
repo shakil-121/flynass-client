@@ -18,66 +18,66 @@ const MerchantAnalysis = () => {
     const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
 
     return (
-        <div className='h-full bg-[#2C2C54] p-8 text-white rounded-md'>
-            <div className='grid grid-cols-3 gap-10'>
+        <div className='h-full p-8 text-white rounded-md'>
+            <div className='grid grid-cols-4 gap-10'>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>Total Parcel</h1>
-                            <h1>{parcel?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Total Parcel</h1>
+                            <h1 className='text-blue-800'>{parcel?.length}</h1>
                         </div>
                     </Link>
                 </div>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>Picked</h1>
-                            <h1>{picked?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Picked</h1>
+                            <h1 className='text-blue-800'>{picked?.length}</h1>
                         </div>
                     </Link>
                 </div>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>On The Way</h1>
-                            <h1>{onWay?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>On The Way</h1>
+                            <h1 className='text-blue-800'>{onWay?.length}</h1>
                         </div>
                     </Link>
                 </div>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>Hold</h1>
-                            <h1>{hold?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Hold</h1>
+                            <h1 className='text-blue-800'>{hold?.length}</h1>
                         </div>
                     </Link>
                 </div>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>Delivered</h1>
-                            <h1>{delivered?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Delivered</h1>
+                            <h1 className='text-blue-800'>{delivered?.length}</h1>
                         </div>
                     </Link>
                 </div>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>Return</h1>
-                            <h1>{returned?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Return</h1>
+                            <h1 className='text-blue-800'>{returned?.length}</h1>
                         </div>
                     </Link>
                 </div>
                 <div>
                     <Link to='dashboard/my-parcel'>
-                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1>Return To Merchant</h1>
-                            <h1>{returnedToMerchant?.length}</h1>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Return To Merchant</h1>
+                            <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
                         </div>
                     </Link>
                 </div>
             </div>
-            
+
             <div>
                 <h1 className='text-3xl font-pppins mt-10'>Parcel Analysis</h1>
                 <div>

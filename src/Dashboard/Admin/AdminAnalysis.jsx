@@ -1,15 +1,13 @@
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell, Tooltip } from "recharts";
 // import Slider from "../../Component/Slider/Slider";
+import support from "../../assets/images/customer-service.png"
+import { FaPhoneAlt } from "react-icons/fa";
 
 const AdminAnalysis = () => {
   const data01 = [
     { name: 'Total Order', value: 400 },
-    { name: 'Complete Order', value: 300 },
-    { name: 'Today Order', value: 300 },
-    { name: 'On The Way', value: 200 },
-    { name: 'Hold', value: 278 },
-    { name: 'Return to Merchant', value: 189 },
+    { name: 'Complete Order', value: 300 }
   ];
 
   return (
@@ -17,32 +15,32 @@ const AdminAnalysis = () => {
       <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-8 font-pppins">
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8 text">
-          <h1 className="text-2xl">15</h1>
-          <h1 className="text-2xl">Total Order</h1>
+          <h1 className="text-2xl text-blue-700">15</h1>
+          <h1 className="text-xl text-gray-400">Total Order</h1>
         </div>
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl">25</h1>
-          <h1 className="text-2xl">Todays Order</h1>
+          <h1 className="text-2xl text-blue-700">25</h1>
+          <h1 className="text-xl text-gray-400">Todays Order</h1>
         </div>
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl">35</h1>
-          <h1 className="text-2xl">On The Way</h1>
+          <h1 className="text-2xl text-blue-700">35</h1>
+          <h1 className="text-xl text-gray-400">On The Way</h1>
         </div>
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl">15</h1>
-          <h1 className="text-2xl">Hold Order</h1>
+          <h1 className="text-2xl text-blue-700">15</h1>
+          <h1 className="text-xl text-gray-400">Hold Order</h1>
         </div>
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl">15</h1>
-          <h1 className="text-2xl">Delivered</h1>
+          <h1 className="text-2xl text-blue-700">15</h1>
+          <h1 className="text-xl text-gray-400">Delivered</h1>
         </div>
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl">15</h1>
-          <h1 className="text-2xl">Return</h1>
+          <h1 className="text-2xl text-blue-700">15</h1>
+          <h1 className="text-xl text-gray-400">Return</h1>
         </div>
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl">15</h1>
-          <h1 className="text-2xl text-center">Return To <span className="text-3xl">Merchent</span></h1>
+          <h1 className="text-2xl text-blue-700">15</h1>
+          <h1 className="text-xl text-center text-gray-400">Return To <span className="text-xl">Merchent</span></h1>
         </div>
       </div>
       <div>
@@ -63,13 +61,17 @@ const AdminAnalysis = () => {
               fill="#F86F03"
               label
             />
-
             <Tooltip />
           </PieChart>
         </div>
       </div>
-      <div>
-        {/* <Slider/> */}
+      <div className="flex items-center gap-3 bg-[#E8F6FC] p-3 rounded-md me-8">
+        <img className="w-16" src={support} alt="" />
+        <div>
+          <h1 className="font-pppins">Customer Support</h1>
+          <h3 className="font-semibold">MD. Sheikh Hasib</h3>
+          <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt/> 09611305423</h2>
+        </div>
       </div>
     </div>
   );

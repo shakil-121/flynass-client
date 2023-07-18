@@ -4,7 +4,6 @@ import logo from "../../assets/logo/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaUserShield, FaPhoneAlt } from "react-icons/fa";
-import { MdDashboard } from "react-icons/md";
 
 const NavBar = () => {
   const { user } = useContext(AuthContext);
