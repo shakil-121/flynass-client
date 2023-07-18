@@ -126,6 +126,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: 200, label: "8-9KG" },
     { value: 220, label: "9-10KG" },
   ];
+
   const deliveryChargeOthercity = [
     { value: 90, label: "0-1KG" },
     { value: 125, label: "1-2KG" },
