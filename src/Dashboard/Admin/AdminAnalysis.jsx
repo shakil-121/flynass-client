@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell, Tooltip } from "recharts";
+// import Slider from "../../Component/Slider/Slider";
 
 const AdminAnalysis = () => {
   const data01 = [
@@ -10,42 +11,42 @@ const AdminAnalysis = () => {
     { name: 'Hold', value: 278 },
     { name: 'Return to Merchant', value: 189 },
   ];
-  
+
   return (
-    <div className="bg-[#2c2c54] h-auto">
-      <h1 className="text-2xl font-pppins p-8 text-white">Dashboard</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-8 font-pppins">
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Total Order</h1>
-          <h1 className="text-4xl">15</h1>
+    <div className=" h-auto">
+      <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-8 font-pppins">
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8 text">
+          <h1 className="text-2xl">15</h1>
+          <h1 className="text-2xl">Total Order</h1>
         </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Todays Order</h1>
-          <h1 className="text-4xl">25</h1>
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-2xl">25</h1>
+          <h1 className="text-2xl">Todays Order</h1>
         </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">On The Way</h1>
-          <h1 className="text-4xl">35</h1>
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-2xl">35</h1>
+          <h1 className="text-2xl">On The Way</h1>
         </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Hold Order</h1>
-          <h1 className="text-4xl">15</h1>
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-2xl">15</h1>
+          <h1 className="text-2xl">Hold Order</h1>
         </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Delivered</h1>
-          <h1 className="text-4xl">15</h1>
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-2xl">15</h1>
+          <h1 className="text-2xl">Delivered</h1>
         </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl">Return</h1>
-          <h1 className="text-4xl">15</h1>
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-2xl">15</h1>
+          <h1 className="text-2xl">Return</h1>
         </div>
-        <div className="bg-white rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-4xl text-center">Return To <span className="text-3xl">Merchent</span></h1>
-          <h1 className="text-4xl">15</h1>
+        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
+          <h1 className="text-2xl">15</h1>
+          <h1 className="text-2xl text-center">Return To <span className="text-3xl">Merchent</span></h1>
         </div>
       </div>
       <div>
-        <h1 className="text-2xl font-pppins p-8 text-white">
+        <h1 className="text-2xl font-pppins p-8 ">
           All Analysis Percentage Chart
         </h1>
 
@@ -66,6 +67,9 @@ const AdminAnalysis = () => {
             <Tooltip />
           </PieChart>
         </div>
+      </div>
+      <div>
+        {/* <Slider/> */}
       </div>
     </div>
   );

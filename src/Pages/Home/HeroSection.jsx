@@ -51,8 +51,8 @@ const HeroSection = () => {
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">VIEW SERVICES</button>
 
             </div>
-            <div className="background-animated md:w-[24%] animate-bounce md:right-0">
-              <img className="-ms-40 pt-16" src={van} alt="" />
+            <div className="background-animated md:w-[24%]  md:right-0">
+              <img className="-ms-40 pt-16 " src={van} alt="" />
             </div>
           </div>
         </SwiperSlide>

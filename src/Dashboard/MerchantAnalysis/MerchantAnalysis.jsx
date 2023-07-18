@@ -15,6 +15,7 @@ const MerchantAnalysis = () => {
     const hold = parcel.filter(item => item.status === "hold");
     const onWay = parcel.filter(item => item.status === "on the way");
     const returned = parcel.filter(item => item.status === "returned");
+    const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
 
     return (
         <div className='h-full bg-[#2C2C54] p-8 text-white rounded-md'>
@@ -67,7 +68,16 @@ const MerchantAnalysis = () => {
                         </div>
                     </Link>
                 </div>
+                <div>
+                    <Link to='dashboard/my-parcel'>
+                        <div className='bg-red-400 text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1>Return To Merchant</h1>
+                            <h1>{returnedToMerchant?.length}</h1>
+                        </div>
+                    </Link>
+                </div>
             </div>
+            
             <div>
                 <h1 className='text-3xl font-pppins mt-10'>Parcel Analysis</h1>
                 <div>
