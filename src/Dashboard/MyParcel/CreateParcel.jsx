@@ -2,7 +2,7 @@ import Select from "react-select";
 import "./CreateParcel.css";
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../AuthProvider/AuthProvider"; 
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 
 
@@ -11,8 +11,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const [currentThana, setCurrentThana] = useState(null);
   const [cod, setCod] = useState(0);
   const [delivaryCharge, setDelivaryCharge] = useState(0);
-  const [amount,setamount]=useState(0) 
-  const {user}=useContext(AuthContext)
+  const [amount, setamount] = useState(0)
+  const { user } = useContext(AuthContext)
   const {
     register,
     handleSubmit,
@@ -21,8 +21,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
     formState: { errors },
   } = useForm();
 
-   // ================================Delivary charge calculation===========
-   const handledelivarycharge = (e) => {
+  // ================================Delivary charge calculation===========
+  const handledelivarycharge = (e) => {
     const delivaryCharge = parseFloat(e.value);
     console.log(delivaryCharge);
     setDelivaryCharge(delivaryCharge);
@@ -41,45 +41,44 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const onSubmit = (data) => {
     // const maindata = [`${day}/${month}/${year}`, data.name];
     // console.log(maindata);
-    const date=`${day}/${month}/${year}`
-    const orderInfo={
-      date:date,
-      from_address:data.from_address,
-      user_email:user?.email,
-      phone:data.phone,
-      name:data.name,
-      to_address:data.to_address,
-      district:currentDistrict,
-      thana:currentThana,
-      marchent_id:data.marchent_id,
-      product_amount:amount,
-      delivary_Charge:delivaryCharge,
-      cod:cod,
-      total_amount:totalAmount,
-      status:"pending"
+    const date = `${day}/${month}/${year}`
+    const orderInfo = {
+      date: date,
+      from_address: data.from_address,
+      user_email: user?.email,
+      phone: data.phone,
+      name: data.name,
+      to_address: data.to_address,
+      district: currentDistrict,
+      thana: currentThana,
+      marchent_id: data.marchent_id,
+      product_amount: amount,
+      delivary_Charge: delivaryCharge,
+      cod: cod,
+      total_amount: totalAmount,
+      status: "pending"
     }
     console.log(orderInfo)
-     
-    fetch("http://localhost:5000/orders",{
-      method:"POST",
-      headers:{
-        "content-type":"application/json"
+
+    fetch("http://localhost:5000/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
       },
-      body:JSON.stringify(orderInfo)
+      body: JSON.stringify(orderInfo)
     })
-    .then(res=>res.json())
-    .then(data=>{
-      if(data.insertedId)
-        {
-            Swal.fire({
-                title: 'Parcel Order Status',
-                text: 'your Parcel Order Successfully',
-                icon: 'success',
-                confirmButtonText: 'Done'
-              })
-        } 
-       reset()
-    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Parcel Order Status',
+            text: 'your Parcel Order Successfully',
+            icon: 'success',
+            confirmButtonText: 'Done'
+          })
+        }
+        reset()
+      })
   };
 
   if (!isVisible) return null;
@@ -111,20 +110,20 @@ const CreateParcel = ({ isVisible, onClose }) => {
     // setAmount(codAmount);
   };
 
- 
+  // const [selectedOption, setSelectedOption] = useState(deliveryChargeDhaka[0].label);
 
   // Delivery charge inside Dhaka
   const deliveryChargeDhaka = [
-    { value: 40, label: "0-1KG" },
-    { value: 60, label: "1-2KG" },
-    { value: 80, label: "2-3KG" },
-    { value: 100, label: "3-4KG" },
-    { value: 120, label: "4-5KG" },
-    { value: 140, label: "5-6KG" },
-    { value: 160, label: "6-7KG" },
-    { value: 180, label: "7-8KG" },
-    { value: 200, label: "8-9KG" },
-    { value: 220, label: "9-10KG" },
+    { value: 20, label: "0-1KG" },
+    { value: 40, label: "1-2KG" },
+    { value: 60, label: "2-3KG" },
+    { value: 80, label: "3-4KG" },
+    { value: 100, label: "4-5KG" },
+    { value: 120, label: "5-6KG" },
+    { value: 140, label: "6-7KG" },
+    { value: 160, label: "7-8KG" },
+    { value: 180, label: "8-9KG" },
+    { value: 200, label: "9-10KG" },
   ];
 
   const deliveryChargeOthercity = [
@@ -142,6 +141,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   //All District in Bangladesh
   const district = [
+    { value: "Dhaka Sub Area", label: "Dhaka Sub Area" },
     { value: "Bagerhat", label: "Bagerhat" },
     { value: "Bandarban", label: "Bandarban" },
     { value: "Barguna", label: "Barguna" },
@@ -209,6 +209,16 @@ const CreateParcel = ({ isVisible, onClose }) => {
   ];
 
   // ALL Thana information
+  const Dhaka_sub_area = [
+    { value: "Savar", label: "Savar" },
+    { value: "Narayanganj", label: "Narayanganj" },
+    { value: "Keranigonj", label: "Keranigonj" },
+    { value: "Dohar", label: "Dohar" },
+    { value: "Nobabganj", label: "Nobabganj" },
+    { value: "Ashuliya", label: "Ashuliya" },
+    { value: "Tongi", label: "Tongi" },
+    { value: "Gazipur", label: "Gazipur" },
+  ]
   const Dhaka = [
     { value: "Adabor", label: "Adabor" },
     { value: "Badda", label: "Badda" },
@@ -1743,7 +1753,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       type="text"
                       placeholder="Amount"
                       className="input input-bordered text-black"
-                      // {...register("product_amount", { required: true })}
+                    // {...register("product_amount", { required: true })}
                     />
                   </div>
                 </>
@@ -1756,6 +1766,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                     <div className="text-black">
                       <Select
                         options={deliveryChargeDhaka}
+                        // defaultInputValue={deliveryChargeDhaka[0].label}
                         defaultValue="Select Product Weight"
                         onChange={handledelivarycharge}
                         isSearchable
@@ -1773,6 +1784,19 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       />
                     </div>
                   </>
+                )}
+              </div>
+              {/* //dhaka sub Area */}
+              <div>
+                {currentDistrict === "Dhaka Dhaka_sub_area" && (
+                  <div>
+                    <Select
+                      options={Dhaka_sub_area}
+                      defaultValue="Select Product Weight"
+                      onChange={handledelivarycharge}
+                      isSearchable
+                    />
+                  </div>
                 )}
               </div>
             </div>

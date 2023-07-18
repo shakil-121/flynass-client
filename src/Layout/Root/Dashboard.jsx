@@ -1,7 +1,9 @@
 import profile from "../../assets/profile.jpg";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { MdVerified } from "react-icons/md";
-import { FaSignOutAlt } from "react-icons/fa";
+import { MdOutlineDashboard, MdVerified } from "react-icons/md";
+import { FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { AiFillShopping } from "react-icons/ai";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Profile from "../../Dashboard/Profile/Profile";
@@ -24,7 +26,7 @@ const Dashboard = () => {
   }
   return (
     <div>
-      <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0 max-w-screen-xl mx-auto">
+      <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
@@ -40,7 +42,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 text-white h-full rounded-md  bg-[#2C2C54]">
+          <ul className="menu p-4 w-80 h-full rounded-md">
             <div className="mb-10">
               <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
               <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
@@ -48,30 +50,36 @@ const Dashboard = () => {
             </div>
             <div className="h-100vh font-pppins px-5 text-xl">
               <div className="flex flex-col gap-2">
-                {/* <li>
-                  <NavLink to="/dashboard">
-                    Dashboard
-                  </NavLink>
-                </li> */}
                 <li>
                   <NavLink to="admin-analysis">
+                    <MdOutlineDashboard />
                     Dashboard
                   </NavLink>
                 </li>
                 <li>
-                  <Link to="">Profile</Link>
+                  <Link to="">
+                    <FaUserGraduate />
+                    Profile</Link>
                 </li>
                 <li>
-                  <Link to="my-parcel">My Parcel</Link>
+                  <Link to="my-parcel">
+                    <AiFillShopping />
+                    My Parcel</Link>
                 </li>
                 <li>
-                  <Link to="all-parcel">All Parcel</Link>
+                  <Link to="all-parcel">
+                    <FaShoppingCart />
+                    All Parcel</Link>
                 </li>
                 <li>
-                  <Link to="">History</Link>
+                  <Link to="">
+                    <FaHistory />
+                    Order History</Link>
                 </li>
                 <li>
-                  <Link to="/services">Service</Link>
+                  <Link to="/services">
+                    <FiSettings/>
+                    Service</Link>
                 </li>
               </div>
               <div className="absolute bottom-10 flex flex-col gap-3">
