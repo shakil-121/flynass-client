@@ -12,7 +12,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Slider = () => {
   return (
-    <>
+    <div className="max-w-screen-xl mx-auto">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -25,7 +25,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper w-[1100px] rounded-lg"
+        className="mySwiper  rounded-lg"
       >
         <SwiperSlide>
           <img className="" src={cover1} alt="" />
@@ -37,7 +37,7 @@ const Slider = () => {
           <img className="" src={cover3} alt="" />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 
