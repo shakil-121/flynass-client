@@ -56,7 +56,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
       delivary_Charge: delivaryCharge,
       cod: cod,
       total_amount: totalAmount,
-      status: "pending"
+      status: "pending",
+      amount_status: "due"
     }
     console.log(orderInfo)
 

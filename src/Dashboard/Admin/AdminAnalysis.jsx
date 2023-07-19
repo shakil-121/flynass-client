@@ -50,7 +50,7 @@ const AdminAnalysis = () => {
 
         {/* paiChart  */}
         <div className="-mt-24">
-          <PieChart width={400} height={400}>
+          <PieChart width={350} height={400}>
             <Pie
               dataKey="value"
               isAnimationActive={false}
