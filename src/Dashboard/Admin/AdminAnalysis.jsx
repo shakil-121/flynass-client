@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell, Tooltip } from "recharts";
+import Slider from "../../Component/Slider";
 // import Slider from "../../Component/Slider/Slider";
 import support from "../../assets/images/customer-service.png"
 import { FaPhoneAlt } from "react-icons/fa";
@@ -12,6 +13,7 @@ const AdminAnalysis = () => {
 
   return (
     <div className=" h-auto">
+      <Slider></Slider>
       <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-8 font-pppins">
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8 text">

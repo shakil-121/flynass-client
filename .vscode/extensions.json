@@ -1,7 +1,6 @@
 {
     "recommendations": [
         "bradlc.vscode-tailwindcss",
-        "tabnine.tabnine-vscode",
-        "steoates.autoimport"
+        "tabnine.tabnine-vscode"
     ]
 }

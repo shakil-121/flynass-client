@@ -127,21 +127,6 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: 200, label: "9-10KG" },
   ];
 
-  // Delivery charge Dhaka Sub Area
-  const deliveryChargeDhakaSubArea = [
-    { value: 25, label: "0-1KG" },
-    { value: 50, label: "1-2KG" },
-    { value: 75, label: "2-3KG" },
-    { value: 100, label: "3-4KG" },
-    { value: 125, label: "4-5KG" },
-    { value: 150, label: "5-6KG" },
-    { value: 175, label: "6-7KG" },
-    { value: 200, label: "7-8KG" },
-    { value: 225, label: "8-9KG" },
-    { value: 250, label: "9-10KG" },
-  ]
-
-  // Delivery charge outside Dhaka
   const deliveryChargeOthercity = [
     { value: 90, label: "0-1KG" },
     { value: 125, label: "1-2KG" },
