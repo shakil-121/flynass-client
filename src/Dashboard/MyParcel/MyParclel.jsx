@@ -7,7 +7,7 @@ const MyParclel = () => {
     const [showModal, setShowModal] = useState(false);
     const { user } = useContext(AuthContext);
     return (
-        <div className='bg-[#2c2c54] p-10 rounded-md text-white h-full'>
+        <div className='p-10 rounded-md h-full'>
             <div className="flex justify-between">
                 <h1 className='text-4xl font-bold font-pppins'>My Parcel</h1>
             </div>
@@ -16,7 +16,7 @@ const MyParclel = () => {
                     <div className="overflow-x-auto flex-1 mt-10">
                         <table className="table">
                             {/* head */}
-                            <thead className='text-white'>
+                            <thead className='bg-gray-400'>
                                 <tr>
                                     <th>No.</th>
                                     <th>Date</th>

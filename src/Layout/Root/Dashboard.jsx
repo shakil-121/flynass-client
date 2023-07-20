@@ -1,7 +1,7 @@
 import profile from "../../assets/profile.jpg";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { MdOutlineDashboard, MdVerified } from "react-icons/md";
-import { FaBars, FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, } from "react-icons/fa";
+import { FaBars, FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, FaUsers, } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { AiFillShopping } from "react-icons/ai";
 import { useContext } from "react";
@@ -80,6 +80,11 @@ const Dashboard = () => {
                   <Link to="all-parcel">
                     <FaShoppingCart />
                     All Parcel</Link>
+                </li>
+                <li>
+                  <Link to="manage-user">
+                    <FaUsers />
+                    Manage User</Link>
                 </li>
                 <li>
                   <Link to="">

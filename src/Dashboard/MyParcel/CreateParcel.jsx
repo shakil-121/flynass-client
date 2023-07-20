@@ -35,7 +35,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const month = currentDate.getMonth() + 1; // Add 1 to get the actual month (January is 0)
   const year = currentDate.getFullYear();
 
-  console.log(`Current date: ${day}-${month}-${year}`);
+  // console.log(`Current date: ${day}-${month}-${year}`);
 
   const onSubmit = (data) => {
     // const maindata = [`${day}/${month}/${year}`, data.name];
@@ -141,7 +141,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   //All District in Bangladesh
   const district = [
-    { value: "Dhaka Sub Area", label: "Dhaka Sub Area" },
+    { value: "Dhaka_Sub_Area", label: "Dhaka Sub Area" },
     { value: "Bagerhat", label: "Bagerhat" },
     { value: "Bandarban", label: "Bandarban" },
     { value: "Barguna", label: "Barguna" },
@@ -209,7 +209,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   ];
 
   // ALL Thana information
-  const Dhaka_sub_area = [
+  const Dhaka_Sub_Area = [
     { value: "Savar", label: "Savar" },
     { value: "Narayanganj", label: "Narayanganj" },
     { value: "Keranigonj", label: "Keranigonj" },
@@ -1022,6 +1022,17 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </div>
                 )}
 
+                {currentDistrict === "Dhaka_Sub_Area" && (
+                  <div>
+                    <Select
+                      options={Dhaka_Sub_Area}
+                      defaultValue="Select Delivery Thana"
+                      onChange={handleThanaOnChange}
+                      isSearchable
+                    />
+                  </div>
+                )}
+
                 {currentDistrict === "Bagerhat" && (
                   <div>
                     <Select
@@ -1789,10 +1800,10 @@ const CreateParcel = ({ isVisible, onClose }) => {
               </div>
               {/* //dhaka sub Area */}
               <div>
-                {currentDistrict === "Dhaka Dhaka_sub_area" && (
+                {currentDistrict === "Dhaka_Sub_Area" && (
                   <div>
                     <Select
-                      options={Dhaka_sub_area}
+                      options={Dhaka_Sub_Area}
                       defaultValue="Select Product Weight"
                       onChange={handledelivarycharge}
                       isSearchable

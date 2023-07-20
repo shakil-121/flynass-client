@@ -76,6 +76,14 @@ const MerchantAnalysis = () => {
                         </div>
                     </Link>
                 </div>
+                <div>
+                    <Link to='dashboard/my-parcel'>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Reject</h1>
+                            <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
+                        </div>
+                    </Link>
+                </div>
             </div>
 
             <div>
