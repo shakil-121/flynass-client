@@ -7,6 +7,8 @@ import Respect from './Respect/Respect';
 import Support from './RequestAQuote/Support';
 import CompanyApproch from './CompanyApproch/CompanyApproch';
 import useTitle from '../../Hooks/useTitle';
+import Testimonial from './Testimonial/Testimonial';
+import Faq from './FAQ/FAQ';
 
 const Home = () => { 
     useTitle("Home")
@@ -21,6 +23,8 @@ const Home = () => {
            {/* <Estimation/> */}
            <Respect/>
            <CompanyApproch/>
+           <Faq/>
+           <Testimonial/>
         </div>
     );
 };
