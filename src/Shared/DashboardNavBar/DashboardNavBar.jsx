@@ -21,8 +21,6 @@ const DashboardNavBar = () => {
                 <div className='bg-[#1E62D4] px-4 py-2 rounded-md'>
                     {/* <button  onClick={() => setShowModal(true)} className="text-base  flex items-center font-pppins text-white gap-2"><MdCreateNewFolder /> Create Multi Parcel </button> */}
                 <Link to="multi_parcel" className="text-base  flex items-center font-pppins text-white gap-2"> <MdCreateNewFolder /> Create Multi Parcel</Link>
-                <div className='rounded-md hidden md:block'>
-                    <button onClick={() => setShowModal(true)} className="btn bg-[#1E62D4] hover:bg-[#1E62D4] items-center font-pppins text-white gap-2"><MdCreateNewFolder /> Create Multi Parcel </button>
                 </div>
             </div>
             <CreateParcel isVisible={showModal} onClose={() => setShowModal(false)} user={user}></CreateParcel>
