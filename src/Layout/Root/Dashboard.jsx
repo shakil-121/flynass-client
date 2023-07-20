@@ -1,7 +1,7 @@
 import profile from "../../assets/profile.jpg";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { MdOutlineDashboard, MdVerified } from "react-icons/md";
-import { FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, } from "react-icons/fa";
+import { FaBars, FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, FaUsers, } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { AiFillShopping } from "react-icons/ai";
 import { useContext } from "react";
@@ -26,24 +26,28 @@ const Dashboard = () => {
       })
   }
   return (
+
     <div>
-      <DashboardNavBar/>
+      <DashboardNavBar />
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
+
+          <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary lg:drawer-open lg:hidden 10"
+          >
+            <FaBars />
+          </label>
+
           {/* Page content here */}
           <Outlet></Outlet>
           {/* <Profile></Profile> */}
-          <label
-            htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
-          >
-            Open drawer
-          </label>
+
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full rounded-md">
+          <ul className="menu p-4 w-80 h-full rounded-md bg-white">
             <div className="mb-10">
               <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
               <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
@@ -68,9 +72,19 @@ const Dashboard = () => {
                     My Parcel</Link>
                 </li>
                 <li>
+                  <Link to="all-admin">
+                    <FaShoppingCart />
+                    All Admin</Link>
+                </li>
+                <li>
                   <Link to="all-parcel">
                     <FaShoppingCart />
                     All Parcel</Link>
+                </li>
+                <li>
+                  <Link to="manage-user">
+                    <FaUsers />
+                    Manage User</Link>
                 </li>
                 <li>
                   <Link to="">
@@ -79,7 +93,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link to="/services">
-                    <FiSettings/>
+                    <FiSettings />
                     Service</Link>
                 </li>
               </div>

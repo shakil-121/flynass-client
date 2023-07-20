@@ -14,7 +14,7 @@ const Profile = () => {
     console.log(userInfo);
 
     return (
-        <div className='bg-[#2c2c54] p-10 rounded-md text-white h-full'>
+        <div className='p-10 rounded-md h-full'>
             <div className="flex justify-between">
                 <h1 className='text-4xl font-bold font-pppins'>My Profile</h1>
             </div>

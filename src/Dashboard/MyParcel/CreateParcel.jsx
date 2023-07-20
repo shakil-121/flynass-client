@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 
-
 const CreateParcel = ({ isVisible, onClose }) => {
   const [currentDistrict, setCurrentDistrict] = useState(null);
   const [currentThana, setCurrentThana] = useState(null);
@@ -36,7 +35,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const month = currentDate.getMonth() + 1; // Add 1 to get the actual month (January is 0)
   const year = currentDate.getFullYear();
 
-  console.log(`Current date: ${day}-${month}-${year}`);
+  // console.log(`Current date: ${day}-${month}-${year}`);
 
   const onSubmit = (data) => {
     // const maindata = [`${day}/${month}/${year}`, data.name];
@@ -56,7 +55,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
       delivary_Charge: delivaryCharge,
       cod: cod,
       total_amount: totalAmount,
-      status: "pending"
+      status: "pending",
+      amount_status: "due"
     }
     console.log(orderInfo)
 
@@ -141,7 +141,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   //All District in Bangladesh
   const district = [
-    { value: "Dhaka Sub Area", label: "Dhaka Sub Area" },
+    { value: "Dhaka_Sub_Area", label: "Dhaka Sub Area" },
     { value: "Bagerhat", label: "Bagerhat" },
     { value: "Bandarban", label: "Bandarban" },
     { value: "Barguna", label: "Barguna" },
@@ -209,7 +209,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   ];
 
   // ALL Thana information
-  const Dhaka_sub_area = [
+  const Dhaka_Sub_Area = [
     { value: "Savar", label: "Savar" },
     { value: "Narayanganj", label: "Narayanganj" },
     { value: "Keranigonj", label: "Keranigonj" },
@@ -740,6 +740,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: "Mohanganj", label: "Mohanganj" },
     { value: "Purbadhala", label: "Purbadhala" },
   ];
+
   const Nilphamari = [
     { value: "Nilphamari Sadar", label: "Nilphamari Sadar" },
     { value: "Domar", label: "Domar" },
@@ -939,12 +940,12 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
         {/* Form Start */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="bg-[#0b0031] overflow-x-auto  h-[90vh] p-10 rounded-md">
+          <div className="bg-sky-400 overflow-x-auto  h-[90vh] p-10 rounded-md">
             <div className="text-black flex flex-col gap-3 mb-5">
-              <h1 className="text-3xl text-white font-pppins">
+              <h1 className="text-3xl text-black font-pppins">
                 Customer Details
               </h1>
-              <p className="font-pppins text-white">From Doorstep</p>
+              <p className="font-pppins">From Doorstep</p>
               <div className="form-control">
                 <input
                   type="text"
@@ -955,7 +956,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 />
               </div>
 
-              <p className="font-pppins text-white">To Doorstep</p>
+              <p className="font-pppins ">To Doorstep</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-black mb-5">
@@ -1014,6 +1015,17 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   <div>
                     <Select
                       options={Dhaka}
+                      defaultValue="Select Delivery Thana"
+                      onChange={handleThanaOnChange}
+                      isSearchable
+                    />
+                  </div>
+                )}
+
+                {currentDistrict === "Dhaka_Sub_Area" && (
+                  <div>
+                    <Select
+                      options={Dhaka_Sub_Area}
                       defaultValue="Select Delivery Thana"
                       onChange={handleThanaOnChange}
                       isSearchable
@@ -1728,7 +1740,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
             </div>
             <div className="flex flex-col gap-5 mt-5">
               <div>
-                <h1 className="text-3xl text-white font-pppins">
+                <h1 className="text-3xl font-pppins">
                   Parcel Details
                 </h1>
               </div>
@@ -1788,10 +1800,10 @@ const CreateParcel = ({ isVisible, onClose }) => {
               </div>
               {/* //dhaka sub Area */}
               <div>
-                {currentDistrict === "Dhaka Dhaka_sub_area" && (
+                {currentDistrict === "Dhaka_Sub_Area" && (
                   <div>
                     <Select
-                      options={Dhaka_sub_area}
+                      options={Dhaka_Sub_Area}
                       defaultValue="Select Product Weight"
                       onChange={handledelivarycharge}
                       isSearchable
@@ -1800,7 +1812,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 )}
               </div>
             </div>
-            <div className="text-white my-4 font-pppins">
+            <div className="my-4 font-pppins">
               <h1 className=" text-2xl mb-3">Charges:</h1>
               <div>
                 Delivary Charge:{" "}
@@ -1810,7 +1822,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
               <h1>--------------------------------</h1>
               <h1>Total Amount: {totalAmount} TK</h1>
             </div>
-            <button className="btn btn-info">Place Order</button>
+            <button className="btn btn-primary">Place Order</button>
             {/* <input type="submit" /> */}
           </div>
         </form>

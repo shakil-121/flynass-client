@@ -16,10 +16,10 @@ const DeliveryPercnet = () => {
 
 
     const data = [
-        { name: "Assigment-1", value: 70 },
-        { name: "Assigment-9", value: 30 }
+        { name: "Delivery Percent", value: 70 },
+        { name: "Return Percent", value: 30 }
     ];
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+    const COLORS = ['#1E62D4', '#FF5733', '#FFBB28', '#FF8042'];
 
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -40,8 +40,8 @@ const DeliveryPercnet = () => {
             <PieChart width={1000} height={900}>
                 <Pie
                     data={data}
-                    cx="50%"
-                    cy="50%"
+                    cx="30%"
+                    cy="30%"
                     labelLine={false}
                     label={renderCustomizedLabel}
                     outerRadius={200}

@@ -18,7 +18,7 @@ const MerchantAnalysis = () => {
     const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
 
     return (
-        <div className='h-full p-8 text-white rounded-md'>
+        <div className='h-full p-8 rounded-md'>
             <div className='grid grid-cols-4 gap-10'>
                 <div>
                     <Link to='dashboard/my-parcel'>
@@ -76,10 +76,28 @@ const MerchantAnalysis = () => {
                         </div>
                     </Link>
                 </div>
+                <div>
+                    <Link to='dashboard/my-parcel'>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Reject</h1>
+                            <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
+                        </div>
+                    </Link>
+                </div>
             </div>
 
             <div>
-                <h1 className='text-3xl font-pppins mt-10'>Parcel Analysis</h1>
+                <h1 className='text-3xl font-pppins mt-10 text-black'>Parcel Analysis</h1>
+                <div className='flex gap-16 mt-6'>
+                    <div className='flex items-center gap-5'>
+                        <h2 className='text-xl font-serif'>Delivery</h2>
+                        <div className='bg-[#1E62D4] h-5 w-5'></div>
+                    </div>
+                    <div className='flex items-center gap-5'>
+                        <h2 className='text-xl font-serif'>Return</h2>
+                        <div className='bg-[#FF5733] h-5 w-5'></div>
+                    </div>
+                </div>
                 <div>
                     <DeliveryPercnet></DeliveryPercnet>
                 </div>
