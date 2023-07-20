@@ -6,11 +6,11 @@ const AllParcel = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className='bg-[#2C2C54] rounded-md p-2 h-full'>
-            <h1 className='text-4xl text-white font-pppins mb-10'>All Parcel</h1>
-            <table className="table text-white">
+        <div className='rounded-md p-2 h-full'>
+            <h1 className='text-4xl  font-pppins mb-10'>All Parcel</h1>
+            <table className="table">
                 {/* head */}
-                <thead className='text-white'>
+                <thead className=''>
                     <tr className='text-center'>
                         <th>No.</th>
                         <th>Merchant <br />
@@ -53,7 +53,12 @@ const AllParcel = () => {
                         <td>
                             <div className='flex flex-col gap-1'>
                                 <span>1200.00</span>
-                                <span>Panding</span>
+                                <div className="dropdown dropdown-bottom text-black">
+                                    <label tabIndex={0} className="text-white font-pppins">due</label>
+                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                        <li><a>Paid</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </td>
                         <td>
@@ -105,7 +110,12 @@ const AllParcel = () => {
                         <td>
                             <div className='flex flex-col gap-1'>
                                 <span>1200.00</span>
-                                <span>Panding</span>
+                                <div className="dropdown dropdown-bottom text-black">
+                                    <label tabIndex={0} className="text-white font-pppins">due</label>
+                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                        <li><a>Paid</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </td>
                         <td>

@@ -13,6 +13,7 @@ import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
 import MyParclel from "../Dashboard/MyParcel/MyParclel";
 import AllParcel from "../Dashboard/Admin/AllParcel/Allparcel";
 import MerchantAnalysis from "../Dashboard/MerchantAnalysis/MerchantAnalysis";
+import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "my-parcel",
         element: <MyParclel></MyParclel>
+      },
+      {
+        path: "all-admin",
+        element: <AllAdmin></AllAdmin>
       },
       {
         path: "all-parcel",

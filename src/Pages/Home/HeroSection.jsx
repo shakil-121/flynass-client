@@ -35,12 +35,12 @@ const HeroSection = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         // onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper  -z-10"
+        className="mySwiper z-10"
       >
         <SwiperSlide>
-          <div className="md:h-[75vh]  bg-gradient-to-l bg-[#1E8FD0] flex"> 
-          <div className="md:w-[80%] px-10 py-4">
-          <h1 className="text-design text-base md:text-9xl text-white font-bold">
+          <div className="md:h-[75vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
+            <div className="md:w-[80%] px-10 py-4">
+              <h1 className="text-design text-base md:text-9xl text-white font-bold mt-32">
                 {" "}
                 WHOLE
               </h1>
@@ -59,7 +59,7 @@ const HeroSection = () => {
         <SwiperSlide>
           <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
-              <h1 className="text-design text-9xl text-white font-bold">
+              <h1 className="text-design text-9xl text-white font-bold mt-32">
                 TO EVERY
               </h1>
               <h1 className="text-9xl text-white font-bold">DISTRICT</h1>
@@ -82,7 +82,7 @@ const HeroSection = () => {
         <SwiperSlide>
           <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
-              <h1 className="text-design text-9xl text-white font-bold">
+              <h1 className="text-design text-9xl text-white font-bold mt-32">
                 READY
               </h1>
               <h1 className="text-9xl text-white font-bold">TO MOVE</h1>

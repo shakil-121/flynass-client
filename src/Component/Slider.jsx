@@ -1,8 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import cover1 from "../assets/images/dashboardCover.png";
-import cover2 from "../assets/images/dashboardCover2.png";
-import cover3 from "../assets/images/dashboardCover3.png";
+import cover1 from "../assets/images/pic1.jpg";
+import cover2 from "../assets/images/pic2.jpg";
+import cover3 from "../assets/images/pic3.jpg";
 
 // Import Swiper styles
 import "swiper/css";

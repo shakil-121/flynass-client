@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 
-
 const CreateParcel = ({ isVisible, onClose }) => {
   const [currentDistrict, setCurrentDistrict] = useState(null);
   const [currentThana, setCurrentThana] = useState(null);
@@ -741,6 +740,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: "Mohanganj", label: "Mohanganj" },
     { value: "Purbadhala", label: "Purbadhala" },
   ];
+
   const Nilphamari = [
     { value: "Nilphamari Sadar", label: "Nilphamari Sadar" },
     { value: "Domar", label: "Domar" },
@@ -940,12 +940,12 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
         {/* Form Start */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="bg-[#0b0031] overflow-x-auto  h-[90vh] p-10 rounded-md">
+          <div className="bg-sky-400 overflow-x-auto  h-[90vh] p-10 rounded-md">
             <div className="text-black flex flex-col gap-3 mb-5">
-              <h1 className="text-3xl text-white font-pppins">
+              <h1 className="text-3xl text-black font-pppins">
                 Customer Details
               </h1>
-              <p className="font-pppins text-white">From Doorstep</p>
+              <p className="font-pppins">From Doorstep</p>
               <div className="form-control">
                 <input
                   type="text"
@@ -956,7 +956,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 />
               </div>
 
-              <p className="font-pppins text-white">To Doorstep</p>
+              <p className="font-pppins ">To Doorstep</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-black mb-5">
@@ -1729,7 +1729,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
             </div>
             <div className="flex flex-col gap-5 mt-5">
               <div>
-                <h1 className="text-3xl text-white font-pppins">
+                <h1 className="text-3xl font-pppins">
                   Parcel Details
                 </h1>
               </div>
@@ -1801,7 +1801,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 )}
               </div>
             </div>
-            <div className="text-white my-4 font-pppins">
+            <div className="my-4 font-pppins">
               <h1 className=" text-2xl mb-3">Charges:</h1>
               <div>
                 Delivary Charge:{" "}
@@ -1811,7 +1811,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
               <h1>--------------------------------</h1>
               <h1>Total Amount: {totalAmount} TK</h1>
             </div>
-            <button className="btn btn-info">Place Order</button>
+            <button className="btn btn-primary">Place Order</button>
             {/* <input type="submit" /> */}
           </div>
         </form>

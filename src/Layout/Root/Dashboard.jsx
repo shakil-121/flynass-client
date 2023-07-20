@@ -72,6 +72,11 @@ const Dashboard = () => {
                     My Parcel</Link>
                 </li>
                 <li>
+                  <Link to="all-admin">
+                    <FaShoppingCart />
+                    All Admin</Link>
+                </li>
+                <li>
                   <Link to="all-parcel">
                     <FaShoppingCart />
                     All Parcel</Link>

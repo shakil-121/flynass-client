@@ -92,6 +92,7 @@ const MyParclel = () => {
                 </div>
             </div>
             <CreateParcel isVisible={showModal} onClose={() => setShowModal(false)} user={user}></CreateParcel>
+            
         </div>
     );
 };

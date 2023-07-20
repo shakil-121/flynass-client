@@ -12,8 +12,10 @@ const AdminAnalysis = () => {
   ];
 
   return (
-    <div className=" h-auto">
-      <Slider></Slider>
+    <div className="h-auto">
+      <div>
+
+      </div>
       <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-8 font-pppins">
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8 text">
@@ -72,7 +74,7 @@ const AdminAnalysis = () => {
         <div>
           <h1 className="font-pppins">Customer Support</h1>
           <h3 className="font-semibold">MD. Sheikh Hasib</h3>
-          <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt/> 09611305423</h2>
+          <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt /> 09611305423</h2>
         </div>
       </div>
     </div>

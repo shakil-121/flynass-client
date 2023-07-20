@@ -16,10 +16,10 @@ const DashboardNavBar = () => {
             </div >
             <div className='flex items-center gap-5'>
                 <div className='rounded-md'>
-                    <button onClick={() => setShowModal(true)} className="btn bg-[#1E62D4] flex items-center text-xs font-pppins text-white gap-2"><MdCreateNewFolder />Create Single Parcel </button>
+                    <button onClick={() => setShowModal(true)} className="btn bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center text-xs font-pppins text-white gap-2"><MdCreateNewFolder />Create Single Parcel </button>
                 </div>
                 <div className='rounded-md hidden md:block'>
-                    <button onClick={() => setShowModal(true)} className="btn bg-[#1E62D4] items-center font-pppins text-white gap-2"><MdCreateNewFolder /> Create Multi Parcel </button>
+                    <button onClick={() => setShowModal(true)} className="btn bg-[#1E62D4] hover:bg-[#1E62D4] items-center font-pppins text-white gap-2"><MdCreateNewFolder /> Create Multi Parcel </button>
                 </div>
             </div>
             <CreateParcel isVisible={showModal} onClose={() => setShowModal(false)} user={user}></CreateParcel>
