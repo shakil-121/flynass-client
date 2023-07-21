@@ -10,10 +10,6 @@ const DeliveryPercnet = () => {
         return res.json();
     })
 
-    // console.log(parcel);
-    const rabbi = parcel.filter(item => item.status === "picked");
-    console.log(rabbi);
-
 
     const data = [
         { name: "Delivery Percent", value: 70 },

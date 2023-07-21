@@ -3,6 +3,7 @@ import useParcel from '../../Hooks/useParcel';
 import { Link } from 'react-router-dom';
 import DeliveryPercnet from './DeliveryPercnet';
 import { useQuery } from '@tanstack/react-query';
+import Slider from '../../Component/Slider';
 
 const MerchantAnalysis = () => {
     const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
@@ -10,21 +11,35 @@ const MerchantAnalysis = () => {
         return res.json();
     })
 
-    const delivered = parcel.filter(item => item.status === "picked");
+
+    const pending = parcel.filter(item => item.status === "pending");
     const picked = parcel.filter(item => item.status === "picked");
-    const hold = parcel.filter(item => item.status === "hold");
     const onWay = parcel.filter(item => item.status === "on the way");
+    const hold = parcel.filter(item => item.status === "hold");
+    const delivered = parcel.filter(item => item.status === "delivered");
     const returned = parcel.filter(item => item.status === "returned");
     const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
+    const reject = parcel.filter(item => item.status === "reject");
 
     return (
         <div className='h-full p-8 rounded-md'>
-            <div className='grid grid-cols-4 gap-10'>
+            <div>
+                <Slider />
+            </div>
+            <div className='grid grid-cols-4 gap-10 mt-10'>
                 <div>
                     <Link to='dashboard/my-parcel'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
                             <h1 className='text-gray-400'>Total Parcel</h1>
                             <h1 className='text-blue-800'>{parcel?.length}</h1>
+                        </div>
+                    </Link>
+                </div>
+                <div>
+                    <Link to='dashboard/my-parcel'>
+                        <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+                            <h1 className='text-gray-400'>Pending Parcel</h1>
+                            <h1 className='text-blue-800'>{pending?.length}</h1>
                         </div>
                     </Link>
                 </div>
@@ -80,7 +95,7 @@ const MerchantAnalysis = () => {
                     <Link to='dashboard/my-parcel'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
                             <h1 className='text-gray-400'>Reject</h1>
-                            <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
+                            <h1 className='text-blue-800'>{reject?.length}</h1>
                         </div>
                     </Link>
                 </div>

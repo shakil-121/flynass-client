@@ -11,7 +11,7 @@ const Profile = () => {
     const [showModal, setShowModal] = useState(false);
     const { user } = useContext(AuthContext);
     const userInfo = useUserInfo()
-    console.log(userInfo);
+    // console.log(userInfo);
 
     return (
         <div className='p-10 rounded-md h-full'>

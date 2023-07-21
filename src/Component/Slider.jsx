@@ -1,8 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import cover1 from "../assets/images/pic1.jpg";
-import cover2 from "../assets/images/pic2.jpg";
-import cover3 from "../assets/images/pic3.jpg";
+import cover1 from "../assets/images/dashboardCover.png";
+import cover2 from "../assets/images/dashboardCover.png";
+import cover3 from "../assets/images/dashboardCover.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,7 +12,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Slider = () => {
   return (
-    <div className="mx">
+    <div className="">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -25,7 +25,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper  rounded-lg"
+        className="mySwiper rounded-lg w-[1480px]"
       >
         <SwiperSlide>
           <img className="" src={cover1} alt="" />
