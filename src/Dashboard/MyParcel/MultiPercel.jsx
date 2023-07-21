@@ -10,7 +10,7 @@ const MultiPercel = () => {
     // Function to fetch and read the CSV file
     const fetchData = async () => {
       try {
-        const response = await fetch("../../../public/data.csv"); // Adjust the path accordingly
+        const response = await fetch("../../../public/sample.csv"); // Adjust the path accordingly
         const text = await response.text();
         const parsedData = text.split("\n").map((row) => row.split(","));
         setCSVData(parsedData);
@@ -25,7 +25,7 @@ const MultiPercel = () => {
   return (
     <div>
       <h1 className="text-black font-pppins text-4xl py-10">Multiple Parcel</h1>
-      <CSVLink data={csvData} filename="data.csv">
+      <CSVLink data={csvData} filename="sample.csv">
         <button className="bg-[#1E62D4] hover:bg-[#003899]  px-8 py-5 item-center gap-2 flex text-white font-pppins text-xl">
           {" "}
           Download Sample CSV <FaFileDownload />

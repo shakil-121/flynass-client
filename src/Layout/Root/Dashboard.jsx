@@ -15,7 +15,6 @@ import useSuperAdmin from "../../Hooks/useSuperAdmin";
 
 const Dashboard = () => {
   const navigate = useNavigate()
-  const { user, logout } = useContext(AuthContext);
   const { user, logout } = useContext(AuthContext) 
   const userInfo=useUserInfo();
   const [isAdmin,isAdminLoading]=useAdmin()  
