@@ -13,9 +13,6 @@ const AdminAnalysis = () => {
 
   return (
     <div className="h-auto">
-      <div>
-
-      </div>
       <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-8 font-pppins">
         <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8 text">

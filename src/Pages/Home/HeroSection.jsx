@@ -52,7 +52,7 @@ const HeroSection = () => {
 
             </div>
             <div className="background-animated md:w-[24%] md:right-0">
-              <img className="-ms-40 pt-16" src={van} alt="" />
+              <img className="-ms-48 pt-16" src={van} alt="" />
             </div>
           </div>
         </SwiperSlide>

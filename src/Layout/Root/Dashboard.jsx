@@ -12,22 +12,29 @@ import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
 import useUserInfo from "../../Hooks/useUserInfo";
 import useAdmin from "../../Hooks/useAdmin";
 import useSuperAdmin from "../../Hooks/useSuperAdmin";
+import useMarchent from "../../Hooks/useMarchent";
+import { useQuery } from "@tanstack/react-query";
 
 const Dashboard = () => {
   const navigate = useNavigate()
-  const { user, logout } = useContext(AuthContext) 
-  const userInfo=useUserInfo();
-  const [isAdmin,isAdminLoading]=useAdmin()  
-  const [isSupperAdmin,isSuperAdminLoading]=useSuperAdmin()
+  const { user, logout } = useContext(AuthContext);
+  const userInfo = useUserInfo();
+  const [isAdmin, isAdminLoading] = useAdmin()
+  const [isSuperAdmin, isSuperAdminLoading] = useSuperAdmin();
+  const [isMerchant, isMerchantLoading] = useMarchent();
 
-  const handleLogout = () => { 
+  const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
+    const res = await fetch('http://localhost:5000/users')
+    return res.json();
+  })
 
-    if(isAdminLoading || isSuperAdminLoading)
-    {
-      return <div>Lodding-------</div>
-    }
+  const loggedInUser = user?.email;
+  const currentUser = allUsers.find(item => item.email === loggedInUser)
+  const role = currentUser?.role;
 
-    console.log(isSupperAdmin);
+  console.log(role);
+
+  const handleLogout = () => {
     logout()
       .then(() => {
         // navigate({to:"/"})
@@ -40,18 +47,16 @@ const Dashboard = () => {
   }
 
 
+
+
   return (
-     
+
     <div>
       <DashboardNavBar />
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-         {
-            // console.log(isSupperAdmin)
-            console.log(isAdmin)
 
-         }
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary lg:drawer-open lg:hidden 10"
@@ -75,54 +80,90 @@ const Dashboard = () => {
             <div className="h-100vh font-pppins px-5 text-xl">
               <div className="flex flex-col gap-2">
                 {
-                  isAdmin?<>
-                  <li>
-                  <NavLink to="admin-analysis">
-                    <MdOutlineDashboard />
-                    Dashboard
-                  </NavLink>
-                </li>
-                  </>:<></>
+                  role === 'admin' ?
+                    <>
+                      <li>
+                        <NavLink to="admin-analysis">
+                          <MdOutlineDashboard />
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <Link to="">
+                          <FaUserGraduate />
+                          Profile</Link>
+                      </li>
+                      <li>
+                        <Link to="all-parcel">
+                          <FaShoppingCart />
+                          All Parcel</Link>
+                      </li>
+                      <li>
+                        <Link to="">
+                          <FaHistory />
+                          Order History</Link>
+                      </li>
+                    </>
+                    :
+                    <div>
+                      {
+                        role === 'superAdmin' ?
+                          <>
+                            <li>
+                              <NavLink to="admin-analysis">
+                                <MdOutlineDashboard />
+                                Dashboard
+                              </NavLink>
+                            </li>
+                            <li>
+                              <Link to="all-parcel">
+                                <FaShoppingCart />
+                                All Parcel</Link>
+                            </li>
+                            <li>
+                              <Link to="all-admin">
+                                <FaShoppingCart />
+                                All Admin</Link>
+                            </li>
+                            <li>
+                              <Link to="manage-user">
+                                <FaUsers />
+                                Manage User</Link>
+                            </li>
+
+                          </>
+                          :
+                          <>
+                            <li>
+                              <Link to="merchant-analysis">
+                                <AiFillShopping />
+                                Dashboard</Link>
+                            </li>
+                            <li>
+                              <Link to="">
+                                <FaUserGraduate />
+                                Profile</Link>
+                            </li>
+                            <li>
+                              <Link to="my-parcel">
+                                <AiFillShopping />
+                                My Parcel</Link>
+                            </li>
+                            <li>
+                              <Link to="">
+                                <FaHistory />
+                                Order History</Link>
+                            </li>
+                            <li>
+                              <Link to="/services">
+                                <FiSettings />
+                                Service</Link>
+                            </li>
+                          </>
+                      }
+                    </div>
                 }
-                {
-                  !isAdmin?<>
-                  <li>
-                  <Link to="">
-                    <FaUserGraduate />
-                    Profile</Link>
-                </li>
-                <li>
-                  <Link to="my-parcel">
-                    <AiFillShopping />
-                    My Parcel</Link>
-                </li>
-                <li>
-                  <Link to="all-admin">
-                    <FaShoppingCart />
-                    All Admin</Link>
-                </li>
-                <li>
-                  <Link to="all-parcel">
-                    <FaShoppingCart />
-                    All Parcel</Link>
-                </li>
-                <li>
-                  <Link to="manage-user">
-                    <FaUsers />
-                    Manage User</Link>
-                </li>
-                <li>
-                  <Link to="">
-                    <FaHistory />
-                    Order History</Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <FiSettings />
-                    Service</Link>
-                </li>
-                  </>:<></>
-                }
+
               </div>
               <div className="absolute bottom-10 flex flex-col gap-3">
                 <h2>Hotline: 09611305423</h2>
