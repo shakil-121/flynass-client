@@ -38,7 +38,7 @@ const HeroSection = () => {
         className="mySwiper z-10"
       >
         <SwiperSlide>
-          <div className="md:h-[75vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
+          <div className="md:h-[90vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[80%] px-10 py-4">
               <h1 className="text-design text-base md:text-9xl text-white font-bold mt-32">
                 {" "}
@@ -47,17 +47,17 @@ const HeroSection = () => {
               <h1 className="text-base md:text-9xl text-white font-bold">BANGLADESH</h1>
               <br />
               <br />
-              <p className="text-white text-2xl">Lorem ipsum dolor sit amet  Sunt enim maiores numquam ducimus <br /> necessitatibus vero qui quos quibusdam labore non!</p> <br />
+              <p className="text-white text-2xl">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, <br /> nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">VIEW SERVICES</button>
 
             </div>
             <div className="background-animated md:w-[24%] md:right-0">
-              <img className="-ms-48 pt-16" src={van} alt="" />
+              <img className="-ms-52 pt-16 mt-28 h-[550px]" src={van} alt="" />
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
+        {/* <SwiperSlide>
+          <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-9xl text-white font-bold mt-32">
                 TO EVERY
@@ -66,8 +66,7 @@ const HeroSection = () => {
               <br />
               <br />
               <p className="text-white text-2xl">
-                Lorem ipsum dolor sit amet Sunt enim maiores numquam ducimus{" "}
-                <br /> necessitatibus vero qui quos quibusdam labore non!
+                Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.
               </p>{" "}
               <br />
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">
@@ -80,7 +79,7 @@ const HeroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
+          <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-9xl text-white font-bold mt-32">
                 READY
@@ -89,8 +88,7 @@ const HeroSection = () => {
               <br />
               <br />
               <p className="text-white text-2xl">
-                Lorem ipsum dolor sit amet Sunt enim maiores numquam ducimus{" "}
-                <br /> necessitatibus vero qui quos quibusdam labore non!
+                Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.
               </p>
               <br />
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">
@@ -101,7 +99,7 @@ const HeroSection = () => {
               <Lottie className="opacity-70" animationData={delivaryanimation} loop={true} />
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );
