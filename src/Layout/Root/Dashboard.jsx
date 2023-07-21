@@ -16,18 +16,16 @@ import useSuperAdmin from "../../Hooks/useSuperAdmin";
 const Dashboard = () => {
   const navigate = useNavigate()
   const { user, logout } = useContext(AuthContext);
-  const userInfo = useUserInfo();
-  const [isAdmin, isAdminLoading] = useAdmin();
-  const [isSupperAdmin, isSupperAdminLoading] = useSuperAdmin();
-
-  console.log(isAdmin);
+  const { user, logout } = useContext(AuthContext) 
+  const userInfo=useUserInfo();
+  const [isAdmin,isAdminLoading]=useAdmin() 
 
   const handleLogout = () => {
 
-    if (isAdminLoading || isSupperAdminLoading) {
+    if(isAdminLoading)
+    {
       return <div>Lodding-------</div>
     }
-
     logout()
       .then(() => {
         // navigate({to:"/"})
@@ -47,6 +45,10 @@ const Dashboard = () => {
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
+         {
+            console.log(isAdmin)
+
+         }
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary lg:drawer-open lg:hidden 10"
