@@ -3,6 +3,7 @@ import "../../MyParcel/CreateParcel.css";
 import { useQuery } from '@tanstack/react-query';
 import UsersInfo from './UsersInfo';
 import { FaTrash, FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const CreateAdmin = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
@@ -12,7 +13,83 @@ const CreateAdmin = ({ isVisible, onClose }) => {
         return res.json();
     })
 
-    console.log(allUsers);
+    const handleAdminDelete = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want to be Delete  this user!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${id}`, {
+                    method: "DELETE"
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        refetch();
+                        if (data.deletedCount > 0) {
+                            Swal.fire("Deleted!", "User has been delete.", "success");
+                        }
+                    });
+            }
+        });
+    };
+
+    // const handleMakeAdmin = id => {
+    //     fetch(`http://localhost:5000/user/status/${id}`, {
+    //         method: 'PATCH'
+    //     }
+    //     )
+    //     // console.log(id);
+    //     // const role = "admin";
+    //     // Swal.fire({
+    //     //     title: "Are you sure?",
+    //     //     text: "You want to be make Admin!",
+    //     //     icon: "warning",
+    //     //     showCancelButton: true,
+    //     //     confirmButtonColor: "#3085d6",
+    //     //     cancelButtonColor: "#d33",
+    //     //     confirmButtonText: "Yes, admin it!",
+    //     // }).then((result) => {
+    //     //     if (result.isConfirmed) {
+    //     //         fetch(`http://localhost:5000/user/status/${id}`, {
+    //     //             method: "PATCh",
+    //     //         })
+    //     //             .then((res) => res.json())
+    //     //             .then((data) => {
+    //     //                 refetch();
+    //     //                 if (data.deletedCount > 0) {
+    //     //                     Swal.fire("Now this user is Admin");
+    //     //                 }
+    //     //             });
+    //     //     }
+    //     // });
+    // };
+
+    const handleMakeAdmin = (user) => {
+        fetch(`http://localhost:5000/user/status/${user._id}`, {
+          method: "PATCH",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.modifiedCount) {
+              refetch();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${user.name} is an Admin Now!`,
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          });
+      };
+
+
 
     return (
         <div className="fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center my-10">
@@ -41,12 +118,12 @@ const CreateAdmin = ({ isVisible, onClose }) => {
                             <td>
                                 {
                                     user?.role === 'admin' ? <p>Admin</p> : <>
-                                        <button className='btn btn-primary'>Make Admin</button>
+                                        <button onClick={() => handleMakeAdmin(user)} className='btn btn-primary'>Make Admin</button>
                                     </>
                                 }
                             </td>
-                            <td className='text-[#D53343]'>
-                                <FaTrashAlt/>
+                            <td>
+                                <button onClick={() => handleAdminDelete(user._id)} className='text-[#D53343]'><FaTrashAlt /></button>
                             </td>
                         </tr>)
                     }

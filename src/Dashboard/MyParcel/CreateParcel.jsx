@@ -97,9 +97,6 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const handleThanaOnChange = (e) => {
     setCurrentThana(e.value);
     setDelivaryCharge('');
-
-
-
   };
 
   const handleParcelAmount = (event) => {

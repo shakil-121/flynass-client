@@ -11,20 +11,23 @@ import NavBar from "../../Shared/NavBar/NavBar";
 import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
 import useUserInfo from "../../Hooks/useUserInfo";
 import useAdmin from "../../Hooks/useAdmin";
+import useSuperAdmin from "../../Hooks/useSuperAdmin";
 
 const Dashboard = () => {
   const navigate = useNavigate()
   const { user, logout } = useContext(AuthContext);
-  const { user, logout } = useContext(AuthContext) 
-  const userInfo=useUserInfo();
-  const [isAdmin,isAdminLoading]=useAdmin() 
+  const userInfo = useUserInfo();
+  const [isAdmin, isAdminLoading] = useAdmin();
+  const [isSupperAdmin, isSupperAdminLoading] = useSuperAdmin();
 
-  const handleLogout = () => { 
+  console.log(isAdmin);
 
-    if(isAdminLoading)
-    {
+  const handleLogout = () => {
+
+    if (isAdminLoading || isSupperAdminLoading) {
       return <div>Lodding-------</div>
     }
+
     logout()
       .then(() => {
         // navigate({to:"/"})
@@ -38,16 +41,12 @@ const Dashboard = () => {
 
 
   return (
-     
+
     <div>
       <DashboardNavBar />
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-         {
-            console.log(isAdmin)
-
-         }
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary lg:drawer-open lg:hidden 10"
@@ -71,53 +70,53 @@ const Dashboard = () => {
             <div className="h-100vh font-pppins px-5 text-xl">
               <div className="flex flex-col gap-2">
                 {
-                  isAdmin?<>
-                  <li>
-                  <NavLink to="admin-analysis">
-                    <MdOutlineDashboard />
-                    Dashboard
-                  </NavLink>
-                </li>
-                  </>:<></>
+                  isAdmin ? <>
+                    <li>
+                      <NavLink to="admin-analysis">
+                        <MdOutlineDashboard />
+                        Dashboard
+                      </NavLink>
+                    </li>
+                  </> : <></>
                 }
                 {
-                  !isAdmin?<>
-                  <li>
-                  <Link to="">
-                    <FaUserGraduate />
-                    Profile</Link>
-                </li>
-                <li>
-                  <Link to="my-parcel">
-                    <AiFillShopping />
-                    My Parcel</Link>
-                </li>
-                <li>
-                  <Link to="all-admin">
-                    <FaShoppingCart />
-                    All Admin</Link>
-                </li>
-                <li>
-                  <Link to="all-parcel">
-                    <FaShoppingCart />
-                    All Parcel</Link>
-                </li>
-                <li>
-                  <Link to="manage-user">
-                    <FaUsers />
-                    Manage User</Link>
-                </li>
-                <li>
-                  <Link to="">
-                    <FaHistory />
-                    Order History</Link>
-                </li>
-                <li>
-                  <Link to="/services">
-                    <FiSettings />
-                    Service</Link>
-                </li>
-                  </>:<></>
+                  !isAdmin ? <>
+                    <li>
+                      <Link to="">
+                        <FaUserGraduate />
+                        Profile</Link>
+                    </li>
+                    <li>
+                      <Link to="my-parcel">
+                        <AiFillShopping />
+                        My Parcel</Link>
+                    </li>
+                    <li>
+                      <Link to="all-admin">
+                        <FaShoppingCart />
+                        All Admin</Link>
+                    </li>
+                    <li>
+                      <Link to="all-parcel">
+                        <FaShoppingCart />
+                        All Parcel</Link>
+                    </li>
+                    <li>
+                      <Link to="manage-user">
+                        <FaUsers />
+                        Manage User</Link>
+                    </li>
+                    <li>
+                      <Link to="">
+                        <FaHistory />
+                        Order History</Link>
+                    </li>
+                    <li>
+                      <Link to="/services">
+                        <FiSettings />
+                        Service</Link>
+                    </li>
+                  </> : <></>
                 }
               </div>
               <div className="absolute bottom-10 flex flex-col gap-3">

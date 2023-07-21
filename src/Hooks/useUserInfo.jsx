@@ -5,16 +5,16 @@ import useAxiosSecure from './useAxiosSecure';
 const useUserInfo = () => {
     const {user}=useAuth()
     const [axiosSecure] = useAxiosSecure();
-    console.log(user);
+    // console.log(user);
     
     const {data: userInfo } = useQuery({
         queryKey: ['carts', user?.email],
         // enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure(`/user/${user?.email}`)
-            console.log('res from axios', res)
+            // console.log('res from axios', res)
             return res.data;
-            console.log(res.data);
+            // console.log(res.data);
         },
     })
 
