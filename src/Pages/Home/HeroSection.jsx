@@ -56,8 +56,8 @@ const HeroSection = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
+        <SwiperSlide>
+          <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-9xl text-white font-bold mt-32">
                 TO EVERY

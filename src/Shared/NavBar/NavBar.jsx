@@ -1,14 +1,37 @@
 // import logo from "../../assets/logo.png"
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaUserShield, FaPhoneAlt } from "react-icons/fa";
 
 const NavBar = () => {
+  const [scrolled, setScrolled] = useState(false);
+ // Function to handle scroll event
+ const handleScroll = () => {
+  if (window.scrollY > 20) {
+    setScrolled(true);
+  } else {
+    setScrolled(false);
+  }
+};
+
+useEffect(() => {
+  // Attach the event listener when the component mounts
+  window.addEventListener('scroll', handleScroll);
+
+  // Clean up the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
   const { user } = useContext(AuthContext);
   return (
-    <div className="navbar fixed z-10 px-16 bg-transparent  text-white">
+    <div    className={`navbar fixed z-10  text-white px-16 transition ${
+      scrolled ? 'bg-[#1E8FD0]' : 'bg-transparent'
+    }`}
+>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
