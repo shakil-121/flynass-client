@@ -38,7 +38,7 @@ const HeroSection = () => {
         className="mySwiper z-10"
       >
         <SwiperSlide>
-          <div className="md:h-[75vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
+          <div className="md:h-[90vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[80%] px-10 py-4">
               <h1 className="text-design text-base md:text-9xl text-white font-bold mt-32">
                 {" "}
@@ -57,7 +57,7 @@ const HeroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
+          <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-9xl text-white font-bold mt-32">
                 TO EVERY
@@ -80,7 +80,7 @@ const HeroSection = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[75vh] bg-gradient-to-l bg-[#1E8FD0] flex">
+          <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-9xl text-white font-bold mt-32">
                 READY
