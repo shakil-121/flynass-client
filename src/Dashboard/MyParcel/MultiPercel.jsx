@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
-import { FaFileDownload } from "react-icons/fa";
+import { FaFileDownload, FaPhoneAlt } from "react-icons/fa";
 import CSVUpload from "../../Component/CSVUpload"
+import support from "../../assets/images/customer-service.png"
 
 const MultiPercel = () => {
   const [csvData, setCSVData] = useState([]);
@@ -46,6 +47,14 @@ const MultiPercel = () => {
       </p>
       <div>
         <CSVUpload></CSVUpload>
+      </div>
+      <div className="flex items-center gap-3 bg-[#E8F6FC] p-3 mb-10 rounded-md me-8">
+        <img className="w-16" src={support} alt="" />
+        <div>
+          <h1 className="font-pppins">Customer Support</h1>
+          <h3 className="font-semibold">MD. Sheikh Hasib</h3>
+          <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt /> 09611305423</h2>
+        </div>
       </div>
     </div>
   );

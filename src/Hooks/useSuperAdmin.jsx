@@ -6,16 +6,16 @@ const useSuperAdmin = () => {
     const {user, loadding} = useAuth()
     const [axiosSecure] = useAxiosSecure();
 
-    const {data: isSupperAdmin, isLoading: isAdminLoading} = useQuery({
+    const {data: isSupperAdmin, isLoading: isSuperAdminLoading} = useQuery({
         queryKey: ['isSupperAdmin', user?.email],
         enabled: !loadding,
         // enabled: !!user?.email && !! localStorage.getItem("access-token"),
         queryFn: async () => {
             const res = await axiosSecure.get(`/user/superadmin/${user?.email}`);
-            return res.data.admin;
+            return res.data.super_admin;
             
         }
     })
-    return [isSupperAdmin,isAdminLoading]
+    return [isSupperAdmin,isSuperAdminLoading]
 }
 export default useSuperAdmin;

@@ -11,19 +11,23 @@ import NavBar from "../../Shared/NavBar/NavBar";
 import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
 import useUserInfo from "../../Hooks/useUserInfo";
 import useAdmin from "../../Hooks/useAdmin";
+import useSuperAdmin from "../../Hooks/useSuperAdmin";
 
 const Dashboard = () => {
   const navigate = useNavigate()
   const { user, logout } = useContext(AuthContext) 
   const userInfo=useUserInfo();
-  const [isAdmin,isAdminLoading]=useAdmin() 
+  const [isAdmin,isAdminLoading]=useAdmin()  
+  const [isSupperAdmin,isSuperAdminLoading]=useSuperAdmin()
 
   const handleLogout = () => { 
 
-    if(isAdminLoading)
+    if(isAdminLoading || isSuperAdminLoading)
     {
       return <div>Lodding-------</div>
     }
+
+    console.log(isSupperAdmin);
     logout()
       .then(() => {
         // navigate({to:"/"})
@@ -42,6 +46,7 @@ const Dashboard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
          {
+            // console.log(isSupperAdmin)
             console.log(isAdmin)
 
          }
