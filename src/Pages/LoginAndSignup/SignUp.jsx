@@ -43,7 +43,7 @@ const SignUp = () => {
             NID: data.nid,
             image: imgUrl,
             role:"merchant",
-            address:"N/A"
+            address:data.address,
           };
         //   console.log(userInfo);
 
@@ -133,6 +133,18 @@ const SignUp = () => {
                   {...register("nid", { required: true })}
                   type="text"
                   placeholder="NID Number"
+                  className="input input-bordered border-slate-300 text-black"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-lg">Address</span>
+                </label>
+                <input
+                  name="nid"
+                  {...register("address", { required: true })}
+                  type="text"
+                  placeholder="Address"
                   className="input input-bordered border-slate-300 text-black"
                 />
               </div>

@@ -8,7 +8,7 @@ import { FaUserShield, FaPhoneAlt } from "react-icons/fa";
 const NavBar = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="navbar fixed z-10 px-16 bg-[#1E8FD0]  text-white">
+    <div className="navbar fixed z-10 px-16 bg-transparent  text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
