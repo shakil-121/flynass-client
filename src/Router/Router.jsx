@@ -16,6 +16,7 @@ import MerchantAnalysis from "../Dashboard/MerchantAnalysis/MerchantAnalysis";
 import MultiPercel from "../Dashboard/MyParcel/MultiPercel";
 import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
 import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
+import Menu from "../Dashboard/Menu/Menu";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
       {
         path:"multi_parcel",
         element:<MultiPercel></MultiPercel>
+      },
+      {
+        path: "menu",
+        element: <Menu></Menu>
       }
     ]
   }

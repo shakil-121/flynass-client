@@ -11,8 +11,7 @@ const Footer = () => {
         <img className="h-24 w-auto" src={logo} alt="Flynass Logo" />
         <br />
         <p className="text-white text-lg">
-          Many desktop publishing packages <br /> and web page editors now use
-          are <br /> dolra Ipsum as their default .
+        Flynass is the strongest doorstep <br /> delivery network of Bangladesh <br /> with nationwide doorstep delivery,
         </p>
         <div className="flex  mt-6 text-white">
             <div className="bg-[#184f6e] hover:bg-[#051721] p-2">

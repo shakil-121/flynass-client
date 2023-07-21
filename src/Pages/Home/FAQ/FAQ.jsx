@@ -39,11 +39,11 @@ const Faq = () => {
                     className="collapse rounded-none collapse-plus py-2 bg-[#E8F6FC] mt-3 text-black">
                     <input type="radio" name="my-accordion-3" />
                     <div className="collapse-title text-xl font-medium">
-                        Q: What are the current delivery coverage areas of Paperfly?
+                        Q: What are the current delivery coverage areas of Flynass?
                     </div>
                     <div className="collapse-content">
                         <p>
-                            Paperfly provides home delivery service in 64 districts and 491 Upazilas all over Bangladesh with its own set-up and owns field force.
+                            Flynass provides home delivery service in 64 districts and 491 Upazilas all over Bangladesh with its own set-up and owns field force.
                         </p>
                     </div>
                 </div>

@@ -103,6 +103,11 @@ const Dashboard = () => {
                           <FaHistory />
                           Order History</Link>
                       </li>
+                      <li>
+                        <Link to="menu">
+                          <FaBars />
+                          Menu</Link>
+                      </li>
                     </>
                     :
                     <div>
@@ -130,7 +135,11 @@ const Dashboard = () => {
                                 <FaUsers />
                                 Manage User</Link>
                             </li>
-
+                            <li>
+                              <Link to="menu">
+                                <FaBars />
+                                Menu</Link>
+                            </li>
                           </>
                           :
                           <>
@@ -159,6 +168,11 @@ const Dashboard = () => {
                                 <FiSettings />
                                 Service</Link>
                             </li>
+                            <li>
+                        <Link to="menu">
+                          <FaBars />
+                          Menu</Link>
+                      </li>
                           </>
                       }
                     </div>

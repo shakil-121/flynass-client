@@ -1042,6 +1042,17 @@ const CreateParcel = ({ isVisible, onClose }) => {
                     />
                   </div>
                 )}
+                
+                {currentDistrict === "Dhaka_Sub_Area" && (
+                  <div>
+                    <Select
+                      options={Dhaka_Sub_Area}
+                      defaultValue="Select Delivery Thana"
+                      onChange={handleThanaOnChange}
+                      isSearchable
+                    />
+                  </div>
+                )}
 
                 {currentDistrict === "Bagerhat" && (
                   <div>
