@@ -9,12 +9,22 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Profile from "../../Dashboard/Profile/Profile";
 import NavBar from "../../Shared/NavBar/NavBar";
 import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
+import useUserInfo from "../../Hooks/useUserInfo";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Dashboard = () => {
   const navigate = useNavigate()
   const { user, logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext) 
+  const userInfo=useUserInfo();
+  const [isAdmin,isAdminLoading]=useAdmin() 
 
-  const handleLogout = () => {
+  const handleLogout = () => { 
+
+    if(isAdminLoading)
+    {
+      return <div>Lodding-------</div>
+    }
     logout()
       .then(() => {
         // navigate({to:"/"})
@@ -28,13 +38,16 @@ const Dashboard = () => {
 
 
   return (
-
+     
     <div>
       <DashboardNavBar />
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
+         {
+            console.log(isAdmin)
 
+         }
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary lg:drawer-open lg:hidden 10"
@@ -51,19 +64,25 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full rounded-md bg-white">
             <div className="mb-10">
-              <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
-              <h1 className="text-3xl text-center mt-3 font-semibold">Rabbi Mia</h1>
-              <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">Merchant Account<MdVerified className="text-success" /></h4>
+              <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
+              <h1 className="text-3xl text-center mt-3 font-semibold">{userInfo?.name}</h1>
+              <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
             </div>
             <div className="h-100vh font-pppins px-5 text-xl">
               <div className="flex flex-col gap-2">
-                <li>
+                {
+                  isAdmin?<>
+                  <li>
                   <NavLink to="admin-analysis">
                     <MdOutlineDashboard />
                     Dashboard
                   </NavLink>
                 </li>
-                <li>
+                  </>:<></>
+                }
+                {
+                  !isAdmin?<>
+                  <li>
                   <Link to="">
                     <FaUserGraduate />
                     Profile</Link>
@@ -98,6 +117,8 @@ const Dashboard = () => {
                     <FiSettings />
                     Service</Link>
                 </li>
+                  </>:<></>
+                }
               </div>
               <div className="absolute bottom-10 flex flex-col gap-3">
                 <h2>Hotline: 09611305423</h2>

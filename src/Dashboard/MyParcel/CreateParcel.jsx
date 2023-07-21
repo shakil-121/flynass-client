@@ -91,11 +91,15 @@ const CreateParcel = ({ isVisible, onClose }) => {
     setCurrentDistrict(e.value);
     setCurrentThana("");
     setCod("");
+    
   };
 
   const handleThanaOnChange = (e) => {
     setCurrentThana(e.value);
     setDelivaryCharge('');
+
+
+
   };
 
   const handleParcelAmount = (event) => {
@@ -105,7 +109,12 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
     if (currentDistrict == "Dhaka") {
       setCod(0);
-    } else {
+    }
+   else if(currentDistrict == "Dhaka_Sub_Area")
+    {
+      setCod(0);
+    }
+    else {
       setCod(COD);
     }
     // setAmount(codAmount);
@@ -115,30 +124,44 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   // Delivery charge inside Dhaka
   const deliveryChargeDhaka = [
-    { value: 20, label: "0-1KG" },
-    { value: 40, label: "1-2KG" },
-    { value: 60, label: "2-3KG" },
-    { value: 80, label: "3-4KG" },
-    { value: 100, label: "4-5KG" },
-    { value: 120, label: "5-6KG" },
-    { value: 140, label: "6-7KG" },
-    { value: 160, label: "7-8KG" },
-    { value: 180, label: "8-9KG" },
-    { value: 200, label: "9-10KG" },
+    { value: 70, label: "0-1KG" },
+    { value: 90, label: "1-2KG" },
+    { value: 110, label: "2-3KG" },
+    { value: 130, label: "3-4KG" },
+    { value: 150, label: "4-5KG" },
+    { value: 170, label: "5-6KG" },
+    { value: 190, label: "6-7KG" },
+    { value: 210, label: "7-8KG" },
+    { value: 230, label: "8-9KG" },
+    { value: 250, label: "9-10KG" },
   ];
 
   const deliveryChargeOthercity = [
-    { value: 90, label: "0-1KG" },
-    { value: 125, label: "1-2KG" },
-    { value: 160, label: "2-3KG" },
-    { value: 195, label: "3-4KG" },
-    { value: 230, label: "4-5KG" },
-    { value: 265, label: "5-6KG" },
-    { value: 300, label: "6-7KG" },
-    { value: 335, label: "7-8KG" },
+    { value: 130, label: "0-1KG" },
+    { value: 160, label: "1-2KG" },
+    { value: 190, label: "2-3KG" },
+    { value: 220, label: "3-4KG" },
+    { value: 250, label: "4-5KG" },
+    { value: 280, label: "5-6KG" },
+    { value: 310, label: "6-7KG" },
+    { value: 340, label: "7-8KG" },
     { value: 370, label: "8-9KG" },
-    { value: 405, label: "9-10KG" },
+    { value: 400, label: "9-10KG" },
   ];
+  
+  const deliveryChargeDhakaSubArea = [
+    { value: 110, label: "0-1KG" },
+    { value: 135, label: "1-2KG" },
+    { value: 160, label: "2-3KG" },
+    { value: 185, label: "3-4KG" },
+    { value: 210, label: "4-5KG" },
+    { value: 235, label: "5-6KG" },
+    { value: 260, label: "6-7KG" },
+    { value: 285, label: "7-8KG" },
+    { value: 310, label: "8-9KG" },
+    { value: 335, label: "9-10KG" },
+  ];
+  
 
   //All District in Bangladesh
   const district = [
@@ -941,9 +964,9 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
         {/* Form Start */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="bg-sky-400 overflow-x-auto  h-[90vh] p-10 rounded-md">
-            <div className="text-black flex flex-col gap-3 mb-5">
-              <h1 className="text-3xl text-black font-pppins">
+          <div className="bg-blue-900 text-white  overflow-x-auto  h-[90vh] p-10 rounded-md">
+            <div className="text-white flex flex-col gap-3 mb-5">
+              <h1 className="text-3xl font-pppins">
                 Customer Details
               </h1>
               <p className="font-pppins">From Doorstep</p>
@@ -1763,7 +1786,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 <></>
               )}
               <div className="form-control my-2">
-                {currentDistrict === "Dhaka" ? (
+                {currentDistrict === "Dhaka" && currentDistrict!="Dhaka_Sub_Area"   ?  (
                   <>
                     <div className="text-black">
                       <Select
@@ -1777,7 +1800,12 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </>
                 ) : (
                   <>
-                    <div className="text-black">
+                  </>
+                )}
+                {
+                  currentDistrict!="Dhaka" && currentDistrict!="Dhaka_Sub_Area"?
+                  <>
+                   <div className="text-black">
                       <Select
                         options={deliveryChargeOthercity}
                         defaultValue="Select Product Weight"
@@ -1785,21 +1813,23 @@ const CreateParcel = ({ isVisible, onClose }) => {
                         isSearchable
                       />
                     </div>
-                  </>
-                )}
+                  </>:<></>
+                }
               </div>
               {/* //dhaka sub Area */}
               <div>
-                {currentDistrict === "Dhaka_Sub_Area" && (
+                {currentDistrict === "Dhaka_Sub_Area" ?
+                 <>
                   <div>
                     <Select
-                      options={Dhaka_Sub_Area}
+                      options={deliveryChargeDhakaSubArea}
                       defaultValue="Select Product Weight"
                       onChange={handledelivarycharge}
                       isSearchable
                     />
                   </div>
-                )}
+                 </>:<></>
+                }
               </div>
             </div>
             <div className="my-4 font-pppins">

@@ -62,7 +62,8 @@ const createAccount=(email,password)=>{
     login,
     logout,
     googleLogin,
-    passwordReset
+    passwordReset,
+    loadding
   };
   return <AuthContext.Provider value={authinfo}>
     {children}
