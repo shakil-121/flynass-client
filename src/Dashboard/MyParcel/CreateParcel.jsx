@@ -95,6 +95,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   const handleThanaOnChange = (e) => {
     setCurrentThana(e.value);
+    setDelivaryCharge('');
   };
 
   const handleParcelAmount = (event) => {
@@ -1015,17 +1016,6 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   <div>
                     <Select
                       options={Dhaka}
-                      defaultValue="Select Delivery Thana"
-                      onChange={handleThanaOnChange}
-                      isSearchable
-                    />
-                  </div>
-                )}
-
-                {currentDistrict === "Dhaka_Sub_Area" && (
-                  <div>
-                    <Select
-                      options={Dhaka_Sub_Area}
                       defaultValue="Select Delivery Thana"
                       onChange={handleThanaOnChange}
                       isSearchable

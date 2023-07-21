@@ -37,7 +37,7 @@ const Services = () => {
                         <div>
                             <h1 className='p-1 md:p-3 flex justify-center items-center md:font-pppins bg-[#CFFCFF] rounded-bl-3xl rounded-tr-3xl text-center'>Outside Dhaka</h1>
                             <div className='bg-[#020531] text-white font-pppins rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5 text-center'>
-                                <h1 className='md:text-xl font-semibold mb-2'>170 Tk</h1>
+                                <h1 className='md:text-xl font-semibold mb-2'>130 Tk</h1>
                                 <h1 className='md:text-xl font-semibold mb-2'>30 Tk</h1>
                             </div>
                         </div>

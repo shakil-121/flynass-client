@@ -12,7 +12,7 @@ import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
 
 const Dashboard = () => {
   const navigate = useNavigate()
-  const { user, logout } = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout()
@@ -25,6 +25,8 @@ const Dashboard = () => {
         console.log(error);
       })
   }
+
+
   return (
 
     <div>
