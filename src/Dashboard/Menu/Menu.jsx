@@ -1,4 +1,4 @@
-import React from 'react';
+import customerCare from '../../assets/images/customer-care-icon.png';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
@@ -8,12 +8,31 @@ import { MdLocationPin, MdOutlineExitToApp, MdLibraryBooks } from "react-icons/m
 const Menu = () => {
     const { user, logout } = useContext(AuthContext);
     console.log(user);
+
+    const handleLogout = () => {
+        logout()
+            .then(() => {
+                // navigate({to:"/"})
+
+                console.log("logout completed");
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className='p-5'>
-            <h1 className='ps-5 text-xl'>
-                Hi, <br />
-                {user.displayName}
-            </h1>
+            <div className='flex justify-between pe-10'>
+                <h1 className='ps-5 text-xl'>
+                    Hi, <br />
+                    {user?.displayName}
+                </h1>
+                <div className='flex items-center gap-2'>
+                    <img className='w-10' src={customerCare} alt="" />
+                    <h2 className='text-xl font-pppins'>Hotline: 09611305423</h2>
+                </div>
+            </div>
             <div className='flex flex-col mt-14 divide-y w-1/2'>
                 <Link to="/dashboard/profile">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
@@ -25,16 +44,14 @@ const Menu = () => {
                         <MdLocationPin />Address
                     </h1>
                 </Link>
-                <Link to="/">
+                <Link to="/dashboard/terms-coditions">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
                         <MdLibraryBooks />Terms & Conditions
                     </h1>
                 </Link>
-                <Link to="/">
-                    <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
-                        <MdOutlineExitToApp />Logout
-                    </h1>
-                </Link>
+                <button onClick={handleLogout} className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
+                    <MdOutlineExitToApp />Logout
+                </button>
 
 
             </div>

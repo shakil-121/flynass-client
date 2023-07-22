@@ -8,7 +8,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
             <div className='w-full md:w-[600px] flex flex-col  rounded-lg'>
-                <button onClick={() => onClose()} className="btn btn-circle btn-outline border-[#E4D804] text-white place-self-end">
+                <button onClick={() => onClose()} className="btn btn-circle btn-outline border-black place-self-end">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 <div className='bg-[#1E62D4] rounded-md p-10'>

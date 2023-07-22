@@ -159,21 +159,15 @@ const Dashboard = () => {
                                 Service</Link>
                             </li>
                             <li>
-                        <Link to="menu">
-                          <FaBars />
-                          Menu</Link>
-                      </li>
+                              <Link to="menu">
+                                <FaBars />
+                                Menu</Link>
+                            </li>
                           </>
                       }
                     </div>
                 }
 
-              </div>
-              <div className="absolute bottom-10 flex flex-col gap-3">
-                <h2>Hotline: 09611305423</h2>
-                <button className="btn bg-[red] text-white" onClick={handleLogout}><NavLink to="/">
-                  LogOut
-                </NavLink><FaSignOutAlt></FaSignOutAlt> </button>
               </div>
             </div>
           </ul>

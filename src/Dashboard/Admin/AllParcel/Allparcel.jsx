@@ -55,6 +55,9 @@ const AllParcel = () => {
                             </div>
                         </td>
                         <td>
+                            <p>{parcel._id}</p>
+                        </td>
+                        <td>
                             <div className='flex flex-col gap-1'>
                                 <span>1200.00</span>
                                 <div className="dropdown dropdown-bottom text-black">
@@ -65,14 +68,7 @@ const AllParcel = () => {
                                 </div>
                             </div>
                         </td>
-                        <td>
-                            <div className='flex flex-col gap-1'>
-                                <span>Name: Rabbi Mia</span>
-                                <span>01303329413</span>
-                                <span>Madargonj</span>
-                                <span>Jamalpur</span>
-                            </div>
-                        </td>
+
                         <td>
                             <div className='flex flex-col gap-1'>
                                 <span>Delivery - 90.00</span>
