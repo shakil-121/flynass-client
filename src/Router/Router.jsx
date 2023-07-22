@@ -17,6 +17,8 @@ import MultiPercel from "../Dashboard/MyParcel/MultiPercel";
 import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
 import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
 import Menu from "../Dashboard/Menu/Menu";
+import TermsAndConditions from "../Pages/Terms&Conditions/TermsAndConditions";
+import Invoice from "../Component/Invoice/Invoice";
 
 const router = createBrowserRouter([
   {
@@ -83,19 +85,27 @@ const router = createBrowserRouter([
       },
       {
         path: "merchant-analysis",
-        element: <MerchantAnalysis/>
+        element: <MerchantAnalysis />
       },
       {
         path: "admin-analysis",
         element: <AdminAnalysis></AdminAnalysis>
       },
       {
-        path:"multi_parcel",
-        element:<MultiPercel></MultiPercel>
+        path: "invoice/:id",
+        element: <Invoice></Invoice>
+      },
+      {
+        path: "multi_parcel",
+        element: <MultiPercel></MultiPercel>
       },
       {
         path: "menu",
         element: <Menu></Menu>
+      },
+      {
+        path: 'terms-coditions',
+        element: <TermsAndConditions></TermsAndConditions>
       }
     ]
   }

@@ -1796,13 +1796,14 @@ const CreateParcel = ({ isVisible, onClose }) => {
               <div className="form-control my-2">
                 {currentDistrict === "Dhaka" && currentDistrict!="Dhaka_Sub_Area"   ?  (
                   <>
-                    <div className="text-black">
+                    <div className="text-black ">
                       <Select
                         options={deliveryChargeDhaka}
                         // defaultInputValue={deliveryChargeDhaka[0].label}
                         defaultValue="Select Product Weight"
                         onChange={handledelivarycharge}
                         isSearchable
+                        
                       />
                     </div>
                   </>
@@ -1828,7 +1829,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
               <div>
                 {currentDistrict === "Dhaka_Sub_Area" ?
                  <>
-                  <div>
+                  <div className="text-black">
                     <Select
                       options={deliveryChargeDhakaSubArea}
                       defaultValue="Select Product Weight"

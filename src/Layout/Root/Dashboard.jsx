@@ -89,11 +89,6 @@ const Dashboard = () => {
                         </NavLink>
                       </li>
                       <li>
-                        <Link to="">
-                          <FaUserGraduate />
-                          Profile</Link>
-                      </li>
-                      <li>
                         <Link to="all-parcel">
                           <FaShoppingCart />
                           All Parcel</Link>
@@ -147,11 +142,6 @@ const Dashboard = () => {
                               <Link to="merchant-analysis">
                                 <AiFillShopping />
                                 Dashboard</Link>
-                            </li>
-                            <li>
-                              <Link to="">
-                                <FaUserGraduate />
-                                Profile</Link>
                             </li>
                             <li>
                               <Link to="my-parcel">
