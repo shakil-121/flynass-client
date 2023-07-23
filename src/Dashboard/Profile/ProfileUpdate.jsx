@@ -13,8 +13,9 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const form = event.target;
         const name = form.name.value;
         const phone = form.phone.value;
-        const address = form.address.value;
-        const updateProfileInfo = { name, phone, address }
+        const address = form.address.value; 
+        console.log(address);
+        const updateProfileInfo = { name, phone,address }
 
         fetch(`http://localhost:5000/user/update/${userInfo._id}`, {
             method: 'PUT',
@@ -56,7 +57,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                             <div className='grid grid-cols-2 gap-2'>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Your Name</label>
-                                    <input type='text' name="name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Enter Name' defaultValue={userInfo.name} />
+                                    <input type='text' name="name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder={userInfo.name} />
                                 </div>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Phone</label>
