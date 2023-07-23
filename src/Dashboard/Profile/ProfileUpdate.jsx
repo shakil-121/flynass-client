@@ -16,7 +16,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const address = form.address.value;
         const updateProfileInfo = { name, phone, address }
 
-        fetch(`http://localhost:5000/user/:${userInfo._id}`, {
+        fetch(`http://localhost:5000/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateProfileInfo)

@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import DeliveryPercnet from './DeliveryPercnet';
 import { useQuery } from '@tanstack/react-query';
 import Slider from '../../Component/Slider';
+import { useState } from 'react';
+import ProfileUpdate from '../Profile/ProfileUpdate';
+import ParcelModal from '../../Component/ParcelModal/ParcelModal';
 
 const MerchantAnalysis = () => {
+    const [showModal, setShowModal] = useState(false);
     const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
         const res = await fetch('http://localhost:5000/orders')
         return res.json();
@@ -28,76 +32,76 @@ const MerchantAnalysis = () => {
             </div>
             <div className='grid grid-cols-4 gap-10 mt-10'>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(parcel)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Total Parcel</h1>
+                            <h1 className='text-gray-400'>parcel Parcel</h1>
                             <h1 className='text-blue-800'>{parcel?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(pending)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
                             <h1 className='text-gray-400'>Pending Parcel</h1>
                             <h1 className='text-blue-800'>{pending?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(picked)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Picked</h1>
+                            <h1 className='text-gray-400'>picked Parcel</h1>
                             <h1 className='text-blue-800'>{picked?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(onWay)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>On The Way</h1>
+                            <h1 className='text-gray-400'>onWay Parcel</h1>
                             <h1 className='text-blue-800'>{onWay?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(hold)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Hold</h1>
+                            <h1 className='text-gray-400'>hold Parcel</h1>
                             <h1 className='text-blue-800'>{hold?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(delivered)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Delivered</h1>
+                            <h1 className='text-gray-400'>delivered Parcel</h1>
                             <h1 className='text-blue-800'>{delivered?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(returned)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Return</h1>
+                            <h1 className='text-gray-400'>returned Parcel</h1>
                             <h1 className='text-blue-800'>{returned?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(returnedToMerchant)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Return To Merchant</h1>
+                            <h1 className='text-gray-400'>returned To Merchant</h1>
                             <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
                 <div>
-                    <Link to='dashboard/my-parcel'>
+                    <button onClick={() => setShowModal(reject)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Reject</h1>
+                            <h1 className='text-gray-400'>reject Parcel</h1>
                             <h1 className='text-blue-800'>{reject?.length}</h1>
                         </div>
-                    </Link>
+                    </button>
                 </div>
             </div>
 
@@ -120,6 +124,7 @@ const MerchantAnalysis = () => {
 
                 </div>
             </div>
+            <ParcelModal isVisible={showModal} onClose={() => setShowModal(false)} ></ParcelModal>
         </div>
     );
 };

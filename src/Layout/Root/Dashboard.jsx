@@ -32,7 +32,7 @@ const Dashboard = () => {
   const currentUser = allUsers.find(item => item.email === loggedInUser)
   const role = currentUser?.role;
 
-  console.log(role);
+  // console.log(role);
 
   const handleLogout = () => {
     logout()
@@ -69,7 +69,7 @@ const Dashboard = () => {
           {/* <Profile></Profile> */}
 
         </div>
-        <div className="drawer-side z-30">
+        <div className="drawer-side z-20">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full rounded-md bg-white">
             <div className="mb-10">
@@ -140,7 +140,7 @@ const Dashboard = () => {
                           <>
                             <li>
                               <Link to="merchant-analysis">
-                                <AiFillShopping />
+                                <MdOutlineDashboard />
                                 Dashboard</Link>
                             </li>
                             <li>
