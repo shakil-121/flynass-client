@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import useAuth from "../Hooks/useAuth" 
 import Swal from 'sweetalert2'
+import useUserInfo from '../Hooks/useUserInfo';
 
 
 const CSVUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   // const [userEmail, setUserEmail] = useState(''); 
   const {user}=useAuth()
+  const userInfo=useUserInfo()
   // console.log(user.email);
-
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -25,6 +26,7 @@ const CSVUpload = () => {
     
     formData.append('csvFile', selectedFile);
     formData.append('user_email', user?.email);
+    formData.append('marchent', userInfo?._id);
     console.log();
 
     axios
@@ -35,13 +37,13 @@ const CSVUpload = () => {
       })
       .then((response) => {
         console.log(response);
-        if(response.data.insertedId)
+        if(response)
         {
           Swal.fire({
             icon: 'success',
             title: 'Order Status',
             text: 'Order Successfully Added',
-            footer: '<a href="">Why do I have this issue?</a>'
+            footer: 'Please , Reload this page for Another Multi-order'
           })
         } 
         
@@ -53,7 +55,7 @@ const CSVUpload = () => {
 
   return (
     <div>
-     <div className='px-10 py-5 border border-stone-500 w-1/4'>
+     <div className='px-10 py-5 border border-stone-500 md:w-[35%] w-[40%]'>
      <input  type="file" onChange={handleFileChange} required/>
      </div>
       {/* <input type="text" placeholder="User Email" onChange={handleUserEmailChange} /> */}
