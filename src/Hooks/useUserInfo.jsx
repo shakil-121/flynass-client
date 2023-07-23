@@ -8,7 +8,7 @@ const useUserInfo = () => {
     // console.log(user);
     
     const {data: userInfo } = useQuery({
-        queryKey: ['carts', user?.email],
+        queryKey: ['user', user?.email],
         // enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure(`/user/${user?.email}`)

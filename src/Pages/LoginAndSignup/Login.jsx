@@ -4,8 +4,10 @@ import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./Login.css"
+import { useState } from "react";
 
 const Login = () => {
+  const [error, setError] = useState('');
 
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef()
@@ -20,9 +22,10 @@ const Login = () => {
       .then((result) => {
         const loggeduser = result.user;
         toast("Login Successfully");
-        <NavLink to="/dashboard"/>
+        <NavLink to="/dashboard" />
       }).catch((error) => {
         console.log(error);
+        setError('Email/Password Wrong');
       });
   };
 
@@ -80,22 +83,15 @@ const Login = () => {
                 className="input input-bordered border-slate-300 text-black"
               />
             </div>
-
+            <div className="text-center mt-2 mb-2 text-red-500">
+              <p>{error}</p>
+            </div>
             <Link className="text-decoration-none text-sky-600"><small onClick={handelresetpassword}>Forget Password</small></Link>
 
             <div className="form-control mt-6">
               <button className="btn bg-zinc-950 border-none text-white hover:text-black">
                 Login
               </button>
-            </div>
-            {/* <p className="text-center text-red-600">{error}</p> */}
-            <p className="text-center text-black text-lg font-semibold">
-              Or Sign-in with
-            </p>
-            <div onClick={handleloginwithgoogle} className="flex text-center gap-8 py-4 justify-center">
-              <Link>
-                <FaGoogle className="text-black h-6 w-6"></FaGoogle>
-              </Link>
             </div>
           </form>
           <p className="text-center text-black pb-6">

@@ -2,7 +2,7 @@ import React from 'react';
 import "../../MyParcel/CreateParcel.css";
 import { useQuery } from '@tanstack/react-query';
 import UsersInfo from './UsersInfo';
-import { FaTrash, FaTrashAlt } from 'react-icons/fa';
+import { FaTrash, FaTrashAlt, FaUserTie } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const CreateAdmin = ({ isVisible, onClose }) => {
@@ -88,7 +88,7 @@ const CreateAdmin = ({ isVisible, onClose }) => {
                                         :
                                         <>
                                             {
-                                                user?.role === 'superAdmin' ? <p>SuperAdmin</p>
+                                                user?.role === 'superAdmin' ? <p className='text-red-400 font-pppins'>SuperAdmin</p>
                                                     :
                                                     <button onClick={() => handleMakeAdmin(user)} className='btn btn-primary'>Make Admin</button>
                                             }
@@ -96,7 +96,11 @@ const CreateAdmin = ({ isVisible, onClose }) => {
                                 }
                             </td>
                             <td>
-                                <button onClick={() => handleAdminDelete(user._id)} className='text-[#D53343]'><FaTrashAlt /></button>
+                                {
+                                    user?.role === 'superAdmin' ? <p><FaUserTie /></p>
+                                        :
+                                        <button onClick={() => handleAdminDelete(user._id)} className='text-[#D53343]'><FaTrashAlt /></button>
+                                }
                             </td>
                         </tr>)
                     }
