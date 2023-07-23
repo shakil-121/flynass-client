@@ -9,11 +9,11 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         event.preventDefault();
         const form = event.target;
         const to_address = form.to_address.value;
-        const updateInformation = {to_address: to_address}
-        console.log(to_address);
+        const updateInformation = {to_address}
+        console.log(updateInformation);
         fetch(`http://localhost:5000/orders/${invoiceParcel._id}`, {
-            method: 'PATCH',
-            headers: {contentType: 'application/json'},
+            method: 'PUT',
+            headers: {'content-type': 'application/json'},
             body: JSON.stringify(updateInformation)
         });
         Swal.fire({

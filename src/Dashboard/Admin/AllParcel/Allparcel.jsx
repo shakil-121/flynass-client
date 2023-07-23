@@ -14,8 +14,8 @@ const AllParcel = () => {
         <div className='rounded-md p-2 h-full'>
             <h1 className='text-4xl  font-pppins mb-10'>All Parcel</h1>
 
-            <div className='bg-sky-400 rounded-md p-10 '>
-                <table className="table lg:w-full overflow-x-auto overflow-y-auto w-[1200px]">
+            <div className='bg-sky-400 rounded-md p-10 overflow-x-auto '>
+                <table className="table table-xs table-pin-rows table-pin-cols">
                     <tr className='text-center bg-gray-400 text-black grid md:grid-cols-9'>
                         <th>No.</th>
                         <th>Merchant <br />
@@ -54,8 +54,8 @@ const AllParcel = () => {
                                 </ul>
                             </div>
                         </td>
-                        <td>
-                            <p>{parcel._id}</p>
+                        <td className='m-4 bg-red-300'>
+                            <p>123</p>
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>

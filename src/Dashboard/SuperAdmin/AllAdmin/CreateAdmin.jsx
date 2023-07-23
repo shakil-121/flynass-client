@@ -38,56 +38,23 @@ const CreateAdmin = ({ isVisible, onClose }) => {
         });
     };
 
-    // const handleMakeAdmin = id => {
-    //     fetch(`http://localhost:5000/user/status/${id}`, {
-    //         method: 'PATCH'
-    //     }
-    //     )
-    //     // console.log(id);
-    //     // const role = "admin";
-    //     // Swal.fire({
-    //     //     title: "Are you sure?",
-    //     //     text: "You want to be make Admin!",
-    //     //     icon: "warning",
-    //     //     showCancelButton: true,
-    //     //     confirmButtonColor: "#3085d6",
-    //     //     cancelButtonColor: "#d33",
-    //     //     confirmButtonText: "Yes, admin it!",
-    //     // }).then((result) => {
-    //     //     if (result.isConfirmed) {
-    //     //         fetch(`http://localhost:5000/user/status/${id}`, {
-    //     //             method: "PATCh",
-    //     //         })
-    //     //             .then((res) => res.json())
-    //     //             .then((data) => {
-    //     //                 refetch();
-    //     //                 if (data.deletedCount > 0) {
-    //     //                     Swal.fire("Now this user is Admin");
-    //     //                 }
-    //     //             });
-    //     //     }
-    //     // });
-    // };
-
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/user/status/${user._id}`, {
-          method: "PATCH",
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: "PATCH",
         })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.modifiedCount) {
-              refetch();
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: `${user.name} is an Admin Now!`,
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
-          });
-      };
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Done...',
+                        text: 'This user is admin now'
+                    })
+                }
+            });
+    };
 
 
 
@@ -117,9 +84,15 @@ const CreateAdmin = ({ isVisible, onClose }) => {
                             <td>{user.email}</td>
                             <td>
                                 {
-                                    user?.role === 'admin' ? <p>Admin</p> : <>
-                                        <button onClick={() => handleMakeAdmin(user)} className='btn btn-primary'>Make Admin</button>
-                                    </>
+                                    user?.role === 'admin' ? <p>Admin</p>
+                                        :
+                                        <>
+                                            {
+                                                user?.role === 'superAdmin' ? <p>SuperAdmin</p>
+                                                    :
+                                                    <button onClick={() => handleMakeAdmin(user)} className='btn btn-primary'>Make Admin</button>
+                                            }
+                                        </>
                                 }
                             </td>
                             <td>
