@@ -43,7 +43,7 @@ const AllParcel = () => {
                         <td>7/10/2023</td>
                         <td>
                             <div className="dropdown dropdown-bottom text-black">
-                                <label tabIndex={0} className="font-pppins">Panding</label>
+                                <label tabIndex={0} className="font-pppins">{parcel.status}</label>
                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
                                     <li><a>Picked</a></li>
                                     <li><a>On The Way</a></li>
@@ -54,12 +54,12 @@ const AllParcel = () => {
                                 </ul>
                             </div>
                         </td>
-                        <td className='m-4 bg-red-300'>
-                            <p>123</p>
+                        <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {parcel._id}
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>
-                                <span>1200.00</span>
+                                <span>{parcel.product_amount}Tk.</span>
                                 <div className="dropdown dropdown-bottom text-black">
                                     <label tabIndex={0} className="font-pppins">due</label>
                                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
@@ -71,16 +71,15 @@ const AllParcel = () => {
 
                         <td>
                             <div className='flex flex-col gap-1'>
-                                <span>Delivery - 90.00</span>
-                                <span>COD - 5.53</span>
+                                <span>Delivery - {parcel.delivary_Charge}Tk</span>
+                                <span>COD - {parcel.cod}Tk</span>
                             </div>
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>
-                                <span>Name: Rabbi Mia</span>
-                                <span>01303329413</span>
-                                <span>Madargonj</span>
-                                <span>Jamalpur</span>
+                                <small>{parcel.name}</small>
+                                <small>{parcel.phone}</small>
+                                <small>{parcel.to_address}</small>
                             </div>
                         </td>
                         <td>
