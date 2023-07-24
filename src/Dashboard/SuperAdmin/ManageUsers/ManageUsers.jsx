@@ -60,7 +60,9 @@ const ManageUsers = () => {
                         <td>
                             <button onClick={() => setShowModal(user._id)} className="btn bg-[#1E62D4] text-white">Info</button>
                         </td>
-                        <td><button onClick={() => handleUserDelete(user._id)}><FaTrashAlt className='text-[#D53343]' /></button></td>
+                        <td>
+                            <button onClick={() => handleUserDelete(user._id)}><FaTrashAlt className='text-[#D53343]' /></button>
+                        </td>
                     </tr>)
                 }
             </div>

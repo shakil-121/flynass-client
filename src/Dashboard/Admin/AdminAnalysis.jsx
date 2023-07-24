@@ -4,8 +4,38 @@ import Slider from "../../Component/Slider";
 // import Slider from "../../Component/Slider/Slider";
 import support from "../../assets/images/customer-service.png"
 import { FaPhoneAlt } from "react-icons/fa";
+import ParcelEdit from "../../Component/ParcelEdit/ParcelEdit";
+import { useQuery } from "@tanstack/react-query";
+import AdminParcelModal from "../../Component/AdminParcelModal/AdminParcelModal";
+import { useEffect } from "react";
 
 const AdminAnalysis = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [todaysParcel, setTodaysParcel] = useState([]);
+
+  const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
+    const res = await fetch('http://localhost:5000/orders')
+    return res.json();
+  })
+
+  useEffect(() => {
+    fetch('http://localhost:5000/orders/today')
+      .then(res => res.json())
+      .then(data => setTodaysParcel(data))
+  }, [todaysParcel])
+
+  const pending = parcel.filter(item => item.status === "pending");
+  const picked = parcel.filter(item => item.status === "picked");
+  const onWay = parcel.filter(item => item.status === "on the way");
+  const hold = parcel.filter(item => item.status === "hold");
+  const delivered = parcel.filter(item => item.status === "delivered");
+  const returned = parcel.filter(item => item.status === "returned");
+  const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
+  const reject = parcel.filter(item => item.status === "reject");
+
+
+
+
   const data01 = [
     { name: 'Total Order', value: 400 },
     { name: 'Complete Order', value: 300 }
@@ -14,34 +44,86 @@ const AdminAnalysis = () => {
   return (
     <div className="h-auto">
       <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-8 font-pppins">
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8 text">
-          <h1 className="text-2xl text-blue-700">15</h1>
-          <h1 className="text-xl text-gray-400">Total Order</h1>
+      <div className='grid grid-cols-4 gap-10 mt-10'>
+        <div>
+          <button onClick={() => setShowModal(todaysParcel)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>Today Parcel</h1>
+              <h1 className='text-blue-800'>{todaysParcel?.length}</h1>
+            </div>
+          </button>
         </div>
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl text-blue-700">25</h1>
-          <h1 className="text-xl text-gray-400">Todays Order</h1>
+        <div>
+          <button onClick={() => setShowModal(parcel)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>Total Parcel</h1>
+              <h1 className='text-blue-800'>{parcel?.length}</h1>
+            </div>
+          </button>
         </div>
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl text-blue-700">35</h1>
-          <h1 className="text-xl text-gray-400">On The Way</h1>
+        <div>
+          <button onClick={() => setShowModal(pending)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>Pending Parcel</h1>
+              <h1 className='text-blue-800'>{pending?.length}</h1>
+            </div>
+          </button>
         </div>
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl text-blue-700">15</h1>
-          <h1 className="text-xl text-gray-400">Hold Order</h1>
+        <div>
+          <button onClick={() => setShowModal(picked)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>picked Parcel</h1>
+              <h1 className='text-blue-800'>{picked?.length}</h1>
+            </div>
+          </button>
         </div>
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl text-blue-700">15</h1>
-          <h1 className="text-xl text-gray-400">Delivered</h1>
+        <div>
+          <button onClick={() => setShowModal(onWay)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>onWay Parcel</h1>
+              <h1 className='text-blue-800'>{onWay?.length}</h1>
+            </div>
+          </button>
         </div>
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl text-blue-700">15</h1>
-          <h1 className="text-xl text-gray-400">Return</h1>
+        <div>
+          <button onClick={() => setShowModal(hold)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>hold Parcel</h1>
+              <h1 className='text-blue-800'>{hold?.length}</h1>
+            </div>
+          </button>
         </div>
-        <div className="bg-[#E8F6FC] rounded-md flex flex-col justify-center items-center py-8">
-          <h1 className="text-2xl text-blue-700">15</h1>
-          <h1 className="text-xl text-center text-gray-400">Return To <span className="text-xl">Merchent</span></h1>
+        <div>
+          <button onClick={() => setShowModal(delivered)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>delivered Parcel</h1>
+              <h1 className='text-blue-800'>{delivered?.length}</h1>
+            </div>
+          </button>
+        </div>
+        <div>
+          <button onClick={() => setShowModal(returned)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>returned Parcel</h1>
+              <h1 className='text-blue-800'>{returned?.length}</h1>
+            </div>
+          </button>
+        </div>
+        <div>
+          <button onClick={() => setShowModal(returnedToMerchant)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>returned To Merchant</h1>
+              <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
+            </div>
+          </button>
+        </div>
+        <div>
+          <button onClick={() => setShowModal(reject)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>reject Parcel</h1>
+              <h1 className='text-blue-800'>{reject?.length}</h1>
+            </div>
+          </button>
         </div>
       </div>
       <div>
@@ -74,6 +156,7 @@ const AdminAnalysis = () => {
           <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt /> 09611305423</h2>
         </div>
       </div>
+      <AdminParcelModal isVisible={showModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
     </div>
   );
 };
