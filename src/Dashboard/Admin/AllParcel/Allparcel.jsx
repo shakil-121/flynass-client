@@ -68,7 +68,6 @@ const AllParcel = () => {
                                 </div>
                             </div>
                         </td>
-
                         <td>
                             <div className='flex flex-col gap-1'>
                                 <span>Delivery - {parcel.delivary_Charge}Tk</span>

@@ -33,13 +33,22 @@ const AdminAnalysis = () => {
   const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
   const reject = parcel.filter(item => item.status === "reject");
 
+  // delivery percentage calculation
+  const returnParcel = (returnedToMerchant.length);
+  const devlieryParcel = (delivered.length);
+  const totalParcel = (returnParcel + devlieryParcel);
 
+  const returnPercentage = (returnParcel * 100 / totalParcel).toFixed(2)
+  const deliveryPercentage = (devlieryParcel * 100 / totalParcel).toFixed(2)
+  console.log(returnPercentage, deliveryPercentage);
 
 
   const data01 = [
-    { name: 'Total Order', value: 400 },
-    { name: 'Complete Order', value: 300 }
+    { name: 'Return Percentage', value: parseFloat(returnPercentage) },
+    { name: 'Delivery Percentage', value: parseFloat(deliveryPercentage) }
   ];
+
+
 
   return (
     <div className="h-auto">

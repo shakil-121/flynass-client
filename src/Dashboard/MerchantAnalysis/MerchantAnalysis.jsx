@@ -118,7 +118,7 @@ const MerchantAnalysis = () => {
                     </div>
                 </div>
                 <div>
-                    {/* <DeliveryPercnet></DeliveryPercnet> */}
+                    <DeliveryPercnet></DeliveryPercnet>
                 </div>
                 <div>
 
