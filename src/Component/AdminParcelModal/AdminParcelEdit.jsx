@@ -1,9 +1,8 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 
-const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
+const AdminParcelEdit = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
-    // console.log(invoiceParcel);
 
     const handleParcelUpdate = event => {
         event.preventDefault();
@@ -11,7 +10,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         const to_address = form.to_address.value;
         const updateInformation = {to_address}
         console.log(updateInformation);
-        fetch(`http://localhost:5000/orders/${invoiceParcel._id}`, {
+        fetch(`http://localhost:5000/orders/${isVisible._id}`, {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(updateInformation)
@@ -23,7 +22,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         })
 
     }
-    
+
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
             <div className='w-full md:w-[600px] flex flex-col  rounded-lg'>
@@ -33,25 +32,25 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
                 <div className='bg-[#1E62D4] rounded-md p-10'>
                     <h1 className='text-white text-3xl font-pppins text-center'>Edit Parcel Information</h1>
                     <div>
-                        <h2 className='text-center text-xl text-white mt-5 font-pppins'>Merchant_ID: {invoiceParcel.marchent_id}</h2>
+                        <h2 className='text-center text-xl text-white mt-5 font-pppins'>Merchant_ID: {isVisible.marchent_id}</h2>
                         <form onSubmit={handleParcelUpdate}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">From </span>
                                 </label>
-                                <input type="text" placeholder="email" defaultValue={invoiceParcel.from_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="email" defaultValue={isVisible.from_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">To </span>
                                 </label>
-                                <input type="text" placeholder="Enter address" name="to_address" defaultValue={invoiceParcel.to_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="Enter address" name="to_address" defaultValue={isVisible.to_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">Delivery Chare</span>
                                 </label>
-                                <input type="text" name="total_amount" placeholder={invoiceParcel.total_amount} className="input input-bordered focus:outline-none" />
+                                <input type="text" name="total_amount" placeholder={isVisible.total_amount} className="input input-bordered focus:outline-none" />
                             </div>
                             <input className='btn btn-block mt-5' type="submit" value="Update" />
                         </form>
@@ -62,4 +61,4 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
     );
 };
 
-export default ParcelEdit;
+export default AdminParcelEdit;

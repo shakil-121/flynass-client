@@ -971,7 +971,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 <input
                   type="text"
                   placeholder="Enter Your Address"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   name="from_address"
                   {...register("from_address", { required: true })}
                 />
