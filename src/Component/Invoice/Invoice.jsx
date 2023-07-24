@@ -10,6 +10,7 @@ const Invoice = () => {
     const parcelId = useParams();
     const allParce = useParcel();
     const invoiceParcel = allParce.find(parcel => parcel._id === parcelId.id);
+    const payableAmount = (parseFloat(invoiceParcel.total_amount) + parseFloat(invoiceParcel.product_amount));
 
     return (
         <div className='flex justify-center items-center h-full'>
@@ -27,9 +28,13 @@ const Invoice = () => {
                     <div className='p-5'>
                         <h1 className='text-xl text-center font-pppins mb-10'>Tracking ID: <br /> {invoiceParcel._id}</h1>
                         <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel.name}</span></h2>
-                        <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel.phone}</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Phone: <span>{invoiceParcel.phone}</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Cutomer Address: <span>{invoiceParcel.to_address}</span></h2>
-                        <h2 className='text-2xl font-serif mb-3'>Price: <span>{invoiceParcel.total_amount}Tk.</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Delivery Charge: <span>{invoiceParcel.total_amount}Tk.</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel.product_amount}Tk.</span></h2>
+                        <hr className='border-2' />
+                        <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{payableAmount}Tk.</span></h2>
+
                         <h2 className='text-2xl font-serif mt-10 text-center'>[Merchant Copy]</h2>
                         <p className='text-center font-serif'>www.flynass.com</p>
                     </div>

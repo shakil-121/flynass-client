@@ -28,7 +28,7 @@ const MerchantAnalysis = () => {
     return (
         <div className='h-full p-8 rounded-md'>
             <div>
-                <Slider />
+                {/* <Slider /> */}
             </div>
             <div className='grid grid-cols-4 gap-10 mt-10'>
                 <div>
@@ -118,7 +118,7 @@ const MerchantAnalysis = () => {
                     </div>
                 </div>
                 <div>
-                    <DeliveryPercnet></DeliveryPercnet>
+                    {/* <DeliveryPercnet></DeliveryPercnet> */}
                 </div>
                 <div>
 
