@@ -10,7 +10,7 @@ const WhatWeDo = () => {
             <div className='max-w-screen-xl mx-auto 2xl:px-0 md:px-16 px-4'>
                 <div className='text-center'>
                 <SectionTitle 
-                    heading="Specialist Logistics Services"
+                    heading="Specialist parcel delivery Services"
                     subHeading="What We Do!">
                 </SectionTitle>
                 </div>

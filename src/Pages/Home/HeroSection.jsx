@@ -40,14 +40,14 @@ const HeroSection = () => {
         <SwiperSlide>
           <div className="md:h-[90vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[80%] px-10 py-4">
-              <h1 className="text-design text-base md:text-9xl text-white font-bold mt-32">
+              <h1 className="text-design text-base md:text-6xl text-white font-bold mt-32">
                 {" "}
                 WHOLE
               </h1>
-              <h1 className="text-base md:text-9xl text-white font-bold">BANGLADESH</h1>
+              <h1 className="text-base md:text-6xl text-white font-bold">BANGLADESH</h1>
               <br />
               <br />
-              <p className="text-white text-2xl">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, <br /> nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
+              <p className="text-white text-xl">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, <br /> nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
               <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">VIEW SERVICES</button>
 
             </div>
@@ -59,13 +59,13 @@ const HeroSection = () => {
         <SwiperSlide>
           <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
-              <h1 className="text-design text-9xl text-white font-bold mt-32">
+              <h1 className="text-design text-6xl text-white font-bold mt-32">
                 TO EVERY
               </h1>
-              <h1 className="text-9xl text-white font-bold">DISTRICT</h1>
+              <h1 className="text-6xl text-white font-bold">DISTRICT</h1>
               <br />
               <br />
-              <p className="text-white text-2xl">
+              <p className="text-white text-xl">
                 Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.
               </p>{" "}
               <br />
@@ -81,13 +81,13 @@ const HeroSection = () => {
         <SwiperSlide>
           <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
-              <h1 className="text-design text-9xl text-white font-bold mt-32">
+              <h1 className="text-design text-6xl text-white font-bold mt-32">
                 READY
               </h1>
-              <h1 className="text-9xl text-white font-bold">TO MOVE</h1>
+              <h1 className="text-6xl text-white font-bold">TO MOVE</h1>
               <br />
               <br />
-              <p className="text-white text-2xl">
+              <p className="text-white text-xl">
                 Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.
               </p>
               <br />
