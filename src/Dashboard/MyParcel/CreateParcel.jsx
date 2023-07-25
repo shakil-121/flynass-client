@@ -1787,6 +1787,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       placeholder="Amount"
                       className="input input-bordered text-black"
                     // {...register("product_amount", { required: true })}
+                    required
                     />
                   </div>
                 </>

@@ -14,18 +14,17 @@ const AllParcel = () => {
         <div className='rounded-md p-2 h-full'>
             <h1 className='text-4xl  font-pppins mb-10'>All Parcel</h1>
 
-            <div className='bg-sky-400 rounded-md p-10 overflow-x-auto '>
+            <div className='bg-sky-400 rounded-md p-10 overflow-auto '>
                 <table className="table table-xs table-pin-rows table-pin-cols">
-                    <tr className='text-center bg-gray-400 text-black grid md:grid-cols-9'>
+                    <tr className='text-center bg-gray-400 text-black grid md:grid-cols-10'>
                         <th>No.</th>
-                        <th>Merchant <br />
-                            Name</th>
+                        <th>Date</th>
                         <th>Status</th>
-                        <th>Product <br />
+                        <th>Tracking <br />
                             ID
                         </th>
                         <th>Percel<br />
-                            Price
+                            Amount
                         </th>
                         <th>Delivery<br />
                             Charge
@@ -35,15 +34,18 @@ const AllParcel = () => {
                         <th>view <br />
                             Invoice
                         </th>
+                        <th>Payable <br />
+                            Amount
+                        </th>
                     </tr>
                 </table>
                 {
-                    allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-9 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
+                    allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-10 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
                         <td>{index + 1}</td>
                         <td>7/10/2023</td>
                         <td>
                             <div className="dropdown dropdown-bottom text-black">
-                                <label tabIndex={0} className="font-pppins">Panding</label>
+                                <label tabIndex={0} className="">{parcel.status}</label>
                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
                                     <li><a>Picked</a></li>
                                     <li><a>On The Way</a></li>
@@ -54,33 +56,23 @@ const AllParcel = () => {
                                 </ul>
                             </div>
                         </td>
-                        <td className='m-4 bg-red-300'>
-                            <p>123</p>
+                        <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {parcel._id}
+                        </td>
+                        <td>
+                            {parcel.product_amount}Tk
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>
-                                <span>1200.00</span>
-                                <div className="dropdown dropdown-bottom text-black">
-                                    <label tabIndex={0} className="font-pppins">due</label>
-                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                        <li><a>Paid</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </td>
-
-                        <td>
-                            <div className='flex flex-col gap-1'>
-                                <span>Delivery - 90.00</span>
-                                <span>COD - 5.53</span>
+                                <span>Delivery - {parcel.delivary_Charge}Tk</span>
+                                <span>COD - {parcel.cod}Tk</span>
                             </div>
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>
-                                <span>Name: Rabbi Mia</span>
-                                <span>01303329413</span>
-                                <span>Madargonj</span>
-                                <span>Jamalpur</span>
+                                <small>{parcel.name}</small>
+                                <small>{parcel.phone}</small>
+                                <small>{parcel.to_address}</small>
                             </div>
                         </td>
                         <td>
@@ -88,6 +80,17 @@ const AllParcel = () => {
                         </td>
                         <td>
                             <Link to={`/dashboard/invoice/${parcel._id}`}><button className="btn btn-primary"><FaEye />Invoice</button></Link>
+                        </td>
+                        <td>
+                            <div className='flex flex-col gap-1'>
+                                <span>{parcel.product_amount}Tk.</span>
+                                <div className="dropdown dropdown-bottom text-black">
+                                    <label tabIndex={0} className="font-pppins">due</label>
+                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                        <li><a>Paid</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </td>
                     </tr>)
                 }

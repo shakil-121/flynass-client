@@ -7,6 +7,8 @@ import Slider from '../../Component/Slider';
 import { useState } from 'react';
 import ProfileUpdate from '../Profile/ProfileUpdate';
 import ParcelModal from '../../Component/ParcelModal/ParcelModal';
+import support from "../../assets/images/customer-service.png"
+import { FaPhoneAlt } from 'react-icons/fa';
 
 const MerchantAnalysis = () => {
     const [showModal, setShowModal] = useState(false);
@@ -24,6 +26,15 @@ const MerchantAnalysis = () => {
     const returned = parcel.filter(item => item.status === "returned");
     const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
     const reject = parcel.filter(item => item.status === "reject");
+
+    // delivery percentage calculation
+    const returnParcel = (returnedToMerchant.length);
+    const devlieryParcel = (delivered.length);
+    const totalParcel = (returnParcel + devlieryParcel);
+
+    const returnPercentage = (returnParcel * 100 / totalParcel).toFixed(2)
+    const deliveryPercentage = (devlieryParcel * 100 / totalParcel).toFixed(2)
+    // console.log(returnPercentage, deliveryPercentage);
 
     return (
         <div className='h-full p-8 rounded-md'>
@@ -118,10 +129,18 @@ const MerchantAnalysis = () => {
                     </div>
                 </div>
                 <div>
-                    {/* <DeliveryPercnet></DeliveryPercnet> */}
+                    <DeliveryPercnet returnPercentage={returnPercentage} deliveryPercentage={deliveryPercentage}></DeliveryPercnet>
                 </div>
                 <div>
 
+                </div>
+            </div>
+            <div className="flex items-center gap-3 bg-[#E8F6FC] p-3 rounded-md me-8">
+                <img className="w-16" src={support} alt="" />
+                <div>
+                    <h1 className="font-pppins">Customer Support</h1>
+                    <h3 className="font-semibold">MD. Sheikh Hasib</h3>
+                    <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt /> 09611305423</h2>
                 </div>
             </div>
             <ParcelModal isVisible={showModal} onClose={() => setShowModal(false)} ></ParcelModal>

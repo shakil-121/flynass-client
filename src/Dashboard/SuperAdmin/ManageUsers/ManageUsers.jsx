@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaInfo, FaTrashAlt } from 'react-icons/fa';
 import UserInformation from './UserInformation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
@@ -41,7 +41,7 @@ const ManageUsers = () => {
 
     return (
         <div className='mt-10'>
-            <h1 className='text-4xl font-pppins mb-5'>Manage Users</h1>
+            <h1 className='text-4xl font-pppins mb-10'>Manage Users</h1>
             <div>
                 <table className="table lg:w-full overflow-x-auto">
                     <tr className='text-center bg-[#1E62D4] text-white grid md:grid-cols-5'>
@@ -58,7 +58,7 @@ const ManageUsers = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>
-                            <button onClick={() => setShowModal(user._id)} className="btn bg-[#1E62D4] text-white">Info</button>
+                            <button onClick={() => setShowModal(user._id)} className="btn bg-blue-800 hover:bg-blue-700 text-white"><FaInfo/>Info</button>
                         </td>
                         <td>
                             <button onClick={() => handleUserDelete(user._id)}><FaTrashAlt className='text-[#D53343]' /></button>
