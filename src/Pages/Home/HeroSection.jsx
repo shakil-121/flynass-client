@@ -38,25 +38,76 @@ const HeroSection = () => {
         className="mySwiper z-10"
       >
         <SwiperSlide>
-          <div className="md:h-[90vh]  bg-gradient-to-l bg-[#1E8FD0] flex">
-            <div className="md:w-[80%] px-10 py-4">
-              <h1 className="text-design text-base md:text-6xl text-white font-bold mt-32">
+          <div className="md:h-[95vh]   bg-gradient-to-l bg-[#1E8FD0]  md:flex flex-col">
+            <div className="md:w-[70%] w-full md:px-10 px-4 py-4">
+             <div className="text-center md:text-left text-6xl md:text-8xl">
+             <h1 className="text-design  text-white font-bold md:mt-32 mt-20">
                 {" "}
                 WHOLE
               </h1>
-              <h1 className="text-base md:text-6xl text-white font-bold">BANGLADESH</h1>
+              <h1 className="  text-white text-4xl md:text-8xl font-bold">BANGLADESH</h1>
+             </div>
               <br />
               <br />
-              <p className="text-white text-xl">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide doorstep delivery, <br /> nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
-              <button className="btn btn-outline rounded-none px-6 border-white text-white text-xl">VIEW SERVICES</button>
-
+              <p className="text-white md:text-xl text-base">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide <br /> doorstep delivery, nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
+              <div className="flex items-center justify-center md:justify-start">
+              <Link to="/services" className="btn btn-outline md:rounded-none rounded-lg  px-6 border-white text-white  md:text-xl text-base ">VIEW SERVICES</Link>
+              </div>
             </div>
-            <div className="background-animated md:w-[24%] md:right-0">
-              <img className="-ms-52 pt-16 mt-28 h-[550px]" src={van} alt="" />
+            <div className="background-animated md:w-[24%] w-full md:right-0">
+              <img className="md:-ms-52 md:pt-16 md:mt-28 h-[550px]" src={van} alt="" />
             </div>
           </div>
         </SwiperSlide>
+
         <SwiperSlide>
+          <div className="md:h-[95vh]   bg-gradient-to-l bg-[#1E8FD0]  md:flex">
+            <div className="md:w-[70%] w-full md:px-10 px-4 py-4">
+             <div className="text-center md:text-left text-6xl md:text-8xl">
+             <h1 className="text-design  text-white font-bold md:mt-32 mt-20">
+                {" "}
+                TO EVERY
+              </h1>
+              <h1 className=" text-white font-bold">DISTRICT</h1>
+             </div>
+              <br />
+              <br />
+              <p className="text-white md:text-xl text-base">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide <br /> doorstep delivery,  nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
+              <div className="flex items-center justify-center md:justify-start">
+              <Link to="/services" className="btn btn-outline md:rounded-none rounded-lg  px-6 border-white text-white  md:text-xl text-base ">VIEW SERVICES</Link>
+              </div>
+            </div>
+            <div className="md:w-[30%] w-full md:right-0  my-auto">
+            <Lottie className="opacity-70" animationData={bikeanimation} loop={true} />
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="md:h-[95vh]   bg-gradient-to-l bg-[#1E8FD0]  md:flex">
+            <div className="md:w-[70%] w-full md:px-10 px-4 py-4">
+             <div className="text-center md:text-left text-6xl md:text-8xl">
+             <h1 className="text-design  text-white font-bold md:mt-32 mt-20">
+                {" "}
+                READY
+              </h1>
+              <h1 className=" text-white font-bold">TO MOVE</h1>
+             </div>
+              <br />
+              <br />
+              <p className="text-white md:text-xl text-base">Flynass is the strongest doorstep delivery network of Bangladesh with nationwide <br /> doorstep delivery,  nationwide doorstep pickup, cash on delivery, warehousing and fulfillment facilities.</p> <br />
+              <div className="flex items-center justify-center md:justify-start">
+              <Link to="/services" className="btn btn-outline md:rounded-none rounded-lg  px-6 border-white text-white  md:text-xl text-base ">VIEW SERVICES</Link>
+              </div>
+            </div>
+            <div className="md:w-[30%] w-full md:right-0  my-auto">
+             <Lottie className="opacity-70" animationData={delivaryanimation} loop={true} />
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* old 2nd slider */}
+        {/* <SwiperSlide>
           <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-6xl text-white font-bold mt-32">
@@ -77,8 +128,10 @@ const HeroSection = () => {
               <Lottie className="opacity-70" animationData={bikeanimation} loop={true} />
             </div>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
+        </SwiperSlide> */}
+
+    {/* old 3rd slider */}
+        {/* <SwiperSlide>
           <div className="h-[90vh] bg-gradient-to-l bg-[#1E8FD0] flex">
             <div className="md:w-[60%] px-10 py-4">
               <h1 className="text-design text-6xl text-white font-bold mt-32">
@@ -99,7 +152,7 @@ const HeroSection = () => {
               <Lottie className="opacity-70" animationData={delivaryanimation} loop={true} />
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );
