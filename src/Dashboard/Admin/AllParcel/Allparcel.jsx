@@ -14,18 +14,17 @@ const AllParcel = () => {
         <div className='rounded-md p-2 h-full'>
             <h1 className='text-4xl  font-pppins mb-10'>All Parcel</h1>
 
-            <div className='bg-sky-400 rounded-md p-10 overflow-x-auto '>
+            <div className='bg-sky-400 rounded-md p-10 overflow-auto '>
                 <table className="table table-xs table-pin-rows table-pin-cols">
-                    <tr className='text-center bg-gray-400 text-black grid md:grid-cols-9'>
+                    <tr className='text-center bg-gray-400 text-black grid md:grid-cols-10'>
                         <th>No.</th>
-                        <th>Merchant <br />
-                            Name</th>
+                        <th>Date</th>
                         <th>Status</th>
-                        <th>Product <br />
+                        <th>Tracking <br />
                             ID
                         </th>
                         <th>Percel<br />
-                            Price
+                            Amount
                         </th>
                         <th>Delivery<br />
                             Charge
@@ -35,15 +34,18 @@ const AllParcel = () => {
                         <th>view <br />
                             Invoice
                         </th>
+                        <th>Payable <br />
+                            Amount
+                        </th>
                     </tr>
                 </table>
                 {
-                    allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-9 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
+                    allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-10 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
                         <td>{index + 1}</td>
                         <td>7/10/2023</td>
                         <td>
                             <div className="dropdown dropdown-bottom text-black">
-                                <label tabIndex={0} className="font-pppins">{parcel.status}</label>
+                                <label tabIndex={0} className="">{parcel.status}</label>
                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
                                     <li><a>Picked</a></li>
                                     <li><a>On The Way</a></li>
@@ -58,15 +60,7 @@ const AllParcel = () => {
                             {parcel._id}
                         </td>
                         <td>
-                            <div className='flex flex-col gap-1'>
-                                <span>{parcel.product_amount}Tk.</span>
-                                <div className="dropdown dropdown-bottom text-black">
-                                    <label tabIndex={0} className="font-pppins">due</label>
-                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                        <li><a>Paid</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {parcel.product_amount}Tk
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>
@@ -86,6 +80,17 @@ const AllParcel = () => {
                         </td>
                         <td>
                             <Link to={`/dashboard/invoice/${parcel._id}`}><button className="btn btn-primary"><FaEye />Invoice</button></Link>
+                        </td>
+                        <td>
+                            <div className='flex flex-col gap-1'>
+                                <span>{parcel.product_amount}Tk.</span>
+                                <div className="dropdown dropdown-bottom text-black">
+                                    <label tabIndex={0} className="font-pppins">due</label>
+                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                        <li><a>Paid</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </td>
                     </tr>)
                 }

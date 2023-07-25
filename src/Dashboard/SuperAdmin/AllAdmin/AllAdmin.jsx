@@ -4,6 +4,7 @@ import CreateAdmin from './CreateAdmin';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import UserInformation from '../ManageUsers/UserInformation';
+import Swal from 'sweetalert2';
 
 const AllAdmin = () => {
     const [showModal, setShowModal] = useState(false);
@@ -16,6 +17,31 @@ const AllAdmin = () => {
 
     const TotalAdmin = allUsers.filter(admin => admin.role === 'admin');
     console.log(TotalAdmin);
+
+    const handleAdminDelete = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want to be Delete  this user!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${id}`, {
+                    method: "DELETE"
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        refetch();
+                        if (data.deletedCount > 0) {
+                            Swal.fire("Deleted!", "User has been delete.", "success");
+                        }
+                    });
+            }
+        });
+    };
 
 
     return (
@@ -45,7 +71,7 @@ const AllAdmin = () => {
                             <button onClick={() => setShowInfo(user._id)} className='flex items-center gap-2 btn bg-[#1E62D4] text-white hover:bg-[#1E62D4]'><FaInfo />Info</button>
                         </td>
                         <td>
-                            <button onClick={() => handleDeleteParcel(user._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
+                            <button onClick={() => handleAdminDelete(user._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
                         </td>
                     </tr>)
                 }
