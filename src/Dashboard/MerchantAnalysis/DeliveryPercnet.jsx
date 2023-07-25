@@ -3,7 +3,10 @@ import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 import useParcel from '../../Hooks/useParcel';
 import { useQuery } from '@tanstack/react-query';
 
-const DeliveryPercnet = () => {
+const DeliveryPercnet = ({deliveryPercentage, returnPercentage}) => {
+    // const delivery = deliveryPercentage;
+    // const returned = returnPercentage;
+    // console.log(delivery, returned);
 
     const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
         const res = await fetch('http://localhost:5000/orders')
@@ -12,8 +15,8 @@ const DeliveryPercnet = () => {
 
 
     const data = [
-        { name: "Delivery Percent", value: 70 },
-        { name: "Return Percent", value: 30 }
+        { name: "Delivery Percent", value: parseFloat(deliveryPercentage) },
+        { name: "Return Percent", value: parseFloat(returnPercentage) }
     ];
     const COLORS = ['#1E62D4', '#FF5733', '#FFBB28', '#FF8042'];
 

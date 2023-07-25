@@ -39,7 +39,7 @@ const Menu = () => {
                         <FaUserPlus />Profile
                     </h1>
                 </Link>
-                <Link to="">
+                <Link to="/dashboard/address">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
                         <MdLocationPin />Address
                     </h1>

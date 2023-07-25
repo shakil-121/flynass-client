@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell, Tooltip } from "recharts";
 import Slider from "../../Component/Slider";
 // import Slider from "../../Component/Slider/Slider";
-import support from "../../assets/images/customer-service.png"
 import { FaPhoneAlt } from "react-icons/fa";
 import ParcelEdit from "../../Component/ParcelEdit/ParcelEdit";
 import { useQuery } from "@tanstack/react-query";
@@ -40,7 +39,7 @@ const AdminAnalysis = () => {
 
   const returnPercentage = (returnParcel * 100 / totalParcel).toFixed(2)
   const deliveryPercentage = (devlieryParcel * 100 / totalParcel).toFixed(2)
-  console.log(returnPercentage, deliveryPercentage);
+  // console.log(returnPercentage, deliveryPercentage);
 
 
   const data01 = [
@@ -157,14 +156,7 @@ const AdminAnalysis = () => {
           </PieChart>
         </div>
       </div>
-      <div className="flex items-center gap-3 bg-[#E8F6FC] p-3 rounded-md me-8">
-        <img className="w-16" src={support} alt="" />
-        <div>
-          <h1 className="font-pppins">Customer Support</h1>
-          <h3 className="font-semibold">MD. Sheikh Hasib</h3>
-          <h2 className="font-semibold flex items-center gap-2"><FaPhoneAlt /> 09611305423</h2>
-        </div>
-      </div>
+      
       <AdminParcelModal isVisible={showModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
     </div>
   );

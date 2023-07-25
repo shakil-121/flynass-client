@@ -19,6 +19,7 @@ import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
 import Menu from "../Dashboard/Menu/Menu";
 import TermsAndConditions from "../Pages/Terms&Conditions/TermsAndConditions";
 import Invoice from "../Component/Invoice/Invoice";
+import Address from "../Dashboard/Address/Address";
 
 const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
       {
         path: 'terms-coditions',
         element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path: "address",
+        element: <Address></Address>
       }
     ]
   }
