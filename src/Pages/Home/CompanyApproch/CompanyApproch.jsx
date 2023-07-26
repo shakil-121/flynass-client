@@ -24,7 +24,7 @@ const CompanyApproch = () => {
           </p>
         </div>
         <div className="mb-10 md:mb-0">
-          <Link to="/covera">
+          <Link to="/signup">
             <button className="bg-[#1E8FD0] rounded-xl px-6 py-3 text-white font-bold">
               Merchant Registration
             </button>

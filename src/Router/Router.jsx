@@ -163,9 +163,10 @@ const router = createBrowserRouter([
       {
         path: "address",
         element: <Address></Address>
-      },
+      }
     ]
-  }
+  },
+  
 ]);
 
 export default router;

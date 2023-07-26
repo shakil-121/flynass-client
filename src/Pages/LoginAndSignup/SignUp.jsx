@@ -159,8 +159,10 @@ const SignUp = () => {
                   placeholder="Type your Phone Number"
                   className="input input-bordered border-slate-300 text-black"
                 />
-              </div>
-              <div class="mb-8">
+              </div> 
+
+              {/* file uploader older version */}
+              {/* <div class="mb-8">
                 <label className="label">
                   <span className="label-text text-lg">Upload your Photo</span>
                 </label>
@@ -187,6 +189,18 @@ const SignUp = () => {
                     </span>
                   </div>
                 </label>
+              </div> */}
+              
+              <div> 
+              <label className="label">
+                  <span className="label-text text-lg">Upload your Photo</span>
+                </label>
+              <input 
+               {...register("image", { required: true })}
+               type="file"
+               name="image"
+               id="file"
+              className="file-input text-black file-input-bordered w-full max-w-xs" />
               </div>
               <div className="form-control">
                 <label className="label">

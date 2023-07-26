@@ -11,7 +11,7 @@ const Faq = () => {
                     data-aos-duration="1500"
                     data-aos-delay="100"
                 >
-                    <h1 className="text-indigo-900 font-pppins my-4 text-xl md:text-4xl font-bold">
+                    <h1 className="text-black font-pppins  text-xl md:text-4xl font-bold">
                         Common Frequently Asked Questions
                     </h1>
                 </div>
