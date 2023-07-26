@@ -21,6 +21,8 @@ import TermsAndConditions from "../Pages/Terms&Conditions/TermsAndConditions";
 import Invoice from "../Component/Invoice/Invoice";
 import Address from "../Dashboard/Address/Address";
 import MerchantHistory from "../Dashboard/MerchantHistory/MerchantHistory";
+import MerchantPayment from "../Dashboard/MerchantPayment/MerchantPayment";
+import AdminDashboard from "../Layout/Root/AdminDashboard";
 
 const router = createBrowserRouter([
   {
@@ -116,9 +118,23 @@ const router = createBrowserRouter([
       {
         path: "history",
         element: <MerchantHistory></MerchantHistory>
+      },
+      {
+        path: "merchant-payment",
+        element: <MerchantPayment></MerchantPayment>
+      }
+    ]
+  },
+  {
+    path: "admin-dashboard",
+    element: <AdminDashboard></AdminDashboard>,
+    children: [
+      {
+        
       }
     ]
   }
+
 ]);
 
 export default router;

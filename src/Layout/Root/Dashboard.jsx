@@ -1,6 +1,6 @@
 import profile from "../../assets/profile.jpg";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { MdOutlineDashboard, MdVerified } from "react-icons/md";
+import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from "react-icons/md";
 import { FaBars, FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, FaUsers, } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { AiFillShopping } from "react-icons/ai";
@@ -69,7 +69,7 @@ const Dashboard = () => {
           {/* <Profile></Profile> */}
 
         </div>
-        <div className="drawer-side z-20">
+        <div className="drawer-side z-20 mt-1">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full rounded-md bg-white">
             <div className="mb-10">
@@ -152,6 +152,11 @@ const Dashboard = () => {
                               <Link to="/dashboard/history">
                                 <FaHistory />
                                 Order History</Link>
+                            </li>
+                            <li>
+                              <Link to="/dashboard/merchant-payment">
+                                <MdOutlineAttachMoney />
+                                Payment</Link>
                             </li>
                             <li>
                               <Link to="/services">
