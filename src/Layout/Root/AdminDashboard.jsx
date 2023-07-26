@@ -1,21 +1,75 @@
 import React from 'react';
+import { FaBars, FaHistory, FaShoppingCart, FaUsers } from 'react-icons/fa';
+import { Outlet } from 'react-router';
+import useUserInfo from '../../Hooks/useUserInfo';
+import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icons/md';
+import { Link, NavLink } from 'react-router-dom';
+import { AiFillShopping } from 'react-icons/ai';
+import { FiSettings } from 'react-icons/fi';
 
 const AdminDashboard = () => {
+    const userInfo = useUserInfo();
     return (
         <div>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {/* Page content here */}
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <label
+                        htmlFor="my-drawer-2"
+                        className="btn btn-primary lg:drawer-open lg:hidden 10"
+                    >
+                        <FaBars />
+                    </label>
+
+                    {/* Page content here */}
+                    <Outlet></Outlet>
 
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side z-10">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                         {/* Sidebar content here */}
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
+                        <div className="mb-10">
+                            <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
+                            <h1 className="text-3xl text-center mt-3 font-semibold">{userInfo?.name}</h1>
+                            <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
+                        </div>
+                        <div className="h-100vh font-pppins px-5 text-xl">
+                            <div className="flex flex-col gap-2">
+                                <li>
+                                    <NavLink to="/admin-dashboard">
+                                        <MdOutlineDashboard />
+                                        Dashboard
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <Link to="all-parcel">
+                                        <FaShoppingCart />
+                                        All Parcel</Link>
+                                </li>
+                                <li>
+                                    <Link to="all-admin">
+                                        <FaShoppingCart />
+                                        All Admin</Link>
+                                </li>
+                                <li>
+                                    <Link to="manage-user">
+                                        <FaUsers />
+                                        Manage User</Link>
+                                </li>
+                                <li>
+                                    <Link to="menu">
+                                        <FaBars />
+                                        Menu</Link>
+                                </li>
+                                <li>
+                                    <Link to="/dashboard/history">
+                                        <FaHistory />
+                                        Order History</Link>
+                                </li>
+                            </div>
+                        </div>
                     </ul>
 
                 </div>

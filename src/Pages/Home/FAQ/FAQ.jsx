@@ -2,7 +2,7 @@ import React from "react";
 
 const Faq = () => {
     return (
-        <div className="example2-anchor bgc px-5 md:px-16 py-8 my-8">
+        <div className="example2-anchor bgc px-5 md:px-16 py-8 mt-24">
             <div
                 className="my-16 max-w-screen-xl mx-auto">
                 <div

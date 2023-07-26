@@ -79,100 +79,36 @@ const Dashboard = () => {
             </div>
             <div className="h-100vh font-pppins px-5 text-xl">
               <div className="flex flex-col gap-2">
-                {
-                  role === 'admin' ?
-                    <>
-                      <li>
-                        <NavLink to="admin-analysis">
-                          <MdOutlineDashboard />
-                          Dashboard
-                        </NavLink>
-                      </li>
-                      <li>
-                        <Link to="all-parcel">
-                          <FaShoppingCart />
-                          All Parcel</Link>
-                      </li>
-                      <li>
-                        <Link to="">
-                          <FaHistory />
-                          Order History</Link>
-                      </li>
-                      <li>
-                        <Link to="menu">
-                          <FaBars />
-                          Menu</Link>
-                      </li>
-                    </>
-                    :
-                    <div>
-                      {
-                        role === 'superAdmin' ?
-                          <>
-                            <li>
-                              <NavLink to="admin-analysis">
-                                <MdOutlineDashboard />
-                                Dashboard
-                              </NavLink>
-                            </li>
-                            <li>
-                              <Link to="all-parcel">
-                                <FaShoppingCart />
-                                All Parcel</Link>
-                            </li>
-                            <li>
-                              <Link to="all-admin">
-                                <FaShoppingCart />
-                                All Admin</Link>
-                            </li>
-                            <li>
-                              <Link to="manage-user">
-                                <FaUsers />
-                                Manage User</Link>
-                            </li>
-                            <li>
-                              <Link to="menu">
-                                <FaBars />
-                                Menu</Link>
-                            </li>
-                          </>
-                          :
-                          <>
-                            <li>
-                              <Link to="merchant-analysis">
-                                <MdOutlineDashboard />
-                                Dashboard</Link>
-                            </li>
-                            <li>
-                              <Link to="my-parcel">
-                                <AiFillShopping />
-                                My Parcel</Link>
-                            </li>
-                            <li>
-                              <Link to="/dashboard/history">
-                                <FaHistory />
-                                Order History</Link>
-                            </li>
-                            <li>
-                              <Link to="/dashboard/merchant-payment">
-                                <MdOutlineAttachMoney />
-                                Payment</Link>
-                            </li>
-                            <li>
-                              <Link to="/services">
-                                <FiSettings />
-                                Service</Link>
-                            </li>
-                            <li>
-                              <Link to="menu">
-                                <FaBars />
-                                Menu</Link>
-                            </li>
-                          </>
-                      }
-                    </div>
-                }
-
+                <li>
+                  <Link to="merchant-analysis">
+                    <MdOutlineDashboard />
+                    Dashboard</Link>
+                </li>
+                <li>
+                  <Link to="my-parcel">
+                    <AiFillShopping />
+                    My Parcel</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/history">
+                    <FaHistory />
+                    Order History</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/merchant-payment">
+                    <MdOutlineAttachMoney />
+                    Payment</Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <FiSettings />
+                    Service</Link>
+                </li>
+                <li>
+                  <Link to="menu">
+                    <FaBars />
+                    Menu</Link>
+                </li>
               </div>
             </div>
           </ul>
