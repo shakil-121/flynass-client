@@ -12,7 +12,7 @@ const Login = () => {
   const location=useLocation()
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef()
-  const from=location.state?.from?.pathname||'/dashboard/menu';
+  // const from=location.state?.from?.pathname || '/dashboard/menu'
 
 
   const handleSubmit = event => {

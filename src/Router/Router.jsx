@@ -9,13 +9,13 @@ import Contact from "../Pages/Contact/Contact";
 import Coverage from "../Pages/Coverage/Coverage";
 import Dashboard from "../Layout/Root/Dashboard";
 import Profile from "../Dashboard/Profile/Profile";
-import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
+// import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
 import MyParclel from "../Dashboard/MyParcel/MyParclel";
-import AllParcel from "../Dashboard/Admin/AllParcel/Allparcel";
+// import AllParcel from "../Dashboard/Admin/AllParcel/Allparcel";
 import MerchantAnalysis from "../Dashboard/MerchantAnalysis/MerchantAnalysis";
 import MultiPercel from "../Dashboard/MyParcel/MultiPercel";
-import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
-import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
+// import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
+// import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
 import Menu from "../Dashboard/Menu/Menu";
 import TermsAndConditions from "../Pages/Terms&Conditions/TermsAndConditions";
 import Invoice from "../Component/Invoice/Invoice";
@@ -23,8 +23,15 @@ import Address from "../Dashboard/Address/Address";
 import AdminLogin from "../Pages/LoginAndSignup/AdminLogin";
 import Private from "../Private/Private";
 import MerchantHistory from "../Dashboard/MerchantHistory/MerchantHistory";
+import MerchantPayment from "../Dashboard/MerchantPayment/MerchantPayment";
 import AdminDashboard from "../Layout/Root/AdminDashboard";
-import AdminPrivate from "../Private/AdminPrivate";
+import AdminAnalysis from "../Dashboard/Admin/AdminAnalysis";
+import AllParcel from "../Dashboard/Admin/AllParcel/Allparcel";
+import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
+import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
+import { path } from "d3-path";
+import { element } from "prop-types";
+// import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
   {
@@ -59,10 +66,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login></Login>,
       },
-      {
-        path:"admin_login",
-        element:<AdminLogin></AdminLogin>
-      }
+      // {
+      //   path: "admin_login",
+      //   element: <AdminLogin></AdminLogin>
+      // }
     ],
   },
   {
@@ -125,41 +132,56 @@ const router = createBrowserRouter([
       {
         path: "history",
         element: <MerchantHistory></MerchantHistory>
+      },
+      {
+        path: "merchant-payment",
+        element: <MerchantPayment></MerchantPayment>
       }
     ]
   },
   {
-    path:"admin_dashboard",
-    element:<AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>,
-    children:[
+    path: "admin-dashboard",
+    element: <AdminDashboard></AdminDashboard>,
+    children: [
+      {
+
+      }
+    ]
+  },
+  {
+    path: "admin_dashboard",
+    element: <AdminDashboard></AdminDashboard>,
+    children: [
       {
         path: "",
-        element: <Profile></Profile>
-      },
-      {
-        path: "admin-analysis",
         element: <AdminAnalysis></AdminAnalysis>
-      },
-      {
-        path: "manage-user",
-        element: <ManageUsers></ManageUsers>
-      },
-      {
-        path: "all-admin",
-        element: <AllAdmin></AllAdmin>
       },
       {
         path: "all-parcel",
         element: <AllParcel></AllParcel>
       },
       {
+        path: "all-admin",
+        element: <AllAdmin></AllAdmin>
+      },
+      {
+        path: "manage-user",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
         path: "menu",
         element: <Menu></Menu>
       },
       {
-        path: 'terms-coditions',
-        element: <TermsAndConditions></TermsAndConditions>
-      },
+        path: "order-history",
+        element: <MerchantHistory></MerchantHistory>
+      }
+    ]
+  },
+  {
+    path: "admin_login",
+    element: <AdminLogin></AdminLogin>,
+    children: [
       {
         path: "address",
         element: <Address></Address>

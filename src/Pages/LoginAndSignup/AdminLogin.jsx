@@ -4,14 +4,16 @@ import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./Login.css"
-import { useState } from "react"; 
+import { useState } from "react";
 import { FaUserTie } from "react-icons/fa";
+import { useQuery } from "@tanstack/react-query";
 
 const AdminLogin = () => {
   const [error, setError] = useState('');
-  const navigate=useNavigate()
-  const location=useLocation()
-  const from=location.state?.from?.pathname || '/Admin_Dashboard'
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/admin_dashboard'
+
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef()
 
@@ -26,7 +28,7 @@ const AdminLogin = () => {
         const loggeduser = result.user;
         toast("Login Successfully");
         // <NavLink to="/dashboard" /> 
-        navigate(from,{replace:true})
+        navigate(from, { replace: true })
       }).catch((error) => {
         console.log(error);
         setError('Email/Password Wrong');

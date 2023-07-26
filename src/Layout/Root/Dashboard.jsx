@@ -1,6 +1,6 @@
 import profile from "../../assets/profile.jpg";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { MdOutlineDashboard, MdVerified } from "react-icons/md";
+import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from "react-icons/md";
 import { FaBars, FaHistory, FaShoppingCart, FaSignOutAlt, FaUserGraduate, FaUsers, } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { AiFillShopping } from "react-icons/ai";
@@ -69,7 +69,7 @@ const Dashboard = () => {
           {/* <Profile></Profile> */}
 
         </div>
-        <div className="drawer-side z-20">
+        <div className="drawer-side z-20 mt-1">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full rounded-md bg-white">
             <div className="mb-10">
@@ -79,95 +79,36 @@ const Dashboard = () => {
             </div>
             <div className="h-100vh font-pppins px-5 text-xl">
               <div className="flex flex-col gap-2">
-                {
-                  role === 'admin' ?
-                    <>
-                      <li>
-                        <NavLink to="admin-analysis">
-                          <MdOutlineDashboard />
-                          Dashboard
-                        </NavLink>
-                      </li>
-                      <li>
-                        <Link to="all-parcel">
-                          <FaShoppingCart />
-                          All Parcel</Link>
-                      </li>
-                      <li>
-                        <Link to="">
-                          <FaHistory />
-                          Order History</Link>
-                      </li>
-                      <li>
-                        <Link to="menu">
-                          <FaBars />
-                          Menu</Link>
-                      </li>
-                    </>
-                    :
-                    <div>
-                      {
-                        role === 'superAdmin' ?
-                          <>
-                            <li>
-                              <NavLink to="admin-analysis">
-                                <MdOutlineDashboard />
-                                Dashboard
-                              </NavLink>
-                            </li>
-                            <li>
-                              <Link to="all-parcel">
-                                <FaShoppingCart />
-                                All Parcel</Link>
-                            </li>
-                            <li>
-                              <Link to="all-admin">
-                                <FaShoppingCart />
-                                All Admin</Link>
-                            </li>
-                            <li>
-                              <Link to="manage-user">
-                                <FaUsers />
-                                Manage User</Link>
-                            </li>
-                            <li>
-                              <Link to="menu">
-                                <FaBars />
-                                Menu</Link>
-                            </li>
-                          </>
-                          :
-                          <>
-                            <li>
-                              <Link to="merchant-analysis">
-                                <MdOutlineDashboard />
-                                Dashboard</Link>
-                            </li>
-                            <li>
-                              <Link to="my-parcel">
-                                <AiFillShopping />
-                                My Parcel</Link>
-                            </li>
-                            <li>
-                              <Link to="/dashboard/history">
-                                <FaHistory />
-                                Order History</Link>
-                            </li>
-                            <li>
-                              <Link to="/services">
-                                <FiSettings />
-                                Service</Link>
-                            </li>
-                            <li>
-                              <Link to="menu">
-                                <FaBars />
-                                Menu</Link>
-                            </li>
-                          </>
-                      }
-                    </div>
-                }
-
+                <li>
+                  <Link to="merchant-analysis">
+                    <MdOutlineDashboard />
+                    Dashboard</Link>
+                </li>
+                <li>
+                  <Link to="my-parcel">
+                    <AiFillShopping />
+                    My Parcel</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/history">
+                    <FaHistory />
+                    Order History</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/merchant-payment">
+                    <MdOutlineAttachMoney />
+                    Payment</Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <FiSettings />
+                    Service</Link>
+                </li>
+                <li>
+                  <Link to="menu">
+                    <FaBars />
+                    Menu</Link>
+                </li>
               </div>
             </div>
           </ul>
