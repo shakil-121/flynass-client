@@ -12,15 +12,8 @@ const AdminLogin = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate()
   const location = useLocation()
-  const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-    const res = await fetch('http://localhost:5000/users')
-    return res.json();
-  })
+  const from = location.state?.from?.pathname || '/admin_dashboard'
 
-  const loggedInUser = user?.email;
-  const currentUser = allUsers.find(item => item.email === loggedInUser)
-  const role = currentUser?.role;
-  const from = location.state?.from?.pathname ||   'admin_dashboard'
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef()
 

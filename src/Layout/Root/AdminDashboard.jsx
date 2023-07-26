@@ -13,7 +13,7 @@ const AdminDashboard = () => {
         <div>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content flex flex-col items-center">
                     {/* Page content here */}
                     <label
                         htmlFor="my-drawer-2"
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
                         <div className="h-100vh font-pppins px-5 text-xl">
                             <div className="flex flex-col gap-2">
                                 <li>
-                                    <NavLink to="/admin-dashboard">
+                                    <NavLink to="/admin_dashboard">
                                         <MdOutlineDashboard />
                                         Dashboard
                                     </NavLink>
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
                                         Menu</Link>
                                 </li>
                                 <li>
-                                    <Link to="/dashboard/history">
+                                    <Link to="order-history">
                                         <FaHistory />
                                         Order History</Link>
                                 </li>
