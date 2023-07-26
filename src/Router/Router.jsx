@@ -119,6 +119,10 @@ const router = createBrowserRouter([
       {
         path: "address",
         element: <Address></Address>
+      },
+      {
+        path: "history",
+        element: <MerchantHistory></MerchantHistory>
       }
     ]
   },

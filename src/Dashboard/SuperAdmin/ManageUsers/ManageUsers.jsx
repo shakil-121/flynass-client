@@ -4,9 +4,11 @@ import { FaInfo, FaTrashAlt } from 'react-icons/fa';
 import UserInformation from './UserInformation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import NewMerchantRequest from './NewMerchantRequest';
 
 const ManageUsers = () => {
     const [showModal, setShowModal] = useState(false);
+    const [newMerchant, setNewMerchant] = useState(false);
 
     // all user data
     const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
@@ -41,7 +43,13 @@ const ManageUsers = () => {
 
     return (
         <div className='mt-10'>
-            <h1 className='text-4xl font-pppins mb-10'>Manage Users</h1>
+            <div className='flex justify-between'>
+                <h1 className='text-4xl font-pppins mb-10'>Manage Users</h1>
+                <div className="indicator me-10">
+                    <span className="indicator-item badge badge-secondary">99+</span>
+                    <button onClick={() => setNewMerchant(true)} className="btn bg-blue-800 hover:bg-blue-700 text-white">Request</button>
+                </div>
+            </div>
             <div>
                 <table className="table lg:w-full overflow-x-auto">
                     <tr className='text-center bg-[#1E62D4] text-white grid md:grid-cols-5'>
@@ -58,7 +66,7 @@ const ManageUsers = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>
-                            <button onClick={() => setShowModal(user._id)} className="btn bg-blue-800 hover:bg-blue-700 text-white"><FaInfo/>Info</button>
+                            <button onClick={() => setShowModal(user._id)} className="btn bg-blue-800 hover:bg-blue-700 text-white"><FaInfo />Info</button>
                         </td>
                         <td>
                             <button onClick={() => handleUserDelete(user._id)}><FaTrashAlt className='text-[#D53343]' /></button>
@@ -67,6 +75,7 @@ const ManageUsers = () => {
                 }
             </div>
             <UserInformation isVisible={showModal} onClose={() => setShowModal(false)} allUsers={allUsers}></UserInformation>
+            <NewMerchantRequest isVisible={newMerchant} onClose={() => setNewMerchant(false)} allUsers={allUsers}></NewMerchantRequest>
         </div>
     );
 };

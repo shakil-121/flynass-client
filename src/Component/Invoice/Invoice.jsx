@@ -61,7 +61,7 @@ const Invoice = () => {
                         <hr className='border-2' />
                         <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{payableAmount}Tk.</span></h2>
 
-                        <h2 className='text-2xl font-serif mt-10 text-center'>[Merchant Copy]</h2>
+                        <h2 className='text-2xl font-serif mt-10 text-center'>[Client Copy]</h2>
                         <p className='text-center font-serif'>www.flynass.com</p>
                     </div>
                 </div>

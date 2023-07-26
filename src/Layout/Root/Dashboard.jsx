@@ -149,7 +149,7 @@ const Dashboard = () => {
                                 My Parcel</Link>
                             </li>
                             <li>
-                              <Link to="">
+                              <Link to="/dashboard/history">
                                 <FaHistory />
                                 Order History</Link>
                             </li>
