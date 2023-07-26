@@ -20,6 +20,7 @@ import Menu from "../Dashboard/Menu/Menu";
 import TermsAndConditions from "../Pages/Terms&Conditions/TermsAndConditions";
 import Invoice from "../Component/Invoice/Invoice";
 import Address from "../Dashboard/Address/Address";
+import MerchantHistory from "../Dashboard/MerchantHistory/MerchantHistory";
 
 const router = createBrowserRouter([
   {
@@ -111,6 +112,10 @@ const router = createBrowserRouter([
       {
         path: "address",
         element: <Address></Address>
+      },
+      {
+        path: "history",
+        element: <MerchantHistory></MerchantHistory>
       }
     ]
   }

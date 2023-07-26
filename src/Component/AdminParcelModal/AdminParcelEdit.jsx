@@ -48,7 +48,7 @@ const AdminParcelEdit = ({ isVisible, onClose }) => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">Delivery Chare</span>
+                                    <span className="label-text text-white">Delivery Charge</span>
                                 </label>
                                 <input type="text" name="total_amount" placeholder={isVisible.total_amount} className="input input-bordered focus:outline-none" />
                             </div>

@@ -33,19 +33,19 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
                 <div className='bg-[#1E62D4] rounded-md p-10'>
                     <h1 className='text-white text-3xl font-pppins text-center'>Edit Parcel Information</h1>
                     <div>
-                        <h2 className='text-center text-xl text-white mt-5 font-pppins'>Merchant_ID: {invoiceParcel.marchent_id}</h2>
+                        <h2 className='text-center text-xl text-white mt-5 font-pppins'>Merchant_ID: {invoiceParcel?.marchent_id}</h2>
                         <form onSubmit={handleParcelUpdate}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">From </span>
                                 </label>
-                                <input type="text" placeholder="email" defaultValue={invoiceParcel.from_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="email" defaultValue={invoiceParcel?.from_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">To </span>
                                 </label>
-                                <input type="text" placeholder="Enter address" name="to_address" defaultValue={invoiceParcel.to_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="Enter address" name="to_address" defaultValue={invoiceParcel?.to_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

@@ -83,7 +83,9 @@ const AllParcel = () => {
                         </td>
                         <td>
                             <div className='flex flex-col gap-1'>
-                                <span>{parcel.product_amount}Tk.</span>
+                                <span>
+                                    {parseFloat(parcel.product_amount) -
+                                        parseFloat((parcel.total_amount))} Tk.</span>
                                 <div className="dropdown dropdown-bottom text-black">
                                     <label tabIndex={0} className="font-pppins">due</label>
                                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">

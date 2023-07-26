@@ -5,7 +5,7 @@ import { useState } from 'react';
 import AdminParcelEdit from './AdminParcelEdit';
 import Swal from 'sweetalert2';
 
-const AdminParcelModal = ({ isVisible, onClose }) => {
+const AdminParcelModal = ({ isVisible, onClose, refetch }) => {
     const [showModal, setShowModal] = useState(false);
     if (!isVisible) return null;
     const invoiceParcel = null;

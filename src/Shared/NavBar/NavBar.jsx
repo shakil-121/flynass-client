@@ -4,34 +4,57 @@ import logo from "../../assets/logo/logo.png";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaUserShield, FaPhoneAlt } from "react-icons/fa";
+import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
- // Function to handle scroll event
- const handleScroll = () => {
-  if (window.scrollY > 20) {
-    setScrolled(true);
-  } else {
-    setScrolled(false);
-  }
-};
-
-useEffect(() => {
-  // Attach the event listener when the component mounts
-  window.addEventListener('scroll', handleScroll);
-
-  // Clean up the event listener when the component unmounts
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
+  const [error, setError] = useState('');
+  // Function to handle scroll event
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
   };
-}, []);
 
-  const { user } = useContext(AuthContext);
+  useEffect(() => {
+    // Attach the event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        // navigate({to:"/"})
+
+        console.log("logout completed");
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
+    const res = await fetch('http://localhost:5000/users')
+    return res.json();
+  })
+
+  const loggedInUser = user?.email;
+  const currentUser = allUsers.find(item => item.email === loggedInUser)
+  const role = currentUser?.role;
+
   return (
-    <div    className={`navbar fixed z-10  text-white px-16 transition ${
-      scrolled ? 'bg-[#1E8FD0]' : 'bg-transparent'
-    }`}
->
+    <div className={`navbar fixed z-10  text-white px-16 transition ${scrolled ? 'bg-[#1E8FD0]' : 'bg-transparent'
+      }`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -106,26 +129,52 @@ useEffect(() => {
           </li>
         </ul>
       </div>
+
       <div className="navbar-end">
-        {user ? (
-          <>
-            <Link className="btn mx-3 bg-[#062751] hover:text-black text-white" to="/dashboard">
-              <div>
-                <h1>Hello <br />
-                  {user?.displayName}</h1>
-              </div>
-            </Link>
-            <div className="avatar online">
-              <div className="h-16 auto rounded-full">
-                <img className="" title={user?.displayName} src={user.photoURL} alt="" />
+
+        {
+          role === 'admin' ?
+            <div>
+              <div className="alert alert-error">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Your are not Merchant</span>
+                <div>
+                  <button onClick={handleLogout} className="btn btn-sm btn-primary">X</button>
+                </div>
               </div>
             </div>
-          </>
-        ) : (
-          <>
-            <Link className="btn btn-active bg-[#062751] text-white hover:text-black" to="/login"><FaUserShield></FaUserShield> Login</Link>
-          </>
-        )}
+            :
+            <>
+              {
+                role === 'superAdmin' ?
+                  <>
+                    <p className="text-black">superAdmin</p>
+                  </>
+                  :
+                  <>
+                    {user ?
+                      <>
+                        <Link className="btn mx-3 bg-[#062751] hover:text-black text-white" to="/dashboard">
+                          <div>
+                            <h1>Hello <br />
+                              {user?.displayName}</h1>
+                          </div>
+                        </Link>
+                        <div className="avatar online">
+                          <div className="h-16 auto rounded-full">
+                            <img className="" title={user?.displayName} src={user.photoURL} alt="" />
+                          </div>
+                        </div>
+                      </>
+                      :
+                      <>
+                        <Link className="btn btn-active bg-[#062751] text-white hover:text-black" to="/login"><FaUserShield></FaUserShield> Login</Link>
+                      </>
+                    }
+                  </>
+              }
+            </>
+        }
       </div>
     </div >
   );
