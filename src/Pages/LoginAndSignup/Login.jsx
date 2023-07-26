@@ -12,7 +12,7 @@ const Login = () => {
   const location=useLocation()
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef()
-  const from=location.state?.from?.pathname || '/'
+  const from=location.state?.from?.pathname || '/dashboard/menu'
 
 
   const handleSubmit = event => {
@@ -20,8 +20,8 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    login(email, password)
     setError("")
+    login(email, password)
       .then((result) => {
         const loggeduser = result.user;
         toast("Login Successfully");

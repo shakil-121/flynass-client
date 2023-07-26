@@ -21,8 +21,10 @@ import TermsAndConditions from "../Pages/Terms&Conditions/TermsAndConditions";
 import Invoice from "../Component/Invoice/Invoice";
 import Address from "../Dashboard/Address/Address";
 import AdminLogin from "../Pages/LoginAndSignup/AdminLogin";
-import MarchentDashboard from "../Layout/MarchentDashboard";
 import Private from "../Private/Private";
+import MerchantHistory from "../Dashboard/MerchantHistory/MerchantHistory";
+import AdminDashboard from "../Layout/Root/AdminDashboard";
+import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
   {
@@ -65,7 +67,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <Private><Dashboard></Dashboard></Private>,
     children: [
       {
         path: "",
@@ -79,27 +81,27 @@ const router = createBrowserRouter([
         path: "my-parcel",
         element: <MyParclel></MyParclel>
       },
-      {
-        path: "all-admin",
-        element: <AllAdmin></AllAdmin>
-      },
-      {
-        path: "all-parcel",
-        element: <AllParcel></AllParcel>
-      },
-      {
-        path: "manage-user",
-        element: <ManageUsers></ManageUsers>
-      },
+      // {
+      //   path: "all-admin",
+      //   element: <AllAdmin></AllAdmin>
+      // },
+      // {
+      //   path: "all-parcel",
+      //   element: <AllParcel></AllParcel>
+      // },
+      // {
+      //   path: "manage-user",
+      //   element: <ManageUsers></ManageUsers>
+      // },
       {
         path: "merchant-analysis",
         element: <MerchantAnalysis />
       }
       ,
-      {
-        path: "admin-analysis",
-        element: <AdminAnalysis></AdminAnalysis>
-      },
+      // {
+      //   path: "admin-analysis",
+      //   element: <AdminAnalysis></AdminAnalysis>
+      // },
       {
         path: "invoice/:id",
         element: <Invoice></Invoice>
@@ -126,37 +128,44 @@ const router = createBrowserRouter([
       }
     ]
   },
-  // {
-  //   path:"marchent_dashboard",
-  //   element:<Private><MarchentDashboard></MarchentDashboard></Private>,
-  //   children:[
-  //     {
-  //       path: "",
-  //       element: <Profile></Profile>
-  //     },
-  //     {
-  //       path: "merchant-analysis",
-  //       element: <MerchantAnalysis />
-  //     },
-  //     {
-  //       path: "invoice/:id",
-  //       element: <Invoice></Invoice>
-  //     },
-  //     {
-  //       path: "multi_parcel",
-  //       element: <MultiPercel></MultiPercel>
-  //     },
-  //     {
-  //       path: "my-parcel",
-  //       element: <MyParclel></MyParclel>
-  //     }
-  //     ,
-  //     {
-  //       path: "menu",
-  //       element: <Menu></Menu>
-  //     },
-  //   ]
-  // }
+  {
+    path:"admin_dashboard",
+    element:<AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>,
+    children:[
+      {
+        path: "",
+        element: <Profile></Profile>
+      },
+      {
+        path: "admin-analysis",
+        element: <AdminAnalysis></AdminAnalysis>
+      },
+      {
+        path: "manage-user",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "all-admin",
+        element: <AllAdmin></AllAdmin>
+      },
+      {
+        path: "all-parcel",
+        element: <AllParcel></AllParcel>
+      },
+      {
+        path: "menu",
+        element: <Menu></Menu>
+      },
+      {
+        path: 'terms-coditions',
+        element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path: "address",
+        element: <Address></Address>
+      },
+    ]
+  }
 ]);
 
 export default router;

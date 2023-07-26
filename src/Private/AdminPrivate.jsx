@@ -2,7 +2,7 @@ import React from 'react';
 import useAuth from '../Hooks/useAuth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 
-const Private = ({children}) => {
+const AdminPrivate = ({children}) => {
     const {user,loadding}=useAuth()
     const navigate=useNavigate();
     const location=useLocation()
@@ -15,8 +15,8 @@ const Private = ({children}) => {
     if(user){
         return children;
     }
-    return <Navigate state={{from:location}} to="/login" replace></Navigate>
+    return <Navigate state={{from:location}} to="/admin_login" replace></Navigate>
 
 };
 
-export default Private;
+export default AdminPrivate;

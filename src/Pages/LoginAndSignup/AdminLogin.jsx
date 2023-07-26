@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
+import { Link, NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -10,6 +10,8 @@ import { FaUserTie } from "react-icons/fa";
 const AdminLogin = () => {
   const [error, setError] = useState('');
   const navigate=useNavigate()
+  const location=useLocation()
+  const from=location.state?.from?.pathname || '/Admin_Dashboard'
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef()
 
@@ -24,7 +26,7 @@ const AdminLogin = () => {
         const loggeduser = result.user;
         toast("Login Successfully");
         // <NavLink to="/dashboard" /> 
-         navigate(to="/dashboard")
+        navigate(from,{replace:true})
       }).catch((error) => {
         console.log(error);
         setError('Email/Password Wrong');
