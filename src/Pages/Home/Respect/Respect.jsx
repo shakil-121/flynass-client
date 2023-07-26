@@ -1,9 +1,8 @@
-import logo1 from '../../../assets/Respected/w1.png';
-import logo2 from '../../../assets/Respected/w2.png';
-import logo3 from '../../../assets/Respected/w3.png';
-import logo4 from '../../../assets/Respected/w4.png';
-import logo5 from '../../../assets/Respected/w5.png';
-import logo6 from '../../../assets/Respected/w6.png';
+import logo1 from '../../../assets/Respected/c1.jpg';
+import logo2 from '../../../assets/Respected/c2.jpg';
+import logo3 from '../../../assets/Respected/c3.jpg';
+import logo4 from '../../../assets/Respected/c4.jpg';
+import logo5 from '../../../assets/Respected/c5.jpg';
 import banner from "../../../assets/images/banner.png"
 import SectionTitle from '../../../Component/SectionTitle';
 import React from "react";
@@ -25,7 +24,7 @@ const Respect = () => {
                 <img className='p-10 w-48' src={logo3} alt="" />
                 <img className='p-10 w-48' src={logo4} alt="" />
                 <img className='p-10 w-48' src={logo5} alt="" />
-                <img className='p-10 w-48' src={logo6} alt="" />
+                <img className='p-10 w-48' src={logo1} alt="" />
                 <img className='p-10 w-48' src={logo3} alt="" />
             </Marquee>
         </div>

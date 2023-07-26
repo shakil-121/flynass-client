@@ -28,7 +28,7 @@ useEffect(() => {
 
   const { user } = useContext(AuthContext);
   return (
-    <div    className={`navbar fixed z-10  text-white px-16 transition ${
+    <div    className={`navbar fixed z-10  text-white pe-10 transition ${
       scrolled ? 'bg-[#1E8FD0]' : 'bg-transparent'
     }`}
 >
@@ -78,7 +78,7 @@ useEffect(() => {
             </li>
           </ul >
         </div >
-        <img className="h-14" src={logo} alt="" />
+        <img className="h-16" src={logo} alt="" />
       </div >
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal font-pppins text-base px-1">

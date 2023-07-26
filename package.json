@@ -16,6 +16,7 @@
     "@mui/material": "^5.14.1",
     "@mui/x-data-grid": "^6.10.1",
     "@tanstack/react-query": "^4.29.25",
+    "aos": "^2.3.4",
     "axios": "^1.4.0",
     "firebase": "^9.23.0",
     "html2pdf.js": "^0.10.1",

@@ -5,10 +5,12 @@ import { useState } from 'react';
 import AdminParcelEdit from './AdminParcelEdit';
 import Swal from 'sweetalert2';
 
-const AdminParcelModal = ({ isVisible, onClose }) => {
+const AdminParcelModal = ({ isVisible,orders,onClose }) => { 
+    const [searchText, setSearchText] = useState(""); 
     const [showModal, setShowModal] = useState(false);
     if (!isVisible) return null;
     const invoiceParcel = null;
+    console.log(isVisible)
 
     const handleDeleteParcel = id => {
         Swal.fire({
@@ -34,7 +36,15 @@ const AdminParcelModal = ({ isVisible, onClose }) => {
             }
         });
     };
-
+ 
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/orders/${searchText}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            orders(data);
+          });
+      };
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-30'>
             <div className='flex flex-col  rounded-lg'>
@@ -45,8 +55,8 @@ const AdminParcelModal = ({ isVisible, onClose }) => {
                     <div className='flex justify-between mb-5'>
                         <h1 className='text-white text-3xl font-pppins'>Admin Parcel Modal</h1>
                         <div className='flex'>
-                            <input type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
-                            <button className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Track Now</button>
+                            <input  onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                            <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Track Now</button>
                         </div>
                     </div>
                     <div className='h-[600px] w-[90vh] overflow-auto'>

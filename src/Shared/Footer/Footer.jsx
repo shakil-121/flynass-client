@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import logo from "../../assets/logo/white-logo.png"; 
 import { FaFacebookF,FaTwitter,FaInstagram,FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -32,29 +33,29 @@ const Footer = () => {
       <div className="text-white md:ms-16">
         <h1 className="text-2xl">Quick Links</h1> 
         <div className="bg-orange-500 h-1 mt-2 w-3/4"></div> 
-        <h2 className="text-lg mt-6">About</h2> 
-        <h1 className="text-lg mt-2">Services</h1> 
-        <h2 className="text-lg mt-2">Contact</h2> 
-        <h2 className="text-lg mt-2">Coverage</h2>
+        <Link to="" className="text-lg mt-6">Coverage</Link> 
+        <Link to="" className="text-lg mt-2">Contact</Link> 
+        <Link to="" className="text-lg mt-2">Contact</Link> 
+        <Link to="" className="text-lg mt-2">Coverage</Link>
         
       </div>
       <div className="text-white md:ms-36">
         <h1 className="text-2xl">Services</h1> 
         <div className="bg-orange-500 h-1 mt-2 w-3/4"></div> 
-        <h2 className="text-lg mt-6">About</h2> 
-        <h1 className="text-lg mt-2">Services</h1> 
-        <h2 className="text-lg mt-2">Contact</h2> 
-        <h2 className="text-lg mt-2">Coverage</h2>
+        <Link to="" className="text-lg mt-6">Service</Link> 
+        <Link to="" className="text-lg mt-2">Contact</Link> 
+        <Link to="" className="text-lg mt-2">Contact</Link> 
+        <Link to="" className="text-lg mt-2">Coverage</Link>
         
       </div>
       <div className="text-white md:ms-36">
-        <h1 className="text-2xl">Community</h1> 
+        {/* <h1 className="text-2xl">Community</h1> 
         <div className="bg-orange-500 h-1 mt-2 w-3/4"></div> 
         <h2 className="text-lg mt-6">About</h2> 
         <h1 className="text-lg mt-2">Services</h1> 
         <h2 className="text-lg mt-2">Contact</h2> 
         <h2 className="text-lg mt-2">Coverage</h2>
-        
+         */}
       </div>
       </div>  
       <br />

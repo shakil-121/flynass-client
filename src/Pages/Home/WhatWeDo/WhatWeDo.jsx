@@ -4,9 +4,9 @@ import pic2 from "../../../assets/whatwedo/pic2.png";
 import pic3 from "../../../assets/whatwedo/pic3.png";
 import SectionTitle from "../../../Component/SectionTitle";
 import Lottie from "lottie-react";
-import single from "../../../../public/singleParcel.json";
-import multi from "../../../../public/multi_parcel.json";
-import van from "../../../../public/van.json";
+import single from "../../../../public/01.json";
+import multi from "../../../../public/04.json";
+import van from "../../../../public/03.json";
 
 const WhatWeDo = () => {
   return (
