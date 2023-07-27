@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <Coverage></Coverage>,
       },
       {
-        path: "signup",
+        path: "sign_up",
         element: <SignUp></SignUp>,
       },
       {
@@ -70,11 +70,11 @@ const router = createBrowserRouter([
       {
         path: "admin_signup",
         element: <AdminSignUp></AdminSignUp>,
+      },
+      {
+        path: "admin_login",
+        element: <AdminLogin></AdminLogin>
       }
-      // {
-      //   path: "admin_login",
-      //   element: <AdminLogin></AdminLogin>
-      // }
     ],
   },
   {
@@ -183,16 +183,16 @@ const router = createBrowserRouter([
       }
     ]
   },
-  {
-    path: "admin_login",
-    element: <AdminLogin></AdminLogin>,
-    children: [
-      {
-        path: "address",
-        element: <Address></Address>
-      }
-    ]
-  },
+  // {
+  //   path: "admin_login",
+  //   element: <AdminLogin></AdminLogin>,
+  //   children: [
+  //     {
+  //       path: "address",
+  //       element: <Address></Address>
+  //     }
+  //   ]
+  // },
   
 ]);
 

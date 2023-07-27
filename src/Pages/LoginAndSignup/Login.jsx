@@ -108,7 +108,7 @@ const Login = () => {
           </form>
           <p className="text-center text-black pb-6">
             Are you new in Flynass ?
-            <Link className="text-blue-600 ps-2" to="/signup">
+            <Link className="text-blue-600 ps-2" to="/sign_up">
               Create Account
             </Link>
           </p>

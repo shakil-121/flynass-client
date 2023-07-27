@@ -92,7 +92,7 @@ const NavBar = () => {
             {
               user ? <></> : <>
                 <li>
-                  <Link to="signup">Registration</Link>
+                  <Link to="sign_up">Registration</Link>
                 </li>
               </>
             }
@@ -120,7 +120,7 @@ const NavBar = () => {
           {
             user ? <></> : <>
               <li>
-                <Link to="signup">Registration</Link>
+                <Link to="sign_up">Registration</Link>
               </li>
             </>
           }

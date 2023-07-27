@@ -220,14 +220,14 @@ const SignUp = () => {
                 </button>
               </div>
               {/* <p className="text-center text-red-600">{error}</p> */}
-              <p className="text-center text-black text-lg font-semibold">
+              {/* <p className="text-center text-black text-lg font-semibold">
                 Or Sign-up with
               </p>
               <div onClick={handleloginwithgoogle} className="flex bg-black w-1/2 btn mx-auto hover:bg-orange-600 justify-center">
                 <Link>
                   <FaGoogle className="text-white h-6 w-6"></FaGoogle>
                 </Link>
-              </div>
+              </div> */}
             </form>
             <p className="text-center text-black pb-6">
               Already have an account?
