@@ -6,9 +6,22 @@ import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icon
 import { Link, NavLink } from 'react-router-dom';
 import { AiFillShopping } from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
+import { useQuery } from '@tanstack/react-query';
+import useAuth from '../../Hooks/useAuth';
 
 const AdminDashboard = () => {
     const userInfo = useUserInfo();
+    const { user } = useAuth();
+
+    const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
+        const res = await fetch('http://localhost:5000/users')
+        return res.json();
+    })
+
+    const loggedInUser = user?.email;
+    const currentUser = allUsers.find(item => item.email === loggedInUser)
+    const role = currentUser?.role;
+
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -37,37 +50,74 @@ const AdminDashboard = () => {
                         </div>
                         <div className="h-100vh font-pppins px-5 text-xl">
                             <div className="flex flex-col gap-2">
-                                <li>
-                                    <NavLink to="/admin_dashboard">
-                                        <MdOutlineDashboard />
-                                        Dashboard
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <Link to="all-parcel">
-                                        <FaShoppingCart />
-                                        All Parcel</Link>
-                                </li>
-                                <li>
-                                    <Link to="all-admin">
-                                        <FaShoppingCart />
-                                        All Admin</Link>
-                                </li>
-                                <li>
-                                    <Link to="manage-user">
-                                        <FaUsers />
-                                        Manage User</Link>
-                                </li>
-                                <li>
-                                    <Link to="menu">
-                                        <FaBars />
-                                        Menu</Link>
-                                </li>
-                                <li>
-                                    <Link to="order-history">
-                                        <FaHistory />
-                                        Order History</Link>
-                                </li>
+                                {
+                                    role === 'admin' ?
+                                        <>
+                                            <li>
+                                                <NavLink to="/admin_dashboard">
+                                                    <MdOutlineDashboard />
+                                                    Dashboard
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <Link to="all-parcel">
+                                                    <FaShoppingCart />
+                                                    All Parcel</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="menu">
+                                                    <FaBars />
+                                                    Menu</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="order-history">
+                                                    <FaHistory />
+                                                    Order History</Link>
+                                            </li>
+                                        </>
+                                        :
+                                        <>
+                                            {
+                                                role === 'superAdmin' ?
+                                                    <>
+                                                        <li>
+                                                            <NavLink to="/admin_dashboard">
+                                                                <MdOutlineDashboard />
+                                                                Dashboard
+                                                            </NavLink>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="all-parcel">
+                                                                <FaShoppingCart />
+                                                                All Parcel</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="all-admin">
+                                                                <FaShoppingCart />
+                                                                All Admin</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="manage-user">
+                                                                <FaUsers />
+                                                                Manage User</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="order-history">
+                                                                <FaHistory />
+                                                                Order History</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="menu">
+                                                                <FaBars />
+                                                                Menu</Link>
+                                                        </li>
+                                                    </>
+                                                    :
+                                                    <>
+                                                    </>
+                                            }
+                                        </>
+                                }
                             </div>
                         </div>
                     </ul>
