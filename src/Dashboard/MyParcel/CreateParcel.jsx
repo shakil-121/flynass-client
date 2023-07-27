@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
+import useUserInfo from "../../Hooks/useUserInfo";
 
 const CreateParcel = ({ isVisible, onClose }) => {
   const [currentDistrict, setCurrentDistrict] = useState(null);
@@ -11,7 +12,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const [cod, setCod] = useState(0);
   const [delivaryCharge, setDelivaryCharge] = useState(0);
   const [amount, setamount] = useState(0)
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  const userInfo=useUserInfo()
   const {
     register,
     handleSubmit,
@@ -972,7 +974,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   type="text"
                   placeholder="Enter Your Address"
                   className="input input-bordered text-black"
-                  name="from_address"
+                  name="from_address" 
+                  defaultValue={userInfo?.address}
                   {...register("from_address", { required: true })}
                 />
               </div>
@@ -1769,7 +1772,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 <div className="form-control text-black">
                   <input
                     type="text"
-                    placeholder="Marchent Order ID"
+                    placeholder="Marchent Order ID" 
+                    defaultValue={`FN-${userInfo?._id}`}
                     className="input input-bordered"
                     {...register("marchent_id", { required: true })}
 

@@ -31,6 +31,7 @@ import AllAdmin from "../Dashboard/SuperAdmin/AllAdmin/AllAdmin";
 import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
 import { path } from "d3-path";
 import { element } from "prop-types";
+import AdminSignUp from "../Pages/LoginAndSignup/AdminRegistration";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login></Login>,
       },
+      {
+        path: "admin_signup",
+        element: <AdminSignUp></AdminSignUp>,
+      }
       // {
       //   path: "admin_login",
       //   element: <AdminLogin></AdminLogin>

@@ -9,6 +9,7 @@ import CompanyApproch from './CompanyApproch/CompanyApproch';
 import useTitle from '../../Hooks/useTitle';
 import Testimonial from './Testimonial/Testimonial';
 import Faq from './FAQ/FAQ';
+import FastDelivery from './FastDelivery/FastDelivery';
 
 const Home = () => { 
     useTitle("Home")
@@ -25,6 +26,7 @@ const Home = () => {
            <CompanyApproch/>
            <Faq/>
            <Testimonial/>
+           <FastDelivery></FastDelivery>
         </div>
     );
 };
