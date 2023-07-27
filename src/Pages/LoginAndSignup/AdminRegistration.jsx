@@ -13,7 +13,7 @@ import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 // console.log(imgHosting_token);
-const SignUp = () => {
+const AdminSignUp = () => {
   const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;
   const {
@@ -42,7 +42,7 @@ const SignUp = () => {
             phone: data.phone,
             NID: data.nid,
             image: imgUrl,
-            role:"merchant",
+            role:"admin",
             address:data.address,
           };
         //   console.log(userInfo);
@@ -83,21 +83,21 @@ const SignUp = () => {
   }
   return (
     <div>
-      <div className="hero w-full min-h-screen rounded-lg  bg-slate-200  py-16">
+      <div className="hero w-full min-h-screen rounded-lg  bg-sky-600 py-16">
         <div className="hero-content w-5/6 flex-col py-4  lg:flex-row">
-          <div className="text-center md:w-1/2 lg:text-left">
+          {/* <div className="text-center md:w-1/2 lg:text-left">
             <Lottie
               className="h-72 w-full"
               animationData={animation}
               loop={true}
             />
-          </div>
+          </div> */}
 
           <div className="card flex-shrink-0 md:w-1/2  shadow-2xl text-white bg-white">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div>
                 <h1 className="font-pppins text-3xl pb-5 font-bold text-center text-black">
-                  Create An Account
+                  Create Admin Account
                 </h1>
               </div>
               <div className="form-control">
@@ -216,7 +216,7 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-zinc-950 border-none text-white hover:text-black">
-                  Registration
+                  Admin Registration
                 </button>
               </div>
               {/* <p className="text-center text-red-600">{error}</p> */}
@@ -231,7 +231,7 @@ const SignUp = () => {
             </form>
             <p className="text-center text-black pb-6">
               Already have an account?
-              <Link className="text-blue-600 ps-2" to="/login">
+              <Link className="text-blue-600 ps-2" to="/admin_login">
                 LogIn
               </Link>
             </p>
@@ -244,4 +244,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default AdminSignUp;

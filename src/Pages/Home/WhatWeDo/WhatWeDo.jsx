@@ -6,7 +6,10 @@ import SectionTitle from "../../../Component/SectionTitle";
 import Lottie from "lottie-react";
 import single from "../../../../public/01.json";
 import multi from "../../../../public/04.json";
-import van from "../../../../public/03.json";
+import van from "../../../../public/03.json"; 
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+AOS.init();
 
 const WhatWeDo = () => {
   return (

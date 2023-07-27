@@ -1,60 +1,64 @@
 import React, { useContext, useRef } from "react";
-import { Link, NavLink, Navigate, useNavigate,useLocation } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import "./Login.css"
+import "./Login.css";
 import { useState } from "react";
 
 const Login = () => {
-  const [error, setError] = useState('');
-  const navigate=useNavigate()
-  const location=useLocation()
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
-  const emailRef = useRef()
+  const emailRef = useRef();
   // const from=location.state?.from?.pathname || '/dashboard/menu'
 
-
-  const handleSubmit = event => {
-    event.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    setError("")
+    setError('');
+
     login(email, password)
       .then((result) => {
         const loggeduser = result.user;
         toast("Login Successfully");
-        // <NavLink to="/dashboard" /> 
-        navigate(from,{replace:true})
-
-        
-      }).catch((error) => {
+        // navigate(from, { replace: true });
+        setError('');
+      })
+      .catch((error) => {
         console.log(error);
-        setError('Email/Password Wrong');
+        setError("Email/Password Wrong");
       });
   };
 
   const handelresetpassword = () => {
     const email = emailRef.current.value;
     if (!email) {
-      alert('Please Enter Your Email Address')
+      alert("Please Enter Your Email Address");
       return;
     }
     passwordReset(email)
       .then(() => {
-        alert('Please Check your Email')
+        alert("Please Check your Email");
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
-        toast("Email is Not Found !")
-      })
-
-  }
+        toast("Email is Not Found !");
+      });
+  };
 
   const handleloginwithgoogle = () => {
-    googleLogin()
-  }
+    googleLogin();
+  };
   return (
     <div>
       <div className="hero w-full min-h-screen rounded-lg bg py-16">
@@ -92,7 +96,9 @@ const Login = () => {
             <div className="text-center mt-2 mb-2 text-red-500">
               <p>{error}</p>
             </div>
-            <Link className="text-decoration-none text-sky-600"><small onClick={handelresetpassword}>Forget Password</small></Link>
+            <Link className="text-decoration-none text-sky-600">
+              <small onClick={handelresetpassword}>Forget Password</small>
+            </Link>
 
             <div className="form-control mt-6">
               <button className="btn bg-zinc-950 border-none text-white hover:text-black">
@@ -102,7 +108,7 @@ const Login = () => {
           </form>
           <p className="text-center text-black pb-6">
             Are you new in Flynass ?
-            <Link className="text-blue-600 ps-2" to="/signup">
+            <Link className="text-blue-600 ps-2" to="/sign_up">
               Create Account
             </Link>
           </p>

@@ -15,18 +15,18 @@ const Footer = () => {
           Bangladesh <br /> with nationwide doorstep delivery,
         </p>
         <div className="flex  mt-6 text-white">
-          <div className="bg-[#184f6e] hover:bg-[#051721] p-2">
+          <div className="bg-[#00a2ff] rounded-md hover:bg-[#051721] p-2">
             <a href="https://www.facebook.com/profile.php?id=100095364961412&mibextid=ZbWKwL">
               <FaFacebookF className="text-2xl"></FaFacebookF>
             </a>
           </div>
-          <div className="bg-[#184f6e] hover:bg-[#051721] p-2 ms-3">
+          <div className="bg-[#00a2ff] rounded-md hover:bg-[#051721] p-2 ms-3">
             <FaInstagram className="text-2xl"></FaInstagram>
           </div>
-          <div className="bg-[#184f6e] hover:bg-[#051721] p-2 ms-3">
+          <div className="bg-[#00a2ff] rounded-md hover:bg-[#051721] p-2 ms-3">
             <FaTwitter className="text-2xl"></FaTwitter>
           </div>
-          <div className="bg-[#184f6e] hover:bg-[#051721] p-2 ms-3">
+          <div className="bg-[#00a2ff] rounded-md hover:bg-[#051721] p-2 ms-3">
             <FaYoutube className="text-2xl"></FaYoutube>
           </div>
         </div>
@@ -58,7 +58,7 @@ const Footer = () => {
 <p className="text-center text-white py-4">
   Copyright © 2023 by Flynass All Rights Reserved. Developed By{" "}
   <a
-    className="text-amber-500"
+    className="text-[#00a2ff]"
     target="_blank"
     href="https://sritfusion.com/"
   >
