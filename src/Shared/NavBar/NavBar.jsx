@@ -88,7 +88,10 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="coverage">Coverage</Link>
-            </li>
+            </li> 
+            <li>
+            <Link to="about">About Us</Link>
+          </li>
             {
               user ? <></> : <>
                 <li>
@@ -116,6 +119,9 @@ const NavBar = () => {
           </li>
           <li>
             <Link to="coverage">Coverage</Link>
+          </li>
+          <li>
+            <Link to="about">About Us</Link>
           </li>
           {
             user ? <></> : <>
