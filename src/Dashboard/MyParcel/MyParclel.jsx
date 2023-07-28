@@ -57,12 +57,12 @@ const MyParclel = () => {
                         <th>Parcel Amount</th>
                         <th>Delivery Charge</th>
                         <th>Payable Amount</th>
-                        <th>Edit</th>
+                        <th className='text-left'>Edit</th>
                         <th>Delete</th>
                     </thead>
                     <tbody>
                         {
-                            merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-4 border-red-400' key={parcel._id}>
+                            merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>{parcel.date}</td>
                                 <td className='m-4 text-xl'>
@@ -82,7 +82,7 @@ const MyParclel = () => {
                                         </span>
                                     </div>
                                 </td>
-                                <td>
+                                <td className='mx-auto'>
                                     <button onClick={() => setShowModal(parcel)} className='px-3 py-2 text-xl bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center gap-1 rounded-md text-white'><FaRegEdit />Edit</button>
                                 </td>
                                 <td>
