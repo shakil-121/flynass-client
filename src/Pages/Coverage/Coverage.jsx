@@ -2,8 +2,10 @@ import React from "react";
 import map from "../../assets/images/map.png";
 import "./Coverage.css"; 
 import cover from "../../assets/images/_Delivery Point.png"
+import useTitle from "../../Hooks/useTitle";
 
 const Coverage = () => {
+  useTitle("Coverage")
   return (
     <div> 
       <div>

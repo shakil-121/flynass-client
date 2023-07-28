@@ -9,7 +9,7 @@ import CountUp from "react-countup";
 
 const CompanyApproch = () => {
   return (
-    <div className="mt-28 font-pop max-w-screen-xl mx-auto  2xl:px-0 md:px-16 px-5 mb-10">
+    <div className="mt-28 font-pppins max-w-screen-xl mx-auto  2xl:px-0 md:px-16 px-5 mb-10">
       <div className="grid md:grid-cols-2 md:justify-items-end justify-items-center items-center">
         <div>
           <SectionTitle
@@ -17,14 +17,14 @@ const CompanyApproch = () => {
             subHeading="Company Approch"
             heading="Reliable Parcel Delivery  Solutions"
           ></SectionTitle>
-          <p className="mb-10">
+          {/* <p className="mb-10">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry the <br /> standard dummy text ever since the when an
             printer took.
-          </p>
+          </p> */}
         </div>
-        <div className="mb-10 md:mb-0">
-          <Link to="/signup">
+        <div className="mb-10 md:mb-0 ">
+          <Link to="/registration">
             <button className="bg-[#1E8FD0] rounded-xl px-6 py-3 text-white font-bold">
               Merchant Registration
             </button>
@@ -35,7 +35,7 @@ const CompanyApproch = () => {
           {/* This section just for design purposes */}
         {/* <div className="hidden md:block bg-[#F98A06] w-72 h-96">
         </div> */}
-        <div className="bg-white md:ms-16 waves md:p-7 p-3 shadow-2xl shadow-[#7ABDE2] mb-10">
+        <div className="bg-white md:ms-16 waves md:p-7 p-3 shadow-2xl shadow-[#7ABDE2] rounded-xl mb-10">
           <div className="md:flex items-center gap-x-20 mb-2">
             <div>
               <h1 className="md:text-[96px] text-[250px] text-bg">02</h1>

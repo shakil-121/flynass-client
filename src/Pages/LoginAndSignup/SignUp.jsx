@@ -11,9 +11,11 @@ import "./signup.css";
 import { Result } from "postcss";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 
 // console.log(imgHosting_token);
 const SignUp = () => {
+  useTitle("Registration")
   const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;
   const {

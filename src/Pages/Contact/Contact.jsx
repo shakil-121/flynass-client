@@ -4,8 +4,10 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { FaMapMarkerAlt, FaMobileAlt, FaEnvelope } from "react-icons/fa";
 import cover from "../../assets/images/contact.png"
+import useTitle from "../../Hooks/useTitle";
 
 const Contact = () => {
+  useTitle("Contact")
   const form = useRef();
 
   const sendEmail = (e) => {

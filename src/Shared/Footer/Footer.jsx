@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
       <div className="font-pppins text-white">
         <span className="footer-title text-2xl">Quick Link</span>
-        <a harf="/sign_up" className="link link-hover text-base my-2">Registration</a>
+        <a harf="/registration" className="link link-hover text-base my-2">Registration</a>
         <a harf="/login" className="link link-hover text-base my-2">Merchant Login</a>
         <a harf="/contact" className="link link-hover text-base my-2">Contact Us</a>
         

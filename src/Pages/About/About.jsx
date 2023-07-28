@@ -1,7 +1,9 @@
 import React from 'react';
 import cover from "../../assets/images/abut.png"
+import useTitle from '../../Hooks/useTitle';
 
 const About = () => {
+    useTitle("About")
     return (
         <div>
             <div>

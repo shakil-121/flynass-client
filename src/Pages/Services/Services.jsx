@@ -1,9 +1,11 @@
+import useTitle from "../../Hooks/useTitle";
 import "./Services.css";
 import React from "react";
 // import Lottie from "lottie-react";
 // import services from "../../assets/all-animation/Transport 2.json";
 
-const Services = () => {
+const Services = () => { 
+  useTitle("Services")
   return (
     <div className="mb-16">
       <div className="services-bg"></div>

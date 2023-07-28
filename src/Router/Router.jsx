@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <Coverage></Coverage>,
       },
       {
-        path: "sign_up",
+        path: "registration",
         element: <SignUp></SignUp>,
       },
       {

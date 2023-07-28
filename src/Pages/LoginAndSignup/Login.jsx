@@ -11,9 +11,11 @@ import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./Login.css";
 import { useState } from "react";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
   const [error, setError] = useState("");
+  useTitle("Login")
   const navigate = useNavigate();
   const location = useLocation();
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
@@ -108,7 +110,7 @@ const Login = () => {
           </form>
           <p className="text-center text-black pb-6">
             Are you new in Flynass ?
-            <Link className="text-blue-600 ps-2" to="/sign_up">
+            <Link className="text-blue-600 ps-2" to="/registration">
               Create Account
             </Link>
           </p>
