@@ -42,64 +42,57 @@ const MyParclel = () => {
             }
         });
     };
-
     if (isLoading) {
         return <div>Loading...</div>; // Show a loading state while data is being fetched
     }
     return (
-        <div className='rounded-md h-full'>
-            <div className="mt-10 h-[80vh] overflow-y-scroll">
-                <div>
-                    <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
-                    <table className="table table-xs table-pin-rows table-pin-cols">
-                        <tr className='text-center bg-gray-400 text-black grid md:grid-cols-8'>
-                            <th>No.</th>
-                            <th>Date</th>
-                            <th>Trackin ID</th>
-                            <th>Parcel Amount</th>
-                            <th>Delivery Charge</th>
-                            <th>Payable Amount</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </table>
-                    {
-                        merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-8 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
-                            <td>{index + 1}</td>
-                            <td>{parcel.date}</td>
-                            <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                {parcel._id}
-                            </td>
-                            <td>
-                                <p>{parcel.product_amount}Tk</p>
-                            </td>
-                            <td className='flex flex-col'>
-                                <small>delivery {parcel.delivary_Charge}TK</small>
-                                <small>cod {parcel.cod}TK</small>
-                            </td>
-                            <td>
-                                <div className='flex flex-col gap-1'>
-                                    <span>
-                                        {parseFloat(parcel.product_amount) -
-                                            parseFloat((parcel.total_amount))} Tk.</span>
-                                    <div className="dropdown dropdown-bottom text-black">
-                                        <label tabIndex={0} className="font-pppins">due</label>
-                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                            <li><a>Paid</a></li>
-                                        </ul>
+        <div>
+            <div className="mt-10 h-[80vh] overflow-scroll">
+                <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
+                <table className="table table-xs table-pin-rows table-pin-cols">
+                    <thead className='text-center bg-gray-400 text-black text-xl'>
+                        <th>No.</th>
+                        <th>Date</th>
+                        <th>Trackin ID</th>
+                        <th>Parcel Amount</th>
+                        <th>Delivery Charge</th>
+                        <th>Payable Amount</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody>
+                        {
+                            merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-4 border-red-400' key={parcel._id}>
+                                <td className='text-xl'>{index + 1}</td>
+                                <td className='text-xl'>{parcel.date}</td>
+                                <td className='m-4 text-xl'>
+                                    {parcel._id}
+                                </td>
+                                <td className='text-xl'>
+                                    <p>{parcel.product_amount}Tk</p>
+                                </td>
+                                <td className='flex flex-col text-xl'>
+                                    <small>delivery - {parcel.delivary_Charge}TK</small>
+                                    <small>cod {parcel.cod}TK</small>
+                                </td>
+                                <td className='text-xl'>
+                                    <div className='flex flex-col gap-1'>
+                                        <span>
+                                            {parseFloat(parcel.product_amount) - parseFloat((parcel.total_amount))} Tk.
+                                        </span>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <button onClick={() => setShowModal(parcel)} className='flex items-center gap-2 btn bg-[#1E62D4] text-white hover:bg-[#1E62D4]'><FaRegEdit />Edit</button>
-                            </td>
-                            <td>
-                                <button onClick={() => handleDeleteParcel(parcel._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
-                            </td>
+                                </td>
+                                <td>
+                                    <button onClick={() => setShowModal(parcel)} className='px-3 py-2 text-xl bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center gap-1 rounded-md text-white'><FaRegEdit />Edit</button>
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDeleteParcel(parcel._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
+                                </td>
 
-                        </tr>)
-                    }
-                </div>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
             </div>
             <AdminParcelEdit isVisible={showModal} onClose={() => setShowModal(false)}></AdminParcelEdit>
 

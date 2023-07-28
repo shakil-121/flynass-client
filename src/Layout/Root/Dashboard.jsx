@@ -55,7 +55,7 @@ const Dashboard = () => {
       <DashboardNavBar />
       <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
+        <div className="drawer-content overflow-hidden">
 
           <label
             htmlFor="my-drawer-2"
