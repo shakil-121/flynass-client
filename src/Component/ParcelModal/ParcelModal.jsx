@@ -10,9 +10,9 @@ const ParcelModal = ({ isVisible, onClose }) => {
                 <button onClick={() => onClose()} className="btn btn-circle btn-outline border-black place-self-end">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
-                <div className='bg-[#1E62D4] rounded-md p-10'>
-                    <h1 className='text-white text-3xl font-pppins'>Update Your Profile</h1>
-                    <div className='h-[600px] w-[90vh] overflow-auto'>
+                <div className='bg-[#1E62D4] rounded-md p-5 md:py-5 h-[80vh] overflow-y-scroll'>
+                    <h1 className='text-white text-3xl font-pppins mb-3'>Parcel</h1>
+                    <div className='w-[80vw] md:w-[70vw]'>
                         <table className="table table-xs table-pin-rows table-pin-cols">
                             <tr className='text-center bg-gray-400 text-black grid md:grid-cols-5'>
                                 <th>No.</th>

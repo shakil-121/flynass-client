@@ -47,24 +47,22 @@ const MyParclel = () => {
         return <div>Loading...</div>; // Show a loading state while data is being fetched
     }
     return (
-        <div className='p-10 rounded-md h-full'>
-            <div className="flex justify-between">
-                <h1 className='text-4xl font-bold font-pppins'>My Parcel</h1>
-            </div>
-            <div className="mt-10">
-                <table className="table table-xs table-pin-rows table-pin-cols">
-                    <tr className='text-center bg-gray-400 text-black grid md:grid-cols-8'>
-                        <th>No.</th>
-                        <th>Date</th>
-                        <th>Trackin ID</th>
-                        <th>Parcel Amount</th>
-                        <th>Delivery Charge</th>
-                        <th>Payable Amount</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </table>
-                <div className='h-[80vh] overflow-auto'>
+        <div className='rounded-md h-full'>
+            <div className="mt-10 h-[80vh] overflow-y-scroll">
+                <div>
+                    <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
+                    <table className="table table-xs table-pin-rows table-pin-cols">
+                        <tr className='text-center bg-gray-400 text-black grid md:grid-cols-8'>
+                            <th>No.</th>
+                            <th>Date</th>
+                            <th>Trackin ID</th>
+                            <th>Parcel Amount</th>
+                            <th>Delivery Charge</th>
+                            <th>Payable Amount</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </table>
                     {
                         merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-8 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
                             <td>{index + 1}</td>

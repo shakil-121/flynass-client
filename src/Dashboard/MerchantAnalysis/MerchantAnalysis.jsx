@@ -50,13 +50,13 @@ const MerchantAnalysis = () => {
     return (
         <div className='h-full p-8 rounded-md'>
             <div>
-                <Slider />
+                {/* <Slider /> */}
             </div>
-            <div className='grid grid-cols-4 gap-10 mt-10'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-10'>
                 <div>
                     <button onClick={() => setShowModal(parcel)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>parcel Parcel</h1>
+                            <h1 className='text-gray-400'>Total <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{parcel?.length}</h1>
                         </div>
                     </button>
@@ -64,7 +64,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(pending)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>Pending Parcel</h1>
+                            <h1 className='text-gray-400'>Pending <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{pending?.length}</h1>
                         </div>
                     </button>
@@ -72,7 +72,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(picked)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>picked Parcel</h1>
+                            <h1 className='text-gray-400'>Picked <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{picked?.length}</h1>
                         </div>
                     </button>
@@ -80,7 +80,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(onWay)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>onWay Parcel</h1>
+                            <h1 className='text-gray-400'>Onway <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{onWay?.length}</h1>
                         </div>
                     </button>
@@ -88,7 +88,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(hold)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>hold Parcel</h1>
+                            <h1 className='text-gray-400'>Hold <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{hold?.length}</h1>
                         </div>
                     </button>
@@ -96,16 +96,15 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(delivered)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>delivered Parcel</h1>
+                            <h1 className='text-gray-400'>Delivered <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{delivered?.length}</h1>
                         </div>
                     </button>
                 </div>
-                
                 <div>
                     <button onClick={() => setShowModal(returned)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>returned Parcel</h1>
+                            <h1 className='text-gray-400'>Returned <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{returned?.length}</h1>
                         </div>
                     </button>
@@ -113,7 +112,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(returnedToMerchant)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>returned To Merchant</h1>
+                            <h1 className='text-gray-400'>Returned To Merchant</h1>
                             <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
                         </div>
                     </button>
@@ -121,7 +120,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(reject)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>reject Parcel</h1>
+                            <h1 className='text-gray-400'>Reject <br /> Parcel</h1>
                             <h1 className='text-blue-800'>{reject?.length}</h1>
                         </div>
                     </button>
@@ -129,7 +128,7 @@ const MerchantAnalysis = () => {
                 <div>
                     <button onClick={() => setShowModal(reject)} className='w-full'>
                         <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-                            <h1 className='text-gray-400'>reject Parcel</h1>
+                            <h1 className='text-gray-400'>Payable <br />Amount</h1>
                             <h1 className='text-blue-800'>{reject?.length}</h1>
                         </div>
                     </button>
@@ -149,7 +148,7 @@ const MerchantAnalysis = () => {
                     </div>
                 </div>
                 <div>
-                    <DeliveryPercnet returnPercentage={returnPercentage} deliveryPercentage={deliveryPercentage}></DeliveryPercnet>
+                    {/* <DeliveryPercnet returnPercentage={returnPercentage} deliveryPercentage={deliveryPercentage}></DeliveryPercnet> */}
                 </div>
                 <div>
 

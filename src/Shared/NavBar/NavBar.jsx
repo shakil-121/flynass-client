@@ -52,7 +52,7 @@ const NavBar = () => {
   const role = currentUser?.role;
 
   return (
-    <div className={`navbar fixed z-10  text-white pe-10 transition ${scrolled ? 'bg-[#1E8FD0]' : 'bg-transparent'
+    <div className={`navbar fixed z-0 text-white pe-10 transition ${scrolled ? 'bg-[#1E8FD0]' : 'bg-transparent'
       }`}
     >
       <div className="navbar-start">
