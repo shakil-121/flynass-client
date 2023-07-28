@@ -939,7 +939,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center ">
+    <div className="z-30 fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center ">
       <div className="w-full md:w-[800px] my-24 flex flex-col  rounded-lg ">
         <button
           onClick={() => onClose()}
