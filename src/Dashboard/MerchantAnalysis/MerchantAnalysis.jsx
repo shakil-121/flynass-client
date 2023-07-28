@@ -155,12 +155,12 @@ const MerchantAnalysis = () => {
             <div className="bg-[#FF5733] h-5 w-5"></div>
           </div>
         </div>
-        {/* <div className="md:w-[60vw] ">
+        <div className="md:w-[60vw] ">
           <DeliveryPercnet
             returnPercentage={returnPercentage}
             deliveryPercentage={deliveryPercentage}
           ></DeliveryPercnet>
-        </div> */}
+        </div>
         <div></div>
       </div>
       <div className="flex items-center gap-3 bg-[#E8F6FC] p-3 rounded-md me-8">
