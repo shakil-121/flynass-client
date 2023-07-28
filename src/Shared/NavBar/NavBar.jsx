@@ -88,14 +88,17 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="coverage">Coverage</Link>
-            </li>
-            {
+            </li> 
+            <li>
+            <Link to="about">About Us</Link>
+          </li>
+            {/* {
               user ? <></> : <>
                 <li>
-                  <Link to="sign_up">Registration</Link>
+                  <Link to="registration">Registration</Link>
                 </li>
               </>
-            }
+            } */}
             <li>
               <p><FaPhoneAlt></FaPhoneAlt> 09611305423</p>
             </li>
@@ -117,13 +120,16 @@ const NavBar = () => {
           <li>
             <Link to="coverage">Coverage</Link>
           </li>
-          {
+          <li>
+            <Link to="about">About Us</Link>
+          </li>
+          {/* {
             user ? <></> : <>
               <li>
-                <Link to="sign_up">Registration</Link>
+                <Link to="registration">Registration</Link>
               </li>
             </>
-          }
+          } */}
           <li>
             <a href="tel:09611305423"><FaPhoneAlt></FaPhoneAlt> 09611305423</a>
           </li>

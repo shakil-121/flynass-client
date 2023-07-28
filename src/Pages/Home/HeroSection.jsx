@@ -75,7 +75,7 @@ const HeroSection = () => {
               </div>
               <br />
               <br />
-              <p className="text-white md:text-xl text-base">
+              <p className="text-white  font-pppins text-base">
                 Flynass is the strongest doorstep delivery network of Bangladesh
                 with nationwide <br /> doorstep delivery, nationwide doorstep
                 pickup, cash on delivery, warehousing and
@@ -84,10 +84,10 @@ const HeroSection = () => {
               <br />
               <div className="flex items-center justify-center md:justify-start">
                 <Link
-                  to="/services"
-                  className="btn btn-outline md:rounded-none rounded-lg  px-6 border-white text-white  md:text-xl text-base "
+                  to="/registration"
+                  className="btn btn-outline font-pppins rounded-lg  px-6 border-white text-white  md:text-xl text-base "
                 >
-                  VIEW SERVICES
+                  Registration 
                 </Link>
               </div>
             </div>
@@ -113,7 +113,7 @@ const HeroSection = () => {
               </div>
               <br />
               <br />
-              <p className="text-white md:text-xl text-base">
+              <p className="text-white font-pppins  text-base">
                 Flynass is the strongest doorstep delivery network of Bangladesh
                 with nationwide <br /> doorstep delivery, nationwide doorstep
                 pickup, cash on delivery, warehousing and
@@ -121,11 +121,11 @@ const HeroSection = () => {
               </p>{" "}
               <br />
               <div className="flex items-center justify-center md:justify-start">
-                <Link
-                  to="/services"
-                  className="btn btn-outline md:rounded-none rounded-lg  px-6 border-white text-white  md:text-xl text-base "
+              <Link
+                  to="/registration"
+                  className="btn btn-outline font-pppins  rounded-lg  px-6 border-white text-white  md:text-xl text-base "
                 >
-                  VIEW SERVICES
+                  Registration 
                 </Link>
               </div>
             </div>
@@ -151,7 +151,7 @@ const HeroSection = () => {
               </div>
               <br />
               <br />
-              <p className="text-white md:text-xl text-base">
+              <p className="text-white  font-pppins text-base">
                 Flynass is the strongest doorstep delivery network of Bangladesh
                 with nationwide <br /> doorstep delivery, nationwide doorstep
                 pickup, cash on delivery, warehousing and
@@ -159,11 +159,11 @@ const HeroSection = () => {
               </p>{" "}
               <br />
               <div className="flex items-center justify-center md:justify-start">
-                <Link
-                  to="/services"
-                  className="btn btn-outline md:rounded-none rounded-lg  px-6 border-white text-white  md:text-xl text-base "
+              <Link
+                  to="/registration"
+                  className="btn btn-outline font-pppins  rounded-lg  px-6 border-white text-white  md:text-xl text-base "
                 >
-                  VIEW SERVICES
+                  Registration 
                 </Link>
               </div>
             </div>

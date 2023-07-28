@@ -12,7 +12,7 @@ const Respect = () => {
     return (
         <div>
             <div>
-                <img className='w-full mt-8' src={banner} alt="" />
+                <img className='w-full mt-8 max-w-screen-xl' src={banner} alt="" />
             </div>
             <div className='max-w-screen-xl mx-auto mt-36 2xl:px-0 px-5 md:px-16'>
             <div className='text-center'>

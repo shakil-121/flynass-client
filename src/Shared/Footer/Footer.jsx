@@ -33,15 +33,16 @@ const Footer = () => {
       </div>
       <div className="font-pppins text-white">
         <span className="footer-title text-2xl">Pages</span>
-        <a className="link link-hover text-base my-2">Home</a>
-        <a className="link link-hover text-base my-2">Covarage</a>
-        <a className="link link-hover text-base my-2">Contact</a>
-        <a className="link link-hover text-base my-2">Services</a>
+        <a harf="/" className="link link-hover text-base my-2">Home</a>
+        <a harf="/covarge" className="link link-hover text-base my-2">Covarage</a>
+        <a harf="/about" className="link link-hover text-base my-2">About us</a>
+        <a harf="/services" className="link link-hover text-base my-2">Services</a>
       </div>
       <div className="font-pppins text-white">
         <span className="footer-title text-2xl">Quick Link</span>
-        <a className="link link-hover text-base my-2">Registration</a>
-        <a className="link link-hover text-base my-2">Merchant Login</a>
+        <a harf="/registration" className="link link-hover text-base my-2">Registration</a>
+        <a harf="/login" className="link link-hover text-base my-2">Merchant Login</a>
+        <a harf="/contact" className="link link-hover text-base my-2">Contact Us</a>
         
       </div>
       <div className="font-pppins text-white">

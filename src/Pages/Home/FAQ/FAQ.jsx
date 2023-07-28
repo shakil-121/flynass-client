@@ -2,24 +2,24 @@ import React from "react";
 
 const Faq = () => {
     return (
-        <div className="example2-anchor bgc px-5 md:px-16 py-8 mt-24">
+        <div className="example2-anchor max-w-screen-xl bgc px-5 md:px-16 py-8 mt-24">
             <div
                 className="my-16 max-w-screen-xl mx-auto">
                 <div
-                    data-aos="fade-left"
-                    data-aos-anchor=".example2-anchor"
-                    data-aos-duration="1500"
-                    data-aos-delay="100"
+                    // data-aos="fade-left"
+                    // data-aos-anchor=".example2-anchor"
+                    // data-aos-duration="1500"
+                    // data-aos-delay="100"
                 >
                     <h1 className="text-black font-pppins  text-xl md:text-4xl font-bold">
                         Common Frequently Asked Questions
                     </h1>
                 </div>
                 <div
-                    data-aos="fade-right"
-                    data-aos-anchor=".example2-anchor"
-                    data-aos-duration="1500"
-                    data-aos-delay="100"
+                    // data-aos="fade-right"
+                    // data-aos-anchor=".example2-anchor"
+                    // data-aos-duration="1500"
+                    // data-aos-delay="100"
                     className="collapse rounded-none collapse-plus py-2 bg-[#E8F6FC] mt-8 text-black">
                     <input type="radio" name="my-accordion-3" />
                     <div className="collapse-title text-xl font-medium">
@@ -32,10 +32,10 @@ const Faq = () => {
                     </div>
                 </div>
                 <div
-                    data-aos="fade-left"
-                    data-aos-anchor=".example2-anchor"
-                    data-aos-duration="1500"
-                    data-aos-delay="100"
+                    // data-aos="fade-left"
+                    // data-aos-anchor=".example2-anchor"
+                    // data-aos-duration="1500"
+                    // data-aos-delay="100"
                     className="collapse rounded-none collapse-plus py-2 bg-[#E8F6FC] mt-3 text-black">
                     <input type="radio" name="my-accordion-3" />
                     <div className="collapse-title text-xl font-medium">
