@@ -26,7 +26,7 @@ const AdminDashboard = () => {
         <div>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center">
+                <div className="drawer-content">
                     {/* Page content here */}
                     <label
                         htmlFor="my-drawer-2"
@@ -41,12 +41,14 @@ const AdminDashboard = () => {
                 </div>
                 <div className="drawer-side z-10">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 h-full bg-sky-200 rounded-md text-base-content">
                         {/* Sidebar content here */}
-                        <div className="mb-10">
-                            <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
-                            <h1 className="text-3xl text-center mt-3 font-semibold">{userInfo?.name}</h1>
-                            <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
+                        <div className="mb-5 py-2 ps-2 rounded-md bg-white bg-opacity-60 flex items-center gap-2">
+                            <img className="w-16 h-16 rounded-full" src={userInfo?.image} alt="" />
+                            <div>
+                                <h1 className="text-xl text-center">{userInfo?.name}</h1>
+                                <h4 className="text-xl font-semibold flex gap-2 items-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
+                            </div>
                         </div>
                         <div className="h-100vh font-pppins px-5 text-xl">
                             <div className="flex flex-col gap-2">

@@ -47,12 +47,10 @@ const AdminAnalysis = () => {
     { name: 'Delivery Percentage', value: parseFloat(deliveryPercentage) }
   ];
 
-
-
   return (
     <div className="h-auto">
-      <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
-      <div className='grid grid-cols-4 gap-10 mt-10'>
+      <h1 className="text-2xl font-pppins p-5">Dashboard</h1>
+      <div className='grid grid-cols-4 gap-8 px-5'>
         <div>
           <button onClick={() => setShowModal(todaysParcel)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>

@@ -56,7 +56,7 @@ const AllAdmin = () => {
                         <th className='bg-sky-400 py-3'>No.</th>
                         <th className='bg-sky-400 py-3'>Name</th>
                         <th className='bg-sky-400 py-3'>User Id</th>
-                        <th className='bg-sky-400 py-3'>Edit</th>
+                        <th className='bg-sky-400 py-3'>Info</th>
                         <th className='bg-sky-400 py-3'>Delete</th>
                     </tr>
                 </table>

@@ -42,7 +42,7 @@ const ManageUsers = () => {
     };
 
     return (
-        <div className='mt-10'>
+        <div className='m-5'>
             <div className='flex justify-between'>
                 <h1 className='text-4xl font-pppins mb-10'>Manage Users</h1>
                 <div className="indicator me-10">

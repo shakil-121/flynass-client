@@ -4,6 +4,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import { FaUserPlus } from 'react-icons/fa';
 import { MdLocationPin, MdOutlineExitToApp, MdLibraryBooks } from "react-icons/md";
+import { useQuery } from '@tanstack/react-query';
 
 const Menu = () => {
     const { user, logout } = useContext(AuthContext);
@@ -21,18 +22,33 @@ const Menu = () => {
             })
     }
 
+    const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
+        const res = await fetch('http://localhost:5000/users')
+        return res.json();
+    })
+
+    const loggedInUser = user?.email;
+    const currentUser = allUsers.find(item => item.email === loggedInUser)
+    const role = currentUser?.role;
+
     return (
         <div className='p-5'>
-            <div className='flex justify-between pe-10'>
-                <h1 className='ps-5 text-xl'>
-                    Hi, <br />
-                    {user?.displayName}
-                </h1>
-                <div className='flex items-center gap-2'>
-                    <img className='w-10' src={customerCare} alt="" />
-                    <h2 className='text-xl font-pppins'>Hotline: 09611305423</h2>
-                </div>
-            </div>
+            {
+                role === 'admin' || 'superAdmin' ?
+                    <></>
+                    :
+                    <div className='flex justify-between pe-10'>
+                        <h1 className='ps-5 text-xl'>
+                            Hi, <br />
+                            {user?.displayName}
+                        </h1>
+                        <div className='flex items-center gap-2'>
+                            <img className='w-10' src={customerCare} alt="" />
+                            <h2 className='text-xl font-pppins'>Hotline: 09611305423</h2>
+                        </div>
+                    </div>
+            }
+
             <div className='flex flex-col mt-14 divide-y w-1/2'>
                 <Link to="/dashboard/profile">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
