@@ -20,9 +20,8 @@ const DashboardNavBar = () => {
     const currentUser = allUsers.find(item => item.email === loggedInUser)
     const role = currentUser?.role;
 
-
     return (
-        <div className="flex justify-center md:justify-between items-center sticky top-0 z-10 bg-white shadow-md">
+        <div className="flex justify-center md:justify-between items-center top-0 z-10 bg-white shadow-md">
             <div className="">
                 <img className="h-10 sm:h-14 md:h-16" src={logo} alt="" />
             </div >

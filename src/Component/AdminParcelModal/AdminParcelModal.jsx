@@ -47,19 +47,19 @@ const AdminParcelModal = ({ isVisible, orders, onClose }) => {
     };
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-30'>
-            <div className='flex flex-col  rounded-lg'>
-                <button onClick={() => onClose()} className="btn btn-circle btn-outline border-black place-self-end">
+            <div className='flex flex-col  rounded-lg bg-sky-500'>
+                <button onClick={() => onClose()} className="btn place-self-end">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
-                <div className='bg-sky-500 rounded-md p-10'>
-                    <div className='flex justify-between mb-5'>
+                <div className=' rounded-md p-5'>
+                    <div className='md:flex justify-between mb-5'>
                         <h1 className='text-white text-3xl font-pppins'>Admin Parcel Modal</h1>
                         <div className='flex'>
                             <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
                             <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Track Now</button>
                         </div>
                     </div>
-                    <div className='h-[600px] w-[90vh] overflow-auto'>
+                    <div className='h-[70vh] w-[70vw] overflow-auto'>
                         <table className="table table-xs table-pin-rows table-pin-cols">
                             <tr className='text-center bg-gray-400 text-black grid md:grid-cols-7'>
                                 <th>No.</th>

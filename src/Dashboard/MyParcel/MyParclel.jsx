@@ -65,7 +65,7 @@ const MyParclel = () => {
                             merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>{parcel.date}</td>
-                                <td className='m-4 text-xl'>
+                                <td className='m-4 text-xl bg-black' style={{ width: '200px', height: '200px', overflow: 'hidden'}}>
                                     {parcel._id}
                                 </td>
                                 <td className='text-xl'>
@@ -88,7 +88,6 @@ const MyParclel = () => {
                                 <td>
                                     <button onClick={() => handleDeleteParcel(parcel._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
                                 </td>
-
                             </tr>)
                         }
                     </tbody>

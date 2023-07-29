@@ -26,7 +26,7 @@ const AdminDashboard = () => {
         <div>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center">
+                <div className="drawer-content">
                     {/* Page content here */}
                     <label
                         htmlFor="my-drawer-2"
@@ -41,7 +41,7 @@ const AdminDashboard = () => {
                 </div>
                 <div className="drawer-side z-10">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 h-full bg-stone-200 rounded-md text-base-content">
                         {/* Sidebar content here */}
                         <div className="mb-10">
                             <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
@@ -121,7 +121,6 @@ const AdminDashboard = () => {
                             </div>
                         </div>
                     </ul>
-
                 </div>
             </div>
         </div>

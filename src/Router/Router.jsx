@@ -117,12 +117,7 @@ const router = createBrowserRouter([
       {
         path: "merchant-analysis",
         element: <MerchantAnalysis />
-      }
-      ,
-      // {
-      //   path: "admin-analysis",
-      //   element: <AdminAnalysis></AdminAnalysis>
-      // },
+      },
       {
         path: "invoice/:id",
         element: <Invoice></Invoice>
@@ -189,7 +184,7 @@ const router = createBrowserRouter([
       {
         path: "order-history",
         element: <MerchantHistory></MerchantHistory>
-      }
+      },
     ]
   },
   // {

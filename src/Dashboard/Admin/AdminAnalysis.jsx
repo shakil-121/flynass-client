@@ -47,12 +47,10 @@ const AdminAnalysis = () => {
     { name: 'Delivery Percentage', value: parseFloat(deliveryPercentage) }
   ];
 
-
-
   return (
     <div className="h-auto">
-      <h1 className="text-2xl font-pppins p-8">Dashboard</h1>
-      <div className='grid grid-cols-4 gap-10 mt-10'>
+      <h1 className="text-2xl font-pppins p-5">Dashboard</h1>
+      <div className='grid grid-cols-4 gap-8 px-5'>
         <div>
           <button onClick={() => setShowModal(todaysParcel)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
@@ -80,7 +78,7 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(picked)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>picked Parcel</h1>
+              <h1 className='text-gray-400'>Picked Parcel</h1>
               <h1 className='text-blue-800'>{picked?.length}</h1>
             </div>
           </button>
@@ -88,7 +86,7 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(onWay)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>onWay Parcel</h1>
+              <h1 className='text-gray-400'>Onway Parcel</h1>
               <h1 className='text-blue-800'>{onWay?.length}</h1>
             </div>
           </button>
@@ -96,7 +94,7 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(hold)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>hold Parcel</h1>
+              <h1 className='text-gray-400'>Hold Parcel</h1>
               <h1 className='text-blue-800'>{hold?.length}</h1>
             </div>
           </button>
@@ -104,7 +102,7 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(delivered)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>delivered Parcel</h1>
+              <h1 className='text-gray-400'>Delivered Parcel</h1>
               <h1 className='text-blue-800'>{delivered?.length}</h1>
             </div>
           </button>
@@ -112,7 +110,7 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(returned)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>returned Parcel</h1>
+              <h1 className='text-gray-400'>Returned Parcel</h1>
               <h1 className='text-blue-800'>{returned?.length}</h1>
             </div>
           </button>
@@ -120,7 +118,7 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(returnedToMerchant)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>returned To Merchant</h1>
+              <h1 className='text-gray-400'>Returned To Merchant</h1>
               <h1 className='text-blue-800'>{returnedToMerchant?.length}</h1>
             </div>
           </button>
@@ -128,7 +126,15 @@ const AdminAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(reject)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
-              <h1 className='text-gray-400'>reject Parcel</h1>
+              <h1 className='text-gray-400'>Reject Parcel</h1>
+              <h1 className='text-blue-800'>{reject?.length}</h1>
+            </div>
+          </button>
+        </div>
+        <div>
+          <button onClick={() => setShowModal(reject)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>Payable Parcel</h1>
               <h1 className='text-blue-800'>{reject?.length}</h1>
             </div>
           </button>
