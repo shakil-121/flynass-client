@@ -25,7 +25,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper rounded-lg w-[1480px]"
+        className="mySwiper rounded-lg "
       >
         <SwiperSlide>
           <img className="" src={cover1} alt="" />
