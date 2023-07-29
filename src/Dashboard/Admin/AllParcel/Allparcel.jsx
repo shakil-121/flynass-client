@@ -12,7 +12,7 @@ const AllParcel = () => {
 
     return (
         <div>
-            <div className='h-[80vh] overflow-scroll bg-sky-400'>
+            <div className='h-[95vh] overflow-scroll bg-sky-400'>
                 <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <thead className='text-center bg-gray-400 text-black text-xl'>
@@ -100,7 +100,6 @@ const AllParcel = () => {
             </div>
             {/* <ParcelRejectForm isVisible={showModal} onClose={() => setShowModal(false)}></ParcelRejectForm> */}
         </div>
-        
     );
 };
 
