@@ -11,8 +11,8 @@ const AllParcel = () => {
     // console.log(allParce);
 
     return (
-        <div className='rounded-md px-2'>
-            <div className='bg-sky-400 p-5 overflow-auto h-[95vh] w-[100%]'>
+        <div className='rounded-md w-[850px]'>
+            <div className='bg-sky-400 p-5 overflow-auto h-[95vh] w-[80vw]'>
                 <h1 className='text-3xl font-pppins mb-2'>All Parcel</h1>
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <thead className='text-center bg-gray-400 text-black text-sm'>
@@ -78,8 +78,7 @@ const AllParcel = () => {
                                     <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                                 </td>
                                 <td className='text-xl'>
-                                    {/* <Link to={`/dashboard/invoice/${parcel._id}`}><h1><FaEye /></h1></Link> */}
-                                    <p className='ms-3'><FaEye /></p>
+                                    <Link to={`/dashboard/invoice/${parcel._id}`}><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white flex items-center'><FaEye />Invoice</button></Link>
                                 </td>
                                 <td className='text-xl'>
                                     <div className='flex flex-col gap-1'>
