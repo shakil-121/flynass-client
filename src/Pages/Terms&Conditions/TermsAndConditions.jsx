@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
             <h1 className='text-5xl font-pppins mb-10 text-center'>Terms & Conditions</h1>
             <div className='flex flex-col gap-5'>
                 <div className='mt-5'>
-                    <Link to="/dashboard/menu">
+                    <Link to="../menu">
                         <h1 className='btn bg-blue-800 text-white hover:bg-blue-700'>
                             <FaArrowLeft />Back
                         </h1>

@@ -78,7 +78,7 @@ const AllParcel = () => {
                                     <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                                 </td>
                                 <td className='text-xl'>
-                                    <Link to={`/dashboard/invoice/${parcel._id}`}><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white flex items-center'><FaEye />Invoice</button></Link>
+                                    <Link to={`../invoice/${parcel._id}`}><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white flex items-center'><FaEye />Invoice</button></Link>
                                 </td>
                                 <td className='text-xl'>
                                     <div className='flex flex-col gap-1'>
