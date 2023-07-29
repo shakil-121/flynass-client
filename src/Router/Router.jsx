@@ -32,6 +32,7 @@ import ManageUsers from "../Dashboard/SuperAdmin/ManageUsers/ManageUsers";
 import { path } from "d3-path";
 import { element } from "prop-types";
 import AdminSignUp from "../Pages/LoginAndSignup/AdminRegistration";
+import TramsCondition from "../Pages/TramsCondition/TramsCondition";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
        path:"about",
        element:<About></About>
+      },
+      {
+      path:"tarms&condition",
+      element:<TramsCondition></TramsCondition>
       },
       {
         path: "admin_signup",
