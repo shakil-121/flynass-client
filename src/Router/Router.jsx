@@ -68,8 +68,8 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-       path:"about",
-       element:<About></About>
+        path: "about",
+        element: <About></About>
       },
       {
         path: "admin_signup",
@@ -97,18 +97,6 @@ const router = createBrowserRouter([
         path: "my-parcel",
         element: <MyParclel></MyParclel>
       },
-      // {
-      //   path: "all-admin",
-      //   element: <AllAdmin></AllAdmin>
-      // },
-      // {
-      //   path: "all-parcel",
-      //   element: <AllParcel></AllParcel>
-      // },
-      // {
-      //   path: "manage-user",
-      //   element: <ManageUsers></ManageUsers>
-      // },
       {
         path: "merchant-analysis",
         element: <MerchantAnalysis />
@@ -180,19 +168,26 @@ const router = createBrowserRouter([
         path: "order-history",
         element: <MerchantHistory></MerchantHistory>
       },
+      {
+        path: "address",
+        element: <Address></Address>
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>
+      },
+      {
+        path: 'terms-coditions',
+        element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path: "invoice/:id",
+        element: <Invoice></Invoice>
+      }
     ]
   },
-  // {
-  //   path: "admin_login",
-  //   element: <AdminLogin></AdminLogin>,
-  //   children: [
-  //     {
-  //       path: "address",
-  //       element: <Address></Address>
-  //     }
-  //   ]
-  // },
-  
+
+
 ]);
 
 export default router;

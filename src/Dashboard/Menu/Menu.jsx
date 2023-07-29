@@ -50,17 +50,17 @@ const Menu = () => {
             }
 
             <div className='flex flex-col mt-14 divide-y w-1/2'>
-                <Link to="/dashboard/profile">
+                <Link to="../profile">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
                         <FaUserPlus />Profile
                     </h1>
                 </Link>
-                <Link to="/dashboard/address">
+                <Link to="../address">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
                         <MdLocationPin />Address
                     </h1>
                 </Link>
-                <Link to="/dashboard/terms-coditions">
+                <Link to="../terms-coditions">
                     <h1 className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
                         <MdLibraryBooks />Terms & Conditions
                     </h1>
@@ -68,8 +68,6 @@ const Menu = () => {
                 <button onClick={handleLogout} className='hover:bg-[#F5F5F5] flex items-center gap-14 text-3xl font-semibold py-8 ps-5'>
                     <MdOutlineExitToApp />Logout
                 </button>
-
-
             </div>
         </div>
     );
