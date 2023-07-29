@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import ParcelRejectForm from './ParcelRejectForm';
 import useParcel from '../../../Hooks/useParcel';
-import { FaEye, FaTrashAlt } from 'react-icons/fa';
+import { FaEye, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const AllParcel = () => {
@@ -11,11 +11,11 @@ const AllParcel = () => {
     // console.log(allParce);
 
     return (
-        <div className='rounded-md w-[850px]'>
-            <div className='bg-sky-400 p-5 overflow-auto h-[95vh] w-[80vw]'>
-                <h1 className='text-3xl font-pppins mb-2'>All Parcel</h1>
+        <div>
+            <div className='h-[80vh] overflow-scroll bg-sky-400'>
+                <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
                 <table className="table table-xs table-pin-rows table-pin-cols">
-                    <thead className='text-center bg-gray-400 text-black text-sm'>
+                    <thead className='text-center bg-gray-400 text-black text-xl'>
                         <td>No.</td>
                         <td>Date</td>
                         <td>Status</td>
@@ -39,7 +39,7 @@ const AllParcel = () => {
                     </thead>
                     <tbody>
                         {
-                            allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] text-center rounded-md mb-5 shadow-lg text- font-josefin' key={parcel._id}>
+                            allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>7/10/2023</td>
                                 <td className='text-xl'>
@@ -97,11 +97,10 @@ const AllParcel = () => {
                         }
                     </tbody>
                 </table>
-
-
             </div>
             {/* <ParcelRejectForm isVisible={showModal} onClose={() => setShowModal(false)}></ParcelRejectForm> */}
         </div>
+        
     );
 };
 
