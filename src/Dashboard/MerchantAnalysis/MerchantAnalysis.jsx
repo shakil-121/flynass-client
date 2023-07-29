@@ -141,6 +141,30 @@ const MerchantAnalysis = () => {
         </div>
       </div>
 
+      {/* payment Summary Section */}
+      <div>
+        <h1 className="text-3xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
+        <div className="grid grid-cols-3 gap-5">
+          <div>
+            <button onClick={() => setShowModal(reject)} className="w-full">
+              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+                <h1 className="text-blue-800">{reject?.length}</h1>
+                <h1 className="text-gray-400">To be processing</h1>
+              </div>
+            </button>
+          </div>
+          <div>
+            <button onClick={() => setShowModal(reject)} className="w-full">
+              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+                <h1 className="text-blue-800">{reject?.length}</h1>
+                <h1 className="text-gray-400">To be collected</h1>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* parcel Analysis */}
       <div>
         <h1 className="text-3xl font-pppins mt-10 text-black">
           Parcel Analysis
