@@ -16,7 +16,7 @@ const MyParclel = () => {
         const res = await fetch(`http://localhost:5000/user/order/${user?.email}`)
         return res.json();
     })
-    console.log(merchantParcel);
+
 
     const handleDeleteParcel = id => {
         Swal.fire({
@@ -65,7 +65,7 @@ const MyParclel = () => {
                             merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>{parcel.date}</td>
-                                <td className='m-4 text-xl bg-black' style={{ width: '20px', height: '200px', overflow: 'hidden', wordWrap: 'break-word'}}>
+                                <td className='m-4 text-xl bg-black' style={{ width: '20px', height: '200px', overflow: 'hidden', wordWrap: 'break-word' }}>
                                     {parcel._id}
                                 </td>
                                 <td className='text-xl'>
@@ -83,7 +83,16 @@ const MyParclel = () => {
                                     </div>
                                 </td>
                                 <td className='mx-auto'>
-                                    <button onClick={() => setShowModal(parcel)} className='px-3 py-2 text-xl bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center gap-1 rounded-md text-white'><FaRegEdit />Edit</button>
+                                    {
+                                        parcel.status === 'pending' ?
+                                            <div className='flex justify-center'>
+                                                <button onClick={() => setShowModal(parcel)} className='px-3 py-2 text-xl bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center gap-1 rounded-md text-white'><FaRegEdit />Edit</button>
+                                            </div>
+                                            :
+                                            <>
+                                                <h1 className='text-xl text-error'>Not <br />changeable</h1>
+                                            </>
+                                    }
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteParcel(parcel._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
