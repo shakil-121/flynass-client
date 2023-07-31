@@ -7,7 +7,7 @@ const useParcel = () => {
         return res.json();
     })
 
-    return parcel;
+    return [parcel, refetch];
 };
 
 export default useParcel;
