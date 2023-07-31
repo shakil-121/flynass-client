@@ -24,7 +24,7 @@ const AllParcel = () => {
             .then((data) => {
                 if (data.acknowledged) {
                     Swal.fire({
-                        title: "Update",
+                        title: "Status Update",
                         text: "Status update successfully",
                         icon: "success",
                         confirmButtonText: "Update",
