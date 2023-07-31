@@ -41,7 +41,7 @@ const CompanyApproch = () => {
               <h1 className="md:text-[96px] text-[250px] text-bg">02</h1>
             </div>
             <h1 className="text-2xl md:text-4xl font-bold text-center md:text-left">
-              Year's of experience in transport <br /> and logistics services
+              Year's of experience <br /> Parcel Delivery services
             </h1>
           </div>
           <div className="grid md:grid-cols-3 justify-center gap-10 ">

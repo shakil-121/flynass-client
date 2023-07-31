@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../Hooks/useAuth';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import MerchentParcelEdit from '../../Component/AdminParcelModal/MerchentParcel';
 
 const MyParclel = () => {
     const [showModal, setShowModal] = useState(false);
@@ -93,7 +94,7 @@ const MyParclel = () => {
                     </tbody>
                 </table>
             </div>
-            <AdminParcelEdit isVisible={showModal} onClose={() => setShowModal(false)}></AdminParcelEdit>
+            <MerchentParcelEdit isVisible={showModal} onClose={() => setShowModal(false)}></MerchentParcelEdit>
 
         </div>
     );

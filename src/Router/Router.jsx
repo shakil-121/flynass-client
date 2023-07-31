@@ -33,6 +33,7 @@ import { path } from "d3-path";
 import { element } from "prop-types";
 import AdminSignUp from "../Pages/LoginAndSignup/AdminRegistration";
 import TramsCondition from "../Pages/TramsCondition/TramsCondition";
+import Error from "../Pages/Error/Error";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -76,14 +77,14 @@ const router = createBrowserRouter([
       path:"tarms&condition",
       element:<TramsCondition></TramsCondition>
       },
-      {
-        path: "admin_signup",
-        element: <AdminSignUp></AdminSignUp>,
-      },
-      {
-        path: "admin_login",
-        element: <AdminLogin></AdminLogin>
-      }
+      // {
+      //   path: "admin_signup",
+      //   element: <AdminSignUp></AdminSignUp>,
+      // },
+      // {
+      //   path: "admin_login",
+      //   element: <AdminLogin></AdminLogin>
+      // }
     ],
   },
   {
@@ -191,6 +192,19 @@ const router = createBrowserRouter([
       }
     ]
   },
+   {
+        path: "admin_signup",
+        element: <AdminSignUp></AdminSignUp>,
+   },
+   {
+    path: "admin_login",
+    element: <AdminLogin></AdminLogin>
+  },
+
+  {
+    path:"*",
+    element:<Error></Error>
+  }
 
 
 ]);

@@ -56,7 +56,7 @@ const NavBar = () => {
       }`}
     >
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown text-sky-300">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm border-sky-500 border-2 font-pppins text-black dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
               <Link>Home</Link>
@@ -105,10 +105,10 @@ const NavBar = () => {
             </li>
           </ul >
         </div >
-        <img className="h-16" src={logo} alt="" />
+        <img className="md:h-16 h-10" src={logo} alt="" />
       </div >
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal font-pppins text-base px-1">
+        <ul className="menu menu-horizontal font-pppins  text-base px-1">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -167,14 +167,14 @@ const NavBar = () => {
                   <>
                     {user ?
                       <>
-                        <Link className="btn mx-3 bg-[#062751] hover:text-black text-white" to="/dashboard">
+                        <Link className="btn mx-3 bg-[#062751] hover:text-black md:text-base text-[10px] text-white" to="/dashboard">
                           <div>
                             <h1>Hello <br />
                               {user?.displayName}</h1>
                           </div>
                         </Link>
                         <div className="avatar online">
-                          <div className="h-16 auto rounded-full">
+                          <div className="md:h-16 h-10 auto rounded-full">
                             <img className="" title={user?.displayName} src={user.photoURL} alt="" />
                           </div>
                         </div>
