@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ParcelRejectForm from './ParcelRejectForm';
 import useParcel from '../../../Hooks/useParcel';
 import { FaEye, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 
@@ -12,9 +12,9 @@ const AllParcel = () => {
     const [allParce, refetch] = useParcel();
     // console.log(allParce);
 
-    const handleStatusUpdate = (status,id) => {
-        console.log(status,id);   
-        const statusUpdate={status}
+    const handleStatusUpdate = (status, id) => {
+        console.log(status, id);
+        const statusUpdate = { status }
         fetch(`http://localhost:5000/order/status/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -24,12 +24,13 @@ const AllParcel = () => {
             .then((data) => {
                 if (data.acknowledged) {
                     Swal.fire({
-                        title: "Update",
+                        title: "Status Update",
                         text: "Status update successfully",
                         icon: "success",
                         confirmButtonText: "Update",
                     });
                 }
+                refetch();
             });
     }
     return (
@@ -51,13 +52,13 @@ const AllParcel = () => {
                             Charge
                         </td>
                         <td>Destination</td>
-                        <td>Reject Button</td>
                         <td>view <br />
                             Invoice
                         </td>
                         <td>Payable <br />
                             Amount
                         </td>
+                        <td>Reject Button</td>
                     </thead>
                     <tbody>
                         {
@@ -68,12 +69,12 @@ const AllParcel = () => {
                                     <div className="dropdown dropdown-bottom text-black">
                                         <label tabIndex={0} className=""><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white'>{parcel.status}</button></label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                            <li onClick={() => handleStatusUpdate('picked')}><a>Picked</a></li>
-                                            <li onClick={() => handleStatusUpdate('on the way')}><a>On The Way</a></li>
+                                            <li onClick={() => handleStatusUpdate('picked', parcel._id)}><a>Picked</a></li>
+                                            <li onClick={() => handleStatusUpdate('on the way', parcel._id)}><a>On The Way</a></li>
                                             <li onClick={() => handleStatusUpdate('delivered')}><a>Deliverd</a></li>
-                                            <li onClick={() => handleStatusUpdate('hold')}><a>Hold</a></li>
-                                            <li onClick={() => handleStatusUpdate('returned')}><a>Return</a></li>
-                                            <li onClick={() => handleStatusUpdate('returned to merchant')}><a>Return to Mechant</a></li>
+                                            <li onClick={() => handleStatusUpdate('hold', parcel._id)}><a>Hold</a></li>
+                                            <li onClick={() => handleStatusUpdate('returned', parcel._id)}><a>Return</a></li>
+                                            <li onClick={() => handleStatusUpdate('returned to merchant', parcel._id)}><a>Return to Mechant</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -97,9 +98,6 @@ const AllParcel = () => {
                                     </div>
                                 </td>
                                 <td className='text-xl'>
-                                    <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
-                                </td>
-                                <td className='text-xl'>
                                     <Link to={`../invoice/${parcel._id}`}><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white flex items-center'><FaEye />Invoice</button></Link>
                                 </td>
                                 <td className='text-xl'>
@@ -114,6 +112,9 @@ const AllParcel = () => {
                                             </ul>
                                         </div>
                                     </div>
+                                </td>
+                                <td className='text-xl'>
+                                    <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                                 </td>
                             </tr>)
                         }
