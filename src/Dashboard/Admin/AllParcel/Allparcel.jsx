@@ -10,6 +10,9 @@ const AllParcel = () => {
     const allParce = useParcel();
     // console.log(allParce);
 
+    const handleStatusUpdate = status => {
+        console.log(status);
+    }
     return (
         <div>
             <div className='h-[95vh] overflow-scroll w-[75vw] px-16 pt-5 bg-sky-400'>
@@ -44,14 +47,14 @@ const AllParcel = () => {
                                 <td className='text-xl'>7/10/2023</td>
                                 <td className='text-xl'>
                                     <div className="dropdown dropdown-bottom text-black">
-                                        <label tabIndex={0} className="">{parcel.status}</label>
+                                        <label tabIndex={0} className=""><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white'>{parcel.status}</button></label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                            <li><a>Picked</a></li>
-                                            <li><a>On The Way</a></li>
-                                            <li><a>Deliverd</a></li>
-                                            <li><a>Hold</a></li>
-                                            <li><a>Return</a></li>
-                                            <li><a>Return to Mechant</a></li>
+                                            <li onClick={() => handleStatusUpdate('picked')}><a>Picked</a></li>
+                                            <li onClick={() => handleStatusUpdate('on the way')}><a>On The Way</a></li>
+                                            <li onClick={() => handleStatusUpdate('delivered')}><a>Deliverd</a></li>
+                                            <li onClick={() => handleStatusUpdate('hold')}><a>Hold</a></li>
+                                            <li onClick={() => handleStatusUpdate('returned')}><a>Return</a></li>
+                                            <li onClick={() => handleStatusUpdate('returned to merchant')}><a>Return to Mechant</a></li>
                                         </ul>
                                     </div>
                                 </td>
