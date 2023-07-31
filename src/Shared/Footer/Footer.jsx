@@ -33,22 +33,21 @@ const Footer = () => {
       </div>
       <div className="font-pppins text-white">
         <span className="footer-title text-2xl">Pages</span>
-        <a harf="/" className="link link-hover text-base my-2">Home</a>
-        <a harf="/covarge" className="link link-hover text-base my-2">Covarage</a>
-        <a harf="/about" className="link link-hover text-base my-2">About us</a>
-        <a harf="/services" className="link link-hover text-base my-2">Services</a>
+        <Link to="/" className="link link-hover text-base my-2">Home</Link>
+        <Link to="/coverage" className="link link-hover text-base my-2">Covarage</Link>
+        <Link to="/about" className="link link-hover text-base my-2">About us</Link>
+        <Link to="/services" className="link link-hover text-base my-2">Services</Link>
       </div>
       <div className="font-pppins text-white">
         <span className="footer-title text-2xl">Quick Link</span>
-        <a harf="/registration" className="link link-hover text-base my-2">Registration</a>
-        <a harf="/login" className="link link-hover text-base my-2">Merchant Login</a>
-        <a harf="/contact" className="link link-hover text-base my-2">Contact Us</a>
-        
+        <Link to="/registration" className="link link-hover text-base my-2">Registration</Link>
+        <Link to="/login" className="link link-hover text-base my-2">Merchant Login</Link>
+        <Link to="/contact" className="link link-hover text-base my-2">Contact Us</Link>
       </div>
       <div className="font-pppins text-white">
         <span className="footer-title text-2xl">Important Page</span>
-        <a className="link link-hover text-base my-2">Trams & Condition</a>
-        <a className="link link-hover text-base my-2">Login</a>
+        <Link to="/tarms&condition" className="link link-hover text-base my-2">Trams & Condition</Link>
+        <Link to="/login" className="link link-hover text-base my-2">Login</Link>
       </div>
 
      

@@ -4,7 +4,7 @@ import cover from "../../assets/images/trams.png"
 const TramsCondition = () => {
     return (
         <div className='font-pppins'>
-            <div>
+            <div className="pt-16">
                 <img className='w-full' src={cover} alt="" />
             </div> 
             <div>

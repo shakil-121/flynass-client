@@ -12,7 +12,7 @@ const Testimonial = () => {
                         <img src={img1} alt="Shoes" className="xl rounded-full" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Sheikh Hasib</h2>
+                        <h2 className="card-title">Tareq Khan</h2>
                         <div className="rating rating-sm">
                             <input type="radio" name="rating-6" className="mask mask-star-2 bg-[#FF3333]" />
                             <input type="radio" name="rating-6" className="mask mask-star-2 bg-[#FF3333]" checked />
@@ -20,8 +20,8 @@ const Testimonial = () => {
                             <input type="radio" name="rating-6" className="mask mask-star-2 bg-[#FF3333]" />
                             <input type="radio" name="rating-6" className="mask mask-star-2 bg-[#FF3333]" />
                         </div>
-                        <h3 className="text-xl text-gray-500">CEO, Flynass</h3>
-                        <p className="text-xl text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat earum laboriosam reiciendis numquam error impedit quod, obcaecati ullam.</p>
+                        <h3 className="text-xl text-gray-500"></h3>
+                        <p className="text-xl text-gray-500">"I'm very impressed with the speedy delivery! My package arrived a day earlier than expected, and everything was well-packed. Great job!"</p>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl m-10">

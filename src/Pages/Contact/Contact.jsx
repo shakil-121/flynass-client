@@ -32,7 +32,7 @@ const Contact = () => {
   };
   return (
     <div>
-       <div>
+       <div className="pt-16">
         <img className="w-full" src={cover} alt="" />
       </div>
       <div>
