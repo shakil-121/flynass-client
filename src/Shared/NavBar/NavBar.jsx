@@ -89,6 +89,7 @@ const NavBar = () => {
             <li>
               <Link to="coverage">Coverage</Link>
             </li> 
+
             <li>
             <Link to="about">About Us</Link>
           </li>

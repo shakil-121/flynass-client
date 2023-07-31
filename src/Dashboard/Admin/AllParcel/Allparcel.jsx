@@ -12,9 +12,9 @@ const AllParcel = () => {
 
     return (
         <div>
-            <div className='h-[95vh] overflow-scroll bg-sky-400'>
+            <div className='h-[95vh] overflow-scroll w-[75vw] px-16 pt-5 bg-sky-400'>
                 <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
-                <table className="table table-xs table-pin-rows table-pin-cols">
+                <table className="table table-xs  table-pin-rows table-pin-cols">
                     <thead className='text-center bg-gray-400 text-black text-xl'>
                         <td>No.</td>
                         <td>Date</td>
