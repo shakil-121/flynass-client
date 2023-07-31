@@ -69,12 +69,12 @@ const AllParcel = () => {
                                     <div className="dropdown dropdown-bottom text-black">
                                         <label tabIndex={0} className=""><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white'>{parcel.status}</button></label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                            <li onClick={() => handleStatusUpdate('picked', parcel._id)}><a>Picked</a></li>
-                                            <li onClick={() => handleStatusUpdate('on the way', parcel._id)}><a>On The Way</a></li>
+                                            <li onClick={() => handleStatusUpdate('picked')}><a>Picked</a></li>
+                                            <li onClick={() => handleStatusUpdate('on the way')}><a>On The Way</a></li>
                                             <li onClick={() => handleStatusUpdate('delivered')}><a>Deliverd</a></li>
-                                            <li onClick={() => handleStatusUpdate('hold', parcel._id)}><a>Hold</a></li>
-                                            <li onClick={() => handleStatusUpdate('returned', parcel._id)}><a>Return</a></li>
-                                            <li onClick={() => handleStatusUpdate('returned to merchant', parcel._id)}><a>Return to Mechant</a></li>
+                                            <li onClick={() => handleStatusUpdate('hold')}><a>Hold</a></li>
+                                            <li onClick={() => handleStatusUpdate('returned')}><a>Return</a></li>
+                                            <li onClick={() => handleStatusUpdate('returned to merchant')}><a>Return to Mechant</a></li>
                                         </ul>
                                     </div>
                                 </td>
