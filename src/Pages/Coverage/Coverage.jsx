@@ -8,7 +8,7 @@ const Coverage = () => {
   useTitle("Coverage")
   return (
     <div> 
-      <div className="pt-16">
+      <div className="pt-16 md:pt-0">
         <img src={cover} alt="" />
       </div>
       <div className="max-w-screen-xl px-10">

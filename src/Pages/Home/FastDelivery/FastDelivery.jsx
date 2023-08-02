@@ -2,7 +2,7 @@ import man from "../../../assets/images/man.png";
 
 const FastDelivery= () => {
   return (
-    <div className="tolly-anchor font-pppins  flex flex-col items-center mt-28 mb-36">
+    <div className="tolly-anchor font-pppins  flex flex-col items-center mt-4 mb-4">
       <div className="md:flex  max-w-screen-xl mx-auto  items-center">
         <div className="mx-4 md:mx-16">
           <h1 className="uppercase text-3xl font-pppins font-semibold mb-5">
