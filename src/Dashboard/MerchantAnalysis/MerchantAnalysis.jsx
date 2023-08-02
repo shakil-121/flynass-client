@@ -25,7 +25,7 @@ const MerchantAnalysis = () => {
     fetch(`http://localhost:5000/user/order/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setParcel(data));
-  }, []);
+  }, [parcel]);
 
   console.log(parcel);
 
