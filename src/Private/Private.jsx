@@ -1,21 +1,31 @@
 import React from 'react';
 import useAuth from '../Hooks/useAuth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import Lottie from "lottie-react";
+import flying from "../../public/animation_flying.json";
 
-const Private = ({children}) => {
-    const {user,loadding}=useAuth()
-    const navigate=useNavigate();
-    const location=useLocation()
-    
-    if(loadding)
-    {
-        return <progress className="progress w-56"></progress>
-   
+const Private = ({ children }) => {
+    const { user, loadding } = useAuth()
+    const navigate = useNavigate();
+    const location = useLocation()
+
+    if (loadding) {
+        return <div className='flex justify-center items-center h-[100vh]'>
+            <div>
+                <Lottie
+                    className="opacity-70 w-56"
+                    animationData={flying}
+                    loop={true}
+                />
+                <h1 className='font-pppins'>Flynass is Loading...</h1>
+            </div>
+        </div>
+
     }
-    if(user){
+    if (user) {
         return children;
     }
-    return <Navigate state={{from:location}} to="/login" replace></Navigate>
+    return <Navigate state={{ from: location }} to="/login" replace></Navigate>
 
 };
 
