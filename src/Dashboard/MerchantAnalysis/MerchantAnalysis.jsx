@@ -40,6 +40,13 @@ const MerchantAnalysis = () => {
   );
   const reject = parcel.filter((item) => item.status === "reject");
 
+  // payment summary
+  const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
+  const collected = paid.reduce((acc, obj) => acc + obj.payable_amount, 0);
+
+  const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
+  const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0);
+
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;
   const devlieryParcel = delivered.length;
@@ -134,7 +141,7 @@ const MerchantAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(reject)} className="w-full">
             <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
-              <h1 className="text-gray-400">Payable <br /> Parcel</h1>
+              <h1 className="text-gray-400">Payable <br /> Amount</h1>
               <h1 className="text-blue-800">{reject?.length}</h1>
             </div>
           </button>
@@ -148,7 +155,16 @@ const MerchantAnalysis = () => {
           <div>
             <button onClick={() => setShowModal(reject)} className="w-full">
               <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
-                <h1 className="text-blue-800">{reject?.length}</h1>
+                <h1 className="text-blue-800">
+                  {
+                    processing ?
+                      <>
+                        {processing} TK
+                      </>
+                      :
+                      <>00.00TK</>
+                  }
+                </h1>
                 <h1 className="text-gray-400">To be processing</h1>
               </div>
             </button>
@@ -156,7 +172,16 @@ const MerchantAnalysis = () => {
           <div>
             <button onClick={() => setShowModal(reject)} className="w-full">
               <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
-                <h1 className="text-blue-800">{reject?.length}</h1>
+                <h1 className="text-blue-800">
+                  {
+                    collected ?
+                      <>
+                        {collected} TK
+                      </>
+                      :
+                      <>00.00TK</>
+                  }
+                </h1>
                 <h1 className="text-gray-400">To be collected</h1>
               </div>
             </button>

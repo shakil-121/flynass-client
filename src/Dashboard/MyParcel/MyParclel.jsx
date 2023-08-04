@@ -58,15 +58,14 @@ const MyParclel = () => {
                         <th>Parcel Amount</th>
                         <th>Delivery Charge</th>
                         <th>Payable Amount</th>
-                        <th className='text-left'>Edit</th>
-                        <th>Delete</th>
+                        <th>Status</th>
                     </thead>
                     <tbody>
                         {
                             merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>{parcel.date}</td>
-                                <td className='m-4 text-xl bg-black' style={{ width: '20px', height: '200px', overflow: 'hidden', wordWrap: 'break-word'}}>
+                                <td className='m-4 text-xl' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>
                                     {parcel._id}
                                 </td>
                                 <td className='text-xl'>
@@ -83,7 +82,11 @@ const MyParclel = () => {
                                         </span>
                                     </div>
                                 </td>
-                                <td className='mx-auto'>
+                                <td className='text-xl'>
+                                    <p className='font-semibold'>{parcel.status}</p>
+                                </td>
+                                
+                                {/* <td className='mx-auto'>
                                     {
                                         parcel.status === 'pending' ?
                                             <div className='flex justify-center'>
@@ -97,7 +100,7 @@ const MyParclel = () => {
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteParcel(parcel._id)} className='btn rounded-full bg-[#D53343] text-white hover:bg-[#D53343]'><FaTrashAlt /></button>
-                                </td>
+                                </td> */}
                             </tr>)
                         }
                     </tbody>

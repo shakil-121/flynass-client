@@ -32,6 +32,15 @@ const AdminAnalysis = () => {
   const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
   const reject = parcel.filter(item => item.status === "reject");
 
+  // payment summary
+  const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
+  const total_paid = paid.reduce((acc, obj) => acc + obj.payable_amount, 0);
+
+  const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
+  const total_due = due.reduce((acc, obj) => acc + obj?.payable_amount, 0);
+
+  // console.log(total_paid);
+
   // delivery percentage calculation
   const returnParcel = (returnedToMerchant.length);
   const devlieryParcel = (delivered.length);
@@ -140,6 +149,47 @@ const AdminAnalysis = () => {
           </button>
         </div>
       </div>
+
+      {/* payment summary */}
+      <div className="px-5">
+        <h1 className="text-3xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
+        <div className="grid grid-cols-3 gap-5">
+          <div>
+            <button onClick={() => setShowModal(reject)} className="w-full">
+              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+                <h1 className="text-blue-800">
+                  {
+                    total_due ?
+                      <>
+                        {total_due} TK
+                      </>
+                      :
+                      <>00.00TK</>
+                  }
+                </h1>
+                <h1 className="text-gray-400">To be processing</h1>
+              </div>
+            </button>
+          </div>
+          <div>
+            <button onClick={() => setShowModal(reject)} className="w-full">
+              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+                <h1 className="text-blue-800">
+                  {
+                    total_paid ?
+                      <>
+                        {total_paid} TK
+                      </>
+                      :
+                      <>00.00TK</>
+                  }
+                </h1>
+                <h1 className="text-gray-400">Total Paid Amount</h1>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
       <div>
         <h1 className="text-2xl font-pppins p-8 ">
           All Analysis Percentage Chart
@@ -162,7 +212,7 @@ const AdminAnalysis = () => {
           </PieChart>
         </div>
       </div>
-      
+
       <AdminParcelModal isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
     </div>
   );

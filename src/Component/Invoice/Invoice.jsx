@@ -12,6 +12,7 @@ const Invoice = () => {
     const allParce = useParcel();
     const invoiceParcel = allParce.find(parcel => parcel?._id === parcelId.id);
     const payableAmount = (parseFloat(invoiceParcel?.total_amount) + parseFloat(invoiceParcel?.product_amount));
+    console.log(allParce);
 
     const handleDownload = () => {
         const element = document.getElementById('invoice-section');
