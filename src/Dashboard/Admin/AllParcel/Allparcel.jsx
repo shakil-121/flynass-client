@@ -9,7 +9,8 @@ import Swal from "sweetalert2";
 const AllParcel = () => {
     const [showModal, setShowModal] = useState(false);
     const [allParce, refetch] = useParcel();
-    const needParcel = allParce.filter(parcel => parcel.status !== "delivered");
+    const needParcel = allParce.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected");
+
     // console.log(allParce);
 
     const handleStatusUpdate = (status, id) => {

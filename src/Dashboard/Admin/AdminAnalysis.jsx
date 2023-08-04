@@ -30,7 +30,7 @@ const AdminAnalysis = () => {
   const delivered = parcel.filter(item => item.status === "delivered");
   const returned = parcel.filter(item => item.status === "returned");
   const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
-  const reject = parcel.filter(item => item.status === "reject");
+  const reject = parcel.filter(item => item.status === "rejected");
 
   // payment summary
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
