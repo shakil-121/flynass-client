@@ -51,13 +51,12 @@ const AllParcel = () => {
                             Charge
                         </td>
                         <td>Destination</td>
-                        <td>Reject Button</td>
                         <td>view <br />
                             Invoice
                         </td>
                         <td>Payable <br />
-                            Amount
-                        </td>
+                         Amount</td>
+                        <td>Rejcet</td>
                     </thead>
                     <tbody>
                         {
@@ -97,9 +96,6 @@ const AllParcel = () => {
                                     </div>
                                 </td>
                                 <td className='text-xl'>
-                                    <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
-                                </td>
-                                <td className='text-xl'>
                                     <Link to={`../invoice/${parcel._id}`}><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white flex items-center'><FaEye />Invoice</button></Link>
                                 </td>
                                 <td className='text-xl'>
@@ -112,6 +108,9 @@ const AllParcel = () => {
                                             </ul>
                                         </div>
                                     </div>
+                                </td>
+                                <td className='text-xl'>
+                                    <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                                 </td>
                             </tr>)
                         }
