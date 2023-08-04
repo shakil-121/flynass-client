@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 const AllParcel = () => {
     const [showModal, setShowModal] = useState(false);
     const [allParce, refetch] = useParcel();
+    const needParcel = allParce.filter(parcel => parcel.status !== "delivered");
     // console.log(allParce);
 
     const handleStatusUpdate = (status, id) => {
@@ -77,7 +78,7 @@ const AllParcel = () => {
                     </thead>
                     <tbody>
                         {
-                            allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
+                            needParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
                                 {/* <td className='text-xl'>{index + 1}</td> */}
                                 <td>
                                     <label>
