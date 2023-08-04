@@ -32,36 +32,58 @@ const AllParcel = () => {
                 refetch();
             });
     }
+
+    const pending = allParce.filter(item => item.status === "pending");
+    const picked = allParce.filter(item => item.status === "picked");
+    const onWay = allParce.filter(item => item.status === "On The Way");
+    const hold = allParce.filter(item => item.status === "hold");
+
     return (
         <div>
             <div className='h-[95vh] overflow-scroll w-[75vw] px-16 pt-5 bg-sky-400'>
-                <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
+                <div>
+                    <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
+                    <div className='flex gap-5 divide-x-2 divide-black items-center text-2xl mb-3 text-black '>
+                        <p className='ps-3'>Pending: {pending.length}</p>
+                        <p className='ps-3'>Picked: {picked.length}</p>
+                        <p className='ps-3'>On The Way: {onWay.length}</p>
+                        <p className='ps-3'>Hold: {hold.length}</p>
+                    </div>
+                </div>
                 <table className="table table-xs  table-pin-rows table-pin-cols">
-                    <thead className='text-center bg-gray-400 text-black text-xl'>
-                        <td>No.</td>
-                        <td>Date</td>
-                        <td>Status</td>
-                        <td>Tracking <br />
+                    <thead className='bg-gray-400 text-black'>
+                        <th><label>
+                            <input type="checkbox" className="checkbox" />
+                        </label>
+                        </th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Tracking <br />
                             ID
-                        </td>
-                        <td>Percel<br />
+                        </th>
+                        <th>Percel<br />
                             Amount
-                        </td>
-                        <td>Delivery<br />
+                        </th>
+                        <th>Delivery<br />
                             Charge
-                        </td>
-                        <td>Destination</td>
-                        <td>view <br />
+                        </th>
+                        <th>Destination</th>
+                        <th>view <br />
                             Invoice
-                        </td>
-                        <td>Payable <br />
-                         Amount</td>
-                        <td>Rejcet</td>
+                        </th>
+                        <th>Payable <br />
+                            Amount</th>
+                        <th>Rejcet</th>
                     </thead>
                     <tbody>
                         {
-                            allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
-                                <td className='text-xl'>{index + 1}</td>
+                            allParce.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
+                                {/* <td className='text-xl'>{index + 1}</td> */}
+                                <td>
+                                    <label>
+                                        <input type="checkbox" className="checkbox" />
+                                    </label>
+                                </td>
                                 <td className='text-xl'>7/10/2023</td>
                                 <td className='text-xl'>
                                     <div className="dropdown dropdown-bottom text-black">

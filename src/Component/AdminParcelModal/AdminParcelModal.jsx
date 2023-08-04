@@ -41,7 +41,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose }) => {
         fetch(`http://localhost:5000/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 orders(data);
             });
     };
