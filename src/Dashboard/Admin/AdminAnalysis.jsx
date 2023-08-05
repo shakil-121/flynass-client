@@ -23,6 +23,7 @@ const AdminAnalysis = () => {
       .then(data => setTodaysParcel(data))
   }, [todaysParcel])
 
+
   const handleSearch = () => {
     fetch(`http://localhost:5000/orders/${searchText}`)
       .then((res) => res.json())
@@ -43,10 +44,10 @@ const AdminAnalysis = () => {
 
   // payment summary
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
-  const total_paid = paid.reduce((acc, obj) => acc + obj.payable_amount, 0);
+  const total_paid = paid.reduce((acc, obj) => acc + obj.payable_amount, 0).toFixed(2);
 
   const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
-  const total_due = due.reduce((acc, obj) => acc + obj?.payable_amount, 0);
+  const total_due = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // console.log(total_paid);
 

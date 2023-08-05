@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import useUserInfo from "../../Hooks/useUserInfo";
+import useParcel from "../../Hooks/useParcel";
 
 const CreateParcel = ({ isVisible, onClose }) => {
   const [currentDistrict, setCurrentDistrict] = useState(null);
@@ -14,6 +15,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const [amount, setamount] = useState(0)
   const { user } = useContext(AuthContext);
   const userInfo = useUserInfo()
+  const [allParce, refetch] = useParcel();
   const {
     register,
     handleSubmit,
@@ -33,19 +35,35 @@ const CreateParcel = ({ isVisible, onClose }) => {
   //   console.log("total:", totalAmount);
   const payableAmount = (parseFloat(amount) - parseFloat((totalAmount)));
 
-
   const currentDate = new Date();
   const day = currentDate.getDate();
   const month = currentDate.getMonth() + 1; // Add 1 to get the actual month (January is 0)
   const year = currentDate.getFullYear();
 
-  // console.log(`Current date: ${day}-${month}-${year}`);
+
+  // tracking id generate
+  const previousLength = (allParce.length);
+  const newLength = previousLength + 1;
+  const onDigitmiddlePart = newLength.toString();
+  const fourDigitMiddle = onDigitmiddlePart.padStart(4, "0");
+  // console.log(fourDigitMiddle);
+  // const dateString = (`${day}${month}${year}` - "0001" - "FN-HF")
+  const formattedDay = String(day).padStart(2, "0");
+  const formattedMonth = String(month).padStart(2, "0");
+  const formatDate = `${formattedDay}${formattedMonth}${year}`;
+  const stringDate = formatDate.toString();
+  // console.log(`Current date: ${formattedDay}${formattedMonth}${year}`);
+  const lastDigit = "FN-HF";
+  const trackingId = `${stringDate}-${fourDigitMiddle}-${lastDigit}`;
+  console.log(trackingId);
+
 
   const onSubmit = (data) => {
     // const maindata = [`${day}/${month}/${year}`, data.name];
     // console.log(maindata);
     const date = `${day}/${month}/${year}`
     const orderInfo = {
+      trackingId: trackingId,
       date: date,
       from_address: data.from_address,
       user_email: user?.email,
@@ -62,6 +80,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
       status: "pending",
       payment_status: "due",
       payable_amount: payableAmount,
+
     }
     console.log(orderInfo)
 

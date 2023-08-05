@@ -45,7 +45,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose }) => {
                 orders(data);
             });
     };
-    
+
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-30'>
             <div className='flex flex-col  rounded-lg bg-sky-500'>
@@ -54,7 +54,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose }) => {
                 </button>
                 <div className=' rounded-md p-5'>
                     <div className='md:flex justify-between mb-5'>
-                        <h1 className='text-white text-3xl font-pppins'>Admin Parcel Modal</h1>
+                        <h1 className='text-white text-3xl font-pppins'>Parcel</h1>
                         <div className='flex'>
                             <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
                             <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Track Now</button>
