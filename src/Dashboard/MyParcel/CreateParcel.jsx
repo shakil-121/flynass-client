@@ -13,7 +13,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const [delivaryCharge, setDelivaryCharge] = useState(0);
   const [amount, setamount] = useState(0)
   const { user } = useContext(AuthContext);
-  const userInfo=useUserInfo()
+  const userInfo = useUserInfo()
   const {
     register,
     handleSubmit,
@@ -31,6 +31,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   const totalAmount = delivaryCharge + cod;
   //   console.log("total:", totalAmount);
+  const payableAmount = (parseFloat(amount) - parseFloat((totalAmount)));
+
 
   const currentDate = new Date();
   const day = currentDate.getDate();
@@ -58,7 +60,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
       cod: cod,
       total_amount: totalAmount,
       status: "pending",
-      amount_status: "due"
+      payment_status: "due",
+      payable_amount: payableAmount,
     }
     console.log(orderInfo)
 
@@ -93,7 +96,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     setCurrentDistrict(e.value);
     setCurrentThana("");
     setCod("");
-    
+
   };
 
   const handleThanaOnChange = (e) => {
@@ -109,8 +112,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     if (currentDistrict == "Dhaka") {
       setCod(0);
     }
-   else if(currentDistrict == "Dhaka_Sub_Area")
-    {
+    else if (currentDistrict == "Dhaka_Sub_Area") {
       setCod(0);
     }
     else {
@@ -147,7 +149,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: 370, label: "8-9KG" },
     { value: 400, label: "9-10KG" },
   ];
-  
+
   const deliveryChargeDhakaSubArea = [
     { value: 110, label: "0-1KG" },
     { value: 135, label: "1-2KG" },
@@ -160,7 +162,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: 310, label: "8-9KG" },
     { value: 335, label: "9-10KG" },
   ];
-  
+
 
   //All District in Bangladesh
   const district = [
@@ -974,7 +976,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   type="text"
                   placeholder="Enter Your Address"
                   className="input input-bordered text-black"
-                  name="from_address" 
+                  name="from_address"
                   defaultValue={userInfo?.address}
                   {...register("from_address", { required: true })}
                 />
@@ -1045,7 +1047,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                     />
                   </div>
                 )}
-                
+
                 {currentDistrict === "Dhaka_Sub_Area" && (
                   <div>
                     <Select
@@ -1772,7 +1774,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 <div className="form-control text-black">
                   <input
                     type="text"
-                    placeholder="Marchent Order ID" 
+                    placeholder="Marchent Order ID"
                     defaultValue={`FN-${userInfo?._id}`}
                     className="input input-bordered"
                     {...register("marchent_id", { required: true })}
@@ -1790,8 +1792,8 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       type="text"
                       placeholder="Amount"
                       className="input input-bordered text-black"
-                    // {...register("product_amount", { required: true })}
-                    required
+                      // {...register("product_amount", { required: true })}
+                      required
                     />
                   </div>
                 </>
@@ -1799,7 +1801,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                 <></>
               )}
               <div className="form-control my-2">
-                {currentDistrict === "Dhaka" && currentDistrict!="Dhaka_Sub_Area"   ?  (
+                {currentDistrict === "Dhaka" && currentDistrict != "Dhaka_Sub_Area" ? (
                   <>
                     <div className="text-black ">
                       <Select
@@ -1808,7 +1810,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                         defaultValue="Select Product Weight"
                         onChange={handledelivarycharge}
                         isSearchable
-                        
+
                       />
                     </div>
                   </>
@@ -1817,32 +1819,32 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </>
                 )}
                 {
-                  currentDistrict!="Dhaka" && currentDistrict!="Dhaka_Sub_Area"?
-                  <>
-                   <div className="text-black">
-                      <Select
-                        options={deliveryChargeOthercity}
-                        defaultValue="Select Product Weight"
-                        onChange={handledelivarycharge}
-                        isSearchable
-                      />
-                    </div>
-                  </>:<></>
+                  currentDistrict != "Dhaka" && currentDistrict != "Dhaka_Sub_Area" ?
+                    <>
+                      <div className="text-black">
+                        <Select
+                          options={deliveryChargeOthercity}
+                          defaultValue="Select Product Weight"
+                          onChange={handledelivarycharge}
+                          isSearchable
+                        />
+                      </div>
+                    </> : <></>
                 }
               </div>
               {/* //dhaka sub Area */}
               <div>
                 {currentDistrict === "Dhaka_Sub_Area" ?
-                 <>
-                  <div className="text-black">
-                    <Select
-                      options={deliveryChargeDhakaSubArea}
-                      defaultValue="Select Product Weight"
-                      onChange={handledelivarycharge}
-                      isSearchable
-                    />
-                  </div>
-                 </>:<></>
+                  <>
+                    <div className="text-black">
+                      <Select
+                        options={deliveryChargeDhakaSubArea}
+                        defaultValue="Select Product Weight"
+                        onChange={handledelivarycharge}
+                        isSearchable
+                      />
+                    </div>
+                  </> : <></>
                 }
               </div>
             </div>

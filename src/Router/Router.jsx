@@ -34,6 +34,7 @@ import { element } from "prop-types";
 import AdminSignUp from "../Pages/LoginAndSignup/AdminRegistration";
 import TramsCondition from "../Pages/TramsCondition/TramsCondition";
 import Error from "../Pages/Error/Error";
+import AdminDashbordHistory from "../Dashboard/Admin/AdminDashbordHistory/AdminDashbordHistory";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -185,6 +186,10 @@ const router = createBrowserRouter([
       {
         path: 'terms-coditions',
         element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path: "history",
+        element: <AdminDashbordHistory></AdminDashbordHistory>
       },
       {
         path: "invoice/:id",

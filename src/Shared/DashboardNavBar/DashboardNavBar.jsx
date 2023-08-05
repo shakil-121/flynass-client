@@ -38,9 +38,9 @@ const DashboardNavBar = () => {
                                     <div className='rounded-md '>
                                         <button onClick={() => setShowModal(true)} className="btn px-2 py-1 bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center text-xs font-pppins text-white gap-2"><MdCreateNewFolder />Create Single Parcel </button>
                                     </div>
-                                    <div className='bg-[#1E62D4] px-2 py-1 rounded-md'>
+                                    <div >
                                         {/* <button  onClick={() => setShowModal(true)} className="text-base  flex items-center font-pppins text-white gap-2"><MdCreateNewFolder /> Create Multi Parcel </button> */}
-                                        <Link to="multi_parcel" className="md:text-base text-xs flex items-center font-pppins text-white gap-2"> <MdCreateNewFolder /> Create Multi Parcel</Link>
+                                        <Link to="multi_parcel"> <button className='bg-[#1E62D4] btn px-2 py-1 rounded-md hover:bg-[#1E62D4] text-white text-xs font-pppins'><MdCreateNewFolder /> Create Multi Parcel</button></Link>
                                     </div>
                                 </div>
                         }

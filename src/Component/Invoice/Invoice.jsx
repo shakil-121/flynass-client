@@ -10,17 +10,17 @@ const Invoice = () => {
     const [showModal, setShowModal] = useState(false);
     const parcelId = useParams();
     const allParce = useParcel();
-    const invoiceParcel = allParce.find(parcel => parcel?._id === parcelId.id);
-    const payableAmount = (parseFloat(invoiceParcel?.total_amount) + parseFloat(invoiceParcel?.product_amount));
+    const invoiceParcel = allParce[0].find(parcel => parcel?._id === parcelId.id);
+    // const payableAmount = (parseFloat(invoiceParcel?.total_amount) + parseFloat(invoiceParcel?.product_amount));
 
     const handleDownload = () => {
         const element = document.getElementById('invoice-section');
         const opt = {
-            margin:       10,
-            filename:     'invoice.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            margin: 10,
+            filename: 'invoice.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
         // Create a PDF using html2pdf.js and download it
@@ -59,8 +59,7 @@ const Invoice = () => {
                         <h2 className='text-2xl font-serif mb-3'>Delivery Charge: <span>{invoiceParcel?.total_amount}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel?.product_amount}Tk.</span></h2>
                         <hr className='border-2' />
-                        <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{payableAmount}Tk.</span></h2>
-
+                        <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{invoiceParcel?.payable_amount}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mt-10 text-center'>[Client Copy]</h2>
                         <p className='text-center font-serif'>www.flynass.com</p>
                     </div>
@@ -75,4 +74,3 @@ export default Invoice;
 
 
 
-              

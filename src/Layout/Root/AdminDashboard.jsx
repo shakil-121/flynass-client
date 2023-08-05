@@ -1,4 +1,4 @@
-import React from 'react';
+import profile from "../../assets/images/default.png";
 import { FaBars, FaHistory, FaShoppingCart, FaUsers } from 'react-icons/fa';
 import { Outlet } from 'react-router';
 import useUserInfo from '../../Hooks/useUserInfo';
@@ -44,7 +44,16 @@ const AdminDashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-stone-200 rounded-md text-base-content">
                         {/* Sidebar content here */}
                         <div className="mb-10">
-                            <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
+                            {
+                                userInfo?.image ?
+                                    <>
+                                        <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
+                                    </>
+                                    :
+                                    <>
+                                        <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
+                                    </>
+                            }
                             <h1 className="text-3xl text-center mt-3 font-semibold">{userInfo?.name}</h1>
                             <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
                         </div>
@@ -70,7 +79,7 @@ const AdminDashboard = () => {
                                                     Menu</Link>
                                             </li>
                                             <li>
-                                                <Link to="order-history">
+                                                <Link to="history">
                                                     <FaHistory />
                                                     Order History</Link>
                                             </li>
