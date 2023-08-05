@@ -45,6 +45,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose }) => {
                 orders(data);
             });
     };
+    
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-30'>
             <div className='flex flex-col  rounded-lg bg-sky-500'>

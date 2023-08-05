@@ -23,6 +23,15 @@ const AdminAnalysis = () => {
       .then(data => setTodaysParcel(data))
   }, [todaysParcel])
 
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/orders/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        orders(data);
+      });
+  };
+
   const pending = parcel.filter(item => item.status === "pending");
   const picked = parcel.filter(item => item.status === "picked");
   const onWay = parcel.filter(item => item.status === "on the way");
