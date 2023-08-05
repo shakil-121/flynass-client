@@ -38,7 +38,8 @@ const MerchantAnalysis = () => {
   const returnedToMerchant = parcel.filter(
     (item) => item.status === "returned to merchant"
   );
-  const reject = parcel.filter((item) => item.status === "reject");
+  const reject = parcel.filter((item) => item.status === "rejected");
+  const unpaid = parcel.filter((item) => item.payment_status === "due");
 
   // payment summary
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
@@ -139,10 +140,10 @@ const MerchantAnalysis = () => {
           </button>
         </div>
         <div>
-          <button onClick={() => setShowModal(reject)} className="w-full">
+          <button onClick={() => setShowModal(unpaid)} className="w-full">
             <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
-              <h1 className="text-gray-400">Payable <br /> Amount</h1>
-              <h1 className="text-blue-800">{reject?.length}</h1>
+              <h1 className="text-gray-400">Unpaid <br /> Parcel</h1>
+              <h1 className="text-blue-800">{unpaid?.length}</h1>
             </div>
           </button>
         </div>
@@ -153,38 +154,34 @@ const MerchantAnalysis = () => {
         <h1 className="text-3xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
         <div className="grid grid-cols-3 gap-5">
           <div>
-            <button onClick={() => setShowModal(reject)} className="w-full">
-              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
-                <h1 className="text-blue-800">
-                  {
-                    processing ?
-                      <>
-                        {processing} TK
-                      </>
-                      :
-                      <>00.00TK</>
-                  }
-                </h1>
-                <h1 className="text-gray-400">To be processing</h1>
-              </div>
-            </button>
+            <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+              <h1 className="text-blue-800">
+                {
+                  processing ?
+                    <>
+                      {processing} TK
+                    </>
+                    :
+                    <>00.00TK</>
+                }
+              </h1>
+              <h1 className="text-gray-400">To be processing</h1>
+            </div>
           </div>
           <div>
-            <button onClick={() => setShowModal(reject)} className="w-full">
-              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
-                <h1 className="text-blue-800">
-                  {
-                    collected ?
-                      <>
-                        {collected} TK
-                      </>
-                      :
-                      <>00.00TK</>
-                  }
-                </h1>
-                <h1 className="text-gray-400">To be collected</h1>
-              </div>
-            </button>
+            <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+              <h1 className="text-blue-800">
+                {
+                  collected ?
+                    <>
+                      {collected} TK
+                    </>
+                    :
+                    <>00.00TK</>
+                }
+              </h1>
+              <h1 className="text-gray-400">To be collected</h1>
+            </div>
           </div>
         </div>
       </div>

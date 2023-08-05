@@ -67,7 +67,7 @@ const MyParclel = () => {
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>{parcel.date}</td>
                                 <td className='m-4 text-xl' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>
-                                    {parcel._id}
+                                    {parcel.trackingId}
                                 </td>
                                 <td className='text-xl'>
                                     <p>{parcel.product_amount}Tk</p>
