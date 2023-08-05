@@ -42,10 +42,10 @@ const MerchantAnalysis = () => {
 
   // payment summary
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
-  const collected = paid.reduce((acc, obj) => acc + obj.payable_amount, 0);
+  const collected = paid.reduce((acc, obj) => acc + obj.payable_amount, 0).toFixed(2);
 
   const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
-  const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0);
+  const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;
@@ -54,7 +54,7 @@ const MerchantAnalysis = () => {
 
   const returnPercentage = ((returnParcel * 100) / totalParcel).toFixed(2);
   const deliveryPercentage = ((devlieryParcel * 100) / totalParcel).toFixed(2);
-  console.log(returnPercentage, deliveryPercentage);
+  // console.log(returnPercentage, deliveryPercentage);
 
   return (
     <div className="h-full  p-8 rounded-md">
@@ -221,10 +221,7 @@ const MerchantAnalysis = () => {
           </h2>
         </div>
       </div>
-      <ParcelModal
-        isVisible={showModal}
-        onClose={() => setShowModal(false)}
-      ></ParcelModal>
+      <ParcelModal isVisible={showModal} onClose={() => setShowModal(false)}></ParcelModal>
     </div>
   );
 };
