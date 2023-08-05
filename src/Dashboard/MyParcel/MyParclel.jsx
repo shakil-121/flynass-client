@@ -18,6 +18,7 @@ const MyParclel = () => {
         return res.json();
     })
 
+    const myParcel = merchantParcel.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected");
 
     const handleDeleteParcel = id => {
         Swal.fire({
@@ -62,11 +63,11 @@ const MyParclel = () => {
                     </thead>
                     <tbody>
                         {
-                            merchantParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
+                            myParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-xl'>{index + 1}</td>
                                 <td className='text-xl'>{parcel.date}</td>
                                 <td className='m-4 text-xl' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>
-                                    {parcel._id}
+                                    {parcel.trackingId}
                                 </td>
                                 <td className='text-xl'>
                                     <p>{parcel.product_amount}Tk</p>
@@ -85,7 +86,7 @@ const MyParclel = () => {
                                 <td className='text-xl'>
                                     <p className='font-semibold'>{parcel.status}</p>
                                 </td>
-                                
+
                                 {/* <td className='mx-auto'>
                                     {
                                         parcel.status === 'pending' ?
