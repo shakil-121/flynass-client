@@ -5,7 +5,7 @@ import useParcel from '../../../Hooks/useParcel';
 const AdminDashbordHistory = () => {
     const [allParce, refetch] = useParcel();
 
-    const history = allParce.filter(item => item.status === "delivered");
+    const history = allParce.filter(item => item.status === "delivered" || item.status === "rejected");
 
     return (
         <div className='px-10 mt-5'>

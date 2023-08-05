@@ -8,10 +8,10 @@ import Swal from "sweetalert2";
 
 const AllParcel = () => {
     const [showModal, setShowModal] = useState(false);
+    const [searchText, setSearchText] = useState("")
     const [allParce, refetch] = useParcel();
     const needParcel = allParce.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected");
 
-    // console.log(allParce);
 
     const handleStatusUpdate = (status, id) => {
         console.log(status, id);
@@ -25,15 +25,44 @@ const AllParcel = () => {
             .then((data) => {
                 if (data.acknowledged) {
                     Swal.fire({
-                        title: "Status Update",
+                        title: "Done!",
                         text: "Status update successfully",
                         icon: "success",
-                        confirmButtonText: "Update",
+                        confirmButtonText: "Ok",
                     });
                 }
                 refetch();
             });
     }
+
+    const handlePaymentStatus = id => {
+        fetch(`http://localhost:5000/order/payment/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            // body: JSON.stringify(statusUpdate)
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.acknowledged) {
+                    Swal.fire({
+                        title: "Done!",
+                        text: "Status update successfully",
+                        icon: "success",
+                        confirmButtonText: "Ok",
+                    });
+                }
+                refetch();
+            });
+    }
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/orders/${searchText}`)
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                orders(data);
+            });
+    };
 
     const pending = allParce.filter(item => item.status === "pending");
     const picked = allParce.filter(item => item.status === "picked");
@@ -45,22 +74,29 @@ const AllParcel = () => {
             <div className='h-[95vh] overflow-scroll w-[75vw] px-16 pt-5 bg-sky-400'>
                 <div>
                     <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
-                    <div className='flex gap-5 divide-x-2 divide-black items-center text-2xl mb-3 text-black '>
-                        <div className="dropdown dropdown-bottom text-black">
-                            <label tabIndex={0} className=""><button className='underline'>Status Change</button></label>
-                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                <li onClick={() => handleStatusUpdate('picked')}><a>Picked</a></li>
-                                <li onClick={() => handleStatusUpdate('on the way')}><a>On The Way</a></li>
-                                <li onClick={() => handleStatusUpdate('delivered')}><a>Deliverd</a></li>
-                                <li onClick={() => handleStatusUpdate('hold')}><a>Hold</a></li>
-                                <li onClick={() => handleStatusUpdate('returned')}><a>Return</a></li>
-                                <li onClick={() => handleStatusUpdate('returned to merchant')}><a>Return to Mechant</a></li>
-                            </ul>
+                    <div className='flex items-center justify-between'>
+                        <div className='flex gap-5 divide-x-2 divide-black items-center text-2xl mb-3 text-black '>
+                            <div className="dropdown dropdown-bottom text-black">
+                                <label tabIndex={0} className=""><button className='underline'>Status Change</button></label>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                    <li onClick={() => handleStatusUpdate('picked')}><a>Picked</a></li>
+                                    <li onClick={() => handleStatusUpdate('on the way')}><a>On The Way</a></li>
+                                    <li onClick={() => handleStatusUpdate('delivered')}><a>Deliverd</a></li>
+                                    <li onClick={() => handleStatusUpdate('hold')}><a>Hold</a></li>
+                                    <li onClick={() => handleStatusUpdate('returned')}><a>Return</a></li>
+                                    <li onClick={() => handleStatusUpdate('returned to merchant')}><a>Return to Mechant</a></li>
+                                </ul>
+                            </div>
+                            <p className='ps-3'>Pending: {pending.length}</p>
+                            <p className='ps-3'>Picked: {picked.length}</p>
+                            <p className='ps-3'>On The Way: {onWay.length}</p>
+                            <p className='ps-3'>Hold: {hold.length}</p>
                         </div>
-                        <p className='ps-3'>Pending: {pending.length}</p>
-                        <p className='ps-3'>Picked: {picked.length}</p>
-                        <p className='ps-3'>On The Way: {onWay.length}</p>
-                        <p className='ps-3'>Hold: {hold.length}</p>
+
+                        <div className='flex'>
+                            <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                            <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Track Now</button>
+                        </div>
                     </div>
                 </div>
                 <table className="table table-xs  table-pin-rows table-pin-cols">
@@ -136,16 +172,25 @@ const AllParcel = () => {
                                 <td className='text-xl'>
                                     <div className='flex flex-col gap-1'>
                                         <span>{parcel.payable_amount} Tk.</span>
-                                        <div className="dropdown dropdown-bottom text-black">
-                                            <label tabIndex={0} className="font-pppins">{parcel.payment_status}</label>
-                                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                                <li><a>Paid</a></li>
-                                            </ul>
-                                        </div>
+                                        {
+                                            parcel.payment_status === 'paid' ?
+                                                <>
+                                                    <p>Paid</p>
+                                                </>
+                                                :
+                                                <>
+                                                    <div className="dropdown dropdown-bottom text-black">
+                                                        <label tabIndex={0} className="font-pppins">{parcel.payment_status}</label>
+                                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                                            <li onClick={() => handlePaymentStatus(parcel._id)}><a>Paid</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </>
+                                        }
                                     </div>
                                 </td>
                                 <td className='text-xl'>
-                                    <button className="font-serif btn-sm btn-warning rounded-md">Reject</button>
+                                    <button onClick={() => handleStatusUpdate('rejected', parcel._id)} className="font-serif btn-sm btn-warning rounded-md">Reject</button>
                                 </td>
                             </tr>)
                         }
