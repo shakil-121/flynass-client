@@ -46,6 +46,17 @@ const AllParcel = () => {
                 <div>
                     <h1 className='text-3xl font-pppins mb-3'>All Parcel</h1>
                     <div className='flex gap-5 divide-x-2 divide-black items-center text-2xl mb-3 text-black '>
+                        <div className="dropdown dropdown-bottom text-black">
+                            <label tabIndex={0} className=""><button className='underline'>Status Change</button></label>
+                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
+                                <li onClick={() => handleStatusUpdate('picked')}><a>Picked</a></li>
+                                <li onClick={() => handleStatusUpdate('on the way')}><a>On The Way</a></li>
+                                <li onClick={() => handleStatusUpdate('delivered')}><a>Deliverd</a></li>
+                                <li onClick={() => handleStatusUpdate('hold')}><a>Hold</a></li>
+                                <li onClick={() => handleStatusUpdate('returned')}><a>Return</a></li>
+                                <li onClick={() => handleStatusUpdate('returned to merchant')}><a>Return to Mechant</a></li>
+                            </ul>
+                        </div>
                         <p className='ps-3'>Pending: {pending.length}</p>
                         <p className='ps-3'>Picked: {picked.length}</p>
                         <p className='ps-3'>On The Way: {onWay.length}</p>
@@ -70,7 +81,7 @@ const AllParcel = () => {
                             Charge
                         </th>
                         <th>Destination</th>
-                        <th>view <br />
+                        <th className='text-center'>view <br />
                             Invoice
                         </th>
                         <th>Payable <br />
@@ -86,10 +97,10 @@ const AllParcel = () => {
                                         <input type="checkbox" className="checkbox" />
                                     </label>
                                 </td>
-                                <td className='text-xl'>7/10/2023</td>
-                                <td className='text-xl'>
+                                <td className='text-sm'>7/10/2023</td>
+                                <td>
                                     <div className="dropdown dropdown-bottom text-black">
-                                        <label tabIndex={0} className=""><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white'>{parcel.status}</button></label>
+                                        <label tabIndex={0} className=""><button className='px-3 py-1 rounded-md text-xl font-semibold bg-[#1E62D4] text-white'>{parcel.status}</button></label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
                                             <li onClick={() => handleStatusUpdate('picked', parcel._id)}><a>Picked</a></li>
                                             <li onClick={() => handleStatusUpdate('on the way', parcel._id)}><a>On The Way</a></li>
@@ -120,7 +131,7 @@ const AllParcel = () => {
                                     </div>
                                 </td>
                                 <td className='text-xl'>
-                                    <Link to={`../invoice/${parcel._id}`}><button className='btn bg-[#1E62D4] hover:bg-[#1E62D4] text-white flex items-center'><FaEye />Invoice</button></Link>
+                                    <Link to={`../invoice/${parcel._id}`}><p className='flex items-center gap-1 bg-[#1E62D4] text-white px-2 py-1 rounded-md'>Invoice</p></Link>
                                 </td>
                                 <td className='text-xl'>
                                     <div className='flex flex-col gap-1'>
