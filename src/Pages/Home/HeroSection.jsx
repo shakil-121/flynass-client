@@ -7,7 +7,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import "./HeroSection.scss";
 import van from "../../assets/images/van.png";
 import Lottie from "lottie-react";
-import bikeanimation from "../../../public/Delivery boy on the way.json";
+import bikeanimation from "../../../public/bike.json";
 import delivaryanimation from "../../../public/2 animation combined.json";
 import { FaChevronCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -103,7 +103,7 @@ const HeroSection = () => {
 
         <SwiperSlide>
           <div className="md:h-[95vh]   bg-gradient-to-l bg-[#1E8FD0]  md:flex">
-            <div className="md:w-[70%] w-full md:px-10 px-4 py-4">
+            <div className="md:w-[60%] w-full md:px-10 px-4 py-4">
               <div className="text-center md:text-left text-6xl md:text-8xl">
                 <h1 className="text-design  text-white font-bold md:mt-32 mt-20">
                   {" "}
@@ -129,9 +129,9 @@ const HeroSection = () => {
                 </Link>
               </div>
             </div>
-            <div className="md:w-[30%] w-full md:right-0  my-auto">
+            <div className="md:w-[40%] w-full md:right-0  my-auto">
               <Lottie
-                className="opacity-70"
+                className="opacity-70 h-96"
                 animationData={bikeanimation}
                 loop={true}
               />
@@ -141,7 +141,7 @@ const HeroSection = () => {
 
         <SwiperSlide>
           <div className="md:h-[95vh]   bg-gradient-to-l bg-[#1E8FD0]  md:flex">
-            <div className="md:w-[70%] w-full md:px-10 px-4 py-4">
+            <div className="md:w-[60%] w-full md:px-10 px-4 py-4">
               <div className="text-center md:text-left text-6xl md:text-8xl">
                 <h1 className="text-design  text-white font-bold md:mt-32 mt-20">
                   {" "}
@@ -167,7 +167,7 @@ const HeroSection = () => {
                 </Link>
               </div>
             </div>
-            <div className="md:w-[30%] w-full md:right-0  my-auto">
+            <div className="md:w-[40%] w-full md:right-0  my-auto">
               <Lottie
                 className="opacity-70"
                 animationData={delivaryanimation}

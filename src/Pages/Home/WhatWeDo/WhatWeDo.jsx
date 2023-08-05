@@ -6,14 +6,14 @@ import SectionTitle from "../../../Component/SectionTitle";
 import Lottie from "lottie-react";
 import single from "../../../../public/01.json";
 import multi from "../../../../public/04.json";
-import van from "../../../../public/03.json"; 
+import van from "../../../../public/03.json";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 AOS.init();
 
 const WhatWeDo = () => {
   return (
-    <div className="bg-[#F2FAFF] pt-20">
+    <div className="box_animation bg-[#F2FAFF] pt-20">
       <div className="max-w-screen-xl mx-auto 2xl:px-0 md:px-16 px-4">
         <div className="text-center">
           <SectionTitle
@@ -32,9 +32,19 @@ const WhatWeDo = () => {
           </div>
           <div>
             <div className="flex flex-col gap-y-2">
-              <div className="md:flex  items-center gap-10 bg-white pe-6 py-5">
+              <div
+                data-aos="fade-up"
+                data-aos-anchor=".box_animation"
+                data-aos-offset="500"
+                data-aos-duration="400"
+                className="md:flex  items-center gap-10 bg-white pe-6 py-5"
+              >
                 <div className="border-l-8 border-[#1E8FD0] -ms-2 hover:ms-0 ps-6">
-                  <Lottie className="h-36 w-24" animationData={single} loop={true} />
+                  <Lottie
+                    className="h-36 w-24"
+                    animationData={single}
+                    loop={true}
+                  />
                 </div>
                 <div>
                   <h1>
@@ -46,13 +56,25 @@ const WhatWeDo = () => {
                     </span>
                   </h1>
                   <p className="leading-7 text-base mt-3">
-                  Single Parcel Delivery is a streamlined and efficient service that caters to the needs of individuals and businesses looking to send or receive a single package.
+                    Single Parcel Delivery is a streamlined and efficient
+                    service that caters to the needs of individuals and
+                    businesses looking to send or receive a single package.
                   </p>
                 </div>
               </div>
-              <div className="md:flex  items-center gap-10 bg-white pe-6 py-5">
+              <div 
+               data-aos="fade-up"
+               data-aos-anchor=".box_animation"
+               data-aos-offset="500"
+               data-aos-duration="500" 
+               data-aos-delay="600"
+              className="md:flex  items-center gap-10 bg-white pe-6 py-5">
                 <div className="border-l-8 border-[#1E8FD0] -ms-2 hover:ms-0 ps-6">
-                <Lottie className="h-48 w-24" animationData={multi} loop={true} />
+                  <Lottie
+                    className="h-48 w-24"
+                    animationData={multi}
+                    loop={true}
+                  />
                 </div>
                 <div>
                   <h1>
@@ -60,17 +82,31 @@ const WhatWeDo = () => {
                       02.{" "}
                     </span>
                     <span className="text-xl md:text-3xl font-bold">
-                     Multi-Parcel Delivery
+                      Multi-Parcel Delivery
                     </span>
                   </h1>
                   <p className="leading-7 mt-3">
-                  Multi-Parcel Delivery Service: A seamless solution for shipping multiple packages to customers, distributing gifts, or handling bulk documents efficiently and reliably. Ideal for individuals and businesses seeking simultaneous transportation of multiple parcels.
+                    Multi-Parcel Delivery Service: A seamless solution for
+                    shipping multiple packages to customers, distributing gifts,
+                    or handling bulk documents efficiently and reliably. Ideal
+                    for individuals and businesses seeking simultaneous
+                    transportation of multiple parcels.
                   </p>
                 </div>
               </div>
-              <div className="md:flex  items-center gap-10 bg-white pe-6 py-5">
+              <div 
+               data-aos="fade-up"
+               data-aos-anchor=".box_animation"
+               data-aos-offset="500"
+               data-aos-duration="600" 
+               data-aos-delay="900"
+              className="md:flex  items-center gap-10 bg-white pe-6 py-5">
                 <div className="border-l-8 border-[#1E8FD0] -ms-2 hover:ms-0 ps-6">
-                <Lottie className="h-48 w-24" animationData={van} loop={true} />
+                  <Lottie
+                    className="h-48 w-24"
+                    animationData={van}
+                    loop={true}
+                  />
                 </div>
                 <div>
                   <h1>
@@ -78,12 +114,15 @@ const WhatWeDo = () => {
                       03.{" "}
                     </span>
                     <span className="text-2xl md:text-3xl font-bold">
-                   Custom Delivery Service 
+                      Custom Delivery Service
                     </span>
                   </h1>
                   <p className="leading-7 mt-3">
-                    
-Custom Delivery Service offers a personalized and flexible shipping solution tailored to the specific needs of individuals and businesses. Whether you have unique delivery requirements, sensitive items, or specific time frames, this service is designed to accommodate your preferences.
+                    Custom Delivery Service offers a personalized and flexible
+                    shipping solution tailored to the specific needs of
+                    individuals and businesses. Whether you have unique delivery
+                    requirements, sensitive items, or specific time frames, this
+                    service is designed to accommodate your preferences.
                   </p>
                 </div>
               </div>

@@ -10,10 +10,13 @@ import {
   FcCalendar,
   FcShipped,
 } from "react-icons/fc";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+AOS.init();
 
 const ChooseUs = () => {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="group_animation max-w-screen-xl mx-auto">
       <div className="mt-28">
         <div className="text-center">
           <SectionTitle
@@ -29,7 +32,12 @@ const ChooseUs = () => {
                         <button className='btn bg-[#ff8a00] mt-5'>Learn More ---</button>
                     </Link> */}
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 mt-20 p-4">
+        <div 
+         data-aos="fade-up"
+         data-aos-anchor=".group_animation"
+         data-aos-offset="500"
+         data-aos-duration="400"
+        className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 mt-20 p-4">
           <div className="p-4 bg-[#F4FBFE] flex flex-col gap-4">
             <FcClock className="text-6xl mx-auto -mt-10" />
             <h1 className="text-xl font-pppins text-center">

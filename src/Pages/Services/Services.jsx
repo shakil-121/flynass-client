@@ -1,13 +1,16 @@
 import useTitle from "../../Hooks/useTitle";
 import "./Services.css";
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+AOS.init();
 // import Lottie from "lottie-react";
 // import services from "../../assets/all-animation/Transport 2.json";
 
 const Services = () => { 
   useTitle("Services")
   return (
-    <div className="mb-16">
+    <div className="service_animation mb-16">
       <div className="services-bg"></div>
       <div>
         <h1 className="text-center text-black font-pppins text-5xl mt-10">
@@ -63,7 +66,12 @@ const Services = () => {
           are at your service.
         </p>
       </div>
-      <div className="max-w-screen-xl mx-auto 2xl:px-0 md:px-16">
+      <div
+       data-aos="fade-up"
+       data-aos-anchor=".service_animation"
+       data-aos-offset="500"
+       data-aos-duration="400"
+      className="max-w-screen-xl mx-auto 2xl:px-0 md:px-16">
         <h1 className="text-4xl text-center font-pppins mt-20">
           Delivery Charges
         </h1>
