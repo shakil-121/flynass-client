@@ -58,7 +58,7 @@ const MyParclel = () => {
                         <th>Trackin ID</th>
                         <th>Parcel Amount</th>
                         <th>Delivery Charge</th>
-                        <th>Payable Amount</th>
+                        <th>Pending <br /> Amount</th>
                         <th>Status</th>
                     </thead>
                     <tbody>
@@ -78,9 +78,15 @@ const MyParclel = () => {
                                 </td>
                                 <td className='text-xl'>
                                     <div className='flex flex-col gap-1'>
-                                        <span>
-                                            {parseFloat(parcel.product_amount) - parseFloat((parcel.total_amount))} Tk.
-                                        </span>
+                                        {
+                                            parcel.status === 'pending' ?
+                                            <>Pending</>
+                                            :
+                                            <>
+                                            {parcel.payable_amount} TK
+                                            </>
+                                        }
+
                                     </div>
                                 </td>
                                 <td className='text-xl'>

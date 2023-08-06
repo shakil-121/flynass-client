@@ -14,7 +14,7 @@ const MerchantPayment = () => {
     return (
         <div>
             <div className='overflow-auto'>
-                <h1 className='text-2xl font-pppins mb-5 mt-2'>Parcel History</h1>
+                <h1 className='text-2xl font-pppins mb-5 mt-2'>Payment History</h1>
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <tr className='text-center bg-gray-400 text-black grid md:grid-cols-7'>
                         <th>No.</th>

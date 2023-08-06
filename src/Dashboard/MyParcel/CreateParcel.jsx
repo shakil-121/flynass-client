@@ -53,7 +53,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const formatDate = `${formattedDay}${formattedMonth}${year}`;
   const stringDate = formatDate.toString();
   // console.log(`Current date: ${formattedDay}${formattedMonth}${year}`);
-  const lastDigit = "FN-HF";
+  const lastDigit = "FN";
   const trackingId = `${stringDate}-${fourDigitMiddle}-${lastDigit}`;
   console.log(trackingId);
 

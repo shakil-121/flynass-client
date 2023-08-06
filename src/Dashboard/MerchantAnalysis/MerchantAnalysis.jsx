@@ -39,7 +39,8 @@ const MerchantAnalysis = () => {
     (item) => item.status === "returned to merchant"
   );
   const reject = parcel.filter((item) => item.status === "rejected");
-  const unpaid = parcel.filter((item) => item.payment_status === "due");
+  const unpaid = parcel.filter((item) => item.payment_status === "due" && item.status !== "pending");
+  const unpaidAmount = unpaid.reduce((acc, obj) => acc + obj.payable_amount, 0).toFixed(2);
 
   // payment summary
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
@@ -142,8 +143,8 @@ const MerchantAnalysis = () => {
         <div>
           <button onClick={() => setShowModal(unpaid)} className="w-full">
             <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
-              <h1 className="text-gray-400">Unpaid <br /> Parcel</h1>
-              <h1 className="text-blue-800">{unpaid?.length}</h1>
+              <h1 className="text-gray-400">Cash <br /> Amount</h1>
+              <h1 className="text-blue-800">{unpaidAmount}</h1>
             </div>
           </button>
         </div>
@@ -165,7 +166,7 @@ const MerchantAnalysis = () => {
                     <>00.00TK</>
                 }
               </h1>
-              <h1 className="text-gray-400">To be processing</h1>
+              <h1 className="text-gray-400">Processing Amount</h1>
             </div>
           </div>
           <div>
@@ -180,7 +181,7 @@ const MerchantAnalysis = () => {
                     <>00.00TK</>
                 }
               </h1>
-              <h1 className="text-gray-400">To be collected</h1>
+              <h1 className="text-gray-400">Collected Amount</h1>
             </div>
           </div>
         </div>

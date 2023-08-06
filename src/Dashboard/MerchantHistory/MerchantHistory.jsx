@@ -25,7 +25,7 @@ const MerchantHistory = () => {
                         <th>Trackin ID</th>
                         <th>Parcel Amount</th>
                         <th>Delivery Charge</th>
-                        <th>Payable Amount</th>
+                        <th>Received Amount</th>
                         <th>Status</th>
                     </tr>
                 </table>
