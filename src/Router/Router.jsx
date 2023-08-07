@@ -75,8 +75,8 @@ const router = createBrowserRouter([
         element: <About></About>
       },
       {
-      path:"tarms&condition",
-      element:<TramsCondition></TramsCondition>
+        path: "tarms&condition",
+        element: <TramsCondition></TramsCondition>
       },
       // {
       //   path: "admin_signup",
@@ -194,21 +194,22 @@ const router = createBrowserRouter([
       {
         path: "invoice/:id",
         element: <Invoice></Invoice>
+      },
+      {
+        path: "admin_signup",
+        element: <AdminSignUp></AdminSignUp>,
       }
     ]
   },
-   {
-        path: "admin_signup",
-        element: <AdminSignUp></AdminSignUp>,
-   },
-   {
+
+  {
     path: "admin_login",
     element: <AdminLogin></AdminLogin>
   },
 
   {
-    path:"*",
-    element:<Error></Error>
+    path: "*",
+    element: <Error></Error>
   }
 
 
