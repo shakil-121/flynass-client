@@ -1,8 +1,38 @@
 import React from 'react';
 import { FaIdCard, FaInfo, FaTrashAlt, FaUserPlus } from 'react-icons/fa';
+import UserInformation from './UserInformation';
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
-const NewMerchantRequest = ({ isVisible, onClose, allUsers }) => {
+const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
+    const [showModal, setShowModal] = useState(false);
     if (!isVisible) return null;
+
+
+    const handleUserDelete = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want to be Delete  this user!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${id}`, {
+                    method: "DELETE"
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        refetch();
+                        if (data.deletedCount > 0) {
+                            Swal.fire("Deleted!", "User has been delete.", "success");
+                        }
+                    });
+            }
+        });
+    };
 
     return (
         <div className='z-30 fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
@@ -25,16 +55,16 @@ const NewMerchantRequest = ({ isVisible, onClose, allUsers }) => {
                                 </tr>
                             </table>
                             {
-                                allUsers.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-6 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={user._id}>
+                                newUsers.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-6 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={user._id}>
                                     <td>{index + 1}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>
                                         <div className='flex flex-col gap-1'>
                                             <div className="dropdown dropdown-bottom text-black">
-                                                <label tabIndex={0} className="font-pppins">pending</label>
+                                                <label tabIndex={0} className="font-pppins">{user.role}</label>
                                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                                    <li className='text-xl rounded-md text-secondary'>confirm</li>
+                                                    <li className='text-xl rounded-md text-secondary'>merchant</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -52,6 +82,7 @@ const NewMerchantRequest = ({ isVisible, onClose, allUsers }) => {
                 </div>
 
             </div>
+            <UserInformation isVisible={showModal} onClose={() => setShowModal(false)} allUsers={newUsers}></UserInformation>
         </div>
     );
 };

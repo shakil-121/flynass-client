@@ -15,6 +15,10 @@ const ManageUsers = () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json();
     })
+    const TotalMerchant = allUsers.filter(users => users.role === 'merchant');
+    
+    const newRequest = allUsers.filter(users => users.role === 'pending');
+    // console.log(TotalAdmin);
 
     const handleUserDelete = id => {
         Swal.fire({
@@ -46,7 +50,7 @@ const ManageUsers = () => {
             <div className='flex justify-between'>
                 <h1 className='text-4xl font-pppins mb-10'>Manage Users</h1>
                 <div className="indicator me-10">
-                    <span className="indicator-item badge badge-secondary">99+</span>
+                    <span className="indicator-item badge badge-secondary">{newRequest.length}+</span>
                     <button onClick={() => setNewMerchant(true)} className="btn bg-blue-800 hover:bg-blue-700 text-white">Request</button>
                 </div>
             </div>
@@ -61,7 +65,7 @@ const ManageUsers = () => {
                     </tr>
                 </table>
                 {
-                    allUsers.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-5 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={user._id}>
+                    TotalMerchant.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-5 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={user._id}>
                         <td>{index + 1}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
@@ -75,7 +79,7 @@ const ManageUsers = () => {
                 }
             </div>
             <UserInformation isVisible={showModal} onClose={() => setShowModal(false)} allUsers={allUsers}></UserInformation>
-            <NewMerchantRequest isVisible={newMerchant} onClose={() => setNewMerchant(false)} allUsers={allUsers}></NewMerchantRequest>
+            <NewMerchantRequest isVisible={newMerchant} onClose={() => setNewMerchant(false)} newUsers={newRequest}></NewMerchantRequest>
         </div>
     );
 };

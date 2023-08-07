@@ -57,7 +57,6 @@ const CreateAdmin = ({ isVisible, onClose }) => {
     };
 
 
-
     return (
         <div className="z-20 fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center my-10">
             <div className="w-full md:w-[1200px] my-24 flex flex-col  rounded-lg height-vh mb-5">

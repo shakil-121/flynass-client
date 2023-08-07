@@ -36,9 +36,9 @@ const Invoice = () => {
     };
 
     return (
-        <div className='flex justify-center items-center h-full'>
+        <div className='w-[50vw] mx-auto'>
             <div>
-                <div className='flex justify-between mb-10'>
+                <div className='flex justify-between mb-5'>
                     <button onClick={() => setShowModal(true)} className='btn btn-primary flex items-center justify-center'><FaRegEdit />Edit</button>
                     <button onClick={handleDownload} className='btn btn-primary flex items-center justify-center'><FaDownload />Download</button>
                     <button onClick={printDivContent} className='btn btn-primary flex items-center justify-center'><FaPrint />Print</button>
@@ -50,8 +50,16 @@ const Invoice = () => {
                     </div>
                     <div className='p-5'>
                         <h1 className='text-xl text-center font-pppins mb-10'>Tracking ID: <br /> {invoiceParcel?.trackingId}</h1>
-                        <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel?.name}</span></h2>
-                        <h2 className='text-2xl font-serif mb-3'>Phone: <span>{invoiceParcel?.phone}</span></h2>
+
+
+                        <div className='flex justify-between'>
+                            <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel?.name}</span></h2>
+                            <h2 className='text-2xl font-serif mb-3'>Phone: <span>{invoiceParcel?.phone}</span></h2>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h2 className='text-2xl font-serif mb-3'>District: <span>{invoiceParcel?.district}</span></h2>
+                            <h2 className='text-2xl font-serif mb-3'>Thana: <span>{invoiceParcel?.thana}</span></h2>
+                        </div>
                         <h2 className='text-2xl font-serif mb-3'>Customer Address: <span>{invoiceParcel?.to_address}</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Delivery Charge: <span>{invoiceParcel?.total_amount}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel?.product_amount}Tk.</span></h2>

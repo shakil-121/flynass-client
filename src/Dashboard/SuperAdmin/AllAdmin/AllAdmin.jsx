@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import UserInformation from '../ManageUsers/UserInformation';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const AllAdmin = () => {
     const [showModal, setShowModal] = useState(false);
@@ -48,7 +49,8 @@ const AllAdmin = () => {
         <div className='px-10 mt-20'>
             <div className='md:flex justify-between'>
                 <h1 className='text-3xl font-pppins'>All Admin{TotalAdmin.leng}</h1>
-                <button onClick={() => setShowModal(true)} className="btn btn-primary">Create Admin</button>
+                
+                 <Link to='../admin_signup'><button className="btn btn-primary">Create Admin</button></Link>
             </div>
             <div>
                 <table className="table table-xs table-pin-rows table-pin-cols border-2">

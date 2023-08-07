@@ -111,7 +111,7 @@ const AdminDashboard = () => {
                                                                 Manage User</Link>
                                                         </li>
                                                         <li>
-                                                            <Link to="order-history">
+                                                            <Link to="history">
                                                                 <FaHistory />
                                                                 Order History</Link>
                                                         </li>
