@@ -8,10 +8,12 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
     const handleParcelUpdate = event => {
         event.preventDefault();
         const form = event.target;
+        const from_address = form.from_address.value;
         const to_address = form.to_address.value;
-        const updateInformation = {to_address}
+        const total_amount = form.total_amount.value;
+        const updateInformation = {to_address,total_amount,from_address}
         console.log(updateInformation);
-        fetch(`http://localhost:5000/orders/${invoiceParcel._id}`, {
+        fetch(`http://localhost:5000/order/${invoiceParcel._id}`, {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(updateInformation)
@@ -39,7 +41,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
                                 <label className="label">
                                     <span className="label-text text-white">From </span>
                                 </label>
-                                <input type="text" placeholder="email" defaultValue={invoiceParcel?.from_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" name="from_address" placeholder="email" defaultValue={invoiceParcel?.from_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

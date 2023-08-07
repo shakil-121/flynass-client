@@ -64,7 +64,7 @@ const Invoice = () => {
                         <h2 className='text-2xl font-serif mb-3'>Delivery Charge: <span>{invoiceParcel?.total_amount}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel?.product_amount}Tk.</span></h2>
                         <hr className='border-2' />
-                        <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{invoiceParcel?.payable_amount}Tk.</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{parseFloat(invoiceParcel?.product_amount)+parseFloat(invoiceParcel?.total_amount)}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mt-10 text-center'>[Client Copy]</h2>
                         <p className='text-center font-serif'>www.flynass.com</p>
                     </div>

@@ -79,6 +79,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
       status: "pending",
       payment_status: "due",
       payable_amount: payableAmount,
+      special_instruction: data.special_instruction,
 
     }
     console.log(orderInfo)
@@ -1864,6 +1865,16 @@ const CreateParcel = ({ isVisible, onClose }) => {
                     </div>
                   </> : <></>
                 }
+              </div>
+            </div>
+            <div className=" text-black my-5">
+              <div className="form-control">
+                <input
+                  type="text"
+                  placeholder="Enter Special Instruction"
+                  className="input input-bordered"
+                  {...register("special_instruction")}
+                />
               </div>
             </div>
             <div className="my-4 font-pppins">
