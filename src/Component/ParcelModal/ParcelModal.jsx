@@ -28,7 +28,7 @@ const ParcelModal = ({ isVisible, onClose }) => {
                                 <td>{index + 1}</td>
                                 <td>{parcel.date}</td>
                                 <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                    {parcel._id}
+                                    {parcel.trackingId}
                                 </td>
                                 <td>
                                     <p>{parcel.product_amount}Tk</p>
