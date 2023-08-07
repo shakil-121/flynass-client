@@ -22,7 +22,6 @@ const Invoice = () => {
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
-
         // Create a PDF using html2pdf.js and download it
         html2pdf().from(element).set(opt).save();
     };
@@ -30,10 +29,8 @@ const Invoice = () => {
     const printDivContent = () => {
         const printContents = document.getElementById('invoice-section').innerHTML;
         const originalContents = document.body.innerHTML;
-
         document.body.innerHTML = printContents;
         window.print();
-
         // Restore the original content after printing
         document.body.innerHTML = originalContents;
     };
@@ -52,7 +49,7 @@ const Invoice = () => {
                         <h1 className='text-3xl font-serif font-semibold bg-gray-300 ps-8 pe-5 py-4 rounded-bl-full '>Invoice</h1>
                     </div>
                     <div className='p-5'>
-                        <h1 className='text-xl text-center font-pppins mb-10'>Tracking ID: <br /> {invoiceParcel?._id}</h1>
+                        <h1 className='text-xl text-center font-pppins mb-10'>Tracking ID: <br /> {invoiceParcel?.trackingId}</h1>
                         <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel?.name}</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Phone: <span>{invoiceParcel?.phone}</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Customer Address: <span>{invoiceParcel?.to_address}</span></h2>
@@ -71,6 +68,3 @@ const Invoice = () => {
 };
 
 export default Invoice;
-
-
-

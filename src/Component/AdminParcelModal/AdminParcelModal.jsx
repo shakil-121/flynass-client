@@ -77,8 +77,8 @@ const AdminParcelModal = ({ isVisible, orders, onClose,refetch }) => {
                             isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
                                 <td>{index + 1}</td>
                                 <td>{parcel.date}</td>
-                                <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                    {parcel._id}
+                                <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', textOverflow: 'ellipsis' }}>
+                                    {parcel.trackingId}
                                 </td>
                                 <td>
                                     <p>{parcel.product_amount}Tk</p>
