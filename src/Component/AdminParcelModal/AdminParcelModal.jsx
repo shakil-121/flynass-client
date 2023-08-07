@@ -5,7 +5,7 @@ import { useState } from 'react';
 import AdminParcelEdit from './AdminParcelEdit';
 import Swal from 'sweetalert2';
 
-const AdminParcelModal = ({ isVisible, orders, onClose,refetch }) => {
+const AdminParcelModal = ({ isVisible, orders, onClose, refetch}) => {
     const [searchText, setSearchText] = useState("");
     const [showModal, setShowModal] = useState(false);
     if (!isVisible) return null;
@@ -30,10 +30,9 @@ const AdminParcelModal = ({ isVisible, orders, onClose,refetch }) => {
                     .then((data) => {
                         if (data.deletedCount > 0) {
                             Swal.fire("Parcel Delete successfully"); 
-                            refetch();
                         }
                     }); 
-
+                 refetch();
             }
         });
     };
