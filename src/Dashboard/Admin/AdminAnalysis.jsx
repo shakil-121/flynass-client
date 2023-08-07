@@ -224,7 +224,7 @@ const AdminAnalysis = () => {
         </div>
       </div>
 
-      <AdminParcelModal isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
+      <AdminParcelModal refetch={refetch} isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
       <AllParcel orders={setShowModal}></AllParcel>
     </div>
   );

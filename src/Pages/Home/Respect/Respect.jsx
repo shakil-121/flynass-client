@@ -10,11 +10,11 @@ import Marquee from "react-fast-marquee";
 
 const Respect = () => {
     return (
-        <div>
+        <div className='max-w-screen-xl mx-auto'>
             <div>
-                <img className='w-full mt-8 ' src={banner} alt="" />
+                <img className='w-[100vw] mt-8 ' src={banner} alt="" />
             </div>
-            <div className='max-w-screen-xl mx-auto mt-36 2xl:px-0 px-5 md:px-16'>
+            <div className='mt-36 2xl:px-0 md:px-16'>
             <div className='text-center'>
                 <SectionTitle subHeading="Respected" heading="Clinets & Partners"></SectionTitle>
             </div>

@@ -40,7 +40,6 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const month = currentDate.getMonth() + 1; // Add 1 to get the actual month (January is 0)
   const year = currentDate.getFullYear();
 
-
   // tracking id generate
   const previousLength = (allParce.length);
   const newLength = previousLength + 1;
