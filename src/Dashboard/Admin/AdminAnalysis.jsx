@@ -224,8 +224,7 @@ const AdminAnalysis = () => {
         </div>
       </div>
 
-      <AdminParcelModal refetch={refetch()} isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
-      <AllParcel className="hidden" orders={setShowModal}></AllParcel>
+      <AdminParcelModal refetch={refetch} isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
     </div>
   );
 };
