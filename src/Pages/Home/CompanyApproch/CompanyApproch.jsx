@@ -6,10 +6,13 @@ import SectionTitle from "../../../Component/SectionTitle";
 import "./CompannyApproch.css";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+AOS.init();
 
 const CompanyApproch = () => {
   return (
-    <div className="mt-28 font-pppins max-w-screen-xl mx-auto  2xl:px-0 md:px-16 px-5 mb-10">
+    <div className="approch_animation mt-28 font-pppins max-w-screen-xl mx-auto  2xl:px-0 md:px-16 px-5 mb-10">
       <div className="grid md:grid-cols-2 md:justify-items-end justify-items-center items-center">
         <div>
           <SectionTitle
@@ -35,7 +38,12 @@ const CompanyApproch = () => {
           {/* This section just for design purposes */}
         {/* <div className="hidden md:block bg-[#F98A06] w-72 h-96">
         </div> */}
-        <div className="bg-white md:ms-16 waves md:p-7 p-3 shadow-2xl shadow-[#7ABDE2] rounded-xl mb-10">
+        <div 
+        data-aos="fade-up"
+        data-aos-anchor=".approch_animation"
+        data-aos-offset="500"
+        data-aos-duration="400"
+        className="bg-white md:ms-16 waves md:p-7 p-3 shadow-2xl shadow-[#7ABDE2] rounded-xl mb-10">
           <div className="md:flex items-center gap-x-20 mb-2">
             <div>
               <h1 className="md:text-[96px] text-[250px] text-bg">02</h1>

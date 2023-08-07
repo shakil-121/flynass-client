@@ -7,6 +7,7 @@ import ParcelEdit from "../../Component/ParcelEdit/ParcelEdit";
 import { useQuery } from "@tanstack/react-query";
 import AdminParcelModal from "../../Component/AdminParcelModal/AdminParcelModal";
 import { useEffect } from "react";
+import AllParcel from "./AllParcel/Allparcel";
 
 const AdminAnalysis = () => {
   const [showModal, setShowModal] = useState(false);
@@ -223,7 +224,8 @@ const AdminAnalysis = () => {
         </div>
       </div>
 
-      <AdminParcelModal isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
+      <AdminParcelModal refetch={refetch} isVisible={showModal} orders={setShowModal} onClose={() => setShowModal(false)} ></AdminParcelModal>
+      <AllParcel orders={setShowModal}></AllParcel>
     </div>
   );
 };
