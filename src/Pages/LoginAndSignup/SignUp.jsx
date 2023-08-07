@@ -44,25 +44,24 @@ const SignUp = () => {
             phone: data.phone,
             NID: data.nid,
             image: imgUrl,
-            role:"merchant",
-            address:data.address,
-            status: "pending"
+            role: "pending",
+            address: data.address,
           };
-        //   console.log(userInfo);
+          //   console.log(userInfo);
 
           createAccount(data.email, data.password)
             .then((result) => {
               const loggedUser = result.user;
               updateProfiledata(loggedUser, data.name, imgUrl);
               toast("Account Create Successfully !")
-              console.log(result); 
-              console.log(userInfo); 
-              fetch("http://localhost:5000/users",{
-                method:"POST",
-                headers:{
-                  "content-type":"application/json"
+              console.log(result);
+              console.log(userInfo);
+              fetch("http://localhost:5000/users", {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json"
                 },
-                body:JSON.stringify(userInfo)
+                body: JSON.stringify(userInfo)
               })
             })
             .catch((error) => {
@@ -77,11 +76,11 @@ const SignUp = () => {
       displayName: name,
       photoURL: photo,
     })
-      .then(() => {})
+      .then(() => { })
       .catch((error) => console.log(error));
   };
-   
-  const handleloginwithgoogle=()=>{
+
+  const handleloginwithgoogle = () => {
     googleLogin()
   }
   return (
@@ -162,7 +161,7 @@ const SignUp = () => {
                   placeholder="Type your Phone Number"
                   className="input input-bordered border-slate-300 text-black"
                 />
-              </div> 
+              </div>
 
               {/* file uploader older version */}
               {/* <div class="mb-8">
@@ -193,17 +192,17 @@ const SignUp = () => {
                   </div>
                 </label>
               </div> */}
-              
-              <div> 
-              <label className="label">
+
+              <div>
+                <label className="label">
                   <span className="label-text text-lg">Upload your Photo</span>
                 </label>
-              <input 
-               {...register("image", { required: true })}
-               type="file"
-               name="image"
-               id="file"
-              className="file-input text-black file-input-bordered w-full max-w-xs" />
+                <input
+                  {...register("image", { required: true })}
+                  type="file"
+                  name="image"
+                  id="file"
+                  className="file-input text-black file-input-bordered w-full max-w-xs" />
               </div>
               <div className="form-control">
                 <label className="label">
