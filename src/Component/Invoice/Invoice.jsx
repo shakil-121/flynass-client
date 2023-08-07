@@ -36,9 +36,9 @@ const Invoice = () => {
     };
 
     return (
-        <div className='flex justify-center items-center h-full'>
+        <div className='w-[40vw] mx-auto'>
             <div>
-                <div className='flex justify-between mb-10'>
+                <div className='flex justify-between mb-5'>
                     <button onClick={() => setShowModal(true)} className='btn btn-primary flex items-center justify-center'><FaRegEdit />Edit</button>
                     <button onClick={handleDownload} className='btn btn-primary flex items-center justify-center'><FaDownload />Download</button>
                     <button onClick={printDivContent} className='btn btn-primary flex items-center justify-center'><FaPrint />Print</button>
