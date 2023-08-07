@@ -15,8 +15,9 @@ const ManageUsers = () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json();
     })
-    const TotalMerchant = allUsers.filter(admin => admin.role === 'merchant' && admin.status === 'confirmed');
-    const newRequest = allUsers.filter(admin => admin.status === 'pending');
+    const TotalMerchant = allUsers.filter(users => users.role === 'merchant');
+    
+    const newRequest = allUsers.filter(users => users.role === 'pending');
     // console.log(TotalAdmin);
 
     const handleUserDelete = id => {

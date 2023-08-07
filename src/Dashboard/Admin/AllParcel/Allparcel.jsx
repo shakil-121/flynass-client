@@ -258,7 +258,8 @@ const AllParcel = () => {
                                             <div className='flex flex-col gap-1'>
                                                 <small>{parcel.name}</small>
                                                 <small>{parcel.phone}</small>
-                                                <small>{parcel.to_address}</small>
+                                                <small>{parcel.district}</small>
+                                                <small>{parcel.thana}</small>
                                             </div>
                                         </td>
                                         <td className='text-xl'>

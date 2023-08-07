@@ -46,6 +46,7 @@ const SignUp = () => {
             image: imgUrl,
             role:"merchant",
             address:data.address,
+            status: "pending"
           };
         //   console.log(userInfo);
 
