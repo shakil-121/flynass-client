@@ -131,8 +131,8 @@ const AllParcel = () => {
             ids: selectedParcelIds,
             status: status,
         };
-        fetch('http://localhost:5000/order/status', {
-            method: 'PUT',
+        fetch('http://localhost:5000/order/multi-status', {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
