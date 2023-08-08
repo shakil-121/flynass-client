@@ -1,8 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
+import { FaRegEdit } from 'react-icons/fa';
+import MerchentParcelEdit from '../AdminParcelModal/MerchentParcel';
 
 const ParcelModal = ({ isVisible, onClose }) => {
+    const [showModal, setShowModal] = useState(false);
     if (!isVisible) return null;
-    console.log(isVisible);
+    // console.log(isVisible);
 
     return (
         <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-30'>
@@ -36,12 +40,23 @@ const ParcelModal = ({ isVisible, onClose }) => {
                                 <td>
                                     {parcel.delivary_Charge}Tk
                                 </td>
-                                <td>{parcel.status}</td>
+                                <td>
+                                    {
+                                        parcel.status === 'pending' ?
+                                            <>
+                                                <button onClick={() => setShowModal(parcel)} className='flex items-center gap-2 btn bg-[#1E62D4] text-white hover:bg-[#1E62D4]'><FaRegEdit />Edit</button>
+                                            </>
+                                            :
+                                            <>{parcel.status}</>
+                                    }
+
+                                </td>
                             </tr>)
                         }
                     </div>
                 </div>
             </div>
+            <MerchentParcelEdit isVisible={showModal} onClose={() => setShowModal(false)} ></MerchentParcelEdit>
         </div>
     );
 };
