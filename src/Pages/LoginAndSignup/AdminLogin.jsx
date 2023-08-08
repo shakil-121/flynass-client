@@ -58,29 +58,29 @@ const AdminLogin = () => {
   return (
     <div>
       <div className="hero w-full min-h-screen rounded-lg  py-16">
-        <div className="card flex-shrink-0 md:w-1/2 bg-opacity-80  shadow-2xl text-white bg-orange-400">
-          <form onSubmit={handleSubmit} className="card-body">
+        <div className="card flex-shrink-0 md:w-1/2 bg-opacity-80  shadow-2xl text-white bg-[#1E62D4]">
+          <form onSubmit={handleSubmit} className="card-body font-pppins text-white">
             <div>
-              <h1 className="font-pppins text-3xl pb-5 font-bold text-center text-black">
+              <h1 className="font-pppins text-3xl pb-5 font-bold text-center">
                 <FaUserTie></FaUserTie>  Admin Login
               </h1>
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-lg">Email</span>
+                <span className="label-text text-lg text-white">Email</span>
               </label>
               <input
                 ref={emailRef}
                 name="email"
                 type="text"
                 placeholder="email"
-                className="input input-bordered border-slate-300 text-black"
+                className="input input-bordered border-slate-300"
               />
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-lg">Password</span>
+                <span className="label-text text-lg text-white">Password</span>
               </label>
               <input
                 name="password"
@@ -92,7 +92,7 @@ const AdminLogin = () => {
             <div className="text-center mt-2 mb-2 text-red-500">
               <p>{error}</p>
             </div>
-            <Link className="text-decoration-none text-sky-600"><small onClick={handelresetpassword}>Forget Password</small></Link>
+            <Link className="text-decoration-none text-cyan-300"><small onClick={handelresetpassword}>Forget Password</small></Link>
 
             <div className="form-control mt-6">
               <button className="btn bg-zinc-950 border-none text-white hover:text-black">
@@ -100,12 +100,7 @@ const AdminLogin = () => {
               </button>
             </div>
           </form>
-          <p className="text-center text-black pb-6">
-            Are you new in Flynass ?
-            <Link className="text-blue-600 ps-2" to="/admin_signup">
-              Create Account
-            </Link>
-          </p>
+          
         </div>
       </div>
 
