@@ -188,7 +188,7 @@ const MerchantAnalysis = () => {
       </div>
 
       {/* parcel Analysis */}
-      <div>
+      <div className="hidden md:block">
         <h1 className="text-3xl font-pppins mt-10 text-black">
           Parcel Analysis
         </h1>
@@ -202,7 +202,7 @@ const MerchantAnalysis = () => {
             <div className="bg-[#FF5733] h-5 w-5"></div>
           </div>
         </div>
-        <div className="md:w-[60vw] ">
+        <div className="md:w-[60vw]">
           <DeliveryPercnet
             returnPercentage={returnPercentage}
             deliveryPercentage={deliveryPercentage}

@@ -35,6 +35,7 @@ import AdminSignUp from "../Pages/LoginAndSignup/AdminRegistration";
 import TramsCondition from "../Pages/TramsCondition/TramsCondition";
 import Error from "../Pages/Error/Error";
 import AdminDashbordHistory from "../Dashboard/Admin/AdminDashbordHistory/AdminDashbordHistory";
+import Instruction from "../Dashboard/MyParcel/Instruction";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -135,6 +136,10 @@ const router = createBrowserRouter([
       {
         path: "merchant-payment",
         element: <MerchantPayment></MerchantPayment>
+      },
+      {
+        path:"instruction",
+        element:<Instruction></Instruction>
       }
     ]
   },

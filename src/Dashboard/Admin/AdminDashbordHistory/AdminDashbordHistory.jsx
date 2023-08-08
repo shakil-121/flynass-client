@@ -6,10 +6,21 @@ const AdminDashbordHistory = () => {
     const [allParce, refetch] = useParcel();
 
     const history = allParce.filter(item => item.status === "delivered" || item.status === "rejected");
+    
+    const handledelete=()=>{
+        fetch("http://localhost:5000/orders/delete",{
+            method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
+    }
 
     return (
         <div className='px-10 mt-5'>
             <h1 className='text-3xl font-pppins mb-3'>History</h1>
+            <button onClick={handledelete} className='bg-red-600 p-4 text-white'>All Delete</button>
             <div className='h-[90vh]  overflow-auto'>
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <tr className='text-center text-black grid md:grid-cols-7 sticky top-0'>

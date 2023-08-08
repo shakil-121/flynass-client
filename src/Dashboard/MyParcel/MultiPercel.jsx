@@ -3,6 +3,7 @@ import { CSVLink } from "react-csv";
 import { FaFileDownload, FaPhoneAlt } from "react-icons/fa";
 import CSVUpload from "../../Component/CSVUpload"
 import support from "../../assets/images/customer-service.png"
+import { Link } from "react-router-dom";
 
 const MultiPercel = () => {
   const [csvData, setCSVData] = useState([]);
@@ -10,7 +11,7 @@ const MultiPercel = () => {
     // Function to fetch and read the CSV file
     const fetchData = async () => {
       try {
-        const response = await fetch("../../../public/sample.csv"); // Adjust the path accordingly
+        const response = await fetch("../../../public/CSV flynass.csv"); // Adjust the path accordingly
         const text = await response.text();
         const parsedData = text.split("\n").map((row) => row.split(","));
         setCSVData(parsedData);
@@ -44,7 +45,10 @@ const MultiPercel = () => {
          
         Note: Your '.xlsx' file must be save '.csv' format and then upload the cvs file for parcel order
 
-      </p>
+      </p> 
+      <div className="mb-8">
+        <Link to="../instruction" className="bg-[#1E62D4] hover:bg-[#003899]  p-3 text-white font-pppins  rounded-lg">Instruction For Multi-parcel Order </Link>
+      </div>
       <div>
         <CSVUpload></CSVUpload>
       </div>
