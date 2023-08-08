@@ -88,11 +88,11 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="coverage">Coverage</Link>
-            </li> 
+            </li>
 
             <li>
-            <Link to="about">About Us</Link>
-          </li>
+              <Link to="about">About Us</Link>
+            </li>
             {/* {
               user ? <></> : <>
                 <li>
@@ -165,24 +165,35 @@ const NavBar = () => {
                   </div>
                   :
                   <>
-                    {user ?
-                      <>
-                        <Link className="btn mx-3 bg-[#062751] hover:text-black md:text-base text-[10px] text-white" to="/dashboard">
-                          <div>
-                            <h1>Hello <br />
-                              {user?.displayName}</h1>
-                          </div>
-                        </Link>
-                        <div className="avatar online">
-                          <div className="md:h-16 h-10 auto rounded-full">
-                            <img className="" title={user?.displayName} src={user.photoURL} alt="" />
-                          </div>
-                        </div>
-                      </>
-                      :
-                      <>
-                        <Link className="btn btn-active bg-[#062751] text-white hover:text-black" to="/login"><FaUserShield></FaUserShield> Login</Link>
-                      </>
+                    {
+                      role === 'pending' ?
+                        <>
+                          <h1>Muri kha sala</h1>
+                        </>
+                        :
+                        <>
+                          <>
+                            {user ?
+                              <>
+                                <Link className="btn mx-3 bg-[#062751] hover:text-black md:text-base text-[10px] text-white" to="/dashboard">
+                                  <div>
+                                    <h1>Hello <br />
+                                      {user?.displayName}</h1>
+                                  </div>
+                                </Link>
+                                <div className="avatar online">
+                                  <div className="md:h-16 h-10 auto rounded-full">
+                                    <img className="" title={user?.displayName} src={user.photoURL} alt="" />
+                                  </div>
+                                </div>
+                              </>
+                              :
+                              <>
+                                <Link className="btn btn-active bg-[#062751] text-white hover:text-black" to="/login"><FaUserShield></FaUserShield> Login</Link>
+                              </>
+                            }
+                          </>
+                        </>
                     }
                   </>
               }

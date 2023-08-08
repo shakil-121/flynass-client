@@ -6,15 +6,15 @@ const AdminDashbordHistory = () => {
     const [allParce, refetch] = useParcel();
 
     const history = allParce.filter(item => item.status === "delivered" || item.status === "rejected");
-    
-    const handledelete=()=>{
-        fetch("http://localhost:5000/orders/delete",{
-            method:"DELETE"
+
+    const handledelete = () => {
+        fetch("http://localhost:5000/orders/delete", {
+            method: "DELETE"
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
 
     return (
