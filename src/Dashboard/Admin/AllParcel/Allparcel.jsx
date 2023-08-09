@@ -242,7 +242,7 @@ const AllParcel = () => {
                                                 </ul>
                                             </div>
                                         </td>
-                                        <td className='m-4 text-sm' style={{ whiteSpace: 'pre-wrap', maxHeight: '2em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                        <td className='m-4 text-sm font-semibold' style={{ whiteSpace: 'pre-wrap', maxHeight: '2em', overflow: 'hidden', maxWidth: '6em', textOverflow: 'ellipsis' }}>
                                             {parcel.trackingId}
                                         </td>
                                         <td className='text-sm font-semibold'>
