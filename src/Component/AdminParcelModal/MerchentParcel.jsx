@@ -45,13 +45,13 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
                         <form onSubmit={handleParcelUpdate}>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">From </span>
+                                    <span className="label-text text-white">Phone </span>
                                 </label>
-                                <input type="text" placeholder="email" name='from_address' defaultValue={isVisible.from_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="Phone" name='phone' defaultValue={isVisible.customer_phone} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">To </span>
+                                    <span className="label-text text-white">Address </span>
                                 </label>
                                 <input type="text" placeholder="Enter address" name="to_address" defaultValue={isVisible.to_address} className="input input-bordered focus:outline-none" />
                             </div>

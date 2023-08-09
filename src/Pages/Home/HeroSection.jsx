@@ -31,7 +31,7 @@ const HeroSection = () => {
   // }
 
   return (
-    <div>
+    <div className="mx">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -45,7 +45,7 @@ const HeroSection = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         // onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper max-w-screen-xl mx-auto z-10"
+        className="mySwiper z-10"
       >
         <SwiperSlide>
           <div className="md:h-[95vh]   bg-gradient-to-l bg-[#1E8FD0]  md:flex flex-col">

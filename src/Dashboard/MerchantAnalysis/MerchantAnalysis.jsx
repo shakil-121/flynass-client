@@ -63,10 +63,10 @@ const MerchantAnalysis = () => {
       <div className="mx-auto md:w-[65vw] w-[90vw]">
         <Slider />
       </div>
-      <div className="grid grid-cols-4 gap-10 mt-10">
+      <div className="grid grid-cols-4 gap-2 mt-5">
         <div>
           <button onClick={() => setShowModal(parcel)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Total <br /> Parcel</h1>
               <h1 className="text-blue-800">{parcel?.length}</h1>
             </div>
@@ -74,7 +74,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(pending)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Pending <br /> Parcel</h1>
               <h1 className="text-blue-800">{pending?.length}</h1>
             </div>
@@ -82,7 +82,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(picked)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Picked <br /> Parcel</h1>
               <h1 className="text-blue-800">{picked?.length}</h1>
             </div>
@@ -90,7 +90,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(onWay)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Onway <br /> Parcel</h1>
               <h1 className="text-blue-800">{onWay?.length}</h1>
             </div>
@@ -98,7 +98,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(hold)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Hold <br /> Parcel</h1>
               <h1 className="text-blue-800">{hold?.length}</h1>
             </div>
@@ -106,7 +106,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(delivered)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Delivered <br /> Parcel</h1>
               <h1 className="text-blue-800">{delivered?.length}</h1>
             </div>
@@ -115,7 +115,7 @@ const MerchantAnalysis = () => {
 
         <div>
           <button onClick={() => setShowModal(returned)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Returned <br /> Parcel</h1>
               <h1 className="text-blue-800">{returned?.length}</h1>
             </div>
@@ -126,7 +126,7 @@ const MerchantAnalysis = () => {
             onClick={() => setShowModal(returnedToMerchant)}
             className="w-full"
           >
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Returned To <br /> Merchant</h1>
               <h1 className="text-blue-800">{returnedToMerchant?.length}</h1>
             </div>
@@ -134,7 +134,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(reject)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Reject <br /> Parcel</h1>
               <h1 className="text-blue-800">{reject?.length}</h1>
             </div>
@@ -142,7 +142,7 @@ const MerchantAnalysis = () => {
         </div>
         <div>
           <button onClick={() => setShowModal(unpaid)} className="w-full">
-            <div className="bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
               <h1 className="text-gray-400">Cash <br /> Amount</h1>
               <h1 className="text-blue-800">{unpaidAmount}</h1>
             </div>

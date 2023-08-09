@@ -52,7 +52,7 @@ const MyParclel = () => {
             <div className="mt-10 h-[80vh] overflow-scroll">
                 <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
                 <table className="table table-xs table-pin-rows table-pin-cols">
-                    <thead className='text-center bg-gray-400 text-black text-xl'>
+                    <thead className='text-center bg-gray-400 text-black text-sm'>
                         <th>No.</th>
                         <th>Date</th>
                         <th>Trackin ID</th>
@@ -64,44 +64,82 @@ const MyParclel = () => {
                     <tbody>
                         {
                             myParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
-                                <td className='text-xl'>{index + 1}</td>
-                                <td className='text-xl'>{parcel.date}</td>
-                                <td className='m-4 text-xl' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>
+                                <td className='text-sm'>{index + 1}</td>
+                                <td className='text-sm'>{parcel.date}</td>
+                                <td className='m-4 text-sm font-semibold' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>
                                     {parcel.trackingId}
                                 </td>
-                                <td className='text-xl'>
+                                <td className='text-sm font-semibold'>
                                     <p>{parcel.product_amount}Tk</p>
                                 </td>
-                                <td className='flex flex-col text-xl'>
+                                <td className='flex flex-col text-sm'>
                                     <small>delivery - {parcel.delivary_Charge}TK</small>
                                     <small>cod {parcel.cod}TK</small>
                                 </td>
-                                <td className='text-xl'>
+                                <td className='text-sm'>
                                     <div className='flex flex-col gap-1'>
                                         {
                                             parcel.status === 'pending' ?
-                                            <>Pending</>
-                                            :
-                                            <>
-                                            {parcel.payable_amount} TK
-                                            </>
+                                                <>Pending</>
+                                                :
+                                                <>
+                                                    {parcel.payable_amount} TK
+                                                </>
                                         }
 
                                     </div>
                                 </td>
-                                <td className='text-xl'>
-                                    <p className='font-semibold'>{parcel.status}</p>
+                                <td className='text-sm'>
+                                    {
+                                        parcel.status === 'pending' ?
+                                            <>
+                                                <p className='font-semibold text-yellow-500'>{parcel.status}</p>
+                                            </>
+                                            :
+                                            <>
+                                                {
+                                                    parcel.status === 'picked' ?
+                                                        <>
+                                                            <p className='font-semibold text-orange-500'>{parcel.status}</p>
+                                                        </>
+                                                        :
+                                                        <>
+                                                            {
+                                                                parcel.status === 'on the way' ?
+                                                                    <>
+                                                                        <p className='font-semibold text-blue-500'>{parcel.status}</p>
+                                                                    </>
+                                                                    :
+                                                                    <>
+                                                                        {
+                                                                            parcel.status === 'hold' ?
+                                                                                <>
+                                                                                    <p className='font-semibold text-purple-900'>{parcel.status}</p>
+                                                                                </>
+                                                                                :
+                                                                                <>
+                                                                                    <p className='font-semibold text-black'>{parcel.status}</p>
+                                                                                </>
+                                                                        }
+                                                                    </>
+                                                            }
+                                                        </>
+                                                }
+                                            </>
+                                    }
+
+                                    {/* <p className='font-semibold'>{parcel.status}</p> */}
                                 </td>
 
                                 {/* <td className='mx-auto'>
                                     {
                                         parcel.status === 'pending' ?
                                             <div className='flex justify-center'>
-                                                <button onClick={() => setShowModal(parcel)} className='px-3 py-2 text-xl bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center gap-1 rounded-md text-white'><FaRegEdit />Edit</button>
+                                                <button onClick={() => setShowModal(parcel)} className='px-3 py-2 text-sm bg-[#1E62D4] hover:bg-[#1E62D4] flex items-center gap-1 rounded-md text-white'><FaRegEdit />Edit</button>
                                             </div>
                                             :
                                             <>
-                                                <h1 className='text-xl text-error'>Not <br />changeable</h1>
+                                                <h1 className='text-sm text-error'>Not <br />changeable</h1>
                                             </>
                                     }
                                 </td>

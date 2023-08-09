@@ -49,7 +49,7 @@ const Dashboard = () => {
 
     <div>
       <DashboardNavBar />
-      <div className="drawer lg:drawer-open md:gap-5 px-4 md:px-0">
+      <div className="drawer lg:drawer-open md:gap-2 px-4 md:px-0">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content overflow-hidden">
 
