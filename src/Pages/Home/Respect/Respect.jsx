@@ -10,7 +10,7 @@ import Marquee from "react-fast-marquee";
 
 const Respect = () => {
     return (
-        <div className='max-w-screen-xl mx-auto'>
+        <div className=''>
             <div>
                 <img className='w-[100vw] mt-8 ' src={banner} alt="" />
             </div>
