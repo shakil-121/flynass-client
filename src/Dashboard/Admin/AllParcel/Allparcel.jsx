@@ -125,6 +125,7 @@ const AllParcel = () => {
     //   };
 
     // Function to handle the status update of selected parcels
+    
     const handleStatusUpdateForSelected = (status) => {
         const selectedParcelIds = selectedParcels.map((id) => id);
         const updateData = {

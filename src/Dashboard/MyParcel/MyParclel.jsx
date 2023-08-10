@@ -18,7 +18,7 @@ const MyParclel = () => {
         return res.json();
     })
 
-    const myParcel = merchantParcel.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected");
+    const myParcel = merchantParcel.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected" && parcel.status !== "returned to merchant");
 
     const handleDeleteParcel = id => {
         Swal.fire({
@@ -151,7 +151,7 @@ const MyParclel = () => {
                     </tbody>
                 </table>
             </div>
-            <MerchentParcelEdit isVisible={showModal} onClose={() => setShowModal(false)}></MerchentParcelEdit>
+            {/* <MerchentParcelEdit isVisible={showModal} onClose={() => setShowModal(false)}></MerchentParcelEdit> */}
 
         </div>
     );

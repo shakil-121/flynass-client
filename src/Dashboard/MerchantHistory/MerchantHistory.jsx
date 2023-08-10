@@ -12,7 +12,7 @@ const MerchantHistory = () => {
         return res.json();
     })
 
-    const historyParcel = merchantParcel.filter(parcel => parcel.status === "delivered" || parcel.status === "rejected");
+    const historyParcel = merchantParcel.filter(parcel => parcel.status === "delivered" || parcel.status === "rejected" || parcel.status === "returned to merchant");
 
     return (
         <div>
@@ -50,11 +50,16 @@ const MerchantHistory = () => {
                             {
                                 parcel.status === 'delivered' ?
                                     <>
-                                    <p className='text-green-600 font-semibold'>Deliverd</p>
-                                    {/* rejected hole red color hobe */}
+                                        <p className='text-green-600 font-semibold'>Deliverd</p>
+                                        {/* rejected hole red color hobe */}
                                     </>
                                     :
-                                    <></>
+                                    <>
+                                    {
+
+                                    }
+                                        <p className='text-red-600 font-semibold text-center'>{parcel.status}</p>
+                                    </>
                             }
                             {/* {parcel.status} */}
                         </td>

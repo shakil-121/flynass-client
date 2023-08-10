@@ -74,7 +74,7 @@ const Dashboard = () => {
                   <>
                     <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
                   </>
-                  :
+                :
                   <>
                     <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
                   </>
@@ -105,7 +105,7 @@ const Dashboard = () => {
                     Payment</Link>
                 </li>
                 <li>
-                  <Link to="/services">
+                  <Link to="service">
                     <FiSettings />
                     Service</Link>
                 </li>

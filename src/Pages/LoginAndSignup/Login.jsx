@@ -12,15 +12,46 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./Login.css";
 import { useState } from "react";
 import useTitle from "../../Hooks/useTitle";
+import { useQuery } from "@tanstack/react-query";
 
 const Login = () => {
   const [error, setError] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+
   useTitle("Login")
-  const navigate = useNavigate();
-  const location = useLocation();
   const { login, passwordReset, googleLogin } = useContext(AuthContext);
   const emailRef = useRef();
+
+  const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
+    const res = await fetch('http://localhost:5000/users')
+    return res.json();
+  })
+
+  // const loggedInUser = user?.email;
+  const currentUser = allUsers.find(item => item.email === userEmail)
+  const role = currentUser?.role;
+
+  console.log(userEmail, role);
+
   // const from=location.state?.from?.pathname || '/dashboard/menu'
+  const location = useLocation();
+  const navigate = useNavigate()
+
+  let from;
+  if (role === 'merchant') {
+    from = location.state?.from?.pathname || '/dashboard';
+  }
+  else if (role === 'pending') {
+
+  }
+  else if (role === 'admin' && role === 'superAdmin') {
+
+  }
+  // else if{
+  //   navigate('/');
+  // }
+
+  // const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,8 +64,9 @@ const Login = () => {
       .then((result) => {
         const loggeduser = result.user;
         toast("Login Successfully");
-        // navigate(from, { replace: true });
+        form.reset();
         setError('');
+        navigate(from, { replace: true })
       })
       .catch((error) => {
         console.log(error);
@@ -61,6 +93,7 @@ const Login = () => {
   const handleloginwithgoogle = () => {
     googleLogin();
   };
+
   return (
     <div>
       <div className="hero w-full min-h-screen rounded-lg bg py-16">
@@ -79,6 +112,7 @@ const Login = () => {
                 ref={emailRef}
                 name="email"
                 type="text"
+                onChange={(e) => setUserEmail(e.target.value)}
                 placeholder="email"
                 className="input input-bordered border-slate-300 text-black"
               />

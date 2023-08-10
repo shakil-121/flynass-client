@@ -5,32 +5,33 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
 
     const handleParcelUpdate = event => {
-        event.preventDefault();
+        // event.preventDefault();
         const form = event.target;
         const to_address = form.to_address.value;
-        const from_address = form.from_address.value;
-        const updateInformation = {to_address,from_address}
+        const phone = form.phone.value;
+        const updateInformation = { to_address, phone }
         console.log(updateInformation);
         fetch(`http://localhost:5000/order/${isVisible._id}`, {
             method: 'PUT',
-            headers: {'content-type': 'application/json'},
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateInformation)
         })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            Swal.fire({
-              title: "Update",
-              text: "Toy Update Successfully",
-              icon: "success",
-              confirmButtonText: "Update",
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.acknowledged) {
+                    Swal.fire({
+                        title: "Update",
+                        text: "Toy Update Successfully",
+                        icon: "success",
+                        confirmButtonText: "Update",
+                    });
+                }
+                form.reset();
+                console.log(data);
             });
-          }
-          form.reset();
-          console.log(data);
-        });
 
     }
+
 
     return (
         <div className='z-20 fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
@@ -47,7 +48,7 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
                                 <label className="label">
                                     <span className="label-text text-white">Phone </span>
                                 </label>
-                                <input type="text" placeholder="Phone" name='phone' defaultValue={isVisible.customer_phone} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="Phone" name='phone' defaultValue={isVisible.phone} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -71,3 +72,5 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
 };
 
 export default MerchentParcelEdit;
+
+

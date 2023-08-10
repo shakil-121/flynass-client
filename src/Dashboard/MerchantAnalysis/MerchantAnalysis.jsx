@@ -49,6 +49,10 @@ const MerchantAnalysis = () => {
   const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
   const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
+  // chash Amount 
+  const cashAmountItems = parcel.filter(item => item.payment_status === "due" && item.status !== "pending");
+  const cashAmount = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
+
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;
   const devlieryParcel = delivered.length;
@@ -141,12 +145,10 @@ const MerchantAnalysis = () => {
           </button>
         </div>
         <div>
-          <button onClick={() => setShowModal(unpaid)} className="w-full">
-            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
-              <h1 className="text-gray-400">Cash <br /> Amount</h1>
-              <h1 className="text-blue-800">{unpaidAmount}</h1>
-            </div>
-          </button>
+          <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
+            <h1 className="text-gray-400">Cash <br /> Amount</h1>
+            <h1 className="text-blue-800">{cashAmount} Tk</h1>
+          </div>
         </div>
       </div>
 

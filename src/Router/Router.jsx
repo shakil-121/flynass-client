@@ -36,6 +36,7 @@ import TramsCondition from "../Pages/TramsCondition/TramsCondition";
 import Error from "../Pages/Error/Error";
 import AdminDashbordHistory from "../Dashboard/Admin/AdminDashbordHistory/AdminDashbordHistory";
 import Instruction from "../Dashboard/MyParcel/Instruction";
+import DashboardService from "../Dashboard/DashboardService/DashboardService";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -138,8 +139,12 @@ const router = createBrowserRouter([
         element: <MerchantPayment></MerchantPayment>
       },
       {
-        path:"instruction",
-        element:<Instruction></Instruction>
+        path: "instruction",
+        element: <Instruction></Instruction>
+      },
+      {
+        path: "service",
+        element: <DashboardService></DashboardService>
       }
     ]
   },
@@ -216,7 +221,6 @@ const router = createBrowserRouter([
     path: "*",
     element: <Error></Error>
   }
-
 
 ]);
 
