@@ -28,14 +28,14 @@ const ParcelModal = ({ isVisible, onClose }) => {
                             </tr>
                         </table>
                         {
-                            isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-6 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
+                            isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-6 mb-2 justify-items-center items-center shadow-lg text-sm font-josefin' key={parcel._id}>
                                 <td>{index + 1}</td>
                                 <td>{parcel.date}</td>
-                                <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                <td className='m-4 font-semibold' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                                     {parcel.trackingId}
                                 </td>
                                 <td>
-                                    <p>{parcel.product_amount}Tk</p>
+                                    <p className='font-semibold'>{parcel.product_amount}Tk</p>
                                 </td>
                                 <td>
                                     {parcel.delivary_Charge}Tk

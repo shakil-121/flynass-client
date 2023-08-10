@@ -1794,7 +1794,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   <input
                     type="text"
                     placeholder="Marchent Order ID"
-                    defaultValue={`FN-${userInfo?._id}`}
+                    // defaultValue={`FN-${userInfo?._id}`}
                     className="input input-bordered"
                     {...register("marchent_id", { required: true })}
 

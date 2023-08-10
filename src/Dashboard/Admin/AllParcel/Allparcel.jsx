@@ -16,7 +16,7 @@ const AllParcel = () => {
     const [allParce, refetch] = useParcel();
 
     // State to hold the filtered parcels that are not delivered or rejected
-    const needParcel = allParce.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected");
+    const needParcel = allParce.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected" && parcel.status !== "returned to merchant");
 
     // Function to handle the status update of a parcel
     const handleStatusUpdate = (status, id) => {
@@ -125,6 +125,7 @@ const AllParcel = () => {
     //   };
 
     // Function to handle the status update of selected parcels
+    
     const handleStatusUpdateForSelected = (status) => {
         const selectedParcelIds = selectedParcels.map((id) => id);
         const updateData = {
@@ -215,7 +216,7 @@ const AllParcel = () => {
                         <tbody>
                             {
                                 parcelsToShow.map((parcel, index) => (
-                                    <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
+                                    <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20 text-xs' key={parcel._id}>
                                         <td>
                                             <label>
                                                 <input
@@ -230,7 +231,7 @@ const AllParcel = () => {
                                         <td>
                                             <div className="dropdown dropdown-bottom text-black">
                                                 <label tabIndex={0} className="">
-                                                    <button className='px-3 py-1 rounded-md text-xl font-semibold bg-[#1E62D4] text-white'>{parcel.status}</button>
+                                                    <button className='px-3 py-1 rounded-md text-xs font-semibold bg-[#1E62D4] text-white'>{parcel.status}</button>
                                                 </label>
                                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
                                                     <li onClick={() => handleStatusUpdate('picked', parcel._id)}><a>Picked</a></li>
@@ -242,19 +243,19 @@ const AllParcel = () => {
                                                 </ul>
                                             </div>
                                         </td>
-                                        <td className='m-4 text-xl' style={{ whiteSpace: 'pre-wrap', maxHeight: '2em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                        <td className='m-4 text-sm font-semibold' style={{ whiteSpace: 'pre-wrap', maxHeight: '2em', overflow: 'hidden', maxWidth: '6em', textOverflow: 'ellipsis' }}>
                                             {parcel.trackingId}
                                         </td>
-                                        <td className='text-xl'>
+                                        <td className='text-sm font-semibold'>
                                             {parcel.product_amount}Tk
                                         </td>
-                                        <td className='text-xl'>
+                                        <td className='text-sm'>
                                             <div className='flex flex-col gap-1'>
                                                 <span>Delivery - {parcel.delivary_Charge}Tk</span>
                                                 <span>COD - {parcel.cod}Tk</span>
                                             </div>
                                         </td>
-                                        <td className='text-xl'>
+                                        <td className='text-sm'>
                                             <div className='flex flex-col gap-1'>
                                                 <small>{parcel.name}</small>
                                                 <small>{parcel.phone}</small>
@@ -262,12 +263,12 @@ const AllParcel = () => {
                                                 <small>{parcel.thana}</small>
                                             </div>
                                         </td>
-                                        <td className='text-xl'>
+                                        <td className='text-sm'>
                                             <Link to={`../invoice/${parcel._id}`}>
                                                 <p className='flex items-center gap-1 bg-[#1E62D4] text-white px-2 py-1 rounded-md'>Invoice</p>
                                             </Link>
                                         </td>
-                                        <td className='text-xl'>
+                                        <td className='text-sm'>
                                             <div className='flex flex-col gap-1'>
                                                 <span>{parcel.payable_amount} Tk.</span>
                                                 {
@@ -288,7 +289,7 @@ const AllParcel = () => {
                                             </div>
                                         </td>
                                         <td className='text-xl'>
-                                            <button onClick={() => handleStatusUpdate('rejected', parcel._id)} className="font-serif btn-sm btn-warning rounded-md">Reject</button>
+                                            <button onClick={() => handleStatusUpdate('rejected', parcel._id)} className="font-serif btn-sm bg-[#D53343] text-white rounded-md">Reject</button>
                                         </td>
                                     </tr>
                                 ))

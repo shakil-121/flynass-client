@@ -5,7 +5,7 @@ import { useState } from 'react';
 import AdminParcelEdit from './AdminParcelEdit';
 import Swal from 'sweetalert2';
 
-const AdminParcelModal = ({ isVisible, orders, onClose, refetch}) => {
+const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
     const [searchText, setSearchText] = useState("");
     const [showModal, setShowModal] = useState(false);
     if (!isVisible) return null;
@@ -29,10 +29,10 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch}) => {
                     .then((res) => res.json())
                     .then((data) => {
                         if (data.deletedCount > 0) {
-                            Swal.fire("Parcel Delete successfully"); 
+                            Swal.fire("Parcel Delete successfully");
                         }
-                    }); 
-                 refetch();
+                    });
+                refetch();
             }
         });
     };
@@ -53,7 +53,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch}) => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 <div className=' rounded-md p-5'>
-                    <div className='md:flex justify-between mb-5'>
+                    <div className='md:flex justify-between mb-2'>
                         <h1 className='text-white text-3xl font-pppins'>Parcel</h1>
                         <div className='flex'>
                             <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
@@ -73,13 +73,13 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch}) => {
                             </tr>
                         </table>
                         {
-                            isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
+                            isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-2 justify-items-center items-center shadow-lg text-sm font-josefin' key={parcel._id}>
                                 <td>{index + 1}</td>
                                 <td>{parcel.date}</td>
-                                <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', textOverflow: 'ellipsis' }}>
+                                <td className='m-4 font-semibold' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', textOverflow: 'ellipsis' }}>
                                     {parcel.trackingId}
                                 </td>
-                                <td>
+                                <td className='font-semibold'>
                                     <p>{parcel.product_amount}Tk</p>
                                 </td>
                                 <td className='flex flex-col'>

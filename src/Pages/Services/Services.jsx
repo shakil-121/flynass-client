@@ -7,7 +7,7 @@ AOS.init();
 // import Lottie from "lottie-react";
 // import services from "../../assets/all-animation/Transport 2.json";
 
-const Services = () => { 
+const Services = () => {
   useTitle("Services")
   return (
     <div className="service_animation mb-16">
@@ -30,48 +30,48 @@ const Services = () => {
             ● Dhaka Suburbs Delivery:
           </span>{" "}
           Narayanganj ,Tongi, Gazipur, Savar, Ashulia.
-          <br /> 
+          <br />
           <span className="font-bold text-xl">● Outside Dhaka Delivery :</span> All over Bangladesh <br />
           <span className="font-bold text-xl"> ● Cash on Delivery:</span> We also make sure the outstanding price which will be paid
           by your customer & collected by our trustworthy delivery agents and
           delivered right to you. <br />
-           <span className="font-bold text-xl">● Dedicated Key Account Manager:</span> Flynass
+          <span className="font-bold text-xl">● Dedicated Key Account Manager:</span> Flynass
           Courier has a dedicated key accounts manager for individual merchants,
           who are there in order to solve any issues raised. <br />
           <span className="font-bold text-xl"> ● Superior
-          Customer Service:</span> Flynass Courier provides an excellent and fast client
+            Customer Service:</span> Flynass Courier provides an excellent and fast client
           service backed by our advanced technology. <br />
           <span className="font-bold text-xl"> ● Real Time
-          Tracking:</span> Shows live status of your consignment through access in the
+            Tracking:</span> Shows live status of your consignment through access in the
           Dashboard. <br /> <br />
           <i className="text-3xl text-sky-500 font-semibold">
             On Time Payment
           </i>{" "}
-          <br /> 
-         <i className="text-2xl text-sky-500 font-semibold">
+          <br />
+          <i className="text-2xl text-sky-500 font-semibold">
             ● Bank Payment: <span className="text-black">Two days in a week. Usually Sunday and
-          Wednesday.</span> </i> <br />
-           <i className="text-2xl text-sky-500 font-semibold">● Mobile Banking by Bkash/ Nagad/ Rocket: <span className="text-black">Four days in a
-          week. OUR KEY COMPETENCIES</span></i>
+              Wednesday.</span> </i> <br />
+          <i className="text-2xl text-sky-500 font-semibold">● Mobile Banking by Bkash/ Nagad/ Rocket: <span className="text-black">Four days in a
+            week. OUR KEY COMPETENCIES</span></i>
 
           <br /> <br />
-           <span className="font-bold text-xl">● Service with A Passion:</span> 24/7 we go the extra mile to
-          deliver the highest level of service. <br /> 
+          <span className="font-bold text-xl">● Service with A Passion:</span> 24/7 we go the extra mile to
+          deliver the highest level of service. <br />
           <span className="font-bold text-xl">● Up-to-the-minute ETAs:</span>
           We remove the guesswork with clear arrival and delivery times. <br />{" "}
           <span className="font-bold text-xl">● Real-Time Tracking and Confirmation:</span> Get peace of mind with live map
-          tracking, confirmations and signature verifications. <br /> 
+          tracking, confirmations and signature verifications. <br />
           <span className="font-bold text-xl">● Security
-          & Reliability:</span> Fully insured, background-checked and verified riders
+            & Reliability:</span> Fully insured, background-checked and verified riders
           are at your service.
         </p>
       </div>
       <div
-       data-aos="fade-up"
-       data-aos-anchor=".service_animation"
-       data-aos-offset="500"
-       data-aos-duration="400"
-      className="max-w-screen-xl mx-auto 2xl:px-0 md:px-16">
+        data-aos="fade-up"
+        data-aos-anchor=".service_animation"
+        data-aos-offset="500"
+        data-aos-duration="400"
+        className="max-w-screen-xl mx-auto 2xl:px-0 md:px-16">
         <h1 className="text-4xl text-center font-pppins mt-20">
           Delivery Charges
         </h1>

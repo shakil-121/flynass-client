@@ -4,9 +4,17 @@ import ExportCSV from './ExportCSV';
 import Swal from 'sweetalert2';
 
 const AdminDashbordHistory = () => {
-    const [allParce, refetch] = useParcel();
+    const [allParcel, refetch] = useParcel();
 
-    const history = allParce.filter(item => item.status === "delivered" || item.status === "rejected");
+    const history = allParcel.filter(item => item.status === "delivered" || item.status === "rejected" || item.status === "returned to merchant");
+
+    // const history = allParcel.filter(item => {
+    //     console.log("Item status:", item.status);
+    //     const isDesiredStatus = item.status === "delivered" || item.status === "rejected" || item.status === "returned to merchant";
+    //     console.log("Is desired status:", isDesiredStatus);
+    //     return isDesiredStatus;
+    // });
+
 
     const handledelete = () => {
         Swal.fire({
@@ -32,7 +40,6 @@ const AdminDashbordHistory = () => {
             }
         });
         refetch();
-
 
 
         // fetch("http://localhost:5000/delete", {
@@ -65,13 +72,13 @@ const AdminDashbordHistory = () => {
                     </tr>
                 </table>
                 {
-                    history.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2 mt-1' key={parcel._id}>
+                    history.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin mt-1' key={parcel._id}>
                         <td>{index + 1}</td>
                         <td>{parcel.date}</td>
-                        <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <td className='m-4 font-semibold' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {parcel.trackingId}
                         </td>
-                        <td>
+                        <td className='font-semibold'>
                             <p>{parcel.product_amount} Tk</p>
                         </td>
                         <td>
