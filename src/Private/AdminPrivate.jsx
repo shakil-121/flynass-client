@@ -1,34 +1,32 @@
 import React from 'react';
 import useAuth from '../Hooks/useAuth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-
+import { useQuery } from '@tanstack/react-query'; 
+import Lottie from "lottie-react";
+import flying from "../../public/animation_flying.json";
 
 
 const AdminPrivate = ({children}) => {
-    const {user,loadding}=useAuth()
-    const navigate=useNavigate();
+    const {user,loadding}=useAuth() 
+    const navigate=useNavigate(); 
     const location=useLocation() 
 
-    // const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-    //     const res = await fetch('http://localhost:5000/users')
-    //     return res.json();
-    // })
-
-    // const loggedInUser = user?.email;
-    // const currentUser = allUsers.find(item => item.email === loggedInUser)
-    // const role = currentUser?.role;
-
     if (loadding) {
-        return <progress className="progress w-56"></progress>;
+        return <div className='flex justify-center items-center h-[100vh]'>
+            <div>
+                <Lottie   
+                    className="opacity-70 w-56"
+                    animationData={flying}
+                    loop={true}
+                />
+                <h1 className='font-pppins'>Flynass is Loading...</h1>
+            </div>
+        </div>
+
     }
-    // if (role === 'admin' || 'superAdmin') {
-    //     return children;
-    // }
-    // if (role === 'marchent') {
-    //     navigate('/login');
-    //     return null;
-    // }
+    if (user) {
+        return children;
+    }
     return <Navigate state={{ from: location }} to="/admin_login" replace></Navigate>
 
 };
