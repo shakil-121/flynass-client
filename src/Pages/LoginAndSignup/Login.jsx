@@ -47,9 +47,6 @@ const Login = () => {
   else if (role === 'admin' && role === 'superAdmin') {
 
   }
-  // else if{
-  //   navigate('/');
-  // }
 
   // const from = location.state?.from?.pathname || '/';
 
@@ -63,7 +60,7 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const loggeduser = result.user;
-        toast("Login Successfully");
+        // toast("Login Successfully");
         form.reset();
         setError('');
         navigate(from, { replace: true })

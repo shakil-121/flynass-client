@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { MdCreateNewFolder } from 'react-icons/md';
-import { FaRegEdit, FaTrashAlt } from 'react-icons/fa';
-import AdminParcelEdit from '../../Component/AdminParcelModal/AdminParcelEdit';
 import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
-import useAuth from '../../Hooks/useAuth';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MerchentParcelEdit from '../../Component/AdminParcelModal/MerchentParcel';
@@ -57,6 +53,7 @@ const MyParclel = () => {
                         <th>Date</th>
                         <th>Trackin ID</th>
                         <th>Parcel Amount</th>
+                        <th>Destination</th>
                         <th>Delivery Charge</th>
                         <th>Pending <br /> Amount</th>
                         <th>Status</th>
@@ -71,6 +68,12 @@ const MyParclel = () => {
                                 </td>
                                 <td className='text-sm font-semibold'>
                                     <p>{parcel.product_amount}Tk</p>
+                                </td>
+                                <td className='m-4 text-sm text-left' style={{ width: '180px', overflow: 'hidden', wordWrap: 'break-word' }}>
+                                    <p>{parcel.name}</p>
+                                    <p>{parcel.to_address}</p>
+                                    <p>{parcel.district}</p>
+                                    <p>{parcel.thana}</p>
                                 </td>
                                 <td className='flex flex-col text-sm'>
                                     <small>delivery - {parcel.delivary_Charge}TK</small>

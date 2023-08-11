@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaRegEdit, FaTrashAlt } from 'react-icons/fa';
-import ParcelEdit from '../ParcelEdit/ParcelEdit';
 import { useState } from 'react';
 import AdminParcelEdit from './AdminParcelEdit';
 import Swal from 'sweetalert2';
@@ -31,8 +30,8 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
                         if (data.deletedCount > 0) {
                             Swal.fire("Parcel Delete successfully");
                         }
+                        refetch();
                     });
-                refetch();
             }
         });
     };

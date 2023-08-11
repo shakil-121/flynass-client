@@ -3,16 +3,17 @@ import { FaPhoneVolume } from "react-icons/fa";
 import Lottie from "lottie-react";
 import phone from "../../../../public/animation_lkhq0cgw.json";
 // import customerCare from "../../../assets/images/customer_care.jpeg"
+import './support.css'
 
 const Support = () => {
   return (
-    <div className="p-4 rounded-xl font-pppins rounded-xl md:p-2 bg-white w-full md:w-1/3 mx-auto border-2 md:border-0 flex flex-col gap-2 shadow-2xl shadow-[#1E8FD0]">
+    <div className="p-4 font-pppins rounded-xl md:p-2  w-full md:w-1/3 mx-auto border-2 md:border-0 flex flex-col gap-2 shadow-2xl shadow-[#1E8FD0]">
       {/* <div>
                     <img src={customerCare} className='w-full rounded-xl' alt="" />
                 </div> */}
       <div className="text-center">
         <h4 className="uppercase font-semibold">24/7 Active Suport Team</h4>
-        <h1 className="text-3xl text-[#1E8FD0] font-bold">
+        <h1 className="text-3xl text-[#1E8FD0] font-bold text-bg">
           Need Immediate Support Or Any Help?
         </h1>
       </div>

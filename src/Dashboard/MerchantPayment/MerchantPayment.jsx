@@ -27,13 +27,13 @@ const MerchantPayment = () => {
                     </tr>
                 </table>
                 {
-                    historyParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={parcel._id}>
+                    historyParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin' key={parcel._id}>
                         <td>{index + 1}</td>
                         <td>{parcel.date}</td>
-                        <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <td className='m-4 font-semibold' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {parcel.trackingId}
                         </td>
-                        <td>
+                        <td className='font-semibold'>
                             <p>{parcel.product_amount}Tk</p>
                         </td>
                         <td className='flex flex-col'>

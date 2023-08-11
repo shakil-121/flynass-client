@@ -1,0 +1,9 @@
+.support-bg {
+    background-image: url(../../../assets/images/support-bg.jpg);
+    font-weight: bolder;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+};

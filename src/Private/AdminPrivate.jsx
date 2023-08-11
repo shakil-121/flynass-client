@@ -4,7 +4,6 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 
 
-
 const AdminPrivate = ({children}) => {
     const {user,loadding}=useAuth()
     const navigate=useNavigate();
