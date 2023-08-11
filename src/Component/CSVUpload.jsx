@@ -22,19 +22,19 @@ const CSVUpload = () => {
 
    // tracking id generate
    const previousLength = (allParce.length);
-   const newLength = previousLength + 1;
-   const onDigitmiddlePart = newLength.toString();
-   const fourDigitMiddle = onDigitmiddlePart.padStart(4, "0");
-   // console.log(fourDigitMiddle);
-   // const dateString = (`${day}${month}${year}` - "0001" - "FN-HF")
-   const formattedDay = String(day).padStart(2, "0");
-   const formattedMonth = String(month).padStart(2, "0");
-   const formatDate = `${formattedDay}${formattedMonth}${year}`;
-   const stringDate = formatDate.toString();
-   // console.log(`Current date: ${formattedDay}${formattedMonth}${year}`);
-   const lastDigit = "FN-HF";
-   const trackingId = `${stringDate}-${fourDigitMiddle}-${lastDigit}`;
-   console.log(trackingId);
+  //  const newLength = previousLength + 1;
+  //  const onDigitmiddlePart = newLength.toString();
+  //  const fourDigitMiddle = onDigitmiddlePart.padStart(4, "0");
+  //  // console.log(fourDigitMiddle);
+  //  // const dateString = (`${day}${month}${year}` - "0001" - "FN-HF")
+  //  const formattedDay = String(day).padStart(2, "0");
+  //  const formattedMonth = String(month).padStart(2, "0");
+  //  const formatDate = `${formattedDay}${formattedMonth}${year}`;
+  //  const stringDate = formatDate.toString();
+  //  // console.log(`Current date: ${formattedDay}${formattedMonth}${year}`);
+  //  const lastDigit = "FN-HF";
+  //  const trackingId = `${stringDate}-${fourDigitMiddle}-${lastDigit}`;
+  //  console.log(trackingId);
   // const [userEmail, setUserEmail] = useState(''); 
 
 
@@ -57,7 +57,7 @@ const CSVUpload = () => {
     formData.append('csvFile', selectedFile);
     formData.append('user_email', user?.email);
     formData.append('marchent_id', userInfo?._id);
-    formData.append('trackingId', trackingId);
+    formData.append('previousLength', previousLength);
     formData.append('from_address', userInfo?.address);
     formData.append('date', date);
     console.log();
