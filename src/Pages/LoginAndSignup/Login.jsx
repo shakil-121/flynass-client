@@ -1,12 +1,10 @@
 import React, { useContext, useRef } from "react";
 import {
   Link,
-  NavLink,
-  Navigate,
   useNavigate,
   useLocation,
 } from "react-router-dom";
-import { FaFileImage, FaGoogle } from "react-icons/fa";
+// import { FaFileImage, FaGoogle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./Login.css";

@@ -24,7 +24,6 @@ const AdminAnalysis = () => {
       .then(data => setTodaysParcel(data))
   }, [todaysParcel])
 
-
   const handleSearch = () => {
     fetch(`http://localhost:5000/orders/${searchText}`)
       .then((res) => res.json())
@@ -42,13 +41,14 @@ const AdminAnalysis = () => {
   const returned = parcel.filter(item => item.status === "returned");
   const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
   const reject = parcel.filter(item => item.status === "rejected");
+  const payableAmount = parcel.filter(item => item.status === "delivered" && item.payment_status === "due");
 
   // payment summary
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
   const total_paid = paid?.reduce((acc, obj) => acc + obj.payable_amount, 0).toFixed(2);
 
   const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
-  const total_due = due?.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2); 
+  const total_due = due?.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
 
   console.log(total_paid);
@@ -153,7 +153,7 @@ const AdminAnalysis = () => {
           </button>
         </div>
         <div>
-          <button onClick={() => setShowModal(reject)} className='w-full'>
+          <button onClick={() => setShowModal(payableAmount)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
               <h1 className='text-gray-400'>Payable Parcel</h1>
               <h1 className='text-blue-800'>{reject?.length}</h1>
@@ -167,38 +167,38 @@ const AdminAnalysis = () => {
         <h1 className="text-3xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
         <div className="grid grid-cols-3 gap-5">
           <div>
-            <button onClick={() => setShowModal(reject)} className="w-full">
-              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
-                <h1 className="text-blue-800">
-                  {
-                    total_due ?
-                      <>
-                        {total_due} TK
-                      </>
-                      :
-                      <>00.00TK</>
-                  }
-                </h1>
-                <h1 className="text-gray-400">To be processing</h1>
-              </div>
-            </button>
+            {/* <button onClick={() => setShowModal(reject)} className="w-full"> */}
+            <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+              <h1 className="text-blue-800">
+                {
+                  total_due ?
+                    <>
+                      {total_due} TK
+                    </>
+                    :
+                    <>00.00TK</>
+                }
+              </h1>
+              <h1 className="text-gray-400">To be Processing</h1>
+            </div>
+            {/* </button> */}
           </div>
           <div>
-            <button onClick={() => setShowModal(reject)} className="w-full">
-              <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
-                <h1 className="text-blue-800">
-                  {
-                    total_paid ?
-                      <>
-                        {total_paid} TK
-                      </>
-                      :
-                      <>00.00TK</>
-                  }
-                </h1>
-                <h1 className="text-gray-400">Total Paid Amount</h1>
-              </div>
-            </button>
+            {/* <button onClick={() => setShowModal(reject)} className="w-full"> */}
+            <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
+              <h1 className="text-blue-800">
+                {
+                  total_paid ?
+                    <>
+                      {total_paid} TK
+                    </>
+                    :
+                    <>00.00TK</>
+                }
+              </h1>
+              <h1 className="text-gray-400">Total Paid Amount</h1>
+            </div>
+            {/* </button> */}
           </div>
         </div>
       </div>

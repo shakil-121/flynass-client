@@ -2,10 +2,8 @@ import profile from "../../assets/images/default.png";
 import { FaBars, FaHistory, FaShoppingCart, FaUsers } from 'react-icons/fa';
 import { Outlet } from 'react-router';
 import useUserInfo from '../../Hooks/useUserInfo';
-import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icons/md';
+import { MdOutlineDashboard, MdVerified } from 'react-icons/md';
 import { Link, NavLink } from 'react-router-dom';
-import { AiFillShopping } from 'react-icons/ai';
-import { FiSettings } from 'react-icons/fi';
 import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../Hooks/useAuth';
 

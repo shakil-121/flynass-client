@@ -12,9 +12,11 @@ import { Result } from "postcss";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useTitle from "../../Hooks/useTitle";
+import { useState } from "react";
 
 // console.log(imgHosting_token);
 const SignUp = () => {
+  const [singupError, setSingupError] = useState();
   useTitle("Registration")
   const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;
@@ -25,11 +27,10 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
+  console.log(singupError);
   const onSubmit = (data) => {
-    // console.log(data);
     const formData = new FormData();
     formData.append("image", data.image[0]);
-
     fetch(img_hosting_url, {
       method: "POST",
       body: formData,
@@ -65,7 +66,16 @@ const SignUp = () => {
               })
             })
             .catch((error) => {
-              console.log(error);
+              // Handle specific error cases
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              console.log(errorCode);
+              if (errorCode === "auth/weak-password") {
+                setSingupError("Password is too weak. Please provide a stronger password.");
+              }
+              else if (errorCode === "auth/email-already-in-use") {
+                setSingupError("Email is already used. please provide a new email address.");
+              }
             });
         }
       });
@@ -111,7 +121,7 @@ const SignUp = () => {
                   {...register("name", { required: true })}
                   type="text"
                   placeholder="name"
-                  className="input input-bordered border-slate-300 text-black"
+                  className="input  border-slate-300 text-black"
                 />
               </div>
               <div className="form-control">
@@ -123,7 +133,7 @@ const SignUp = () => {
                   {...register("email", { required: true })}
                   type="text"
                   placeholder="email"
-                  className="input input-bordered border-slate-300 text-black"
+                  className="input  border-slate-300 text-black"
                 />
               </div>
               <div className="form-control">
@@ -135,7 +145,7 @@ const SignUp = () => {
                   {...register("nid", { required: true })}
                   type="text"
                   placeholder="NID Number"
-                  className="input input-bordered border-slate-300 text-black"
+                  className="input  border-slate-300 text-black"
                 />
               </div>
               <div className="form-control">
@@ -147,7 +157,7 @@ const SignUp = () => {
                   {...register("address", { required: true })}
                   type="text"
                   placeholder="Address"
-                  className="input input-bordered border-slate-300 text-black"
+                  className="input  border-slate-300 text-black"
                 />
               </div>
               <div className="form-control">
@@ -159,7 +169,7 @@ const SignUp = () => {
                   {...register("phone", { required: true })}
                   type="text"
                   placeholder="Type your Phone Number"
-                  className="input input-bordered border-slate-300 text-black"
+                  className="input  border-slate-300 text-black"
                 />
               </div>
 
@@ -213,15 +223,15 @@ const SignUp = () => {
                   {...register("password", { required: true })}
                   type="password"
                   placeholder="password"
-                  className="input input-bordered border-slate-300 text-black"
+                  className="input border-slate-300 text-black"
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-zinc-950 border-none text-white hover:text-black">
+                <button className="btn bg-zinc-950 border-none text-white">
                   Registration
                 </button>
               </div>
-              {/* <p className="text-center text-red-600">{error}</p> */}
+              <p className="text-center text-sm text-red-500">{singupError}</p>
               {/* <p className="text-center text-black text-lg font-semibold">
                 Or Sign-up with
               </p>
