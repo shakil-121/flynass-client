@@ -37,6 +37,7 @@ import Error from "../Pages/Error/Error";
 import AdminDashbordHistory from "../Dashboard/Admin/AdminDashbordHistory/AdminDashbordHistory";
 import Instruction from "../Dashboard/MyParcel/Instruction";
 import DashboardService from "../Dashboard/DashboardService/DashboardService";
+import AdminPrivate from "../Private/AdminPrivate";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -159,7 +160,7 @@ const router = createBrowserRouter([
   },
   {
     path: "admin_dashboard",
-    element: <AdminDashboard></AdminDashboard>,
+    element: <AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>,
     children: [
       {
         path: "",
