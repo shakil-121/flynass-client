@@ -74,7 +74,7 @@ const AdminLogin = () => {
                 name="email"
                 type="text"
                 placeholder="email"
-                className="input input-bordered border-slate-300"
+                className="input input-bordered border-slate-300 text-black"
               />
             </div>
 

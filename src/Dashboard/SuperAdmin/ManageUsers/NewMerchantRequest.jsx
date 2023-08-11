@@ -34,6 +34,32 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
         });
     };
 
+    const handleroleupdate=(id)=>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This Valid user!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes,sure!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/user/role_update/${id}`, {
+                    method: "PUT"
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        // refetch();
+                        if (data.modifiedCount > 0) {
+                            Swal.fire("Merchant!", "User has been merchant.", "success");
+                        } 
+                        console.log(data);
+                    });
+            }
+        });
+    }
+
     return (
         <div className='z-30 fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
             <div className='flex flex-col rounded-lg w-[80vw]'>
@@ -64,7 +90,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
                                             <div className="dropdown dropdown-bottom text-black">
                                                 <label tabIndex={0} className="font-pppins">{user.role}</label>
                                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                                    <li className='text-xl rounded-md text-secondary'>merchant</li>
+                                                    <li onClick={()=>handleroleupdate(user?._id)} className='text-xl rounded-md text-secondary'>merchant</li>
                                                 </ul>
                                             </div>
                                         </div>
