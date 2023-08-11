@@ -227,7 +227,7 @@ const AllParcel = () => {
                                                 />
                                             </label>
                                         </td>
-                                        <td className='text-sm'>7/10/2023</td>
+                                        <td className='text-sm'>{parcel.date}</td>
                                         <td>
                                             <div className="dropdown dropdown-bottom text-black">
                                                 <label tabIndex={0} className="">
