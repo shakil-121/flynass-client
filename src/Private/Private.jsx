@@ -2,7 +2,7 @@ import React from 'react';
 import useAuth from '../Hooks/useAuth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
-import flying from "../../public/animation_flying.json";
+import loading from "../../public/loading.json";
 
 const Private = ({ children }) => {
     const { user, loadding } = useAuth()
@@ -14,7 +14,7 @@ const Private = ({ children }) => {
             <div>
                 <Lottie
                     className="opacity-70 w-56"
-                    animationData={flying}
+                    animationData={loading}
                     loop={true}
                 />
                 <h1 className='font-pppins'>Flynass is Loading...</h1>

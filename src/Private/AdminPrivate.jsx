@@ -3,7 +3,7 @@ import useAuth from '../Hooks/useAuth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query'; 
 import Lottie from "lottie-react";
-import flying from "../../public/animation_flying.json";
+import flying from "../../public/loading.json";
 
 const AdminPrivate = ({children}) => {
     const {user,loadding}=useAuth() 

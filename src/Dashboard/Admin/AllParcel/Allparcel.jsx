@@ -271,7 +271,7 @@ const AllParcel = () => {
                                         </td>
                                         <td className='text-sm'>
                                             <div className='flex flex-col gap-1'>
-                                                <span>{parcel.payable_amount} Tk.</span>
+                                                <span>{parcel?.payable_amount} Tk.</span>
                                                 {
                                                     parcel.payment_status === 'paid' ?
                                                         <>
