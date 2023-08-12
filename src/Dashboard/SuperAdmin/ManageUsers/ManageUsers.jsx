@@ -16,7 +16,7 @@ const ManageUsers = () => {
         return res.json();
     })
     const TotalMerchant = allUsers.filter(users => users.role === 'merchant');
-    
+
     const newRequest = allUsers.filter(users => users.role === 'pending');
     // console.log(TotalAdmin);
 

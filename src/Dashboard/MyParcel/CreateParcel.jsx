@@ -56,7 +56,6 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const trackingId = `${stringDate}-${fourDigitMiddle}-${lastDigit}`;
   console.log(trackingId);
 
-
   const onSubmit = (data) => {
     // const maindata = [`${day}/${month}/${year}`, data.name];
     // console.log(maindata);

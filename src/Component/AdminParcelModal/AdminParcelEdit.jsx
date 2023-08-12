@@ -1,25 +1,43 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 
-const AdminParcelEdit = ({ isVisible, onClose }) => {
+const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
     if (!isVisible) return null;
 
     const handleParcelUpdate = event => {
         event.preventDefault();
         const form = event.target;
+        const from_address = form.from_address.value;
         const to_address = form.to_address.value;
-        const updateInformation = {to_address}
+        const delivary_Charge = form.delivary_Charge.value;
+        const cod = form.cod.value;
+        const total_amount = parseFloat(delivary_Charge) + parseFloat(cod);
+        const updateInformation = { from_address, to_address, delivary_Charge, cod, total_amount }
         console.log(updateInformation);
-        fetch(`http://localhost:5000/order/${isVisible._id}`, {
-            method: 'PUT',
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify(updateInformation)
-        });
         Swal.fire({
-            icon: 'success',
-            title: 'Done...',
-            text: 'Your parcel information Successfully updated',
-        })
+            title: "Are you sure?",
+            text: "You want to be Upadte this parcel Info!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Update Info!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/order/admin/${isVisible._id}`, {
+                    method: 'PUT',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify(updateInformation)
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        refetch();
+                        if (data.modifiedCount > 0) {
+                            Swal.fire("Updated!", "This parcel update.", "successfull");
+                        }
+                    });
+            }
+        });
 
     }
 
@@ -38,19 +56,27 @@ const AdminParcelEdit = ({ isVisible, onClose }) => {
                                 <label className="label">
                                     <span className="label-text text-white">From </span>
                                 </label>
-                                <input type="text" placeholder="email"  defaultValue={isVisible.from_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" name='from_address' defaultValue={isVisible.from_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-white">To </span>
+                                    <span className="label-text text-white">Customer Address</span>
                                 </label>
-                                <input type="text" placeholder="Enter address" name="to_address" defaultValue={isVisible.to_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" name="to_address" defaultValue={isVisible.to_address} className="input input-bordered focus:outline-none" />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text text-white">Delivery Charge</span>
-                                </label>
-                                <input type="text" name="total_amount" placeholder={isVisible?.total_amount} defaultValue={isVisible?.total_amount} className="input input-bordered focus:outline-none text-black" />
+                            <div className='grid grid-cols-2 gap-3'>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text text-white">Delivery Charge</span>
+                                    </label>
+                                    <input type="text" name="delivary_Charge" placeholder={isVisible.delivary_Charge} className="input input-bordered focus:outline-none" />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text text-white">COD</span>
+                                    </label>
+                                    <input type="text" name="cod" placeholder={isVisible.cod} className="input input-bordered focus:outline-none" />
+                                </div>
                             </div>
                             <input className='btn btn-block mt-5' type="submit" value="Update" />
                         </form>

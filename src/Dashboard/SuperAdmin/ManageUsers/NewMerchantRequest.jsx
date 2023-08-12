@@ -34,7 +34,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
         });
     };
 
-    const handleroleupdate=(id)=>{
+    const handleroleupdate = (id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "This Valid user!",
@@ -53,7 +53,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
                         // refetch();
                         if (data.modifiedCount > 0) {
                             Swal.fire("Merchant!", "User has been merchant.", "success");
-                        } 
+                        }
                         console.log(data);
                     });
             }
@@ -90,7 +90,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
                                             <div className="dropdown dropdown-bottom text-black">
                                                 <label tabIndex={0} className="font-pppins">{user.role}</label>
                                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                                    <li onClick={()=>handleroleupdate(user?._id)} className='text-xl rounded-md text-secondary'>merchant</li>
+                                                    <li onClick={() => handleroleupdate(user?._id)} className='text-xl rounded-md text-secondary'>merchant</li>
                                                 </ul>
                                             </div>
                                         </div>
