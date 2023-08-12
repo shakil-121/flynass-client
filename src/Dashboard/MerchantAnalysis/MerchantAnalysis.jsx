@@ -67,7 +67,7 @@ const MerchantAnalysis = () => {
       <div className="mx-auto md:w-[65vw] w-[90vw]">
         <Slider />
       </div>
-      <div className="grid grid-cols-4 gap-2 mt-5">
+      <div className="grid md:grid-cols-4  gap-2 mt-5">
         <div>
           <button onClick={() => setShowModal(parcel)} className="w-full">
             <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
@@ -154,8 +154,8 @@ const MerchantAnalysis = () => {
 
       {/* payment Summary Section */}
       <div>
-        <h1 className="text-3xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
-        <div className="grid grid-cols-3 gap-5">
+        <h1 className="md:text-3xl text-2xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
+        <div className="grid md:grid-cols-3 gap-5">
           <div>
             <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
               <h1 className="text-blue-800">
