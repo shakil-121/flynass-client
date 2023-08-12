@@ -89,7 +89,7 @@ const CSVUpload = () => {
 
   return (
     <div>
-     <div className='px-10 py-5 border border-stone-500 md:w-[35%] w-[40%]'>
+     <div className='px-10 py-5 border border-stone-500 md:w-[35%] w-[100%]'>
      <input  type="file" onChange={handleFileChange} required/>
      </div>
       {/* <input type="text" placeholder="User Email" onChange={handleUserEmailChange} /> */}
