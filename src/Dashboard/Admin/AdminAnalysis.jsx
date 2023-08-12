@@ -71,7 +71,7 @@ const AdminAnalysis = () => {
   return (
     <div className="h-auto">
       <h1 className="text-2xl font-pppins p-5">Dashboard</h1>
-      <div className='grid grid-cols-4 gap-8 px-5'>
+      <div className='grid md:grid-cols-4 gap-8 px-5'>
         <div>
           <button onClick={() => setShowModal(todaysParcel)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
@@ -165,7 +165,7 @@ const AdminAnalysis = () => {
       {/* payment summary */}
       <div className="px-5">
         <h1 className="text-3xl font-pppins mt-10 text-black mb-5">Payment Summary</h1>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5">
           <div>
             {/* <button onClick={() => setShowModal(reject)} className="w-full"> */}
             <div className="bg-[#E8F6FC] text-xl font-semibold rounded-lg text-center py-10">
