@@ -19,7 +19,7 @@ const AdminAnalysis = () => {
   })
 
   useEffect(() => {
-    fetch('http://localhost:5000/orders/today')
+    fetch('http://localhost:5000/today')
       .then(res => res.json())
       .then(data => setTodaysParcel(data))
   }, [todaysParcel])

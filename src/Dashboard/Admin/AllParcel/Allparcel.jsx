@@ -3,7 +3,8 @@ import ParcelRejectForm from './ParcelRejectForm';
 import useParcel from '../../../Hooks/useParcel';
 import { FaEye, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"; 
+// import api from "../../../CentralAPI/API"
 
 const AllParcel = () => {
     // State to manage the modal visibility
