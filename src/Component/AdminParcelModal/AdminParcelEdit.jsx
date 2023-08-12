@@ -10,7 +10,7 @@ const AdminParcelEdit = ({ isVisible, onClose }) => {
         const to_address = form.to_address.value;
         const updateInformation = {to_address}
         console.log(updateInformation);
-        fetch(`http://localhost:5000/orders/${isVisible._id}`, {
+        fetch(`http://localhost:5000/order/${isVisible._id}`, {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(updateInformation)
@@ -38,7 +38,7 @@ const AdminParcelEdit = ({ isVisible, onClose }) => {
                                 <label className="label">
                                     <span className="label-text text-white">From </span>
                                 </label>
-                                <input type="text" placeholder="email" defaultValue={isVisible.from_address} className="input input-bordered focus:outline-none" />
+                                <input type="text" placeholder="email"  defaultValue={isVisible.from_address} className="input input-bordered focus:outline-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -50,7 +50,7 @@ const AdminParcelEdit = ({ isVisible, onClose }) => {
                                 <label className="label">
                                     <span className="label-text text-white">Delivery Charge</span>
                                 </label>
-                                <input type="text" name="total_amount" placeholder={isVisible.total_amount} className="input input-bordered focus:outline-none" />
+                                <input type="text" name="total_amount" placeholder={isVisible?.total_amount} defaultValue={isVisible?.total_amount} className="input input-bordered focus:outline-none text-black" />
                             </div>
                             <input className='btn btn-block mt-5' type="submit" value="Update" />
                         </form>

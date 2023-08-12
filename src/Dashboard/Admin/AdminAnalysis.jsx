@@ -51,7 +51,7 @@ const AdminAnalysis = () => {
   const total_due = due?.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
 
-  console.log(total_paid);
+  // console.log(total_paid);
 
   // delivery percentage calculation
   const returnParcel = (returnedToMerchant.length);
