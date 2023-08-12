@@ -96,7 +96,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
                     </div>
                 </div>
             </div>
-            <AdminParcelEdit isVisible={showModal} onClose={() => setShowModal(false)} ></AdminParcelEdit>
+            <AdminParcelEdit isVisible={showModal} onClose={() => setShowModal(false)} refetch={refetch} ></AdminParcelEdit>
         </div>
     );
 };
