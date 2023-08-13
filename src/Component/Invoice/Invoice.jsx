@@ -52,21 +52,19 @@ const Invoice = () => {
                         <h1 className='text-xl text-center font-pppins mb-10'>Tracking ID: <br /> {invoiceParcel?.trackingId}</h1>
 
 
-                        <div className='flex justify-between'>
-                            <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel?.name}</span></h2>
-                            <h2 className='text-2xl font-serif mb-3'>Phone: <span>{invoiceParcel?.phone}</span></h2>
-                        </div>
+                        <h2 className='text-2xl font-serif mb-3'>Name: <span>{invoiceParcel?.name}</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Phone: <span>{invoiceParcel?.phone}</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Thana: <span>{invoiceParcel?.thana}</span></h2>
                         <div className='flex justify-between'>
                             <h2 className='text-2xl font-serif mb-3'>District: <span>{invoiceParcel?.district}</span></h2>
-                            <h2 className='text-2xl font-serif mb-3'>Thana: <span>{invoiceParcel?.thana}</span></h2>
+                            <h2 className='text-2xl font-serif mb-3'>Merchant Name: <span>{invoiceParcel?.district}</span></h2>
                         </div>
                         <h2 className='text-2xl font-serif mb-3'>Customer Address: <span>{invoiceParcel?.to_address}</span></h2>
-                        <h2 className='text-2xl font-serif mb-3'>Delivery Charge: <span>{invoiceParcel?.total_amount}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel?.product_amount}Tk.</span></h2>
                         <hr className='border-2' />
-                        <h2 className='text-2xl font-serif mb-3'>Payable Amount: <span>{parseFloat(invoiceParcel?.product_amount)+parseFloat(invoiceParcel?.total_amount)}Tk.</span></h2>
+                        <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel?.product_amount}Tk.</span></h2>
                         <h2 className='text-2xl font-serif mt-10 text-center'>[Client Copy]</h2>
-                        <p className='text-center font-serif'>www.flynass.com</p>
+                        <p className='text-center font-serif'>www.flynassbd.com</p>
                     </div>
                 </div>
             </div>

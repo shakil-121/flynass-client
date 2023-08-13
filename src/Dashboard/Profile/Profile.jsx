@@ -67,7 +67,20 @@ const Profile = () => {
                             <br />
                             <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />{userInfo?.address}</span>
                         </h4>
+
+                        <h4 className="font-bold mt-2">
+                            Payment Method:
+                            <br />
+                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />N/A</span>
+                        </h4>
+
+                        <h4 className="font-bold mt-2">
+                            Mobile/Bank:
+                            <br />
+                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />N/A</span>
+                        </h4>
                     </div>
+
                     <div>
                         <button onClick={() => setShowModal(true)} className="text-xl font-serif flex items-center"><LiaEdit /> Edit</button>
                     </div>

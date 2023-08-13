@@ -3,20 +3,35 @@ import { AiOutlineNumber } from "react-icons/ai";
 import { IoMdMail } from "react-icons/io";
 import useUserInfo from "../../Hooks/useUserInfo";
 import Swal from "sweetalert2";
+import Select from "react-select";
+import { useState } from "react";
 
 const ProfileUpdate = ({ isVisible, onClose, user }) => {
     if (!isVisible) return null;
     const userInfo = useUserInfo();
     console.log(userInfo._id);
+    const [methodSeleted, setBankSelected] = useState(null);
+
+    console.log(methodSeleted);
+    const handleSelectedPMethod = (e) => {
+        const methodSeleted = e.value;
+        setBankSelected(methodSeleted);
+    };
+
+    const selectedMethod = [
+        { value: "Bkash", label: "Bkash" },
+        { value: "Nagad", label: "Nagad" },
+        { value: "Bank", label: "Bank" },
+    ];
+
     const handleUpdateProfile = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const phone = form.phone.value;
-        const address = form.address.value; 
+        const address = form.address.value;
         console.log(address);
-        const updateProfileInfo = { name, phone,address }
-
+        const updateProfileInfo = { name, phone, address }
         fetch(`http://localhost:5000/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -68,6 +83,43 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                 <label className='block text-sm font-bold text-white'>Address</label>
                                 <input type='text' name="address" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Enter Address' defaultValue={userInfo.address} />
                             </div>
+                            <div className='grid grid-cols-2 gap-2'>
+                                <div className='mb-4'>
+                                    <label className='block text-sm font-bold text-white'>Payment Method</label>
+                                    <div>
+                                        <Select
+                                            options={selectedMethod}
+                                            // defaultValue={currentDistrict}
+                                            placeholder="Select Delivery District"
+                                            onChange={handleSelectedPMethod}
+                                            isSearchable
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className='mb-4'>
+                                    <label className='block text-sm font-bold text-white'>Account Number</label>
+                                    <input type='text' name="account-number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Account Number' required />
+                                </div>
+
+                            </div>
+                            {
+                                methodSeleted === 'Bank' &&
+                                <div className='grid grid-cols-2 gap-2'>
+                                    <div className='mb-4'>
+                                        <label className='block text-sm font-bold text-white'>Bank Name</label>
+                                        <input type='text' name="bank-name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Bank Name' required />
+                                    </div>
+                                    <div className='mb-4'>
+                                        <label className='block text-sm font-bold text-white'>Branch Name</label>
+                                        <input type='text' name="branch-number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Branch Name' required />
+                                    </div>
+                                    <div className='mb-4'>
+                                        <label className='block text-sm font-bold text-white'>Routing Nunber</label>
+                                        <input type='text' name="routing-number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Routing Number' required />
+                                    </div>
+                                </div>
+                            }
                             <div>
                                 <input className="btn btn-block" type="submit" value="Update" />
                             </div>
