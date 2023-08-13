@@ -71,13 +71,13 @@ const Profile = () => {
                         <h4 className="font-bold mt-2">
                             Payment Method:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />N/A</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />{userInfo?.payment_method}</span>
                         </h4>
 
                         <h4 className="font-bold mt-2">
-                            Mobile/Bank:
+                            Mobile/Bank Account:
                             <br />
-                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />N/A</span>
+                            <span className="font-serif font-medium flex items-center gap-2"><FaIdCard />{userInfo?.account_number}</span>
                         </h4>
                     </div>
 

@@ -21,7 +21,7 @@ const NoticeBoard = () => {
             <form onSubmit={handleNoticeUpdate}>
                 <div className='flex flex-col gap-3'>
                     <textarea className="textarea textarea-info h-48" name='notice' placeholder="Type here..."></textarea>
-                    <input className='btn btn-block bg-[#D53343] hover:bg-[#D53343] text-white' type="submit" value="Notic Send" />
+                    <input className='btn btn-block bg-blue-800 hover:bg-blue-800 text-white' type="submit" value="Notic Send" />
                 </div>
             </form>
         </div>
