@@ -47,12 +47,12 @@ const MerchantAnalysis = () => {
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
   const collected = paid.reduce((acc, obj) => acc + obj.payable_amount, 0).toFixed(2);
 
-  const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
+  const due = parcel.filter(item => item.payment_status === "due" && item.status === "delivered" && item.payable_amount);
   const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // chash Amount 
-  const cashAmountItems = parcel.filter(item => item.payment_status === "due" && item.status !== "pending");
-  const cashAmount = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
+  const cashAmountItems = parcel.filter(item => item.status !== "pending" && item.payment_status === "due");
+  const cashAmount = cashAmountItems.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;

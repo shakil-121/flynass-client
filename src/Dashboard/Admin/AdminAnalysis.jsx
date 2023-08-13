@@ -47,7 +47,7 @@ const AdminAnalysis = () => {
   const paid = parcel.filter(item => item.payment_status === "paid" && item.payable_amount);
   const total_paid = paid?.reduce((acc, obj) => acc + obj.payable_amount, 0).toFixed(2);
 
-  const due = parcel.filter(item => item.payment_status === "due" && item.payable_amount);
+  const due = parcel.filter(item => item.payment_status === "due" && item.status === 'delivered' && item.payable_amount);
   const total_due = due?.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
 

@@ -3,7 +3,7 @@ import ParcelRejectForm from './ParcelRejectForm';
 import useParcel from '../../../Hooks/useParcel';
 import { FaEye, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 // import api from "../../../CentralAPI/API"
 
 const AllParcel = () => {
@@ -43,25 +43,7 @@ const AllParcel = () => {
     };
 
     // Function to handle the payment status update of a parcel
-    const handlePaymentStatus = id => {
-        fetch(`http://localhost:5000/order/payment/${id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            // body: JSON.stringify(statusUpdate)
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.acknowledged) {
-                    Swal.fire({
-                        title: "Done!",
-                        text: "Status update successfully",
-                        icon: "success",
-                        confirmButtonText: "Ok",
-                    });
-                }
-                refetch();
-            });
-    };
+    
 
     // Function to handle the search of parcels based on the search text
     const handleSearch = () => {
@@ -126,7 +108,7 @@ const AllParcel = () => {
     //   };
 
     // Function to handle the status update of selected parcels
-    
+
     const handleStatusUpdateForSelected = (status) => {
         const selectedParcelIds = selectedParcels.map((id) => id);
         const updateData = {
@@ -266,28 +248,11 @@ const AllParcel = () => {
                                         </td>
                                         <td className='text-sm'>
                                             <Link to={`../invoice/${parcel._id}`}>
-                                                <p className='flex items-center gap-1 bg-[#1E62D4] text-white px-2 py-1 rounded-md'>Invoice</p>
+                                                <p className='bg-[#1E62D4] text-center text-white px-1 py-1 rounded-md'>Invoice</p>
                                             </Link>
                                         </td>
-                                        <td className='text-sm'>
-                                            <div className='flex flex-col gap-1'>
-                                                <span>{parcel?.payable_amount} Tk.</span>
-                                                {
-                                                    parcel.payment_status === 'paid' ?
-                                                        <>
-                                                            <p>Paid</p>
-                                                        </>
-                                                        :
-                                                        <>
-                                                            <div className="dropdown dropdown-bottom text-black">
-                                                                <label tabIndex={0} className="font-pppins">{parcel.payment_status}</label>
-                                                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                                                    <li onClick={() => handlePaymentStatus(parcel._id)}><a>Paid</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </>
-                                                }
-                                            </div>
+                                        <td className='text-sm font-pppins text-center'>
+                                            {parcel.payable_amount} TK
                                         </td>
                                         <td className='text-xl'>
                                             <button onClick={() => handleStatusUpdate('rejected', parcel._id)} className="font-serif btn-sm bg-[#D53343] text-white rounded-md">Reject</button>

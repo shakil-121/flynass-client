@@ -82,7 +82,7 @@ const Profile = () => {
                     </div>
 
                     <div>
-                        <button onClick={() => setShowModal(true)} className="text-xl font-serif flex items-center"><LiaEdit /> Edit</button>
+                        <button onClick={() => setShowModal(true)} className="text-xl font-serif flex items-center"><LiaEdit />Edit Profile</button>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,10 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import useUserInfo from '../../Hooks/useUserInfo';
 
 const MerchentParcelEdit = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
-
+    const userInfo = useUserInfo();
     const handleParcelUpdate = event => {
         // event.preventDefault();
         const form = event.target;
@@ -42,7 +43,7 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
                 <div className='bg-[#7865e3] rounded-md p-10'>
                     <h1 className='text-white text-3xl font-pppins text-center'>Edit Parcel Information</h1>
                     <div>
-                        <h2 className='text-center text-xl text-white mt-5 font-pppins'>Merchant_ID: {isVisible.marchent_id}</h2>
+                        <h2 className='text-center text-xl text-white mt-5 font-pppins'>Merchant_ID: {userInfo?._id}</h2>
                         <form onSubmit={handleParcelUpdate}>
                             <div className="form-control">
                                 <label className="label">

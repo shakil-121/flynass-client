@@ -6,14 +6,8 @@ import Swal from 'sweetalert2';
 const AdminDashbordHistory = () => {
     const [allParcel, refetch] = useParcel();
 
-    const history = allParcel.filter(item => item.status === "delivered" || item.status === "rejected" || item.status === "returned to merchant");
+    const history = allParcel.filter(item => item.status === "delivered" && item.payment_status === "paid" || item.status === "rejected" || item.status === "returned to merchant");
 
-    // const history = allParcel.filter(item => {
-    //     console.log("Item status:", item.status);
-    //     const isDesiredStatus = item.status === "delivered" || item.status === "rejected" || item.status === "returned to merchant";
-    //     console.log("Is desired status:", isDesiredStatus);
-    //     return isDesiredStatus;
-    // });
 
 
     const handledelete = () => {
@@ -40,16 +34,6 @@ const AdminDashbordHistory = () => {
             }
         });
         refetch();
-
-
-        // fetch("http://localhost:5000/delete", {
-        //     method: "DELETE"
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
-        // refetch();
     }
 
     return (
@@ -61,7 +45,7 @@ const AdminDashbordHistory = () => {
             </div>
             <div className='h-[90vh]  overflow-auto'>
                 <table className="table table-xs table-pin-rows table-pin-cols">
-                    <tr className='text-center text-black grid md:grid-cols-7 sticky top-0'>
+                    <tr className='text-center text-black grid md:grid-cols-8 sticky top-0'>
                         <th>No.</th>
                         <th>Date</th>
                         <th>Trackin ID</th>
@@ -69,10 +53,11 @@ const AdminDashbordHistory = () => {
                         <th>Delivery Charge</th>
                         <th>Paid Amount</th>
                         <th>Status</th>
+                        <th>Payment</th>
                     </tr>
                 </table>
                 {
-                    history.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin mt-1' key={parcel._id}>
+                    history.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-8 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin mt-1' key={parcel._id}>
                         <td>{index + 1}</td>
                         <td>{parcel.date}</td>
                         <td className='m-4 font-semibold' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -89,6 +74,9 @@ const AdminDashbordHistory = () => {
                         </td>
                         <td>
                             {parcel?.status}
+                        </td>
+                        <td>
+                            {parcel?.payment_status}
                         </td>
                     </tr>)
                 }
