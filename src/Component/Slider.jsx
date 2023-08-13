@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import cover1 from "../assets/images/dashboardCover.png";
 import cover2 from "../assets/images/dashboardCover2.png";
 import cover3 from "../assets/images/dashboardCover3.png";
+import cover4 from "../assets/images/dashboardCover4.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,6 +30,9 @@ const Slider = () => {
       >
         <SwiperSlide>
           <img className="" src={cover1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="" src={cover4} alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="" src={cover2} alt="" />

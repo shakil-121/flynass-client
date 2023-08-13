@@ -47,6 +47,11 @@ const SignUp = () => {
             image: imgUrl,
             role: "pending",
             address: data.address,
+            account_number:"N/A",
+            bank_name:"N/A",
+            branch_name:"N/A",
+            payment_method:"N/A",
+            routing_number:"N/A"
           };
           //   console.log(userInfo);
 

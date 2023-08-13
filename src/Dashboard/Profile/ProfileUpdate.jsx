@@ -30,8 +30,13 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const name = form.name.value;
         const phone = form.phone.value;
         const address = form.address.value;
+        const account_number=form.account_number.value;
+        const bank_name=form.bank_name.value;
+        const branch_name=form.branch_name.value;
+        const payment_method=form.payment_method.value;
+        const routing_number=form.routing_number.value;
         console.log(address);
-        const updateProfileInfo = { name, phone, address }
+        const updateProfileInfo = { name, phone, address,account_number,bank_name,branch_name,payment_method,payment_method,routing_number }
         fetch(`http://localhost:5000/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -89,7 +94,8 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                     <div>
                                         <Select
                                             options={selectedMethod}
-                                            // defaultValue={currentDistrict}
+                                            // defaultValue={currentDistrict} 
+                                            name="payment_method"
                                             placeholder="Select Payment Method"
                                             onChange={handleSelectedPMethod}
                                             isSearchable
@@ -99,7 +105,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                 </div>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Account Number</label>
-                                    <input type='text' name="account-number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Account Number' required />
+                                    <input type='text' name="account_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Account Number' required />
                                 </div>
 
                             </div>
@@ -108,15 +114,15 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                 <div className='grid grid-cols-2 gap-2'>
                                     <div className='mb-4'>
                                         <label className='block text-sm font-bold text-white'>Bank Name</label>
-                                        <input type='text' name="bank-name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Bank Name' required />
+                                        <input type='text' name="bank_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Bank Name' required />
                                     </div>
                                     <div className='mb-4'>
                                         <label className='block text-sm font-bold text-white'>Branch Name</label>
-                                        <input type='text' name="branch-number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Branch Name' required />
+                                        <input type='text' name="branch_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Branch Name' required />
                                     </div>
                                     <div className='mb-4'>
                                         <label className='block text-sm font-bold text-white'>Routing Nunber</label>
-                                        <input type='text' name="routing-number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Routing Number' required />
+                                        <input type='text' name="routing_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Routing Number' required />
                                     </div>
                                 </div>
                             }
