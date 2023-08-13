@@ -38,6 +38,8 @@ import AdminDashbordHistory from "../Dashboard/Admin/AdminDashbordHistory/AdminD
 import Instruction from "../Dashboard/MyParcel/Instruction";
 import DashboardService from "../Dashboard/DashboardService/DashboardService";
 import AdminPrivate from "../Private/AdminPrivate";
+import NoticeBoard from "../Dashboard/Admin/NoticeBoard/NoticeBoard";
+import AdminPayment from "../Dashboard/Admin/AdminPayment/AdminPayment";
 // import AdminPrivate from "../Private/AdminPrivate";
 
 const router = createBrowserRouter([
@@ -171,6 +173,10 @@ const router = createBrowserRouter([
         element: <AllParcel></AllParcel>
       },
       {
+        path: "payment",
+        element: <AdminPayment></AdminPayment>
+      },
+      {
         path: "all-admin",
         element: <AllAdmin></AllAdmin>
       },
@@ -209,6 +215,10 @@ const router = createBrowserRouter([
       {
         path: "admin_signup",
         element: <AdminSignUp></AdminSignUp>,
+      },
+      {
+        path: "notice-board",
+        element: <NoticeBoard></NoticeBoard>
       }
     ]
   },

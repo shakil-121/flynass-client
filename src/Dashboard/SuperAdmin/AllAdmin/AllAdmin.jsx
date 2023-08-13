@@ -49,8 +49,8 @@ const AllAdmin = () => {
         <div className='px-10 mt-20'>
             <div className='md:flex justify-between'>
                 <h1 className='text-3xl font-pppins'>All Admin{TotalAdmin.leng}</h1>
-                
-                 <Link to='../admin_signup'><button className="btn btn-primary">Create Admin</button></Link>
+
+                <Link to='../admin_signup'><button className="btn btn-primary">Create Admin</button></Link>
             </div>
             <div>
                 <table className="table table-xs table-pin-rows table-pin-cols border-2">
@@ -63,7 +63,7 @@ const AllAdmin = () => {
                     </tr>
                 </table>
                 {
-                    TotalAdmin.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-5 mb-5 justify-items-center items-center shadow-lg text-xl font-josefin p-2' key={user._id}>
+                    TotalAdmin.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-5 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin p-2' key={user._id}>
                         <td>{index + 1}</td>
                         <td>{user.name}</td>
                         <td className='m-4' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', overflow: 'hidden', textOverflow: 'ellipsis' }}>

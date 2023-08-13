@@ -156,7 +156,7 @@ const AdminAnalysis = () => {
           <button onClick={() => setShowModal(payableAmount)} className='w-full'>
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
               <h1 className='text-gray-400'>Payable Parcel</h1>
-              <h1 className='text-blue-800'>{reject?.length}</h1>
+              <h1 className='text-blue-800'>{payableAmount?.length}</h1>
             </div>
           </button>
         </div>
