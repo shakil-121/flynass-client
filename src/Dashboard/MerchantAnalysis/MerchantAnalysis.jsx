@@ -10,6 +10,7 @@ import ParcelModal from "../../Component/ParcelModal/ParcelModal";
 import support from "../../assets/images/customer-service.png";
 import { FaPhoneAlt } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
+import Notice from "../Notice/Notice";
 
 const MerchantAnalysis = () => {
   const [showModal, setShowModal] = useState(false);
@@ -66,6 +67,9 @@ const MerchantAnalysis = () => {
     <div className="h-full  p-8 rounded-md">
       <div className="mx-auto md:w-[65vw] w-[90vw]">
         <Slider />
+      </div>
+      <div>
+        <Notice></Notice>
       </div>
       <div className="grid md:grid-cols-4  gap-2 mt-5">
         <div>

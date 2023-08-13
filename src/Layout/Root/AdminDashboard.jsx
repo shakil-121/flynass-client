@@ -2,10 +2,11 @@ import profile from "../../assets/images/default.png";
 import { FaBars, FaHistory, FaShoppingCart, FaUsers } from 'react-icons/fa';
 import { Outlet } from 'react-router';
 import useUserInfo from '../../Hooks/useUserInfo';
-import { MdOutlineDashboard, MdVerified } from 'react-icons/md';
+import { MdAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icons/md';
 import { Link, NavLink } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../Hooks/useAuth';
+import { IoMdNotifications } from "react-icons/io";
 
 const AdminDashboard = () => {
     const userInfo = useUserInfo();
@@ -72,6 +73,16 @@ const AdminDashboard = () => {
                                                     All Parcel</Link>
                                             </li>
                                             <li>
+                                                <Link to="payment">
+                                                    <MdAttachMoney />
+                                                    Payment</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="notice-board">
+                                                    <IoMdNotifications />
+                                                    Notice Board</Link>
+                                            </li>
+                                            <li>
                                                 <Link to="menu">
                                                     <FaBars />
                                                     Menu</Link>
@@ -99,6 +110,16 @@ const AdminDashboard = () => {
                                                                 All Parcel</Link>
                                                         </li>
                                                         <li>
+                                                            <Link to="payment">
+                                                                <MdAttachMoney />
+                                                                Payment</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link to="history">
+                                                                <FaHistory />
+                                                                Order History</Link>
+                                                        </li>
+                                                        <li>
                                                             <Link to="all-admin">
                                                                 <FaShoppingCart />
                                                                 All Admin</Link>
@@ -109,9 +130,9 @@ const AdminDashboard = () => {
                                                                 Manage User</Link>
                                                         </li>
                                                         <li>
-                                                            <Link to="history">
-                                                                <FaHistory />
-                                                                Order History</Link>
+                                                            <Link to="notice-board">
+                                                                <IoMdNotifications />
+                                                                Notice Board</Link>
                                                         </li>
                                                         <li>
                                                             <Link to="menu">
