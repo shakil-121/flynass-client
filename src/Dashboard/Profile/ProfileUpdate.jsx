@@ -30,13 +30,15 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const name = form.name.value;
         const phone = form.phone.value;
         const address = form.address.value;
-        const account_number=form.account_number.value;
-        const bank_name=form.bank_name.value;
-        const branch_name=form.branch_name.value;
-        const payment_method=form.payment_method.value;
-        const routing_number=form.routing_number.value;
-        console.log(address);
-        const updateProfileInfo = { name, phone, address,account_number,bank_name,branch_name,payment_method,payment_method,routing_number }
+        const account_number= form.account_number.value;
+        const bank_name= form.bank_name?.value;
+        const branch_name= form.branch_name?.value;
+        const payment_method= form.payment_method?.value;
+        const routing_number= form.routing_number?.value;
+        // console.log(address);
+        const updateProfileInfo = { name, phone, address,account_number,bank_name,branch_name,payment_method,payment_method,routing_number} 
+
+        console.log(updateProfileInfo)
         fetch(`http://localhost:5000/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
