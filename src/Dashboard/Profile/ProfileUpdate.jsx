@@ -90,7 +90,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                         <Select
                                             options={selectedMethod}
                                             // defaultValue={currentDistrict}
-                                            placeholder="Select Delivery District"
+                                            placeholder="Select Payment Method"
                                             onChange={handleSelectedPMethod}
                                             isSearchable
                                             required

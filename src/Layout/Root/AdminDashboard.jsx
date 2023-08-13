@@ -78,6 +78,11 @@ const AdminDashboard = () => {
                                                     Payment</Link>
                                             </li>
                                             <li>
+                                                <Link to="history">
+                                                    <FaHistory />
+                                                    Order History</Link>
+                                            </li>
+                                            <li>
                                                 <Link to="notice-board">
                                                     <IoMdNotifications />
                                                     Notice Board</Link>
@@ -86,11 +91,6 @@ const AdminDashboard = () => {
                                                 <Link to="menu">
                                                     <FaBars />
                                                     Menu</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="history">
-                                                    <FaHistory />
-                                                    Order History</Link>
                                             </li>
                                         </>
                                         :
