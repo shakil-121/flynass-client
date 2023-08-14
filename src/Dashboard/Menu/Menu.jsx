@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaUserPlus } from 'react-icons/fa';
 import { MdLocationPin, MdOutlineExitToApp, MdLibraryBooks } from "react-icons/md";
 import { useQuery } from '@tanstack/react-query';
+import { baseUrl } from '../../config/api';
 
 const Menu = () => {
     const { user, logout } = useContext(AuthContext);
@@ -23,7 +24,7 @@ const Menu = () => {
     }
 
     const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch(`${baseUrl}/users`)
         return res.json();
     })
 

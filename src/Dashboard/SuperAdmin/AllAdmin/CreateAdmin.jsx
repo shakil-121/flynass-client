@@ -4,12 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import UsersInfo from './UsersInfo';
 import { FaTrash, FaTrashAlt, FaUserTie } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../../config/api';
 
 const CreateAdmin = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
 
     const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch(`${baseUrl}/users`)
         return res.json();
     })
 
@@ -24,7 +25,7 @@ const CreateAdmin = ({ isVisible, onClose }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`${baseUrl}/users/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())
@@ -39,7 +40,7 @@ const CreateAdmin = ({ isVisible, onClose }) => {
     };
 
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`${baseUrl}/users/admin/${user._id}`, {
             method: "PATCH",
         })
             .then((res) => res.json())

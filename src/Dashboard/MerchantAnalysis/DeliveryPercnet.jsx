@@ -2,6 +2,7 @@ import React from 'react';
 import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 import useParcel from '../../Hooks/useParcel';
 import { useQuery } from '@tanstack/react-query';
+import { baseUrl } from '../../config/api';
 
 const DeliveryPercnet = ({deliveryPercentage, returnPercentage}) => {
     // const delivery = deliveryPercentage;
@@ -9,7 +10,7 @@ const DeliveryPercnet = ({deliveryPercentage, returnPercentage}) => {
     // console.log(delivery, returned);
 
     const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
-        const res = await fetch('http://localhost:5000/orders')
+        const res = await fetch(`${baseUrl}/orders`)
         return res.json();
     })
 

@@ -4,6 +4,7 @@ import useAuth from "../Hooks/useAuth"
 import Swal from 'sweetalert2'
 import useUserInfo from '../Hooks/useUserInfo';
 import useParcel from '../Hooks/useParcel';
+import { baseUrl } from '../config/api';
 
 
 const CSVUpload = () => {
@@ -63,7 +64,7 @@ const CSVUpload = () => {
     console.log();
 
     axios
-      .post('http://localhost:5000/upload', formData, {
+      .post(`${baseUrl}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

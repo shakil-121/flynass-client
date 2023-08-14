@@ -6,6 +6,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaUserShield, FaPhoneAlt } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { baseUrl } from "../../config/api";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,7 +44,7 @@ const NavBar = () => {
   }
 
   const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-    const res = await fetch('http://localhost:5000/users')
+    const res = await fetch(`${baseUrl}/users`)
     return res.json();
   })
 

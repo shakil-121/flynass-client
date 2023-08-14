@@ -1,6 +1,7 @@
 import React from 'react';
 import useParcel from '../../../Hooks/useParcel';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../../config/api';
 
 const AdminPayment = () => {
     const [allParcel, refetch] = useParcel();
@@ -8,7 +9,7 @@ const AdminPayment = () => {
     const history = allParcel.filter(item => item.status === "delivered" && item.payment_status === "due");
 
     const handlePaymentStatus = id => {
-        fetch(`http://localhost:5000/order/payment/${id}`, {
+        fetch(`${baseUrl}/order/payment/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             // body: JSON.stringify(statusUpdate)

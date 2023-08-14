@@ -11,6 +11,7 @@ import "./signup.css";
 import { Result } from "postcss";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { baseUrl } from "../../config/api";
 
 // console.log(imgHosting_token);
 const AdminSignUp = () => {
@@ -54,7 +55,7 @@ const AdminSignUp = () => {
               toast("Account Create Successfully !")
               console.log(result); 
               console.log(userInfo); 
-              fetch("http://localhost:5000/users",{
+              fetch(`${baseUrl}/users`,{
                 method:"POST",
                 headers:{
                   "content-type":"application/json"

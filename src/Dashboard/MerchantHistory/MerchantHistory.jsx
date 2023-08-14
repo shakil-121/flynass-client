@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import { useQuery } from '@tanstack/react-query';
 import { FaRegEdit } from 'react-icons/fa';
+import { baseUrl } from '../../config/api';
 
 const MerchantHistory = () => {
     const { user } = useAuth();
 
     const { data: merchantParcel = [], isLoading, refetch } = useQuery(['order'], async () => {
-        const res = await fetch(`http://localhost:5000/user/order/${user?.email}`)
+        const res = await fetch(`${baseUrl}/user/order/${user?.email}`)
         return res.json();
     })
 
