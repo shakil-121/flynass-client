@@ -13,14 +13,15 @@ const AdminDashboard = () => {
     const userInfo = useUserInfo();
     const { user } = useAuth();
 
-    const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch(`${baseUrl}/users`)
-        return res.json();
-    })
+    // const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
+    //     const res = await fetch(`${baseUrl}/users`)
+    //     return res.json();
+    // })
 
-    const loggedInUser = user?.email;
-    const currentUser = allUsers.find(item => item.email === loggedInUser)
-    const role = currentUser?.role;
+    // const loggedInUser = user?.email;
+    // const currentUser = allUsers.find(item => item.email === loggedInUser)
+    
+    const role = userInfo?.role;
 
     return (
         <div>
