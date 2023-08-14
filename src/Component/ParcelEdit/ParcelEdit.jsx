@@ -14,7 +14,8 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         const total_amount = form.total_amount.value;
         const updateInformation = {to_address,total_amount,from_address}
         console.log(updateInformation);
-        fetch(`${baseUrl}/order/${invoiceParcel._id}`, {
+
+        fetch(`${baseUrl}/admin/order/${invoiceParcel._id}`, {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(updateInformation)
@@ -54,7 +55,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
                                 <label className="label">
                                     <span className="label-text text-white">Delivery Chare</span>
                                 </label>
-                                <input type="text" name="total_amount" placeholder={invoiceParcel.total_amount} className="input input-bordered focus:outline-none" />
+                                <input type="text" name="total_amount" defaultValue={invoiceParcel?.total_amount} className="input input-bordered focus:outline-none" />
                             </div>
                             <input className='btn btn-block mt-5' type="submit" value="Update" />
                         </form>

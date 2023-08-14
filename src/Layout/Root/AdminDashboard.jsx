@@ -7,6 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../Hooks/useAuth';
 import { IoMdNotifications } from "react-icons/io";
+import { baseUrl } from "../../config/api";
 
 const AdminDashboard = () => {
     const userInfo = useUserInfo();
