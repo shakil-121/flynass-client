@@ -4,13 +4,14 @@ import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MerchentParcelEdit from '../../Component/AdminParcelModal/MerchentParcel';
+import { baseUrl } from '../../config/api';
 
 const MyParclel = () => {
     const [showModal, setShowModal] = useState(false);
     const { user } = useContext(AuthContext);
     console.log(user);
     const { data: merchantParcel = [], isLoading, refetch } = useQuery(['order'], async () => {
-        const res = await fetch(`http://localhost:5000/user/order/${user?.email}`)
+        const res = await fetch(`${baseUrl}/user/order/${user?.email}`)
         return res.json();
     })
 
@@ -27,7 +28,7 @@ const MyParclel = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`${baseUrl}/order/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())

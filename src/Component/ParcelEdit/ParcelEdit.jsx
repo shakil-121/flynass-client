@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../config/api';
 
 const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
     if (!isVisible) return null;
@@ -13,7 +14,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         const total_amount = form.total_amount.value;
         const updateInformation = {to_address,total_amount,from_address}
         console.log(updateInformation);
-        fetch(`http://localhost:5000/order/${invoiceParcel._id}`, {
+        fetch(`${baseUrl}/order/${invoiceParcel._id}`, {
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(updateInformation)

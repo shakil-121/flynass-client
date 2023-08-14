@@ -13,7 +13,7 @@ const AdminDashboard = () => {
     const { user } = useAuth();
 
     const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch(`${baseUrl}/users`)
         return res.json();
     })
 

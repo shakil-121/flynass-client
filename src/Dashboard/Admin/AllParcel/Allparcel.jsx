@@ -4,6 +4,7 @@ import useParcel from '../../../Hooks/useParcel';
 import { FaEye, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from "sweetalert2";
+import { baseUrl } from '../../../config/api';
 // import api from "../../../CentralAPI/API"
 
 const AllParcel = () => {
@@ -23,7 +24,7 @@ const AllParcel = () => {
     const handleStatusUpdate = (status, id) => {
         console.log(status, id);
         const statusUpdate = { status };
-        fetch(`http://localhost:5000/order/status/${id}`, {
+        fetch(`${baseUrl}/order/status/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(statusUpdate)
@@ -47,7 +48,7 @@ const AllParcel = () => {
 
     // Function to handle the search of parcels based on the search text
     const handleSearch = () => {
-        fetch(`http://localhost:5000/orders/${searchText}`)
+        fetch(`${baseUrl}/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -115,7 +116,7 @@ const AllParcel = () => {
             ids: selectedParcelIds,
             status: status,
         };
-        fetch('http://localhost:5000/order/multi-status', {
+        fetch(`${baseUrl}/order/multi-status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

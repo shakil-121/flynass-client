@@ -6,13 +6,14 @@ import { useQuery } from '@tanstack/react-query';
 import UserInformation from '../ManageUsers/UserInformation';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../../../config/api';
 
 const AllAdmin = () => {
     const [showModal, setShowModal] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
 
     const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch(`${baseUrl}/users`)
         return res.json();
     })
 
@@ -30,7 +31,7 @@ const AllAdmin = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`${baseUrl}/users/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())
