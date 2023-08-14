@@ -5,6 +5,7 @@ import { FaDownload, FaPrint, FaRegEdit } from 'react-icons/fa';
 import ParcelEdit from '../ParcelEdit/ParcelEdit';
 import { useState } from 'react';
 import html2pdf from 'html2pdf.js';
+import AdminParcelEdit from '../AdminParcelModal/AdminParcelEdit';
 
 const Invoice = () => {
     const [showModal, setShowModal] = useState(false);
@@ -39,7 +40,7 @@ const Invoice = () => {
         <div className='w-[50vw] mx-auto'>
             <div>
                 <div className='flex justify-between mb-5'>
-                    <button onClick={() => setShowModal(true)} className='btn btn-primary flex items-center justify-center'><FaRegEdit />Edit</button>
+                    <button onClick={() => setShowModal(invoiceParcel)} className='btn btn-primary flex items-center justify-center'><FaRegEdit />Edit</button>
                     <button onClick={handleDownload} className='btn btn-primary flex items-center justify-center'><FaDownload />Download</button>
                     <button onClick={printDivContent} className='btn btn-primary flex items-center justify-center'><FaPrint />Print</button>
                 </div>
@@ -68,7 +69,7 @@ const Invoice = () => {
                     </div>
                 </div>
             </div>
-            <ParcelEdit isVisible={showModal} onClose={() => setShowModal(false)} invoiceParcel={invoiceParcel}></ParcelEdit>
+            <AdminParcelEdit isVisible={showModal} onClose={() => setShowModal(false)} invoiceParcel={invoiceParcel}></AdminParcelEdit>
         </div>
     );
 };
