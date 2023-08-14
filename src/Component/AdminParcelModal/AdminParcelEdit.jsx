@@ -13,7 +13,9 @@ const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
         const delivary_Charge = form.delivary_Charge.value;
         const cod = form.cod.value;
         const total_amount = parseFloat(delivary_Charge) + parseFloat(cod);
-        const updateInformation = { from_address, to_address, delivary_Charge, cod, total_amount }
+        const payable_amount = parseFloat(isVisible?.product_amount) - total_amount;
+        const updateInformation = { from_address, to_address, delivary_Charge, cod, total_amount, payable_amount };
+
         console.log(updateInformation);
         Swal.fire({
             title: "Are you sure?",
