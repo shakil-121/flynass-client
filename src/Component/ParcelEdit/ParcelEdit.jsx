@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../config/api';
 
 const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
     if (!isVisible) return null;
@@ -11,11 +12,11 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         const from_address = form.from_address.value;
         const to_address = form.to_address.value;
         const total_amount = form.total_amount.value;
-        const updateInformation = {to_address,total_amount,from_address}
+        const updateInformation = { to_address, total_amount, from_address }
         console.log(updateInformation);
-        fetch(`http://localhost:5000/order/${invoiceParcel._id}`, {
+        fetch(`${baseUrl}/order/${invoiceParcel._id}`, {
             method: 'PUT',
-            headers: {'content-type': 'application/json'},
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateInformation)
         });
         Swal.fire({
@@ -25,7 +26,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         })
 
     }
-    
+
     return (
         <div className='z-20 fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
             <div className='w-full md:w-[600px] flex flex-col  rounded-lg'>
