@@ -11,6 +11,7 @@ import "./Login.css";
 import { useState } from "react";
 import useTitle from "../../Hooks/useTitle";
 import { useQuery } from "@tanstack/react-query";
+import { baseUrl } from "../../config/api";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -21,7 +22,7 @@ const Login = () => {
   const emailRef = useRef();
 
   const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-    const res = await fetch('http://localhost:5000/users')
+    const res = await fetch(`${baseUrl}/users`)
     return res.json();
   })
 

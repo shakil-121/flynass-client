@@ -8,24 +8,27 @@ import { useQuery } from "@tanstack/react-query";
 import AdminParcelModal from "../../Component/AdminParcelModal/AdminParcelModal";
 import { useEffect } from "react";
 import AllParcel from "./AllParcel/Allparcel";
+import useParcel from "../../Hooks/useParcel";
+import { baseUrl } from "../../config/api";
 
 const AdminAnalysis = () => {
   const [showModal, setShowModal] = useState(false);
   const [todaysParcel, setTodaysParcel] = useState([]);
 
-  const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
-    const res = await fetch('http://localhost:5000/orders')
-    return res.json();
-  })
+  // const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
+  //   const res = await fetch('http://localhost:5000/orders')
+  //   return res.json();
+  // })
+  const [parcel, refetch] = useParcel();
 
   useEffect(() => {
-    fetch('http://localhost:5000/today')
+    fetch(`${baseUrl}/today`)
       .then(res => res.json())
       .then(data => setTodaysParcel(data))
   }, [todaysParcel])
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/orders/${searchText}`)
+    fetch(`${baseUrl}/orders/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

@@ -11,6 +11,7 @@ import support from "../../assets/images/customer-service.png";
 import { FaPhoneAlt } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 import Notice from "../Notice/Notice";
+import { baseUrl } from "../../config/api";
 
 const MerchantAnalysis = () => {
   const [showModal, setShowModal] = useState(false);
@@ -23,7 +24,7 @@ const MerchantAnalysis = () => {
   //     return res.json();
   // })
   useEffect(() => {
-    fetch(`http://localhost:5000/user/order/${user?.email}`)
+    fetch(`${baseUrl}/user/order/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setParcel(data));
   }, [parcel]);

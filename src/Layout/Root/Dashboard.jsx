@@ -9,6 +9,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import DashboardNavBar from "../../Shared/DashboardNavBar/DashboardNavBar";
 import useUserInfo from "../../Hooks/useUserInfo";
 import { useQuery } from "@tanstack/react-query";
+import { baseUrl } from "../../config/api";
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -16,7 +17,7 @@ const Dashboard = () => {
   const userInfo = useUserInfo();
 
   const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-    const res = await fetch('http://localhost:5000/users')
+    const res = await fetch(`${baseUrl}/users`)
     return res.json();
   })
 

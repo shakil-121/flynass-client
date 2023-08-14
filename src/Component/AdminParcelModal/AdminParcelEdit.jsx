@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../config/api';
 
 const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
     if (!isVisible) return null;
@@ -24,7 +25,7 @@ const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
             confirmButtonText: "Yes, Update Info!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/order/admin/${isVisible._id}`, {
+                fetch(`${baseUrl}/order/admin/${isVisible._id}`, {
                     method: 'PUT',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(updateInformation)

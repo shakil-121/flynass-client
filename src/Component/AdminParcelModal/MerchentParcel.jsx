@@ -1,6 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import useUserInfo from '../../Hooks/useUserInfo';
+import { baseUrl } from '../../config/api';
 
 const MerchentParcelEdit = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
@@ -12,7 +13,7 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
         const phone = form.phone.value;
         const updateInformation = { to_address, phone }
         console.log(updateInformation);
-        fetch(`http://localhost:5000/order/${isVisible._id}`, {
+        fetch(`${baseUrl}/order/${isVisible._id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateInformation)

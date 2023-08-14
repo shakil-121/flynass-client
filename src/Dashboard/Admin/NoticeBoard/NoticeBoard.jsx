@@ -2,6 +2,7 @@ import React from 'react';
 import { IoMdNotifications } from 'react-icons/io';
 import useNotice from '../../../Hooks/useNotice';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../../config/api';
 
 const NoticeBoard = () => {
     const UpdatedNotice = useNotice();
@@ -15,7 +16,7 @@ const NoticeBoard = () => {
         // console.log(notice);  
         const id = "64d8abcda3efcb0b84670175"
         const updateNotice = { notice }
-        fetch(`http://localhost:5000/notice/${id}`, {
+        fetch(`${baseUrl}/notice/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateNotice)

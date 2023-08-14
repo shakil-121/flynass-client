@@ -6,6 +6,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import useUserInfo from "../../Hooks/useUserInfo";
 import useParcel from "../../Hooks/useParcel";
+import { baseUrl } from "../../config/api";
 
 const CreateParcel = ({ isVisible, onClose }) => {
   const [currentDistrict, setCurrentDistrict] = useState(null);
@@ -83,7 +84,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     }
     console.log(orderInfo)
 
-    fetch("http://localhost:5000/orders", {
+    fetch(`${baseUrl}/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json"

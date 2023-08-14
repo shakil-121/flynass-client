@@ -5,6 +5,7 @@ import useUserInfo from "../../Hooks/useUserInfo";
 import Swal from "sweetalert2";
 import Select from "react-select";
 import { useState } from "react";
+import { baseUrl } from "../../config/api";
 
 const ProfileUpdate = ({ isVisible, onClose, user }) => {
     if (!isVisible) return null;
@@ -30,16 +31,16 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const name = form.name.value;
         const phone = form.phone.value;
         const address = form.address.value;
-        const account_number= form.account_number.value;
-        const bank_name= form.bank_name?.value;
-        const branch_name= form.branch_name?.value;
-        const payment_method= form.payment_method?.value;
-        const routing_number= form.routing_number?.value;
+        const account_number = form.account_number.value;
+        const bank_name = form.bank_name?.value;
+        const branch_name = form.branch_name?.value;
+        const payment_method = form.payment_method?.value;
+        const routing_number = form.routing_number?.value;
         // console.log(address);
-        const updateProfileInfo = { name, phone, address,account_number,bank_name,branch_name,payment_method,payment_method,routing_number} 
+        const updateProfileInfo = { name, phone, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number }
 
         console.log(updateProfileInfo)
-        fetch(`http://localhost:5000/user/update/${userInfo._id}`, {
+        fetch(`${baseUrl}/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateProfileInfo)

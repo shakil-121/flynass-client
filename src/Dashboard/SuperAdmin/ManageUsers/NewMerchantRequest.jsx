@@ -3,6 +3,7 @@ import { FaIdCard, FaInfo, FaTrashAlt, FaUserPlus } from 'react-icons/fa';
 import UserInformation from './UserInformation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../../config/api';
 
 const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
     const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`${baseUrl}/users/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())
@@ -45,7 +46,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
             confirmButtonText: "Yes,sure!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/user/role_update/${id}`, {
+                fetch(`${baseUrl}/user/role_update/${id}`, {
                     method: "PUT"
                 })
                     .then((res) => res.json())

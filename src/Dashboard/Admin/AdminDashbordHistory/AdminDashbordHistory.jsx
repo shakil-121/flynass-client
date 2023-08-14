@@ -2,6 +2,7 @@ import React from 'react';
 import useParcel from '../../../Hooks/useParcel';
 import ExportCSV from './ExportCSV';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../../config/api';
 
 const AdminDashbordHistory = () => {
     const [allParcel, refetch] = useParcel();
@@ -21,7 +22,7 @@ const AdminDashbordHistory = () => {
             confirmButtonText: "Yes, delete all!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch("http://localhost:5000/delete", {
+                fetch(`${baseUrl}/delete`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())

@@ -3,6 +3,7 @@ import { FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { useState } from 'react';
 import AdminParcelEdit from './AdminParcelEdit';
 import Swal from 'sweetalert2';
+import { baseUrl } from '../../config/api';
 
 const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
     const [searchText, setSearchText] = useState("");
@@ -22,7 +23,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/order/${id}`, {
+                fetch(`${baseUrl}/order/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())
@@ -37,7 +38,7 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
     };
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/orders/${searchText}`)
+        fetch(`${baseUrl}/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

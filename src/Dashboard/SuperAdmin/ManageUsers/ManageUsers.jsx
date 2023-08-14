@@ -5,6 +5,7 @@ import UserInformation from './UserInformation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import NewMerchantRequest from './NewMerchantRequest';
+import { baseUrl } from '../../../config/api';
 
 const ManageUsers = () => {
     const [showModal, setShowModal] = useState(false);
@@ -12,7 +13,7 @@ const ManageUsers = () => {
 
     // all user data
     const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch(`${baseUrl}/users`)
         return res.json();
     })
     const TotalMerchant = allUsers.filter(users => users.role === 'merchant');
@@ -31,7 +32,7 @@ const ManageUsers = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`${baseUrl}/users/${id}`, {
                     method: "DELETE"
                 })
                     .then((res) => res.json())
