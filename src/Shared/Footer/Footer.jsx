@@ -16,7 +16,7 @@ const Footer = () => {
         </p>
         <div className="flex  mt-6 text-white">
           <div className="bg-[#00a2ff] rounded-md hover:bg-[#051721] p-2">
-            <a href="https://www.facebook.com/profile.php?id=100095364961412&mibextid=ZbWKwL">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100095364961412&mibextid=ZbWKwL">
               <FaFacebookF className="text-2xl"></FaFacebookF>
             </a>
           </div>
