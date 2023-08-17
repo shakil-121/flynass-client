@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const axiosSecure = axios.create({
-  baseURL: 'http://62.72.29.251:5000',
+  baseURL: import.meta.env.VITE_URL,
 });
 
 const useAxiosSecure = () => {
