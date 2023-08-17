@@ -46,7 +46,7 @@ const CompanyApproch = () => {
         className="bg-white md:ms-16 waves md:p-7 p-3 shadow-2xl shadow-[#7ABDE2] rounded-xl mb-10">
           <div className="md:flex items-center gap-x-20 mb-2">
             <div>
-              <h1 className="md:text-[96px] text-[250px] text-bg">02</h1>
+              <h1 className="md:text-[96px] text-[90px] text-bg">02</h1>
             </div>
             <h1 className="text-2xl md:text-4xl font-bold text-center md:text-left">
               Year's of experience <br /> Parcel Delivery services
@@ -56,7 +56,7 @@ const CompanyApproch = () => {
             <div className="flex items-center gap-5">
               <img className="w-20" src={avatar} alt="" />
               <div>
-                <h1 className="text-6xl font-bold mb-3">
+                <h1 className="md:text-6xl text-4xl font-bold mb-3">
                   <CountUp end={150}  duration={10}/>+
                 </h1>
                 <h3 className="text-2xl font-bold">Professional Staff</h3>
@@ -65,14 +65,14 @@ const CompanyApproch = () => {
             <div className="flex items-center gap-5">
               <img className="w-20" src={van} alt="" />
               <div>
-                <h1 className="text-6xl font-bold mb-3"> <CountUp end={15000}  duration={10}/>+</h1>
+                <h1 className="md:text-6xl text-4xl font-bold mb-3"> <CountUp end={15000}  duration={10}/>+</h1>
                 <h3 className="text-2xl font-bold">On Time Delievery</h3>
               </div>
             </div>
             <div className="flex items-center gap-5">
               <img className="w-20" src={Tech} alt="" />
               <div>
-                <h1 className="text-6xl font-bold mb-3"> <CountUp end={150}  duration={10}/>+</h1>
+                <h1 className="md:text-6xl text-4xl font-bold mb-3"> <CountUp end={150}  duration={10}/>+</h1>
                 <h3 className="text-2xl font-bold">Technology & Media</h3>
               </div>
             </div>

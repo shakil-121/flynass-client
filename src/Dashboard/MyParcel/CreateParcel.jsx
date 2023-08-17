@@ -204,7 +204,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: "Faridpur", label: "Faridpur" },
     { value: "Feni", label: "Feni" },
     { value: "Gaibandha", label: "Gaibandha" },
-    { value: "Gazipur", label: "Gazipur" },
+    // { value: "Gazipur", label: "Gazipur" },
     { value: "Gopalganj", label: "Gopalganj" },
     { value: "Habiganj", label: "Habiganj" },
     { value: "Jamalpur", label: "Jamalpur" },
@@ -228,7 +228,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: "Mymensingh", label: "Mymensingh" },
     { value: "Naogaon", label: "Naogaon" },
     { value: "Narail", label: "Narail" },
-    { value: "Narayanganj", label: "Narayanganj" },
+    // { value: "Narayanganj", label: "Narayanganj" },
     { value: "Narsingdi", label: "Narsingdi" },
     { value: "Natore", label: "Natore" },
     { value: "Netrokona", label: "Netrokona" },
@@ -526,17 +526,17 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: "Saghata", label: "Saghata" },
   ];
 
-  const Gazipur = [
-    { value: "Gazipur Sadar", label: "Gazipur Sadar" },
-    { value: "Kaliakair", label: "Kaliakair" },
-    { value: "Kapasia", label: "Kapasia" },
-    { value: "Sreepur", label: "Sreepur" },
-    { value: "Kaliganj", label: "Kaliganj" },
-    { value: "Tongi", label: "Tongi" },
-    { value: "Bhawalnagar", label: "Bhawalnagar" },
-    { value: "Monnunagar", label: "Monnunagar" },
-    { value: "Kaliakair Thana Gazi", label: "Kaliakair Thana Gazi" },
-  ];
+  // const Gazipur = [
+  //   { value: "Gazipur Sadar", label: "Gazipur Sadar" },
+  //   { value: "Kaliakair", label: "Kaliakair" },
+  //   { value: "Kapasia", label: "Kapasia" },
+  //   { value: "Sreepur", label: "Sreepur" },
+  //   { value: "Kaliganj", label: "Kaliganj" },
+  //   { value: "Tongi", label: "Tongi" },
+  //   { value: "Bhawalnagar", label: "Bhawalnagar" },
+  //   { value: "Monnunagar", label: "Monnunagar" },
+  //   { value: "Kaliakair Thana Gazi", label: "Kaliakair Thana Gazi" },
+  // ];
 
   const Gopalganj = [
     { value: "Gopalganj Sadar", label: "Gopalganj Sadar" },
@@ -750,13 +750,13 @@ const CreateParcel = ({ isVisible, onClose }) => {
     { value: "Kalia", label: "Kalia" },
     { value: "Lohagara", label: "Lohagara" },
   ];
-  const Narayanganj = [
-    { value: "Narayanganj Sadar", label: "Narayanganj Sadar" },
-    { value: "Araihazar", label: "Araihazar" },
-    { value: "Rupganj", label: "Rupganj" },
-    { value: "Bandar", label: "Bandar" },
-    { value: "Sonargaon", label: "Sonargaon" },
-  ];
+  // const Narayanganj = [
+  //   { value: "Narayanganj Sadar", label: "Narayanganj Sadar" },
+  //   { value: "Araihazar", label: "Araihazar" },
+  //   { value: "Rupganj", label: "Rupganj" },
+  //   { value: "Bandar", label: "Bandar" },
+  //   { value: "Sonargaon", label: "Sonargaon" },
+  // ];
   const Narsingdi = [
     { value: "Narsingdi Sadar", label: "Narsingdi Sadar" },
     { value: "Belabo", label: "Belabo" },
@@ -1265,7 +1265,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </div>
                 )}
 
-                {currentDistrict === "Gazipur" && (
+                {/* {currentDistrict === "Gazipur" && (
                   <div>
                     <Select
                       options={Gazipur}
@@ -1274,7 +1274,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       isSearchable
                     />
                   </div>
-                )}
+                )} */}
 
                 {currentDistrict === "Gopalganj" && (
                   <div>
@@ -1529,7 +1529,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </div>
                 )}
 
-                {currentDistrict === "Narayanganj" && (
+                {/* {currentDistrict === "Narayanganj" && (
                   <div>
                     <Select
                       options={Narayanganj}
@@ -1538,7 +1538,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       isSearchable
                     />
                   </div>
-                )}
+                )} */}
 
                 {currentDistrict === "Narsingdi" && (
                   <div>

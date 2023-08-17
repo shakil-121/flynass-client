@@ -30,7 +30,7 @@ const Profile = () => {
                             <img className="w-20 h-20 rounded-full border-2 border-white" src={profile} alt="" />
                         </div>
                 }
-                <div className="flex justify-between mt-8 shadow-[rgba(0,_0,_0,_2)_0px_3px_10px] p-5 rounded-md">
+                <div className="md:flex justify-between mt-8 shadow-[rgba(0,_0,_0,_2)_0px_3px_10px] md:p-5 p-1 rounded-md">
                     <div className="flex-1 grid md:grid-cols-2 mt-5 gap-4">
                         <h4 className="font-bold mt-2">
                             Merchant ID:
@@ -82,7 +82,7 @@ const Profile = () => {
                     </div>
 
                     <div>
-                        <button onClick={() => setShowModal(true)} className="text-xl font-serif flex items-center"><LiaEdit />Edit Profile</button>
+                        <button onClick={() => setShowModal(true)} className="text-xl md:mt-0 mt-2 font-serif flex items-center"><LiaEdit />Edit Profile</button>
                     </div>
                 </div>
             </div>

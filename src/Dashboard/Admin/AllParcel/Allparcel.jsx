@@ -83,7 +83,7 @@ const AllParcel = () => {
 
     // const handleStatusUpdateForSelected = (status) => {
     //     const selectedParcelIds = selectedParcels.map((id) => id); // Remove the ObjectId conversion
-    //     fetch('http://localhost:5000/order/status', {
+    //     fetch('http://62.72.29.251:5000/order/status', {
     //       method: 'PUT',
     //       headers: {
     //         'Content-Type': 'application/json',

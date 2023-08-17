@@ -13,7 +13,7 @@ const DashboardNavBar = () => {
     const { user } = useContext(AuthContext);
 
     // const { data: allUsers = [], refetch } = useQuery(['users'], async () => {
-    //     const res = await fetch('http://localhost:5000/users')
+    //     const res = await fetch('http://62.72.29.251:5000/users')
     //     return res.json();
     // })
 
