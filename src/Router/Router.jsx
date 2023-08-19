@@ -224,7 +224,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "admin_is_flyning",
+    path: "admin_is_flying",
     element: <AdminLogin></AdminLogin>
   },
 

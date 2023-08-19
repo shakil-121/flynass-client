@@ -52,7 +52,7 @@ const MerchantAnalysis = () => {
   const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // chash Amount 
-  const cashAmountItems = parcel.filter(item => item.status !== "pending" && item.payment_status === "due");
+  const cashAmountItems = parcel.filter(item => item.status !== "pending" && item.payment_status === "due" && item.total_amount);
   const cashAmount = cashAmountItems.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // delivery percentage calculation

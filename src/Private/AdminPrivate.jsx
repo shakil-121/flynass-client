@@ -25,7 +25,7 @@ const AdminPrivate = ({ children }) => {
     if (user) {
         return children;
     }
-    return <Navigate state={{ from: location }} to="/admin_is_flyning" replace></Navigate>
+    return <Navigate state={{ from: location }} to="/admin_is_flying" replace></Navigate>
 
 };
 
