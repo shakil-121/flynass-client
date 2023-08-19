@@ -224,7 +224,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "admin_login",
+    path: "_#rabbi",
     element: <AdminLogin></AdminLogin>
   },
 
