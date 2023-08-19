@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const axiosSecure = axios.create({
-  baseURL: 'https://server.flynassbd.com',
+  baseURL: import.meta.env.VITE_URL,
 });
 
 const useAxiosSecure = () => {

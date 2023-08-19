@@ -74,7 +74,7 @@ const AdminLogin = () => {
                 name="email"
                 type="text"
                 placeholder="email"
-                className="input input-bordered border-slate-300 text-black"
+                className="input border-slate-300 text-black"
               />
             </div>
 
@@ -86,7 +86,7 @@ const AdminLogin = () => {
                 name="password"
                 type="password"
                 placeholder="password"
-                className="input input-bordered border-slate-300 text-black"
+                className="input border-slate-300 text-black"
               />
             </div>
             <div className="text-center mt-2 mb-2 text-red-500">

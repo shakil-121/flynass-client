@@ -1,1 +1,1 @@
-export const baseUrl = 'https://server.flynassbd.com'
+export const baseUrl = import.meta.env.VITE_URL;

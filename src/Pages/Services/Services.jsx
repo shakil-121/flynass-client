@@ -82,10 +82,10 @@ const Services = () => {
                 Package Weight
               </h1>
               <div className="bg-[#020531] text-white font-pppins rounded-tl-3xl rounded-br-3xl p-5 flex flex-col divide-y mt-5">
-                <h1 className="md:text-xl font-semibold mb-2">
+                <h1 className="md:text-xl text-[12px] font-semibold mb-2">
                   Standard up to 1kg
                 </h1>
-                <h1 className="md:text-xl font-semibold mb-2">
+                <h1 className="md:text-xl text-[12px]  font-semibold mb-2">
                   Per Additional kg
                 </h1>
               </div>

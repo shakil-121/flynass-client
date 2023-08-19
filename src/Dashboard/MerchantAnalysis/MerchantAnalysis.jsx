@@ -20,7 +20,7 @@ const MerchantAnalysis = () => {
   console.log(user);
 
   // const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
-  //     const res = await fetch(`http://localhost:5000/user/order/${user?.email}`)
+  //     const res = await fetch(`http://62.72.29.251:5000/user/order/${user?.email}`)
   //     return res.json();
   // })
   useEffect(() => {

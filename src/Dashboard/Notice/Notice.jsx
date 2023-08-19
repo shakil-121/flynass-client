@@ -17,7 +17,7 @@ const Notice = () => {
                 animationData={ball}
                 loop={true}
               />
-            <h4 className='font-semibold flex-1'>
+            <h4 className='font-semibold md:text-base text-[10px] flex-1'>
                {notice}
             </h4>
         </div>

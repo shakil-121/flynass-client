@@ -40,9 +40,9 @@ const AdminDashboard = () => {
                     <Outlet></Outlet>
 
                 </div>
-                <div className="drawer-side z-10">
+                <div className="drawer-side z-10 bg-stone-200">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-stone-200 rounded-md text-base-content">
+                    <ul className="menu p-4 w-80  rounded-md text-base-content">
                         {/* Sidebar content here */}
                         <div className="mb-10">
                             {
