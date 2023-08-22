@@ -18,7 +18,7 @@ const AllParcel = () => {
     const [allParce, refetch] = useParcel();
 
     // State to hold the filtered parcels that are not delivered or rejected
-    const needParcel = allParce.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected" && parcel.status !== "returned to merchant");
+    const needParcel = allParce.filter(parcel => parcel.status !== "delivered" && parcel.status !== "rejected" && parcel.status !== "returned to merchant" && parcel.status !== "returned");
 
     // Function to handle the status update of a parcel
     const handleStatusUpdate = (status, id) => {

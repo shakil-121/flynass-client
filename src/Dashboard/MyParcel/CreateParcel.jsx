@@ -80,7 +80,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
       payment_status: "due",
       payable_amount: payableAmount,
       special_instruction: data.special_instruction,
-
+      merchant_name: userInfo?.merchant_name
     }
     console.log(orderInfo)
 
@@ -94,6 +94,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
       .then(res => res.json())
       .then(data => {
         if (data.insertedId) {
+          refetch();
           Swal.fire({
             title: 'Parcel Order Status',
             text: 'your Parcel Order Successfully',

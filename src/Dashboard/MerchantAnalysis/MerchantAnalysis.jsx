@@ -52,8 +52,12 @@ const MerchantAnalysis = () => {
   const processing = due.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // chash Amount 
-  const cashAmountItems = parcel.filter(item => item.status !== "pending" && item.payment_status === "due" && item.total_amount);
+  const cashAmountItems = parcel.filter(item => item.status !== "pending" && item.status !== "returned" && item.payment_status === "due" && item.total_amount);
   const cashAmount = cashAmountItems.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
+
+  // return Amount 
+  const returnItems = parcel.filter(item => item.status === "returned" && item.total_amount);
+  const returnAmount = returnItems.reduce((acc, obj) => acc + obj?.total_amount, 0).toFixed(2);
 
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;
@@ -167,7 +171,7 @@ const MerchantAnalysis = () => {
                 {
                   processing ?
                     <>
-                      {processing} TK
+                      { processing - returnAmount} TK
                     </>
                     :
                     <>00.00TK</>

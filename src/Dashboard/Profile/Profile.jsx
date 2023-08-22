@@ -39,6 +39,12 @@ const Profile = () => {
                         </h4>
 
                         <h4 className="font-bold mt-2">
+                            Merchant Name:
+                            <br />
+                            <span className="font-serif font-medium flex items-center gap-2"><FaUserAlt /> {userInfo?.merchant_name}</span>
+                        </h4>
+
+                        <h4 className="font-bold mt-2">
                             Full Name:
                             <br />
                             <span className="font-serif font-medium flex items-center gap-2"><FaUserAlt /> {userInfo?.name}</span>

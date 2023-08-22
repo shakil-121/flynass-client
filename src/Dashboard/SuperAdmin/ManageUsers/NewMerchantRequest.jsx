@@ -91,7 +91,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
                                             <div className="dropdown dropdown-bottom text-black">
                                                 <label tabIndex={0} className="font-pppins">{user.role}</label>
                                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-48">
-                                                    <li onClick={() => handleroleupdate(user?._id)} className='text-xl rounded-md text-secondary'>merchant</li>
+                                                    <button onClick={() => handleroleupdate(user?._id)} className='text-xl rounded-md text-secondary'>merchant</button>
                                                 </ul>
                                             </div>
                                         </div>

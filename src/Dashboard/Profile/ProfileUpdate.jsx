@@ -26,9 +26,10 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
     ];
 
     const handleUpdateProfile = event => {
-        event.preventDefault();
+        // event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const merchant_name = form.merchant_name.value;
         const phone = form.phone.value;
         const address = form.address.value;
         const account_number = form.account_number.value;
@@ -37,7 +38,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const payment_method = form.payment_method?.value;
         const routing_number = form.routing_number?.value;
         // console.log(address);
-        const updateProfileInfo = { name, phone, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number }
+        const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number }
 
         console.log(updateProfileInfo)
         fetch(`${baseUrl}/user/update/${userInfo._id}`, {
@@ -86,6 +87,10 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                     <label className='block text-sm font-bold text-white'>Phone</label>
                                     <input type='text' name="phone" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Enter Address' defaultValue={userInfo.phone} />
                                 </div>
+                            </div>
+                            <div className='mb-4'>
+                                <label className='block text-sm font-bold text-white'>Merchant Name</label>
+                                <input type='text' name="merchant_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Merhcant Name' defaultValue={userInfo.merchant_name} />
                             </div>
                             <div className='mb-4'>
                                 <label className='block text-sm font-bold text-white'>Address</label>
