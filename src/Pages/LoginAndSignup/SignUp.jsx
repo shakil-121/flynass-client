@@ -15,9 +15,13 @@ import useTitle from "../../Hooks/useTitle";
 import { useState } from "react";
 import { baseUrl } from "../../config/api";
 
+
+
+
 // console.log(imgHosting_token);
 const SignUp = () => {
   const [singupError, setSingupError] = useState();
+  const [isSignedUp, setIsSignedUp] = useState(false);
   useTitle("Registration")
   const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;
@@ -70,6 +74,7 @@ const SignUp = () => {
                 },
                 body: JSON.stringify(userInfo)
               })
+              setIsSignedUp(true);
             })
             .catch((error) => {
               // Handle specific error cases
@@ -101,6 +106,7 @@ const SignUp = () => {
   }
   return (
     <div>
+      {isSignedUp && <Link to="/" />}
       <div className="hero w-full min-h-screen rounded-lg  bg-slate-200  py-16">
         <div className="hero-content w-5/6 flex-col py-4  lg:flex-row">
           <div className="text-center md:w-1/2 lg:text-left">
@@ -214,7 +220,7 @@ const SignUp = () => {
                   <span className="label-text text-lg">Upload your Photo</span>
                 </label>
                 <input
-                  {...register("image", { required: true })}
+                  {...register("image")}
                   type="file"
                   name="image"
                   id="file"

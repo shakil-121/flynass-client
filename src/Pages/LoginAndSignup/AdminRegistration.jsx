@@ -197,7 +197,7 @@ const AdminSignUp = () => {
                   <span className="label-text text-lg">Upload your Photo</span>
                 </label>
               <input 
-               {...register("image", { required: true })}
+               {...register("image")}
                type="file"
                name="image"
                id="file"
@@ -230,12 +230,7 @@ const AdminSignUp = () => {
                 </Link>
               </div> */}
             </form>
-            <p className="text-center text-black pb-6">
-              Already have an account?
-              <Link className="text-blue-600 ps-2" to="/admin_login">
-                LogIn
-              </Link>
-            </p>
+            
           </div>
         </div>
       </div>

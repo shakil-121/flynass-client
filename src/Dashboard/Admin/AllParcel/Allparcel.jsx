@@ -131,7 +131,9 @@ const AllParcel = () => {
                         text: "Status update successfully",
                         icon: "success",
                         confirmButtonText: "Ok",
-                    });
+                    }); 
+                    // Clear the selected parcels after successful status update
+                    setSelectedParcels([]);
                 }
                 refetch();
             })
