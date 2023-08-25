@@ -1856,6 +1856,17 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   />
                 </div>
               </div>
+              <div>
+                <div className="form-control text-black">
+                  <input
+                    type="text"
+                    placeholder="Merchant Name"
+                    defaultValue={userInfo?.merchant_name}
+                    className="input input-bordered"
+                    {...register("merchant_name")}
+                  />
+                </div>
+              </div>
             </div>
             <div className="flex flex-col gap-5">
               {currentThana ? (

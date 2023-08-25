@@ -56,7 +56,8 @@ const SignUp = () => {
             bank_name:"N/A",
             branch_name:"N/A",
             payment_method:"N/A",
-            routing_number:"N/A"
+            routing_number:"N/A",
+            merchant_name:"N/A",
           };
           //   console.log(userInfo);
 
