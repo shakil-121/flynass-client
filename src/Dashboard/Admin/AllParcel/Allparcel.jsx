@@ -60,7 +60,7 @@ const AllParcel = () => {
     // Filter parcels based on their status
     const pending = allParce.filter(item => item.status === "pending");
     const picked = allParce.filter(item => item.status === "picked");
-    const onWay = allParce.filter(item => item.status === "On The Way");
+    const onWay = allParce.filter(item => item.status === "on the way");
     const hold = allParce.filter(item => item.status === "hold");
 
     // State to hold the filtered parcels based on search text
@@ -161,10 +161,10 @@ const AllParcel = () => {
                                     <li onClick={() => handleStatusUpdateForSelected('returned to merchant')}><a>Return to Merchant</a></li>
                                 </ul>
                             </div>
-                            <p className='ps-3 text-sm font-medium'>Pending: {pending.length}</p>
-                            <p className='ps-3 text-sm font-medium'>Picked: {picked.length}</p>
-                            <p className='ps-3 text-sm font-medium'>On The Way: {onWay.length}</p>
-                            <p className='ps-3 text-sm font-medium'>Hold: {hold.length}</p>
+                            <p className='ps-3 text-sm font-medium'>Pending: {pending?.length}</p>
+                            <p className='ps-3 text-sm font-medium'>Picked: {picked?.length}</p>
+                            <p className='ps-3 text-sm font-medium'>On The Way: {onWay?.length}</p>
+                            <p className='ps-3 text-sm font-medium'>Hold: {hold?.length}</p>
                         </div>
                         <div className='flex'>
                             <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />

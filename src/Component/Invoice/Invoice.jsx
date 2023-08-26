@@ -58,7 +58,7 @@ const Invoice = () => {
                         <h2 className='text-2xl font-serif mb-3'>Thana: <span>{invoiceParcel?.thana}</span></h2>
                         <div className='flex justify-between'>
                             <h2 className='text-2xl font-serif mb-3'>District: <span>{invoiceParcel?.district}</span></h2>
-                            <h2 className='text-2xl font-serif mb-3'>Merchant Name: <span>{invoiceParcel?.district}</span></h2>
+                            <h2 className='text-2xl font-serif mb-3'>Merchant Name: <span>{invoiceParcel?.merchant_name}</span></h2>
                         </div>
                         <h2 className='text-2xl font-serif mb-3'>Customer Address: <span>{invoiceParcel?.to_address}</span></h2>
                         <h2 className='text-2xl font-serif mb-3'>Parcel Amount: <span>{invoiceParcel?.product_amount}Tk.</span></h2>
