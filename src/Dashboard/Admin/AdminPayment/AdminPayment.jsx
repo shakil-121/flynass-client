@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useParcel from '../../../Hooks/useParcel';
 import Swal from 'sweetalert2';
 import { baseUrl } from '../../../config/api';
@@ -50,10 +50,34 @@ const AdminPayment = () => {
                 refetch();
             });
     };
+    
+    // State to hold the search text
+    const [searchText, setSearchText] = useState("");
+   // State to hold the filtered parcels based on search text
+   const [searchedParcel, setSearchedParcel] = useState([]);
+     // Function to handle the search of parcels based on the search text
+     const handleSearch = () => {
+        fetch(`${baseUrl}/orders/${searchText}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                // Update the 'searchedParcel' state with the fetched data
+                setSearchedParcel(data);
+            });
+    }; 
+
+     // Determine which parcels to show based on the search result
+     const parcelsToShow = searchedParcel.length > 0 ? searchedParcel : history;
 
     return (
         <div className='px-5 mt-3'>
             <h1 className='text-3xl font-pppins mb-3'>Payment Pending</h1>
+
+            <div className='flex my-6'>
+                            <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Enter Name / TrackingID / Phone / Email" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                            <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Search Now</button>
+                        </div>
+
             <div className='h-[90vh]  overflow-auto'>
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <tr className='text-center text-black grid md:grid-cols-8 sticky top-0'>
@@ -68,7 +92,7 @@ const AdminPayment = () => {
                     </tr>
                 </table>
                 {
-                    history.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-8 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin mt-1' key={parcel._id}>
+                    parcelsToShow.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-8 mb-3 justify-items-center items-center shadow-lg text-sm font-josefin mt-1' key={parcel._id}>
                         <td>{index + 1}</td>
                         <td>{parcel.date}</td>
                         <td>{parcel.merchant_name}</td>

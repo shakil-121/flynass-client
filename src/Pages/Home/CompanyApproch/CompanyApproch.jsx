@@ -57,7 +57,7 @@ const CompanyApproch = () => {
               <img className="w-20" src={avatar} alt="" />
               <div>
                 <h1 className="md:text-6xl text-4xl font-bold mb-3">
-                  <CountUp end={150}  duration={10}/>+
+                  <CountUp end={15}  duration={10}/>+
                 </h1>
                 <h3 className="text-2xl font-bold">Professional Staff</h3>
               </div>
@@ -72,7 +72,7 @@ const CompanyApproch = () => {
             <div className="flex items-center gap-5">
               <img className="w-20" src={Tech} alt="" />
               <div>
-                <h1 className="md:text-6xl text-4xl font-bold mb-3"> <CountUp end={150}  duration={10}/>+</h1>
+                <h1 className="md:text-6xl text-4xl font-bold mb-3"> <CountUp end={10}  duration={10}/>+</h1>
                 <h3 className="text-2xl font-bold">Technology & Media</h3>
               </div>
             </div>
