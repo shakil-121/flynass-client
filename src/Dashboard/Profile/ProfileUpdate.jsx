@@ -26,7 +26,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
     ];
 
     const handleUpdateProfile = event => {
-        // event.preventDefault();
+        event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const merchant_name = form.merchant_name.value;
@@ -37,8 +37,9 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const branch_name = form.branch_name?.value;
         const payment_method = form.payment_method?.value;
         const routing_number = form.routing_number?.value;
-        // console.log(address);
-        const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number }
+        const account_holder = form.account_holder?.value;
+        const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number, account_holder }
+        console.log(updateProfileInfo);
 
         console.log(updateProfileInfo)
         fetch(`${baseUrl}/user/update/${userInfo._id}`, {
@@ -62,12 +63,12 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
     }
 
     return (
-        <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center'>
+        <div className='h-[90vh] overflow-hidden fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center mt-2'>
             <div className='w-full md:w-[600px] flex flex-col  rounded-lg'>
                 <button onClick={() => onClose()} className="btn btn-circle btn-outline border-black place-self-end">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
-                <div className='bg-[#1E62D4] rounded-md p-10'>
+                <div className='bg-[#1E62D4] rounded-md p-10 overflow-x-auto'>
                     <h1 className='text-white text-3xl font-pppins'>Update Your Profile</h1>
                     <div>
                         <form onSubmit={handleUpdateProfile}>
@@ -81,7 +82,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                             <div className='grid grid-cols-2 gap-2'>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Your Name</label>
-                                    <input type='text' name="name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder={userInfo.name} />
+                                    <input type='text' name="name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' defaultValue={userInfo.name} />
                                 </div>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Phone</label>
@@ -89,7 +90,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                 </div>
                             </div>
                             <div className='mb-4'>
-                                <label className='block text-sm font-bold text-white'>Merchant Name</label>
+                                <label className='block text-sm font-bold text-white '>Merchant Name</label>
                                 <input type='text' name="merchant_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Merhcant Name' defaultValue={userInfo.merchant_name} />
                             </div>
                             <div className='mb-4'>
@@ -126,11 +127,15 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                     </div>
                                     <div className='mb-4'>
                                         <label className='block text-sm font-bold text-white'>Branch Name</label>
-                                        <input type='text' name="branch_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Branch Name' required />
+                                        <input type='text' name="branch_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Branch Name' required />
                                     </div>
                                     <div className='mb-4'>
                                         <label className='block text-sm font-bold text-white'>Routing Nunber</label>
                                         <input type='text' name="routing_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Routing Number' required />
+                                    </div>
+                                    <div className='mb-4'>
+                                        <label className='block text-sm font-bold text-white'>Account Holder</label>
+                                        <input type='text' name="account_holder" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Account Holder Name' defaultValue={userInfo.account_holder} required />
                                     </div>
                                 </div>
                             }

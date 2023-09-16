@@ -15,7 +15,7 @@ const UserInformation = ({ isVisible, onClose, allUsers }) => {
                 </button>
                 <div className='h-[90vh] overflow-auto bg-[#1E62D4] p-5 rounded-md'>
                     <h1 className='text-center font-pppins text-3xl mb-8 text-white flex items-center justify-center gap-3'>Information Card<FaIdCard /> </h1>
-                    <div className='flex flex-col gap-y-3 text-white text-center'>
+                    <div className='flex flex-col gap-y-3 text-white text-left'>
                         <img className='w-48 rounded-md mx-auto' src={singleUser?.image} alt="" />
                         <h1 className='text-xl font-semibold'><span className='text-2xl font-pppins'>Merchant ID:</span> {singleUser?._id}</h1>
                         <div className='grid grid-cols-2 gap-2'>
@@ -34,8 +34,13 @@ const UserInformation = ({ isVisible, onClose, allUsers }) => {
                             <h1 className='text-xl font-semibold'><span className='text-xl font-pppins'>Bank Name:</span> {singleUser?.bank_name}</h1>
                             <h1 className='text-xl font-semibold'><span className='text-xl font-pppins'>Branch Name:</span> {singleUser?.branch_name}</h1>
                         </div>
+
                         <div className='grid grid-cols-2 gap-2'>
                             <h1 className='text-xl font-semibold'><span className='text-xl font-pppins'>Routing Number:</span> {singleUser?.routing_number}</h1>
+                            <h1 className='text-sm font-semibold'><span className='text-xl font-pppins'>Account Holder:</span> {singleUser?.account_holder}</h1>
+                        </div>
+
+                        <div className='grid grid-cols-2 gap-2'>
                             <h1 className='text-sm font-semibold'><span className='text-xl font-pppins'>Address:</span> {singleUser?.address}</h1>
                         </div>
                     </div>
