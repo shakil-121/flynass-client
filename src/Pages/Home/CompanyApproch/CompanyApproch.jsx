@@ -18,7 +18,7 @@ const CompanyApproch = () => {
           <SectionTitle
             className="text-left"
             subHeading="Company Approch"
-            heading="Reliable Parcel Delivery  Solutions"
+            heading="Reliable Courier Delivery  Solutions"
           ></SectionTitle>
           {/* <p className="mb-10">
             Lorem Ipsum is simply dummy text of the printing and typesetting
