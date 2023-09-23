@@ -38,8 +38,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const payment_method = form.payment_method?.value;
         const routing_number = form.routing_number?.value;
         const account_holder = form.account_holder?.value;
-        const test = form.test?.value;
-        const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number, account_holder, test }
+        const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number, account_holder }
         console.log(updateProfileInfo);
         fetch(`${baseUrl}/user/update/${userInfo._id}`, {
             method: 'PUT',
@@ -90,7 +89,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                             </div>
                             <div className='mb-4'>
                                 <label className='block text-sm font-bold text-white '>Merchant Name</label>
-                                <input type='text' name="merchant_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Merhcant Name' required />
+                                <input type='text' name="merchant_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Merhcant Name' defaultValue={userInfo.merchant_name} required />
                             </div>
                             <div className='mb-4'>
                                 <label className='block text-sm font-bold text-white'>Address</label>
@@ -114,11 +113,6 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Account Number</label>
                                     <input type='text' name="account_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Account Number' required />
-                                </div>
-
-                                <div className='mb-4'>
-                                    <label className='block text-sm font-bold text-white'>test</label>
-                                    <input type='text' name="test" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='test' required />
                                 </div>
 
                             </div>
