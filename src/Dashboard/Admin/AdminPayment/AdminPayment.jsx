@@ -7,6 +7,7 @@ const AdminPayment = () => {
     const [allParcel, refetch] = useParcel();
 
     const history = allParcel.filter(item => item.status === "delivered" && item.payment_status === "due" || item.status === "returned" && item.payment_status === "due");
+    console.log(history);
 
     const handlePaymentStatus = id => {
         fetch(`${baseUrl}/order/payment/${id}`, {
@@ -50,13 +51,13 @@ const AdminPayment = () => {
                 refetch();
             });
     };
-    
+
     // State to hold the search text
     const [searchText, setSearchText] = useState("");
-   // State to hold the filtered parcels based on search text
-   const [searchedParcel, setSearchedParcel] = useState([]);
-     // Function to handle the search of parcels based on the search text
-     const handleSearch = () => {
+    // State to hold the filtered parcels based on search text
+    const [searchedParcel, setSearchedParcel] = useState([]);
+    // Function to handle the search of parcels based on the search text
+    const handleSearch = () => {
         fetch(`${baseUrl}/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
@@ -64,19 +65,19 @@ const AdminPayment = () => {
                 // Update the 'searchedParcel' state with the fetched data
                 setSearchedParcel(data);
             });
-    }; 
+    };
 
-     // Determine which parcels to show based on the search result
-     const parcelsToShow = searchedParcel.length > 0 ? searchedParcel : history;
+    // Determine which parcels to show based on the search result
+    const parcelsToShow = searchedParcel.length > 0 ? searchedParcel : history;
 
     return (
         <div className='px-5 mt-3'>
             <h1 className='text-3xl font-pppins mb-3'>Payment Pending</h1>
 
             <div className='flex my-6'>
-                            <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Enter Name / TrackingID / Phone / Email" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
-                            <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Search Now</button>
-                        </div>
+                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Enter Name / TrackingID / Phone / Email" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Search Now</button>
+            </div>
 
             <div className='h-[90vh]  overflow-auto'>
                 <table className="table table-xs table-pin-rows table-pin-cols">

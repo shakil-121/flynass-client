@@ -91,7 +91,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                             </div>
                             <div className='mb-4'>
                                 <label className='block text-sm font-bold text-white '>Merchant Name</label>
-                                <input type='text' name="merchant_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Merhcant Name' defaultValue={userInfo.merchant_name} />
+                                <input type='text' name="merchant_name" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Merhcant Name' defaultValue={userInfo.merchant_name} required />
                             </div>
                             <div className='mb-4'>
                                 <label className='block text-sm font-bold text-white'>Address</label>

@@ -75,6 +75,7 @@ const MyParclel = () => {
                                     <p>{parcel.to_address}</p>
                                     <p>{parcel.district}</p>
                                     <p>{parcel.thana}</p>
+                                    <p>{parcel.phone}</p>
                                 </td>
                                 <td className='flex flex-col text-sm'>
                                     <small>delivery - {parcel.delivary_Charge}TK</small>
