@@ -40,8 +40,6 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const account_holder = form.account_holder?.value;
         const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number, account_holder }
         console.log(updateProfileInfo);
-
-        console.log(updateProfileInfo)
         fetch(`${baseUrl}/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
