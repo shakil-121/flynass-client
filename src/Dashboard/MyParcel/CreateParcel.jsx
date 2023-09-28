@@ -1394,7 +1394,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </div>
                 )}
 
-                {currentDistrict === "Khulna " && (
+                {currentDistrict === "Khulna" && (
                   <div>
                     <Select
                       options={Khulna}
@@ -1406,7 +1406,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   </div>
                 )}
 
-                {currentDistrict === "Kishoreganj  " && (
+                {/* {currentDistrict === "Kishoreganj  " && (
                   <div>
                     <Select
                       options={Kishoreganj}
@@ -1416,7 +1416,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                       required
                     />
                   </div>
-                )}
+                )} */}
 
                 {currentDistrict === "Kurigram" && (
                   <div>
