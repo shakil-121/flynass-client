@@ -72,13 +72,13 @@ const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
                                     <label className="label">
                                         <span className="label-text text-white">Delivery Charge</span>
                                     </label>
-                                    <input type="text" name="delivary_Charge" placeholder={isVisible.delivary_Charge} className="input input-bordered focus:outline-none" />
+                                    <input type="text" name="delivary_Charge" defaultValue={isVisible.delivary_Charge} placeholder="Parcel Delivery Charge" className="input input-bordered focus:outline-none" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-white">COD</span>
                                     </label>
-                                    <input type="text" name="cod" placeholder={isVisible.cod} className="input input-bordered focus:outline-none" />
+                                    <input type="text" name="cod" defaultValue={isVisible.cod} placeholder="Enter Parcel COD" className="input input-bordered focus:outline-none" />
                                 </div>
                             </div>
                             <input className='btn btn-block mt-5' type="submit" value="Update" />
