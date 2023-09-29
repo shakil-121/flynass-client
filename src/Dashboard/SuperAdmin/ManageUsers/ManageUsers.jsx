@@ -68,12 +68,14 @@ const ManageUsers = () => {
                 {
                     TotalMerchant.map((user, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-5 mb-5 justify-items-center items-center shadow-lg  font-josefin p-2' key={user._id}>
                         <td>{index + 1}</td>
-                        <td>{user.name}</td>
-                        <td className='w-[200px]'>{user.email}</td>
-
-                        {/* <td className='m-4 text-sm font-semibold' style={{ whiteSpace: 'pre-wrap', maxHeight: '2em', overflow: 'hidden', maxWidth: '6em', textOverflow: 'ellipsis' }}>
+                        <td className='w-32'>{user.name}</td>
+                        {/* <td className='w-52 overflow-hidden'>
                             {user.email}
                         </td> */}
+
+                        <td className='m-4 text-sm font-semibold' style={{ whiteSpace: 'normal', maxHeight: '2em', overflow: 'hidden' }}>
+                            {user.email}
+                        </td>
 
                         <td>
                             <button onClick={() => setShowModal(user._id)} className="btn bg-blue-800 hover:bg-blue-700 text-white"><FaInfo />Info</button>
