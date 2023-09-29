@@ -174,7 +174,7 @@ const AllParcel = () => {
                 </div>
 
                 <div className='overflow-x-scroll h-[84vh]'>
-                    <table className="table table-xs  table-pin-rows table-pin-cols w-[1200px]2xl:w-full">
+                    <table className="table table-xs  table-pin-rows table-pin-cols w-[1200px] 2xl:w-full">
                         <thead className='bg-gray-400 text-black'>
                             <th>
                                 <label>
