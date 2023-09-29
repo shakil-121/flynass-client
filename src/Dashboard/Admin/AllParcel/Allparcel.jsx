@@ -44,7 +44,7 @@ const AllParcel = () => {
     };
 
     // Function to handle the payment status update of a parcel
-    
+
 
     // Function to handle the search of parcels based on the search text
     const handleSearch = () => {
@@ -131,7 +131,7 @@ const AllParcel = () => {
                         text: "Status update successfully",
                         icon: "success",
                         confirmButtonText: "Ok",
-                    }); 
+                    });
                     // Clear the selected parcels after successful status update
                     setSelectedParcels([]);
                 }
@@ -172,8 +172,9 @@ const AllParcel = () => {
                         </div>
                     </div>
                 </div>
-                <div className='overflow-y-auto h-[84vh]'>
-                    <table className="table table-xs  table-pin-rows table-pin-cols overflow-scroll">
+
+                <div className='overflow-x-scroll h-[84vh]'>
+                    <table className="table table-xs  table-pin-rows table-pin-cols">
                         <thead className='bg-gray-400 text-black'>
                             <th>
                                 <label>
@@ -182,6 +183,9 @@ const AllParcel = () => {
                             </th>
                             <th>Date</th>
                             <th>Status</th>
+
+                            {/* fixing prpblem date 29/09/23 */}
+                            <th>Merchent <br /> Name</th>
                             <th>Tracking <br />
                                 ID
                             </th>
@@ -228,6 +232,11 @@ const AllParcel = () => {
                                                     <li onClick={() => handleStatusUpdate('returned to merchant', parcel._id)}><a>Return to Merchant</a></li>
                                                 </ul>
                                             </div>
+                                        </td>
+
+                                        {/* fixing problem date 29/09/23 */}
+                                        <td className='text-sm font-semibold'>
+                                            {parcel.merchant_name}
                                         </td>
                                         <td className='m-4 text-sm font-semibold' style={{ whiteSpace: 'pre-wrap', maxHeight: '2em', overflow: 'hidden', maxWidth: '6em', textOverflow: 'ellipsis' }}>
                                             {parcel.trackingId}
