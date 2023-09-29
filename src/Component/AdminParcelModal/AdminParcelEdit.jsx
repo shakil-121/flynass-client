@@ -11,10 +11,11 @@ const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
         const from_address = form.from_address.value;
         const to_address = form.to_address.value;
         const delivary_Charge = form.delivary_Charge.value;
+        const product_amount = form.product_amount.value;
         const cod = form.cod.value;
         const total_amount = parseFloat(delivary_Charge) + parseFloat(cod);
         const payable_amount = parseFloat(isVisible?.product_amount) - total_amount;
-        const updateInformation = { from_address, to_address, delivary_Charge, cod, total_amount, payable_amount };
+        const updateInformation = { from_address, to_address, delivary_Charge, cod, total_amount, payable_amount, product_amount};
 
         console.log(updateInformation);
         Swal.fire({
@@ -66,6 +67,12 @@ const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
                                     <span className="label-text text-white">Customer Address</span>
                                 </label>
                                 <input type="text" name="to_address" defaultValue={isVisible.to_address} className="input input-bordered focus:outline-none" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text text-white">Parcel Amount</span>
+                                </label>
+                                <input type="text" name="product_amount" defaultValue={isVisible.product_amount}  className="input input-bordered focus:outline-none" />
                             </div>
                             <div className='grid grid-cols-2 gap-3'>
                                 <div className="form-control">
