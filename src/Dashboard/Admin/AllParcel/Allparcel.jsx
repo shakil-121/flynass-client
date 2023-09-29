@@ -174,7 +174,7 @@ const AllParcel = () => {
                 </div>
 
                 <div className='overflow-x-scroll h-[84vh]'>
-                    <table className="table table-xs  table-pin-rows table-pin-cols">
+                    <table className="table table-xs  table-pin-rows table-pin-cols w-[1200px]">
                         <thead className='bg-gray-400 text-black'>
                             <th>
                                 <label>
@@ -250,12 +250,13 @@ const AllParcel = () => {
                                                 <span>COD - {parcel.cod}Tk</span>
                                             </div>
                                         </td>
-                                        <td className='text-sm'>
+                                        <td className='text-sm w-[200px]'>
                                             <div className='flex flex-col gap-1'>
-                                                <small>{parcel.name}</small>
-                                                <small>{parcel.phone}</small>
-                                                <small>{parcel.district}</small>
-                                                <small>{parcel.thana}</small>
+                                                <small><span className='font-semibold'>Customer Name:</span> {parcel.name}</small>
+                                                <small><span className='font-semibold'>Customer Phone: </span>{parcel.phone}</small>
+                                                <small><span className='font-semibold'>Customer District: </span>{parcel.district}</small>
+                                                <small><span className='font-semibold'>Customer Thana: </span>{parcel.thana}</small>
+                                                <small><span className='font-semibold'>Customer Address: </span>{parcel.to_address}</small>
                                             </div>
                                         </td>
                                         <td className='text-sm'>
