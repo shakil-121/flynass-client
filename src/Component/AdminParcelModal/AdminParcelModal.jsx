@@ -62,10 +62,11 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
                     </div>
                     <div className='h-[70vh] w-[70vw] overflow-auto'>
                         <table className="table table-xs table-pin-rows table-pin-cols">
-                            <tr className='text-center bg-gray-400 text-black grid md:grid-cols-7'>
+                            <tr className='text-center bg-gray-400 text-black grid md:grid-cols-8'>
                                 <th>No.</th>
                                 <th>Date</th>
                                 <th>Trackin ID</th>
+                                <th>Merchant Name</th>
                                 <th>Parcel Amount</th>
                                 <th>Delivery Charge</th>
                                 <th>Edit</th>
@@ -73,11 +74,14 @@ const AdminParcelModal = ({ isVisible, orders, onClose, refetch }) => {
                             </tr>
                         </table>
                         {
-                            isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-7 mb-2 justify-items-center items-center shadow-lg text-sm font-josefin' key={parcel._id}>
+                            isVisible.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md grid md:grid-cols-8 mb-2 justify-items-center items-center shadow-lg text-sm font-josefin' key={parcel._id}>
                                 <td>{index + 1}</td>
                                 <td>{parcel.date}</td>
                                 <td className='m-4 font-semibold' style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxHeight: '3em', textOverflow: 'ellipsis' }}>
                                     {parcel.trackingId}
+                                </td>
+                                <td className='font-semibold'>
+                                    <p>{parcel.merchant_name}</p>
                                 </td>
                                 <td className='font-semibold'>
                                     <p>{parcel.product_amount}Tk</p>
