@@ -49,7 +49,7 @@ const MyParclel = () => {
             <div className="mt-10 h-[80vh] overflow-scroll">
                 <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
                 <table className="table table-xs table-pin-rows table-pin-cols">
-                    <thead className='text-center bg-gray-400 text-black text-sm'>
+                    <thead className=' bg-gray-400 text-black text-sm'>
                         <th>No.</th>
                         <th>Date</th>
                         <th>Trackin ID</th>
@@ -61,25 +61,34 @@ const MyParclel = () => {
                     </thead>
                     <tbody>
                         {
-                            myParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg text-center border-y-8 border-white p-20' key={parcel._id}>
+                            myParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-sm'>{index + 1}</td>
                                 <td className='text-sm'>{parcel.date}</td>
                                 <td className='m-4 text-sm font-semibold' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>
                                     {parcel.trackingId}
                                 </td>
                                 <td className='text-sm font-semibold'>
-                                    <p>{parcel.product_amount}Tk</p>
+                                    <p>{parcel.product_amount} Tk</p>
                                 </td>
-                                <td className='m-4 text-sm text-left' style={{ width: '180px', overflow: 'hidden', wordWrap: 'break-word' }}>
+                                {/* <td className='m-4 text-sm text-left' style={{ width: '180px', overflow: 'hidden', wordWrap: 'break-word' }}>
                                     <p>{parcel.name}</p>
                                     <p>{parcel.to_address}</p>
                                     <p>{parcel.district}</p>
                                     <p>{parcel.thana}</p>
                                     <p>{parcel.phone}</p>
+                                </td> */}
+                                <td className='text-sm w-[200px]'>
+                                    <div className='flex flex-col gap-1'>
+                                        <small><span className='font-bold'>Customer Name:</span> {parcel.name}</small>
+                                        <small><span className='font-bold'>Customer Phone: </span>{parcel.phone}</small>
+                                        <small><span className='font-bold'>Customer District: </span>{parcel.district}</small>
+                                        <small><span className='font-bold'>Customer Thana: </span>{parcel.thana}</small>
+                                        <small><span className='font-bold'>Customer Address: </span>{parcel.to_address}</small>
+                                    </div>
                                 </td>
-                                <td className='flex flex-col text-sm'>
-                                    <small>delivery - {parcel.delivary_Charge}TK</small>
-                                    <small>cod {parcel.cod}TK</small>
+                                <td className='text-[14px] font-semibold'>
+                                    <p>delivery - {parcel.delivary_Charge}TK</p>
+                                    <p>cod {parcel.cod}TK</p>
                                 </td>
                                 <td className='text-sm'>
                                     <div className='flex flex-col gap-1'>

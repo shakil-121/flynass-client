@@ -103,6 +103,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                             options={selectedMethod}
                                             // defaultValue={currentDistrict} 
                                             name="payment_method"
+                                            defaultInputValue={userInfo.payment_method}
                                             placeholder="Select Payment Method"
                                             onChange={handleSelectedPMethod}
                                             isSearchable
@@ -112,7 +113,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                                 </div>
                                 <div className='mb-4'>
                                     <label className='block text-sm font-bold text-white'>Account Number</label>
-                                    <input type='text' name="account_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder='Account Number' required />
+                                    <input type='text' name="account_number" className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' defaultValue={userInfo.account_number} required />
                                 </div>
 
                             </div>

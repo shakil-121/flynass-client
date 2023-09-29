@@ -29,9 +29,9 @@ const Services = () => {
           <span className="font-bold text-xl">
             ● Dhaka Suburbs Delivery:
           </span>{" "}
-          Narayanganj ,Tongi, Gazipur, Savar, Ashulia.
+          Narayanganj ,Tongi, Gazipur, Savar, Ashulia with in 24-48 hours.
           <br />
-          <span className="font-bold text-xl">● Outside Dhaka Delivery :</span> All over Bangladesh <br />
+          <span className="font-bold text-xl">● Outside Dhaka Delivery :</span> All over Bangladesh with in 3-4 days<br />
           <span className="font-bold text-xl"> ● Cash on Delivery:</span> We also make sure the outstanding price which will be paid
           by your customer & collected by our trustworthy delivery agents and
           delivered right to you. <br />
