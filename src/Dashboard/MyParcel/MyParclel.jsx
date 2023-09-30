@@ -8,7 +8,13 @@ import { baseUrl } from '../../config/api';
 
 const MyParclel = () => {
     const [showModal, setShowModal] = useState(false);
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext); 
+
+      // State to hold the search text
+      const [searchText, setSearchText] = useState("");
+        // State to hold the filtered parcels based on search text
+     const [searchedParcel, setSearchedParcel] = useState([]);
+
     console.log(user);
     const { data: merchantParcel = [], isLoading, refetch } = useQuery(['order'], async () => {
         const res = await fetch(`${baseUrl}/user/order/${user?.email}`)
@@ -44,15 +50,42 @@ const MyParclel = () => {
     if (isLoading) {
         return <div>Loading...</div>; // Show a loading state while data is being fetched
     }
+
+
+        // Function to handle the search of parcels based on the search text
+    const handleSearch = () => {
+        fetch(`${baseUrl}/orders/${searchText}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                // Update the 'searchedParcel' state with the fetched data
+                setSearchedParcel(data);
+            });
+    };  
+
+    
+
+    // Determine which parcels to show based on the search result
+    const parcelsToShow = searchedParcel.length > 0 ? searchedParcel : myParcel; 
+     
+    
+   
+
     return (
         <div>
             <div className="mt-10 h-[80vh] overflow-scroll">
-                <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
+               <div className='flex my-3 justify-between'>
+               <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
+               <div className='flex'>
+                            <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID / Cus.Phone" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                            <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#f8417b] border-none'>Live Tracking</button>
+                        </div>
+               </div>
                 <table className="table table-xs table-pin-rows table-pin-cols">
                     <thead className=' bg-gray-400 text-black text-sm'>
                         <th>No.</th>
                         <th>Date</th>
-                        <th>Trackin ID</th>
+                        <th>Tracking ID</th>
                         <th>Parcel Amount</th>
                         <th>Destination</th>
                         <th>Delivery Charge</th>
@@ -61,7 +94,7 @@ const MyParclel = () => {
                     </thead>
                     <tbody>
                         {
-                            myParcel.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
+                            parcelsToShow.map((parcel, index) => <tr className='bg-[#EEEEEE] rounded-md mb-5 shadow-lg border-y-8 border-white p-20' key={parcel._id}>
                                 <td className='text-sm'>{index + 1}</td>
                                 <td className='text-sm'>{parcel.date}</td>
                                 <td className='m-4 text-sm font-semibold' style={{ width: '20px', overflow: 'hidden', wordWrap: 'break-word' }}>

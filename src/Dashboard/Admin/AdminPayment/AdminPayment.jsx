@@ -75,7 +75,7 @@ const AdminPayment = () => {
             <h1 className='text-3xl font-pppins mb-3'>Payment Pending</h1>
 
             <div className='flex my-6'>
-                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Enter Name / TrackingID / Phone / Email" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Merchant Name / TrackingID / Phone / Email" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
                 <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Search Now</button>
             </div>
 

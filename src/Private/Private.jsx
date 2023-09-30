@@ -4,6 +4,7 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import loading from "../../public/loading.json";
 
+
 const Private = ({ children }) => {
     const { user, loadding } = useAuth()
     const navigate = useNavigate();
