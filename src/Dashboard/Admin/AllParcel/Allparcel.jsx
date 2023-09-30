@@ -167,7 +167,7 @@ const AllParcel = () => {
                             <p className='ps-3 text-sm font-medium'>Hold: {hold?.length}</p>
                         </div>
                         <div className='flex'>
-                            <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
+                            <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tra.ID/Mer.Name/Phone" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
                             <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#1E62D4] border-none'>Track Now</button>
                         </div>
                     </div>
