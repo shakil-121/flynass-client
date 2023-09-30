@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import animation from "../../assets/all-animation/93796-door-delivery.json";
@@ -22,6 +23,7 @@ import { baseUrl } from "../../config/api";
 const SignUp = () => {
   const [singupError, setSingupError] = useState();
   const [isSignedUp, setIsSignedUp] = useState(false);
+  const navigate = useNavigate()
   useTitle("Registration")
   const { createAccount, googleLogin } = useContext(AuthContext);
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${imgHosting_token}`;
@@ -65,7 +67,7 @@ const SignUp = () => {
             .then((result) => {
               const loggedUser = result.user;
               updateProfiledata(loggedUser, data.name, imgUrl);
-              toast("Account Create Successfully !")
+              toast("Account Create Successfully !");
               console.log(result);
               console.log(userInfo);
               fetch(`${baseUrl}/users`, {
@@ -76,6 +78,7 @@ const SignUp = () => {
                 body: JSON.stringify(userInfo)
               })
               setIsSignedUp(true);
+              navigate("/");
             })
             .catch((error) => {
               // Handle specific error cases
@@ -90,6 +93,7 @@ const SignUp = () => {
               }
             });
         }
+
       });
   };
 
