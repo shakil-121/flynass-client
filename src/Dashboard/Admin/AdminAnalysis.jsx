@@ -42,6 +42,7 @@ const AdminAnalysis = () => {
   const hold = parcel.filter(item => item.status === "hold");
   const delivered = parcel.filter(item => item.status === "delivered");
   const returned = parcel.filter(item => item.status === "returned");
+  const inTransit = parcel.filter(item => item.status === "in transit");
   const returnedToMerchant = parcel.filter(item => item.status === "returned to merchant");
   const reject = parcel.filter(item => item.status === "rejected");
   const payableAmount = parcel.filter(item => item.status === "delivered" && item.payment_status === "due");
@@ -142,6 +143,14 @@ const AdminAnalysis = () => {
             <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
               <h1 className='text-gray-400'>Returned Parcel</h1>
               <h1 className='text-blue-800'>{returned?.length}</h1>
+            </div>
+          </button>
+        </div>
+        <div>
+          <button onClick={() => setShowModal(inTransit)} className='w-full'>
+            <div className='bg-[#E8F6FC] text-2xl font-pppins rounded-lg text-center py-10'>
+              <h1 className='text-gray-400'>In Transit Parcel</h1>
+              <h1 className='text-blue-800'>{inTransit?.length}</h1>
             </div>
           </button>
         </div>

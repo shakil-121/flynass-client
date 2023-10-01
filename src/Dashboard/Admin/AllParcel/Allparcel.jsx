@@ -158,6 +158,7 @@ const AllParcel = () => {
                                     <li onClick={() => handleStatusUpdateForSelected('delivered')}><a>Delivered</a></li>
                                     <li onClick={() => handleStatusUpdateForSelected('hold')}><a>Hold</a></li>
                                     <li onClick={() => handleStatusUpdateForSelected('returned')}><a>Return</a></li>
+                                    <li onClick={() => handleStatusUpdateForSelected('in transit')}><a>In Transit</a></li>
                                     <li onClick={() => handleStatusUpdateForSelected('returned to merchant')}><a>Return to Merchant</a></li>
                                 </ul>
                             </div>
@@ -229,6 +230,7 @@ const AllParcel = () => {
                                                     <li onClick={() => handleStatusUpdate('delivered', parcel._id)}><a>Delivered</a></li>
                                                     <li onClick={() => handleStatusUpdate('hold', parcel._id)}><a>Hold</a></li>
                                                     <li onClick={() => handleStatusUpdate('returned', parcel._id)}><a>Return</a></li>
+                                                    <li onClick={() => handleStatusUpdate('in transit', parcel._id)}><a>In Transit</a></li>
                                                     <li onClick={() => handleStatusUpdate('returned to merchant', parcel._id)}><a>Return to Merchant</a></li>
                                                 </ul>
                                             </div>
