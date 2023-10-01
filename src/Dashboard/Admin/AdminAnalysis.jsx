@@ -182,7 +182,7 @@ const AdminAnalysis = () => {
                 {
                   total_due_amount ?
                     <>
-                      {total_due_amount} TK
+                      {(total_due_amount).toFixed(2)} TK
                     </>
                     :
                     <>00.00TK</>
