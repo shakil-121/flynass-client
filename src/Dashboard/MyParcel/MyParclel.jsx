@@ -13,7 +13,8 @@ const MyParclel = () => {
       // State to hold the search text
       const [searchText, setSearchText] = useState("");
         // State to hold the filtered parcels based on search text
-     const [searchedParcel, setSearchedParcel] = useState([]);
+     const [searchedParcel, setSearchedParcel] = useState([]); 
+
 
     console.log(user);
     const { data: merchantParcel = [], isLoading, refetch } = useQuery(['order'], async () => {
@@ -59,8 +60,9 @@ const MyParclel = () => {
             .then((data) => {
                 console.log(data);
                 // Update the 'searchedParcel' state with the fetched data
-                setSearchedParcel(data);
-            });
+                setSearchedParcel(data); 
+            }); 
+            
     };  
 
     
@@ -69,8 +71,6 @@ const MyParclel = () => {
     const parcelsToShow = searchedParcel.length > 0 ? searchedParcel : myParcel; 
      
     
-   
-
     return (
         <div>
             <div className="mt-10 h-[80vh] overflow-scroll">
@@ -78,7 +78,9 @@ const MyParclel = () => {
                <h1 className='text-3xl font-pppins mb-3'>My Parcel</h1>
                <div className='flex'>
                             <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Tracking ID / Cus.Phone" className="input input-bordered w-full max-w-xs rounded-tr-none rounded-br-none focus:outline-none" />
-                            <button onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#f8417b] border-none'>Live Tracking</button>
+                            <button 
+                            disabled={!searchText}
+                             onClick={handleSearch} className='btn rounded-tl-none rounded-bl-none bg-[#1E62D4] text-white hover:bg-[#f8417b] border-none'>Live Tracking</button>
                         </div>
                </div>
                 <table className="table table-xs table-pin-rows table-pin-cols">
