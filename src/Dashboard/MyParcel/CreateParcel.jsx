@@ -1874,7 +1874,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
                   <div className="form-control mt-5">
                     <input
                       onChange={handleParcelAmount}
-                      type="text"
+                      type="number"
                       placeholder="Amount"
                       className="input input-bordered text-black"
                       // {...register("product_amount", { required: true })}

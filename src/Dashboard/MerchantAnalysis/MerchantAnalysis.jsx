@@ -35,6 +35,7 @@ const MerchantAnalysis = () => {
   const picked = parcel.filter((item) => item.status === "picked");
   const onWay = parcel.filter((item) => item.status === "on the way");
   const hold = parcel.filter((item) => item.status === "hold");
+  const inTransit = parcel.filter((item) => item.status === "in transit");
   const delivered = parcel.filter((item) => item.status === "delivered");
   const returned = parcel.filter((item) => item.status === "returned");
   const returnedToMerchant = parcel.filter(
@@ -56,8 +57,8 @@ const MerchantAnalysis = () => {
   const cashAmount = cashAmountItems.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // return Amount 
-  const returnItems = parcel.filter(item => item.status === "returned" && item.total_amount);
-  const returnAmount = returnItems.reduce((acc, obj) => acc + obj?.total_amount, 0).toFixed(2);
+  const returnItems = parcel.filter(item => item.status === "returned" && item.delivary_Charge);
+  const returnAmount = returnItems.reduce((acc, obj) => acc + obj?.delivary_Charge, 0).toFixed(2);
 
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;
@@ -117,6 +118,16 @@ const MerchantAnalysis = () => {
             </div>
           </button>
         </div>
+
+        <div>
+          <button onClick={() => setShowModal(inTransit)} className="w-full">
+            <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
+              <h1 className="text-gray-400">In <br />Transit</h1>
+              <h1 className="text-blue-800">{inTransit?.length}</h1>
+            </div>
+          </button>
+        </div>
+
         <div>
           <button onClick={() => setShowModal(delivered)} className="w-full">
             <div className="bg-[#E8F6FC] text-xl font-pppins rounded-lg text-center py-5">
