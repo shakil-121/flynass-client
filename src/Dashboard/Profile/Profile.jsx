@@ -15,7 +15,7 @@ const Profile = () => {
     // console.log(userInfo);
 
     return (
-        <div className='p-10 rounded-md h-full'>
+        <div className='md:p-10 rounded-md h-full mb-5'>
             <div className="flex justify-between">
                 <h1 className='text-4xl font-bold font-pppins'>My Profile</h1>
             </div>
@@ -87,7 +87,7 @@ const Profile = () => {
                         </h4>
                     </div>
 
-                    <div>
+                    <div className="mb-3 text-[#1e62d4] font-semibold">
                         <button onClick={() => setShowModal(true)} className="text-xl md:mt-0 mt-2 font-serif flex items-center"><LiaEdit />Edit Profile</button>
                     </div>
                 </div>
