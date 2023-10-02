@@ -38,7 +38,8 @@ const ParcelModal = ({ isVisible, onClose }) => {
                                     <p className='font-semibold'>{parcel.product_amount}Tk</p>
                                 </td>
                                 <td>
-                                    {parcel.total_amount}Tk
+                                    <p>Delivery - {parcel.delivary_Charge} TK</p>
+                                    <p>COD - {parcel.cod} TK</p>
                                 </td>
                                 <td>
                                     {
