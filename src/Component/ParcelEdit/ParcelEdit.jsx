@@ -13,7 +13,7 @@ const ParcelEdit = ({ isVisible, onClose, invoiceParcel }) => {
         const to_address = form.to_address.value;
         const total_amount = form.total_amount.value;
         const updateInformation = { to_address, total_amount, from_address }
-        console.log(updateInformation);
+        // console.log(updateInformation);
 
         fetch(`${baseUrl}/admin/order/${invoiceParcel._id}`, {
             method: 'PUT',

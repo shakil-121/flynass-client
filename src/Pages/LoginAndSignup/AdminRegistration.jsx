@@ -53,8 +53,8 @@ const AdminSignUp = () => {
               const loggedUser = result.user;
               updateProfiledata(loggedUser, data.name, imgUrl);
               toast("Account Create Successfully !")
-              console.log(result); 
-              console.log(userInfo); 
+              // console.log(result); 
+              // console.log(userInfo); 
               fetch(`${baseUrl}/users`,{
                 method:"POST",
                 headers:{

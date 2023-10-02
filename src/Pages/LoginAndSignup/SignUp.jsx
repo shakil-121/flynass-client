@@ -34,7 +34,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(singupError);
+  // console.log(singupError);
   const onSubmit = (data) => {
     const formData = new FormData();
     formData.append("image", data.image[0]);
@@ -68,8 +68,8 @@ const SignUp = () => {
               const loggedUser = result.user;
               updateProfiledata(loggedUser, data.name, imgUrl);
               toast("Account Create Successfully !");
-              console.log(result);
-              console.log(userInfo);
+              // console.log(result);
+              // console.log(userInfo);
               fetch(`${baseUrl}/users`, {
                 method: "POST",
                 headers: {
@@ -84,7 +84,7 @@ const SignUp = () => {
               // Handle specific error cases
               const errorCode = error.code;
               const errorMessage = error.message;
-              console.log(errorCode);
+              // console.log(errorCode);
               if (errorCode === "auth/weak-password") {
                 setSingupError("Password is too weak. Please provide a stronger password.");
               }

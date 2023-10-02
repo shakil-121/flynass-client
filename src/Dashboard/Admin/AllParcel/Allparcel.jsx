@@ -22,7 +22,7 @@ const AllParcel = () => {
 
     // Function to handle the status update of a parcel
     const handleStatusUpdate = (status, id) => {
-        console.log(status, id);
+        // console.log(status, id);
         const statusUpdate = { status };
         fetch(`${baseUrl}/order/status/${id}`, {
             method: 'PUT',
@@ -51,7 +51,7 @@ const AllParcel = () => {
         fetch(`${baseUrl}/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 // Update the 'searchedParcel' state with the fetched data
                 setSearchedParcel(data);
             });

@@ -30,7 +30,7 @@ const Login = () => {
   const currentUser = allUsers.find(item => item.email === userEmail)
   const role = currentUser?.role;
 
-  console.log(userEmail, role);
+  // console.log(userEmail, role);
 
   // const from=location.state?.from?.pathname || '/dashboard/menu'
   const location = useLocation();

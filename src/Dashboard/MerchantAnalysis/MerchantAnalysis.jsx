@@ -17,7 +17,7 @@ const MerchantAnalysis = () => {
   const [showModal, setShowModal] = useState(false);
   const [parcel, setParcel] = useState([]);
   const { user } = useAuth();
-  console.log(user);
+  // console.log(user);
 
   // const { data: parcel = [], refetch } = useQuery(['orders'], async () => {
   //     const res = await fetch(`http://62.72.29.251:5000/user/order/${user?.email}`)
@@ -29,7 +29,7 @@ const MerchantAnalysis = () => {
       .then((data) => setParcel(data));
   }, [parcel]);
 
-  console.log(parcel);
+  // console.log(parcel);
 
   const pending = parcel.filter((item) => item.status === "pending");
   const picked = parcel.filter((item) => item.status === "picked");

@@ -16,7 +16,7 @@ const MyParclel = () => {
      const [searchedParcel, setSearchedParcel] = useState([]); 
 
 
-    console.log(user);
+    // console.log(user);
     const { data: merchantParcel = [], isLoading, refetch } = useQuery(['order'], async () => {
         const res = await fetch(`${baseUrl}/user/order/${user?.email}`)
         return res.json();
@@ -58,7 +58,7 @@ const MyParclel = () => {
         fetch(`${baseUrl}/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 // Update the 'searchedParcel' state with the fetched data
                 setSearchedParcel(data); 
             }); 

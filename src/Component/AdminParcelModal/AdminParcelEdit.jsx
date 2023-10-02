@@ -17,7 +17,7 @@ const AdminParcelEdit = ({ isVisible, onClose, refetch }) => {
         const payable_amount = parseFloat(isVisible?.product_amount) - total_amount;
         const updateInformation = { from_address, to_address, delivary_Charge, cod, total_amount, payable_amount, product_amount};
 
-        console.log(updateInformation);
+        // console.log(updateInformation);
         Swal.fire({
             title: "Are you sure?",
             text: "You want to be Upadte this parcel Info!",
