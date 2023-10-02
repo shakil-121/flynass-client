@@ -57,8 +57,12 @@ const MerchantAnalysis = () => {
   const cashAmount = cashAmountItems.reduce((acc, obj) => acc + obj?.payable_amount, 0).toFixed(2);
 
   // return Amount 
+  // const returnItems = parcel.filter(item => item.status === "returned" && item.delivary_Charge);
+  // const returnAmount = returnItems.reduce((acc, obj) => acc + obj?.delivary_Charge, 0).toFixed(2);
+
   const returnItems = parcel.filter(item => item.status === "returned" && item.delivary_Charge);
-  const returnAmount = returnItems.reduce((acc, obj) => acc + obj?.delivary_Charge, 0).toFixed(2);
+  const returnAmount = returnItems.reduce((acc, obj) => acc + parseFloat(obj?.delivary_Charge || 0), 0).toFixed(2);
+
 
   // delivery percentage calculation
   const returnParcel = returnedToMerchant.length;
@@ -183,6 +187,7 @@ const MerchantAnalysis = () => {
                   processing ?
                     <>
                       { processing - returnAmount} TK
+                      {/* {processing} TK */}
                     </>
                     :
                     <>00.00TK</>
