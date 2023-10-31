@@ -14,17 +14,14 @@ import FastDelivery from './FastDelivery/FastDelivery';
 const Home = () => { 
     useTitle("Home")
     return (
-        <div>
+        <div> 
            <HeroSection></HeroSection>
            <WhatWeDo/>
            <ChooseUs/>  
            <Support></Support>
-           {/* <RequestAQuote/> */}
-           {/* <Estimation/> */}
            <Respect/>
            <CompanyApproch/>
            <Faq/>
-           {/* <Testimonial/> */}
            <FastDelivery></FastDelivery>
         </div>
     );
