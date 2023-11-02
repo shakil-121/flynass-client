@@ -7,10 +7,10 @@ import UnderDevelopment from '../../Pages/Error/UnderDevelopment';
 const Root = () => {
     return (
         <div>
-            <UnderDevelopment></UnderDevelopment>
-            {/* <NavBar></NavBar>
-           <Outlet/> 
-           <Footer></Footer> */}
+            {/* <UnderDevelopment></UnderDevelopment> */}
+           <NavBar></NavBar>
+            <Outlet/> 
+           <Footer></Footer>
         </div>
     );
 };
