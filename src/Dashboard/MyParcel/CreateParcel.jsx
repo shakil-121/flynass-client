@@ -46,7 +46,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   const newLength = previousLength + 1;
   const onDigitmiddlePart = newLength.toString();
   const fourDigitMiddle = onDigitmiddlePart.padStart(4, "0");
-  // console.log(fourDigitMiddle);
+  
   // const dateString = (`${day}${month}${year}` - "0001" - "FN-HF")
   const formattedDay = String(day).padStart(2, "0");
   const formattedMonth = String(month).padStart(2, "0");
