@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Address = () => {
     const userInfo = useUserInfo();
-    console.log(userInfo);
+    // console.log(userInfo);
     return (
         <div className='md:w-1/2 mt-28'>
             <h1 className='text-xl font-pppins hover:bg-slate-100  py-5 px-5 border-b-2 flex items-center gap-3'><FaHome />{userInfo?.address}</h1>

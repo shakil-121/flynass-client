@@ -28,7 +28,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   // ================================Delivary charge calculation===========
   const handledelivarycharge = (e) => {
     const delivaryCharge = parseFloat(e.value);
-    console.log(delivaryCharge);
+    // console.log(delivaryCharge);
     setDelivaryCharge(delivaryCharge);
   };
 
@@ -55,7 +55,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
   // console.log(`Current date: ${formattedDay}${formattedMonth}${year}`);
   const lastDigit = "FN";
   const trackingId = `${stringDate}-${fourDigitMiddle}-${lastDigit}`;
-  console.log(trackingId);
+  // console.log(trackingId);
 
   const onSubmit = (data) => {
     // const maindata = [`${day}/${month}/${year}`, data.name];
@@ -82,7 +82,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
       special_instruction: data.special_instruction,
       merchant_name: userInfo?.merchant_name
     }
-    console.log(orderInfo)
+    // console.log(orderInfo)
 
     fetch(`${baseUrl}/orders`, {
       method: "POST",
@@ -112,7 +112,7 @@ const CreateParcel = ({ isVisible, onClose }) => {
 
   const handleDistrictOnChange = (e) => {
     // const district = e;
-    console.log(e.value);
+    // console.log(e.value);
     setCurrentDistrict(e.value);
     setCurrentThana("");
     setCod("");
@@ -1966,3 +1966,5 @@ const CreateParcel = ({ isVisible, onClose }) => {
 };
 
 export default CreateParcel;
+
+// rabbi

@@ -32,7 +32,7 @@ const NoticeBoard = () => {
                     });
                 }
                 form.reset();
-                console.log(data);
+                // console.log(data);
             });
     }
     return (

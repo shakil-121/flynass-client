@@ -10,10 +10,10 @@ import { baseUrl } from "../../config/api";
 const ProfileUpdate = ({ isVisible, onClose, user }) => {
     if (!isVisible) return null;
     const userInfo = useUserInfo();
-    console.log(userInfo._id);
+    // console.log(userInfo._id);
     const [methodSeleted, setBankSelected] = useState(null);
 
-    console.log(methodSeleted);
+    // console.log(methodSeleted);
     const handleSelectedPMethod = (e) => {
         const methodSeleted = e.value;
         setBankSelected(methodSeleted);
@@ -39,7 +39,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
         const routing_number = form.routing_number?.value;
         const account_holder = form.account_holder?.value;
         const updateProfileInfo = { name, phone, merchant_name, address, account_number, bank_name, branch_name, payment_method, payment_method, routing_number, account_holder }
-        console.log(updateProfileInfo);
+        // console.log(updateProfileInfo);
         fetch(`${baseUrl}/user/update/${userInfo._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@ const ProfileUpdate = ({ isVisible, onClose, user }) => {
                     });
                 }
                 form.reset();
-                console.log(data);
+                // console.log(data);
             });
     }
 

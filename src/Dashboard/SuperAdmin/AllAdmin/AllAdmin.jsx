@@ -18,7 +18,7 @@ const AllAdmin = () => {
     })
 
     const TotalAdmin = allUsers.filter(admin => admin.role === 'admin');
-    console.log(TotalAdmin);
+    // console.log(TotalAdmin);
 
     const handleAdminDelete = id => {
         Swal.fire({

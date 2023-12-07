@@ -61,7 +61,7 @@ const CSVUpload = () => {
     formData.append('previousLength', previousLength);
     formData.append('from_address', userInfo?.address);
     formData.append('date', date);
-    console.log();
+    // console.log();
 
     axios
       .post(`${baseUrl}/upload`, formData, {
@@ -70,7 +70,7 @@ const CSVUpload = () => {
         },
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         if(response)
         {
           Swal.fire({

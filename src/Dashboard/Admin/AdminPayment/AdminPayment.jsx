@@ -7,7 +7,7 @@ const AdminPayment = () => {
     const [allParcel, refetch] = useParcel();
 
     const history = allParcel.filter(item => item.status === "delivered" && item.payment_status === "due" || item.status === "returned" && item.payment_status === "due");
-    console.log(history);
+    // console.log(history);
 
     const handlePaymentStatus = id => {
         fetch(`${baseUrl}/order/payment/${id}`, {
@@ -31,7 +31,7 @@ const AdminPayment = () => {
 
 
     const handleStatusUpdate = (status, id) => {
-        console.log(status, id);
+        // console.log(status, id);
         const statusUpdate = { status };
         fetch(`${baseUrl}/order/status/${id}`, {
             method: 'PUT',
@@ -61,7 +61,7 @@ const AdminPayment = () => {
         fetch(`${baseUrl}/orders/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 // Update the 'searchedParcel' state with the fetched data
                 setSearchedParcel(data);
             });

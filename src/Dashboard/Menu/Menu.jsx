@@ -9,17 +9,17 @@ import { baseUrl } from '../../config/api';
 
 const Menu = () => {
     const { user, logout } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
 
     const handleLogout = () => {
         logout()
             .then(() => {
                 // navigate({to:"/"})
 
-                console.log("logout completed");
+                // console.log("logout completed");
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
             })
     }
 

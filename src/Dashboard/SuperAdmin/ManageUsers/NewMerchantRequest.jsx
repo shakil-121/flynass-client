@@ -55,7 +55,7 @@ const NewMerchantRequest = ({ isVisible, onClose, newUsers }) => {
                         if (data.modifiedCount > 0) {
                             Swal.fire("Merchant!", "User has been merchant.", "success");
                         }
-                        console.log(data);
+                        // console.log(data);
                     });
             }
         });

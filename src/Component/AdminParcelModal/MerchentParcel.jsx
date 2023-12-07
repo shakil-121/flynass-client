@@ -12,7 +12,7 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
         const to_address = form.to_address.value;
         const phone = form.phone.value;
         const updateInformation = { to_address, phone }
-        console.log(updateInformation);
+        // console.log(updateInformation);
         fetch(`${baseUrl}/order/${isVisible._id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
@@ -29,7 +29,7 @@ const MerchentParcelEdit = ({ isVisible, onClose }) => {
                     });
                 }
                 form.reset();
-                console.log(data);
+                // console.log(data);
             });
 
     }
